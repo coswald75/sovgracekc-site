@@ -5,8 +5,9 @@
   --ink: #2e2118;
   --muted: #6b5a4e;
   --line: #e2dcd2;
-  --coral: #d85a30;
-  --coral-dark: #993c1d;
+  --coral: #6e2f3d;
+  --coral-dark: #54242f;
+  --band: #ad8352;
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
 }
@@ -137,7 +138,7 @@ img { max-width: 100%; height: auto; display: block; }
 .block-cta { background: var(--coral); padding: 44px 24px 0; text-align: center; }
 .block-cta .caps-head { color: #fff; margin-bottom: 36px; }
 .block-cta-inner {
-  background: var(--ink);
+  background: #1c1814;
   color: var(--cream);
   padding: 26px 32px;
   margin: 0 auto;

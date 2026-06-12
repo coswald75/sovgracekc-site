@@ -106,26 +106,26 @@ const canonical = `https://sovgracekc.org${path}`;
   </footer>
 
   <style>
-    .band { background: var(--cocoa); }
+    .band { background: var(--band); }
     .band-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
-    .band-logo img { height: 38px; width: auto; }
+    .band-logo img { height: 38px; width: auto; filter: brightness(0); opacity: 0.85; }
     .nav-list { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
     .nav-list a {
       font-family: var(--sans);
       font-size: 0.82rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--cream);
+      color: var(--ink);
       text-decoration: none;
     }
-    .nav-list a:hover { color: #e9b39a; }
+    .nav-list a:hover { color: #fff; }
     .nav-toggle, .nav-burger { display: none; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
     @media (max-width: 900px) {
       .nav-burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-      .nav-burger span { width: 24px; height: 2px; background: var(--cream); }
-      .nav-list { display: none; position: absolute; right: 24px; top: 66px; background: var(--cocoa); padding: 18px 24px; flex-direction: column; align-items: flex-start; gap: 14px; z-index: 50; }
+      .nav-burger span { width: 24px; height: 2px; background: var(--ink); }
+      .nav-list { display: none; position: absolute; right: 24px; top: 66px; background: var(--band); padding: 18px 24px; flex-direction: column; align-items: flex-start; gap: 14px; z-index: 50; }
       .nav-toggle:checked ~ .nav-list { display: flex; }
       nav { position: relative; }
       .footer-grid { grid-template-columns: 1fr; }
