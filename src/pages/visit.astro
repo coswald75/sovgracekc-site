@@ -45,7 +45,7 @@ const testimonials = [
           <li><a href="/community/">Get Connected</a></li>
           <li><a href="/bridge/">The Bridge Course</a></li>
           <li><a href="/leadership/">Leadership</a></li>
-          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="/missions/">Missions</a></li>
         </ul>
       </aside>
     </div>
@@ -56,9 +56,9 @@ const testimonials = [
       <h2 class="caps-head" style="text-align:center;">What visitors are saying</h2>
       <div class="grid-3" style="margin-top:36px;">
         {testimonials.map((t) => (
-          <div>
-            <blockquote style="font-size:1.02rem; margin-top:0;">{t.quote}</blockquote>
-            <p style="font-family:var(--sans); letter-spacing:0.18em; text-transform:uppercase; font-size:0.8rem;">&mdash; {t.name}</p>
+          <div style="border-left:3px solid var(--coral); padding:6px 0 6px 24px;">
+            <p style="font-family:var(--serif); font-size:1.02rem; line-height:1.5; margin:0 0 14px;">{t.quote}</p>
+            <p style="font-family:var(--sans); letter-spacing:0.18em; text-transform:uppercase; font-size:0.8rem; margin:0;">&mdash; {t.name}</p>
           </div>
         ))}
       </div>
@@ -69,7 +69,7 @@ const testimonials = [
     <div class="wrap" style="max-width:680px; text-align:center;">
       <h2 class="caps-head">Need help or have a question?</h2>
       <p>We're available 9 AM &ndash; 5 PM and we'd love to answer any questions you have.</p>
-      <a class="btn-dark" href="/contact/">Send us a message</a>
+      <a class="btn-dark" href="mailto:chris@sovgracekc.org">Send us a message</a>
     </div>
   </section>
 </Base>

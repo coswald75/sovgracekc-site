@@ -12,3 +12,6 @@
 # Broken nav link that 404s on the old site — fix it for good
 /get-involved/ /community/ 301
 /get-involved /community/ 301
+# Contact page retired in favor of Missions (contact info lives in the footer)
+/contact/ /missions/ 301
+/contact /missions/ 301
