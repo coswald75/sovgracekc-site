@@ -1,14 +1,14 @@
 :root {
   --cream: #ffffff;
-  --panel: #f4f2ed;
-  --cocoa: #3e3a35;
-  --ink: #2d2c2a;
-  --muted: #5f5d58;
-  --line: #e5e3de;
-  --coral: #9d4f50;
-  --coral-dark: #7e3d3e;
-  --band: #a38c54;
-  --green: #6ba28c;
+  --panel: #f2f4f7;
+  --cocoa: #3a4565;
+  --ink: #273050;
+  --muted: #4d5570;
+  --line: #e3e6ec;
+  --coral: #9a6b42;
+  --coral-dark: #7c5430;
+  --band: #ffffff;
+  --green: #9a6b42;
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
 }

@@ -106,7 +106,7 @@ const canonical = `https://sovgracekc.org${path}`;
   </footer>
 
   <style>
-    .band { background: var(--band); }
+    .band { background: var(--band); border-bottom: 1px solid var(--line); }
     .band-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
     .band-logo img { height: 38px; width: auto; filter: brightness(0); opacity: 0.85; }
     .nav-list { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
@@ -119,7 +119,7 @@ const canonical = `https://sovgracekc.org${path}`;
       color: var(--ink);
       text-decoration: none;
     }
-    .nav-list a:hover { color: #fff; }
+    .nav-list a:hover { color: var(--coral-dark); }
     .nav-toggle, .nav-burger { display: none; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
     @media (max-width: 900px) {
