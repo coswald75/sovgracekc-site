@@ -1,13 +1,14 @@
 :root {
-  --cream: #f6f2ec;
-  --panel: #f1ece3;
-  --cocoa: #533d31;
-  --ink: #2e2118;
-  --muted: #6b5a4e;
-  --line: #e2dcd2;
-  --coral: #6e2f3d;
-  --coral-dark: #54242f;
-  --band: #ad8352;
+  --cream: #ffffff;
+  --panel: #f4f2ed;
+  --cocoa: #3e3a35;
+  --ink: #2d2c2a;
+  --muted: #5f5d58;
+  --line: #e5e3de;
+  --coral: #9d4f50;
+  --coral-dark: #7e3d3e;
+  --band: #a38c54;
+  --green: #6ba28c;
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'Inter', -apple-system, system-ui, sans-serif;
 }
@@ -94,7 +95,7 @@ img { max-width: 100%; height: auto; display: block; }
 .tile img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
 .tile-caption { padding: 22px 18px 24px; text-align: center; }
 .tile-caption.dark { background: var(--ink); }
-.tile-caption.accent { background: var(--coral-dark); }
+.tile-caption.accent { background: var(--coral); }
 .tile-caption h3 {
   font-family: var(--sans);
   font-size: 1rem;
@@ -135,15 +136,14 @@ img { max-width: 100%; height: auto; display: block; }
 .with-sidebar { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(220px, 1fr); gap: 64px; align-items: start; }
 
 /* Stacked color-block CTA, Park-style */
-.block-cta { background: var(--coral); padding: 44px 24px 0; text-align: center; }
-.block-cta .caps-head { color: #fff; margin-bottom: 36px; }
+.block-cta { background: var(--green); padding: 40px 0 36px; text-align: center; max-width: 720px; margin: 0 auto; }
+.block-cta .caps-head { color: #fff; margin-bottom: 28px; }
 .block-cta-inner {
-  background: #1c1814;
-  color: var(--cream);
+  background: var(--ink);
+  color: #fff;
   padding: 26px 32px;
-  margin: 0 auto;
-  max-width: 640px;
-  transform: translateY(28px);
+  width: calc(100% + 104px);
+  margin-left: -52px;
 }
 .block-cta-inner .line1 {
   font-family: var(--sans);
@@ -153,7 +153,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   margin: 0 0 6px;
 }
-.block-cta-inner a { color: var(--cream); }
+.block-cta-inner a { color: #fff; }
 
 blockquote {
   font-family: var(--serif);
@@ -172,6 +172,8 @@ blockquote {
 
 @media (max-width: 820px) {
   .grid-3 { grid-template-columns: 1fr; }
+  .block-cta { max-width: none; }
+  .block-cta-inner { width: 100%; margin-left: 0; }
   .grid-2 { grid-template-columns: 1fr; }
   .with-sidebar { grid-template-columns: 1fr; gap: 40px; }
   .section { padding: 44px 0; }
