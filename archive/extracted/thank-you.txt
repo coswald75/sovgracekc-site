@@ -1,0 +1,14 @@
+
+[h2] Thank you! 
+[li] Go to the Homepage 
+[li] Meet the Leadership 
+[li] Learn about Community Groups 
+
+=== IMAGES ===
+https://sovgracekc.org/wp-content/uploads/2021/11/covfel_logo_black-1.png | alt: 
+https://sovgracekc.org/wp-content/uploads/2021/11/covfel_logo_black-1.png | alt: 
+
+=== LINKS (external/notable) ===
+https://sovgracekc.org/
+https://sovgracekc.org/leadership/
+https://sovgracekc.org/get-involved/#community-groups

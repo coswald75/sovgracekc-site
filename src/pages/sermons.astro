@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+
+const featured = [
+  { title: 'The Future: Anxiety, Arrogance, or Adventure?', passage: 'Proverbs 27', href: 'https://podcasts.apple.com/us/podcast/proverbs-27-my-posture-toward-the-future-neither/id585104277?i=1000610288160' },
+  { title: 'From Demoralized to Remoralized', passage: 'Proverbs 25', href: 'https://podcasts.apple.com/us/podcast/proverbs-25-from-demoralized-to-remoralized/id585104277?i=1000608077552' },
+  { title: 'For Kingship Belongs to the Lord', passage: 'Proverbs 20', href: 'https://podcasts.apple.com/us/podcast/proverbs-20-for-kingship-belongs-to-the-lord/id585104277?i=1000602838213' },
+  { title: 'The Role Sex Will Play in Saving the World', passage: 'Proverbs 7', href: 'https://podcasts.apple.com/us/podcast/proverbs-7-the-role-sex-will-play-in-saving-the-world/id585104277?i=1000588697061' },
+];
+---
+<Base
+  title="Sermons | Providence Community Church | Church in Lenexa, KS"
+  description="Get an introduction to the preaching at Providence Community Church. Listen to or watch a sermon here on the website or on your favorite podcast app."
+  path="/sermons/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Sermons</p>
+      <h1>The preaching at Providence.</h1>
+      <p style="font-size:1.15rem;">Featured sermons are handpicked messages that give you an introduction to the preaching at Providence Community Church. Check out our full sermon archive for all past messages.</p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:28px;">
+        <a class="btn" href="https://sermons.sovgracekc.org/">Sermon archive</a>
+        <a class="btn-ghost" href="https://podcasts.apple.com/us/podcast/the-providence-podcast/id1721017934">Apple Podcasts</a>
+        <a class="btn-ghost" href="https://open.spotify.com/show/0OoTEDDOEp27qkCYXcMg7T">Spotify</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <p class="eyebrow">Featured sermons</p>
+      <h2>Start here.</h2>
+      <div class="grid-2" style="margin-top:36px; gap:28px; align-items:stretch;">
+        {featured.map((s) => (
+          <a href={s.href} class="card" style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between; padding:28px 30px;">
+            <div>
+              <p class="eyebrow" style="margin-bottom:10px;">{s.passage}</p>
+              <h3 style="font-size:1.5rem;">{s.title}</h3>
+              <p style="font-size:0.95rem; margin-bottom:18px;">Chris Oswald</p>
+            </div>
+            <span class="arrow-link">Listen</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

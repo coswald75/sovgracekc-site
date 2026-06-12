@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import sof from '../content/statement-of-faith.html?raw';
+
+const core = [
+  { name: 'Scripture', body: 'We believe that the Holy Bible is the inspired Word of God and that it was written by men as they were moved by the Holy Spirit of God. It is the truth without error and shall remain preserved forever as the divine account of the Gospel of Salvation, and the supreme standard by which all human conduct, creeds, and opinions should be tried.' },
+  { name: 'Reformed Theology', body: 'Scripture presents the all-glorious, triune God as the source and end of all things (Romans 11:36), sovereignly working all things according to His will (Ephesians 1:11). At the center of God’s purposes in the world is the exaltation of His glory through the redemption of sinners (John 17:1–26).' },
+  { name: 'Gospel-Centeredness', body: 'We believe that the gospel—the good news of God’s saving activity in Jesus Christ—is the pinnacle of His redemptive acts (Ephesians 1:9–12), the center of the Bible’s story (Luke 24:44–47), and the essential message for our faith, life, and witness (1 Corinthians 15:3–11). We are committed to preaching the gospel, singing the gospel, praying the gospel, and building our churches upon the gospel (2 Timothy 4:2; Colossians 3:16; Matthew 16:18).' },
+  { name: 'God-given Gender Roles', body: 'We believe it was God’s glorious plan to create men and women in His image, giving them equal dignity and value in His sight, while designing them for differing and complementary roles within the home and the church (Genesis 1:26–28; Ephesians 5:22–33; 1 Timothy 2:8–15). Because these roles give different expressions to God’s image in humanity, they should be valued and pursued in joy and faith.' },
+];
+---
+<Base
+  title="Beliefs | Providence Community Church | Church in Lenexa, KS"
+  description="Discover what Providence Community Church believes about Jesus Christ, the Bible, salvation, the role of the Church, and other core doctrines."
+  path="/beliefs/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Beliefs</p>
+      <h1>Our beliefs.</h1>
+      <p style="font-size:1.15rem;">Our Statement of Faith captures what we believe, creating a foundation for why we do what we do as a church. Our primary passion and central influence in our life together is the gospel of Jesus Christ.</p>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <p class="eyebrow">Overview of core beliefs</p>
+      <h2>What anchors us.</h2>
+      <div class="grid-2" style="margin-top:36px; gap:40px; align-items:start;">
+        {core.map((c) => (
+          <div>
+            <h3>{c.name}</h3>
+            <p style="font-size:0.98rem;">{c.body}</p>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top:8px; max-width:64ch;">
+        <h3>Cultural Engagement</h3>
+        <p style="font-size:0.98rem;">We believe Christians, and the local church, are to have a preserving effect on society (Matthew 5:13). The church also has a prophetic role in society, bringing the Bible to bear on the moral issues of the day, like John the Baptist (Luke 3:19). We reject the distinction between &ldquo;political&rdquo; issues and &ldquo;religious&rdquo; issues. If God has spoken on an issue, so must the church.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap-narrow prose">
+      <p class="eyebrow">Statement of faith</p>
+      <h2>Our Statement of Faith.</h2>
+      <p>While the Bible is our only infallible rule of faith and practice, we are also committed&mdash;and accountable&mdash;to a specific statement of faith that represents a summary of the teaching of Holy Scripture on key points of doctrine essential to the beliefs, conduct, and witness of our churches.</p>
+      <p><a class="btn-ghost" href="/wp-content/uploads/2021/06/SGC_Statement_of_Faith.pdf">Download Statement of Faith</a></p>
+      <div set:html={sof} />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,14 @@
+# Stale provider landing pages — keep the URLs alive, send people somewhere real
+/vbs/ /community/ 301
+/vbs /community/ 301
+/build/ / 301
+/build / 301
+/membersmeeting/ / 301
+/membersmeeting / 301
+/new-old/ /visit/ 301
+/new-old /visit/ 301
+/event-abovethefold-easter/ /visit/ 301
+/event-abovethefold-easter /visit/ 301
+# Broken nav link that 404s on the old site — fix it for good
+/get-involved/ /community/ 301
+/get-involved /community/ 301

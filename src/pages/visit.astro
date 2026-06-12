@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+
+const steps = [
+  { n: '01', title: 'Arrive', img: '/wp-content/uploads/Providence_Visit_ChurchBuilding-1024x683.jpg', body: "Join us at 10:00 AM. Dress casually or dress up, but come as you are! You'll find plenty of parking in front of our building at 10113 Lenexa Dr. Providence Community Church has a drop-off lane directly in front of the church if you'd like to drop off your little ones or those who have trouble walking." },
+  { n: '02', title: 'Need coffee? Have kids?', img: '/wp-content/uploads/Providence_Visit_CoffeeBar_Squared.jpg', body: "We've got you. When you enter our building you'll be greeted by someone at the door who can direct you to our children's ministry check-in area, to the coffee area, the sanctuary and so forth. Be sure to grab one of our visitor cards that provides a link to all the key pieces of information about our church." },
+  { n: '03', title: 'Singing', img: '/wp-content/uploads/Providence_Visit_Singing.jpg', body: 'You can expect a variety of worship songs and music styles on Sunday mornings. We love to glorify God together here at Providence Community Church, and one way we do so is through singing. Our hope is that you will find an atmosphere where you and your family can experience God and join us in worshiping Him together.' },
+  { n: '04', title: 'Preaching', img: '/wp-content/uploads/IMG_0259-683x1024.jpg', body: "After we sing four songs, we sit down and open up God's word to hear what he has to say to us. The sermon usually lasts somewhere between 35-40 minutes." },
+];
+
+const testimonials = [
+  { quote: 'Providence is a place where I have learned so much. The Bible is preached from and without shame. Prayer is central and many opportunities are available to participate with others in prayer. The people are warm and inclusive and quick to welcome newcomers. It is easy to get involved and a warm environment.', name: 'Lauren H.' },
+  { quote: "One of the many things we love is that it has small groups that meet during the week. It is a place you will be loved and taught God's word.", name: 'Kate M.' },
+  { quote: "Providence offers excellent biblical, Christ-centered preaching, and you'll find a loving congregation that genuinely cares for each other!", name: 'Colton T.' },
+];
+---
+<Base
+  title="Visit on Sunday | Providence Community Church | Church in Lenexa, KS"
+  description="Finding a church in your local area can be hard. We're glad you found Providence Community Church! Find details about what to expect on Sundays."
+  path="/visit/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Visit</p>
+      <h1>Join us on a Sunday morning.</h1>
+      <p style="font-size:1.15rem;">If you're new to the Lenexa area, looking for answers, or searching for a fresh start, our Sunday morning service is a great place to start.</p>
+      <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:28px;">
+        <a class="btn" href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a>
+        <span style="font-family:var(--condensed); letter-spacing:0.18em; text-transform:uppercase; font-size:0.85rem; color:var(--muted);">Sundays at 10:00 AM &middot; 10113 Lenexa Dr</span>
+      </div>
+    </div>
+  </section>
+
+  {steps.map((s, i) => (
+    <section class="section section-rule">
+      <div class="wrap grid-2">
+        {i % 2 === 0 ? (
+          <>
+            <div>
+              <p class="eyebrow">{s.n}</p>
+              <h2>{s.title}</h2>
+              <p>{s.body}</p>
+            </div>
+            <div class="photo"><img src={s.img} alt={s.title} loading="lazy" /></div>
+          </>
+        ) : (
+          <>
+            <div class="photo"><img src={s.img} alt={s.title} loading="lazy" /></div>
+            <div>
+              <p class="eyebrow">{s.n}</p>
+              <h2>{s.title}</h2>
+              <p>{s.body}</p>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <p class="eyebrow">What visitors are saying</p>
+      <h2>Hear from people who have visited Providence.</h2>
+      <div class="grid-3" style="margin-top:36px;">
+        {testimonials.map((t) => (
+          <div>
+            <blockquote style="font-size:1.05rem; margin-top:0;">{t.quote}</blockquote>
+            <p style="font-family:var(--condensed); letter-spacing:0.18em; text-transform:uppercase; font-size:0.85rem;">&mdash; {t.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap" style="max-width:720px; text-align:center;">
+      <h2>Need help or have a question?</h2>
+      <p>We're available 9 AM &ndash; 5 PM and we'd love to answer any questions you have.</p>
+      <a class="btn" href="/contact/">Send us a message</a>
+    </div>
+  </section>
+</Base>

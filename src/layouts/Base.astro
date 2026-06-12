@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+const canonical = `https://sovgracekc.org${path}`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/wp-content/uploads/cropped-favicon-5-32x32.png" sizes="32x32" />
+  <link rel="icon" href="/wp-content/uploads/cropped-favicon-5-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/wp-content/uploads/cropped-favicon-5-180x180.png" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet" />
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T97PS8Z8');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T97PS8Z8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header style="border-bottom: 1px solid var(--line);">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:20px;">
+      <a href="/" style="text-decoration:none;">
+        <img src="/wp-content/uploads/providence-church-updated-logo-wide.png" alt="Providence Community Church" style="height:44px; width:auto; filter:brightness(0); opacity:0.8;" />
+      </a>
+      <nav aria-label="Main">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </label>
+        <ul class="nav-list">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/beliefs/">Beliefs</a></li>
+          <li><a href="/leadership/">Leadership</a></li>
+          <li><a href="/community/">Community</a></li>
+          <li><a href="/sermons/">Sermons</a></li>
+          <li><a href="/visit/" class="btn nav-cta">Visit Sunday</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <section class="section section-panel section-rule">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Sundays at 10:00 AM</p>
+        <h2>Get directions</h2>
+        <p>We'd love to see you and your family at Providence Community Church this weekend. Our service starts at 10:00 AM.</p>
+        <a class="btn" href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a>
+      </div>
+      <div class="photo">
+        <img src="/wp-content/uploads/Providence_Lenexa_City.jpg" alt="Lenexa, Kansas" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid var(--line); padding:56px 0 40px;">
+    <div class="wrap" style="display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px;">
+      <div>
+        <img src="/wp-content/uploads/providence-church-updated-logo-wide.png" alt="Providence Community Church" style="height:40px; width:auto; margin-bottom:18px; filter:brightness(0); opacity:0.8;" />
+        <p style="font-size:0.95rem; max-width:46ch;">At Providence Community Church, we are a true family of Christians who live to make much of Jesus as we gather in community and love our neighbors in Lenexa, KS. We aren't showy and aren't interested in trying to be impressive. We simply want the good news of the gospel to permeate our lives.</p>
+        <p style="font-size:0.95rem;">
+          <a href="https://facebook.com/sovgracekc/">Facebook</a> &nbsp;&middot;&nbsp;
+          <a href="https://instagram.com/providence_churchkc">Instagram</a>
+        </p>
+      </div>
+      <div>
+        <p class="eyebrow" style="color:var(--muted);">Quick links</p>
+        <ul style="list-style:none; padding:0; margin:0; font-size:0.95rem; line-height:2.1;">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/beliefs/">Beliefs</a></li>
+          <li><a href="/leadership/">Leadership</a></li>
+          <li><a href="/community/">Community</a></li>
+          <li><a href="/sermons/">Sermons</a></li>
+          <li><a href="/visit/">Visit</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow" style="color:var(--muted);">Contact</p>
+        <p style="font-size:0.95rem;"><a href="mailto:chris@sovgracekc.org">chris@sovgracekc.org</a></p>
+        <p style="font-size:0.95rem;">10113 Lenexa Dr<br />Lenexa, KS 66215</p>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:36px; border-top:1px solid var(--line); padding-top:20px;">
+      <p style="font-size:0.85rem; margin:0;">&copy; {new Date().getFullYear()} Providence Community Church. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    .nav-list { display:flex; align-items:center; gap:26px; list-style:none; margin:0; padding:0; }
+    .nav-list a:not(.nav-cta) { font-size:0.95rem; font-weight:500; color:var(--cocoa); text-decoration:none; }
+    .nav-list a:not(.nav-cta):hover { color:var(--coral); }
+    .nav-cta { padding:9px 20px; font-size:0.9rem; }
+    .nav-toggle, .nav-burger { display:none; }
+    @media (max-width: 860px) {
+      .nav-burger { display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:6px; }
+      .nav-burger span { width:24px; height:2px; background:var(--cocoa); }
+      .nav-list { display:none; position:absolute; right:24px; top:74px; background:var(--cream); border:1px solid var(--line); border-radius:10px; padding:18px 24px; flex-direction:column; align-items:flex-start; gap:14px; z-index:50; }
+      .nav-toggle:checked ~ .nav-list { display:flex; }
+      nav { position:relative; }
+    }
+    @media (max-width: 760px) {
+      footer .wrap:first-child { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>

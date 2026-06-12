@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+
+const ministries = [
+  { name: "Children's Ministry", img: '/wp-content/uploads/Providence_Lenexa_Kids.jpg', href: '/community/#childrens-ministry' },
+  { name: 'Young Professionals', img: '/wp-content/uploads/Providence_Community_YoungProfessionals.jpg', href: '/community/#young-professionals' },
+  { name: 'College Ministry', img: '/wp-content/uploads/providence-community-church-lenexa-community-college-1024x704.jpg', href: '/community/#college-ministry' },
+  { name: 'Intro to Christianity', img: '/wp-content/uploads/Small-Group-Discussion.jpeg', href: '/community/#bridge-course' },
+  { name: "Women's Ministry", img: '/wp-content/uploads/SGCAU_Connected_WomensMinistry-1024x704.jpg', href: '/community/#womens-ministry' },
+  { name: "Men's Ministry", img: '/wp-content/uploads/SGCAU_Connected_MensMinistry-1024x683.jpg', href: '/community/#mens-ministry' },
+];
+---
+<Base
+  title="Providence Community Church | Gospel-Centered Church in Lenexa"
+  description="Whether you're looking for a church, looking for community, or looking for answers, you're welcome at Providence Community Church."
+  path="/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">A church in Lenexa, Kansas</p>
+      <h1>Whatever your story, we're glad you're here.</h1>
+      <p style="font-size:1.15rem; max-width:56ch;">Whether you're looking for a gospel-centered church near you, looking for community, or looking for answers, you're welcome at Providence Community Church in Lenexa.</p>
+      <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:28px;">
+        <a class="btn" href="/visit/">Join us on Sunday</a>
+        <a class="btn-ghost" href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a>
+        <span style="font-family:var(--condensed); letter-spacing:0.18em; text-transform:uppercase; font-size:0.85rem; color:var(--muted);">Sundays at 10:00 AM</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <p class="eyebrow">Who we are</p>
+      <h2 style="max-width:24ch;">An encouraging and truth-loving local church in Lenexa, KS.</h2>
+      <p style="max-width:60ch;">You'll find the members here to be welcoming, friendly, and enjoying life to the fullest.</p>
+      <div class="grid-3" style="margin-top:40px;">
+        <div>
+          <p class="eyebrow" style="color:var(--cocoa);">Truth</p>
+          <p style="font-size:0.98rem;">We think compromising the truth for the sake of love is short-sighted. While all of us sin and fall short, we would rather repent than undertake the fool's errand of refashioning reality to suit our own preferences.</p>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--cocoa);">Community</p>
+          <p style="font-size:0.98rem;">The gospel of Jesus Christ teaches us to not take ourselves too seriously. We love to gather together, eat good food, play games, and enjoy the wholesome beauty of God's creation.</p>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--cocoa);">Service</p>
+          <p style="font-size:0.98rem;">In scripture, we see a pattern of a people's vertical relationship with God being expressed in their horizontal relationship with others. We believe that serving others is fundamental to a life well-lived.</p>
+        </div>
+      </div>
+      <blockquote style="margin-top:40px; max-width:62ch;">More than anything, Providence is a group of people who love to admire what an old Puritan theologian called &ldquo;the diverse excellencies of Jesus Christ.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap">
+      <p class="eyebrow">Find your community</p>
+      <h2>Discover how you can get involved and grow here at Providence.</h2>
+      <div class="grid-3" style="margin-top:40px;">
+        {ministries.map((m) => (
+          <a href={m.href} class="card" style="text-decoration:none;">
+            <img src={m.img} alt={m.name} loading="lazy" />
+            <div class="card-body">
+              <h3>{m.name}</h3>
+              <span class="arrow-link">Learn more</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap grid-2">
+      <div class="photo">
+        <img src="/wp-content/uploads/Providence-Community-Church_Lenexa_Preaching-1024x415.jpg" alt="Preaching at Providence Community Church" loading="lazy" />
+      </div>
+      <div>
+        <p class="eyebrow">Get to know our pastor</p>
+        <h2>Humble service, gospel ambition.</h2>
+        <p>Our leadership team aims to humbly serve Providence and help reach the Lenexa and Kansas City area with the gospel.</p>
+        <a class="arrow-link" href="/leadership/">Meet the team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">The best place to start?</p>
+        <h2>Join us on a Sunday morning.</h2>
+        <p>It's common for people to have questions. Here's a little of what you can expect when you visit Providence Community Church:</p>
+        <ul style="color:var(--muted); padding-left:20px; line-height:1.9; font-size:0.98rem;">
+          <li>Our service begins at 10:00 AM and typically ends at 11:30 AM.</li>
+          <li>Dress casually or dress up &mdash; either way, come as you are comfortable.</li>
+          <li>Providence Kids is a place where children ages infant&ndash;8 years old have fun, make friends, and learn the story of the Bible.</li>
+          <li>You can expect a variety of timeless hymns and contemporary worship songs.</li>
+          <li>We primarily teach the Bible verse-by-verse and chapter-by-chapter, and apply the truth to relationships, work, and life.</li>
+        </ul>
+        <a class="btn" href="/visit/" style="margin-top:10px;">What to expect on Sunday</a>
+      </div>
+      <div class="photo">
+        <img src="/wp-content/uploads/Providence_Visit_ChurchBuilding-1024x683.jpg" alt="The Providence Community Church building" loading="lazy" />
+      </div>
+    </div>
+  </section>
+</Base>

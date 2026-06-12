@@ -1,0 +1,10 @@
+
+[p] 
+[h2] Getting Connected Starts Here 
+[li] Time to Complete: 20 seconds 
+
+=== IMAGES ===
+https://sovgracekc.org/wp-content/uploads/2021/11/covfel_logo_black-1.png | alt: 
+
+=== LINKS (external/notable) ===
+https://sovgracekc.org
