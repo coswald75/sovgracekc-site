@@ -12,15 +12,25 @@ const events = [
   description="Whether you're looking for a church, looking for community, or looking for answers, you're welcome at Providence Community Church."
   path="/"
 >
-  <section style="padding:44px 0 0;">
+  <section style="padding:24px 0 0;">
     <div class="wrap hero-grid">
       <div class="media hero-media">
         <img src="/wp-content/uploads/stock-worship-candid.jpg" alt="Sunday worship at Providence Community Church" />
       </div>
-      <div class="hero-side">
+      <div class="hero-rail">
+        <a class="rail-card rail-dark" href="/sermons/">
+          <p class="label" style="color:#fff; margin:0;">Current Series</p>
+          <div>
+            <h3 style="color:#fff; font-size:1.9rem; margin:0;">Summer in<br />Ecclesiastes</h3>
+            <p style="color:rgba(255,255,255,0.6); margin:10px 0 0; font-size:0.85rem; letter-spacing:0.1em;">+++</p>
+          </div>
+        </a>
         <a class="float-card" href="/sermons/">
           <h3>Sermons</h3>
           <span class="arrow">&#8594;</span>
+        </a>
+        <a class="rail-card media" href="/community/" style="padding:0;">
+          <img src="/wp-content/uploads/providence-marriage-mentorship-2.jpg" alt="Community at Providence" style="aspect-ratio:1/1; object-fit:cover; width:100%;" />
         </a>
       </div>
     </div>
@@ -102,12 +112,18 @@ const events = [
   </section>
 
   <style>
-    .hero-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: end; }
-    .hero-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-    .hero-side { display: flex; justify-content: flex-end; padding-bottom: 8px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 44px; align-items: start; }
+    .hero-media img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; }
+    .hero-rail { display: flex; flex-direction: column; gap: 24px; }
+    .rail-card { display: flex; flex-direction: column; justify-content: space-between; border-radius: 14px; text-decoration: none; overflow: hidden; }
+    .rail-dark { background: #111; padding: 26px 28px; aspect-ratio: 1 / 1; }
+    .hero-rail .float-card { width: 100%; aspect-ratio: auto; min-height: 340px; }
+    .hero-rail .float-card h3 { font-size: 2.1rem; }
+    .hero-rail .float-card .arrow { width: 52px; height: 52px; font-size: 1.3rem; }
     @media (max-width: 860px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .hero-side { justify-content: flex-start; }
+      .hero-rail { flex-direction: row; flex-wrap: wrap; }
+      .hero-rail > * { flex: 1 1 240px; }
     }
   </style>
 </Base>
