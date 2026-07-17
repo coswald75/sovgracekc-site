@@ -16,8 +16,18 @@ const events = [
     <div class="wrap hero-grid">
       <div>
         <div class="media hero-media">
-          <img src="/wp-content/uploads/stock-worship-candid.jpg" alt="Sunday worship at Providence Community Church" />
+          <video autoplay muted loop playsinline preload="metadata"
+            poster="/media/hero-poster.jpg" id="hero-video"
+            aria-label="Families arriving at Providence Community Church on a Sunday morning">
+            <source src="/media/hero-loop.mp4" type="video/mp4" />
+          </video>
         </div>
+        <script>
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const v = document.getElementById('hero-video');
+            if (v) { v.removeAttribute('autoplay'); v.pause(); }
+          }
+        </script>
         <div style="padding-top:32px;">
           <h1 class="masthead">A Church for KC</h1>
           <div class="two-col">
@@ -112,7 +122,7 @@ const events = [
 
   <style>
     .hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 44px; align-items: start; }
-    .hero-media img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; }
+    .hero-media img, .hero-media video { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; display: block; }
     .hero-rail { display: flex; flex-direction: column; gap: 24px; }
     .rail-card { display: flex; flex-direction: column; justify-content: space-between; border-radius: 14px; text-decoration: none; overflow: hidden; }
     .rail-dark { background: #111; padding: 26px 28px; aspect-ratio: 1 / 1; }
