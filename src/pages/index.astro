@@ -40,11 +40,11 @@ const events = [
         </div>
       </div>
       <div class="hero-rail">
-        <a class="rail-card rail-dark" href="/sermons/">
-          <p class="label" style="color:#fff; margin:0;">Current Series</p>
-          <div>
-            <h3 style="color:#fff; font-size:1.9rem; margin:0;">Summer in<br />Ecclesiastes</h3>
-            <p style="color:rgba(255,255,255,0.6); margin:10px 0 0; font-size:0.85rem; letter-spacing:0.1em;">+++</p>
+        <a class="rail-card rail-photo" href="/photos/" style="background-image:url('/wp-content/uploads/providence-vista-fourth.jpg');">
+          <p class="label" style="color:#fff; margin:0; position:relative;">Photos</p>
+          <div style="position:relative;">
+            <h3 style="color:#fff; font-size:1.9rem; margin:0;">Our Life<br />Together</h3>
+            <p style="color:rgba(255,255,255,0.75); margin:10px 0 0; font-size:0.85rem; letter-spacing:0.1em;">+++</p>
           </div>
         </a>
         <a class="float-card" href="/sermons/">
@@ -126,6 +126,8 @@ const events = [
     .hero-rail { display: flex; flex-direction: column; gap: 24px; }
     .rail-card { display: flex; flex-direction: column; justify-content: space-between; border-radius: 14px; text-decoration: none; overflow: hidden; }
     .rail-dark { background: #111; padding: 26px 28px; aspect-ratio: 1 / 1; }
+    .rail-photo { background-size: cover; background-position: center; padding: 26px 28px; aspect-ratio: 1 / 1; position: relative; }
+    .rail-photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.5)); }
     .hero-rail .float-card { width: 100%; aspect-ratio: auto; min-height: 340px; }
     .hero-rail .float-card h3 { font-size: 2.1rem; }
     .hero-rail .float-card .arrow { width: 52px; height: 52px; font-size: 1.3rem; }

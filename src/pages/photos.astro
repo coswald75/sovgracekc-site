@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const photos = [
+  { src: '/wp-content/uploads/providence-vista-fourth.jpg', caption: 'Fourth of July at the lake' },
+  { src: '/wp-content/uploads/Providence_About_FirePit.jpg', caption: 'Firepit nights' },
+  { src: '/wp-content/uploads/Providence_Community_Boating.jpg', caption: 'Out on the water' },
+  { src: '/wp-content/uploads/Providence_Community_SmallGroups-1024x576.jpg', caption: 'Community Groups, midweek' },
+  { src: '/wp-content/uploads/Providence_Visit_CoffeeBar_Squared.jpg', caption: 'Coffee before the service' },
+  { src: '/wp-content/uploads/Providence_Visit_Singing.jpg', caption: 'Sunday singing' },
+  { src: '/wp-content/uploads/Providence-Community-Church_Lenexa_Public-Market-1024x506.jpg', caption: 'Evenings at the Public Market' },
+  { src: '/wp-content/uploads/Providence_Beliefs_WomensEvent-1024x586.jpg', caption: "Women's ministry, outside" },
+  { src: '/wp-content/uploads/SGCAU_Connected_MensMinistry-1024x683.jpg', caption: "Men's ministry" },
+  { src: '/wp-content/uploads/Providence-Community-Church_Lenexa_Community.jpg', caption: 'Lenexa — our city' },
+  { src: '/wp-content/uploads/Providence-Community-Church_Lenexa_Chris-Preaching.jpg', caption: 'The Word, opened' },
+  { src: '/wp-content/uploads/providence-marriage-mentorship-2.jpg', caption: 'Celebrating together' },
+];
+---
+<Base
+  title="Photos | Providence Community Church | Church in Lenexa, KS"
+  description="Photos from our life together at Providence Community Church — Sundays, firepits, the lake, and our city."
+  path="/photos/"
+>
+  <section style="padding:56px 0;">
+    <div class="wrap">
+      <h1 class="masthead" style="font-size:clamp(2rem,4.8vw,3.4rem);">Photos from Our Life Together</h1>
+      <div class="two-col">
+        <p>Less photoshoot, more life. Sundays and weekdays, the building and the lake, coffee and firepits &mdash; this is what it looks like to be a true family of Christians in Lenexa.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gallery">
+        {photos.map((p) => (
+          <figure class="shot">
+            <div class="media"><img src={p.src} alt={p.caption} loading="lazy" /></div>
+            <figcaption>
+              <p style="font-family:var(--serif); font-size:1.05rem; margin:10px 0 0;">{p.caption}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="field-section" style="padding:72px 0; text-align:center;">
+    <div class="wrap" style="max-width:680px;">
+      <h2 class="display" style="font-size:clamp(1.6rem,3vw,2.2rem);">Be in the next one.</h2>
+      <p style="font-size:0.95rem;">The best way to see what Providence is like is to spend a Sunday with us.</p>
+      <a class="btn-outline" href="/visit/">Plan a visit</a>
+    </div>
+  </section>
+
+  <style>
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px; }
+    .shot { margin: 0; }
+    .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    @media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .gallery { grid-template-columns: 1fr; } }
+  </style>
+</Base>
