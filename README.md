@@ -26,5 +26,6 @@ Static replacement for the Digital Outreach WordPress site. Built with Astro, de
 
 1. Replace the `/sermons/` link-out with the Sermon Steward sermon section for Providence
 2. Decide on a contact-form backend (currently a mailto link); thank-you pages already exist
-3. Create the Cloudflare Pages project, connect this repo, verify at the *.pages.dev preview URL
-4. Point sovgracekc.org DNS at Pages (DNS is already on Cloudflare), watch Search Console 2–4 weeks, then cancel Digital Outreach
+3. ~~Create the Cloudflare Pages project~~ DONE — live at sovgracekc.pages.dev (direct-upload deploys via wrangler)
+4. **Flip og:image host** in src/layouts/Base.astro from sovgracekc.pages.dev to sovgracekc.org (two lines)
+5. Launch = change nameservers at DirectNic to eoin/martha.ns.cloudflare.com (zone staged in Chris's account), attach custom domain to the Pages project, verify Search Console, submit sitemap, watch 2–4 weeks, then cancel Digital Outreach
