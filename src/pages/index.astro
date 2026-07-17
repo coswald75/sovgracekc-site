@@ -1,13 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const tiles = [
-  { name: "Sunday Worship", sub: 'Worship with us in Lenexa', img: '/wp-content/uploads/stock-worship-candid.jpg', href: '/visit/', tone: 'dark' },
-  { name: 'Sermons', sub: 'The preaching at Providence', img: '/wp-content/uploads/providence-sermons-preaching-sq.jpg', href: '/sermons/', tone: 'accent' },
-  { name: "Kids & Families", sub: 'Planting seeds of faith', img: '/wp-content/uploads/stock-kids-crafts.jpg', href: '/community/#childrens-ministry', tone: 'dark' },
-  { name: "Men's Ministry", sub: 'Formation for heads of household', img: '/wp-content/uploads/SGCAU_Connected_MensMinistry-1024x683.jpg', href: '/community/#mens-ministry', tone: 'accent' },
-  { name: "Women's Ministry", sub: 'Titus 2 care and mentorship', img: '/wp-content/uploads/SGCAU_Connected_WomensMinistry-1024x704.jpg', href: '/community/#womens-ministry', tone: 'dark' },
-  { name: 'Marriage Mentorship', sub: 'Couples investing in couples', img: '/wp-content/uploads/providence-marriage-mentorship-2.jpg', href: 'mailto:chris@sovgracekc.org?subject=Marriage%20Mentorship', tone: 'accent' },
+const events = [
+  { label: 'Kids & Families', name: 'Providence Kids on Sundays', img: '/wp-content/uploads/stock-kids-crafts.jpg', href: '/community/#childrens-ministry' },
+  { label: "Men & Women", name: 'Ministries that meet weekly', img: '/wp-content/uploads/SGCAU_Connected_WomensMinistry-1024x704.jpg', href: '/community/' },
+  { label: 'Marriage Mentorship', name: 'Couples investing in couples', img: '/wp-content/uploads/providence-marriage-mentorship-2.jpg', href: 'mailto:chris@sovgracekc.org?subject=Marriage%20Mentorship' },
 ];
 ---
 <Base
@@ -15,68 +12,102 @@ const tiles = [
   description="Whether you're looking for a church, looking for community, or looking for answers, you're welcome at Providence Community Church."
   path="/"
 >
-  <section class="section" style="padding-bottom:44px;">
-    <div class="wrap" style="text-align:center;">
-      <img src="/wp-content/uploads/providence-tree-mark-navy.png" alt="" style="height:96px; width:auto; margin:0 auto 26px;" />
-      <h1 style="font-size:clamp(2.13rem, 4.7vw, 3.25rem); line-height:1.3; margin:0 auto;">Providence is<br />Truth and Beauty<br />in Community.</h1>
-    </div>
-  </section>
-
-  <section style="padding-bottom:88px;">
-    <div class="wrap">
-      <div class="block-cta">
-        <p class="caps-head">Join us this Sunday</p>
-        <div class="block-cta-inner">
-          <p class="line1">10:00 AM &bull; 10113 Lenexa Dr</p>
-          <p style="margin:0; font-size:1.02rem;"><a href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a> &nbsp;&middot;&nbsp; <a href="/visit/">What to expect</a></p>
-        </div>
+  <section style="padding:44px 0 0;">
+    <div class="wrap hero-grid">
+      <div class="media hero-media">
+        <img src="/wp-content/uploads/stock-worship-candid.jpg" alt="Sunday worship at Providence Community Church" />
       </div>
-    </div>
-  </section>
-
-  <section style="padding-bottom:72px;">
-    <div class="wrap grid-3">
-      {tiles.map((t) => (
-        <a href={t.href} class="tile">
-          <img src={t.img} alt={t.name} loading="lazy" />
-          <div class={`tile-caption ${t.tone}`}>
-            <h3>{t.name}</h3>
-            <div class="rule"></div>
-            <p>{t.sub}</p>
-          </div>
+      <div class="hero-side">
+        <a class="float-card" href="/sermons/">
+          <h3>Sermons</h3>
+          <span class="arrow">&#8594;</span>
         </a>
-      ))}
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:44px; padding-bottom:72px;">
+      <h1 class="masthead">A Church for Kansas City</h1>
+      <div class="two-col">
+        <p>We are a church in Lenexa, Kansas with a desire to display truth and beauty in community &mdash; and to see the gospel of Jesus Christ permeate our lives, our families, and our city.</p>
+        <div>
+          <p>We gather on Sundays at 10:00am at 10113 Lenexa Dr. You'll find the members here to be welcoming, friendly, and enjoying life to the fullest.</p>
+          <a class="cta-link" href="/about/">Learn more</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section section-panel">
-    <div class="wrap" style="text-align:center; max-width:840px;">
-      <h2 class="caps-head">Who we are</h2>
-      <p style="font-size:1.15rem; max-width:62ch; margin:0 auto 40px;">Providence is an encouraging and truth-loving local church in Lenexa, KS. You'll find the members here to be welcoming, friendly, and enjoying life to the fullest.</p>
-      <div class="grid-3" style="text-align:center; gap:36px;">
-        <div>
-          <h3 class="caps-head" style="font-size:1.05rem;">Truth</h3>
-          <p style="font-size:0.98rem;">We think compromising the truth for the sake of love is short-sighted. While all of us sin and fall short, we would rather repent than undertake the fool's errand of refashioning reality to suit our own preferences.</p>
-        </div>
-        <div>
-          <h3 class="caps-head" style="font-size:1.05rem;">Community</h3>
-          <p style="font-size:0.98rem;">The gospel of Jesus Christ teaches us to not take ourselves too seriously. We love to gather together, eat good food, play games, and enjoy the wholesome beauty of God's creation.</p>
-        </div>
-        <div>
-          <h3 class="caps-head" style="font-size:1.05rem;">Service</h3>
-          <p style="font-size:0.98rem;">In scripture, we see a pattern of a people's vertical relationship with God being expressed in their horizontal relationship with others. We believe that serving others is fundamental to a life well-lived.</p>
+  <hr class="rule" />
+
+  <section class="section" style="text-align:center;">
+    <div class="wrap">
+      <div class="badge">+++</div>
+      <p style="font-family:var(--serif); font-size:1.45rem; margin:0 0 18px;">Sunday Service at 10:00am</p>
+      <a class="cta-link" href="/visit/">Plan a visit</a>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="section">
+    <div class="wrap" style="position:relative;">
+      <div style="display:flex; justify-content:flex-end; margin-bottom:34px;">
+        <a class="cta-link" href="/community/">All ministries</a>
+      </div>
+      <div style="display:grid; grid-template-columns:56px 1fr; gap:24px; align-items:start;">
+        <div class="side-label">Get Connected</div>
+        <div class="grid-3">
+          {events.map((e) => (
+            <div>
+              <a href={e.href} class="media" style="display:block;">
+                <img src={e.img} alt={e.name} style="aspect-ratio:4/3;" loading="lazy" />
+              </a>
+              <p class="label" style="margin:18px 0 6px;">{e.label}</p>
+              <p style="font-family:var(--serif); font-size:1.2rem; margin:0 0 10px;">{e.name}</p>
+              <a class="cta-link" href={e.href} style="font-size:0.85rem;">Details</a>
+            </div>
+          ))}
         </div>
       </div>
-      <p style="font-size:1.1rem; max-width:58ch; margin:40px auto 0;">More than anything, Providence is a group of people who love to admire what an old Puritan theologian called &ldquo;the diverse excellencies of Jesus Christ.&rdquo;</p>
+    </div>
+  </section>
+
+  <section class="field-section" style="padding:88px 0;">
+    <div class="wrap">
+      <h2 class="display" style="margin-bottom:20px;">Truth and Beauty in Community.</h2>
+      <p style="font-family:var(--serif); font-style:italic; font-size:0.95rem; margin:0;">&lsquo;Whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely&hellip; think about these things.&rsquo; <span style="font-style:normal;">Philippians 4:8</span></p>
+      <p style="font-size:0.92rem; color:var(--gray); margin-top:4px;">The mission of Providence Community Church</p>
+      <div class="grid-3" style="margin-top:44px;">
+        <div>
+          <p class="label" style="margin-bottom:8px;">Truth</p>
+          <p style="font-size:0.95rem;">We would rather repent than undertake the fool's errand of refashioning reality to suit our own preferences.</p>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:8px;">Community</p>
+          <p style="font-size:0.95rem;">We love to gather together, eat good food, play games, and enjoy the wholesome beauty of God's creation.</p>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:8px;">Service</p>
+          <p style="font-size:0.95rem;">We believe that serving others is fundamental to a life well-lived.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap" style="text-align:center; max-width:760px;">
-      <h2 class="caps-head">New here?</h2>
-      <p style="font-size:1.05rem;">It's common for people to have questions. Our service begins at 10:00 AM and typically ends at 11:30 AM. Dress casually or dress up &mdash; come as you are comfortable. Providence Kids serves children from infants to 8 years old, and we primarily teach the Bible verse-by-verse and chapter-by-chapter, applying the truth to relationships, work, and life.</p>
-      <a class="btn-dark" href="/visit/" style="margin-top:16px;">What to expect on Sunday</a>
+    <div class="wrap" style="text-align:center; max-width:720px;">
+      <h2 class="display" style="font-size:clamp(1.6rem,3vw,2.2rem);">New here?</h2>
+      <p style="font-size:0.98rem;">It's common for people to have questions. Dress casually or dress up &mdash; come as you are comfortable. Providence Kids serves children from infants to 8 years old, and we teach the Bible verse-by-verse, applying the truth to relationships, work, and life.</p>
+      <a class="cta-link" href="/visit/">What to expect on Sunday</a>
     </div>
   </section>
 
+  <style>
+    .hero-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: end; }
+    .hero-media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .hero-side { display: flex; justify-content: flex-end; padding-bottom: 8px; }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-side { justify-content: flex-start; }
+    }
+  </style>
 </Base>
