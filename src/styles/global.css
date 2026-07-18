@@ -186,10 +186,15 @@ blockquote {
 .photo { border-radius: 10px; overflow: hidden; }
 .photo img { width: 100%; }
 
+.side-grid { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; }
+.side-grid-wrap { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; }
+
 @media (max-width: 860px) {
   .grid-3, .grid-2, .two-col { grid-template-columns: 1fr; }
   .section { padding: 48px 0; }
   .side-label { display: none; }
+  .side-grid, .side-grid-wrap { grid-template-columns: 1fr; gap: 0; }
+  .masthead { font-size: clamp(2rem, 11vw, 5rem); }
 }
 
 /* ——— Compat classes for interior pages (Park-era markup, church.nyc skin) ——— */
