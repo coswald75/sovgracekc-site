@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+
+const actions = [
+  { title: 'Sermon notes', sub: 'Recent messages, passages, and audio', href: '/sermons/' },
+  { title: 'This week at Providence', sub: 'Announcements, events, and sign-ups', href: 'https://lenexachurch.churchcenter.com/home' },
+  { title: 'New here? Say hello', sub: "Introduce yourself — we'd love to meet you", href: 'mailto:chris@sovgracekc.org?subject=Hello%20from%20a%20Sunday%20guest' },
+  { title: 'Give', sub: 'Simple, secure online giving', href: 'https://lenexachurch.churchcenter.com/giving' },
+];
+---
+<Base
+  title="This Sunday | Providence Community Church"
+  description="Sermon notes, announcements, connect, and giving — everything for this Sunday at Providence Community Church."
+  path="/seat/"
+>
+  <section style="padding:40px 0 64px;">
+    <div class="wrap" style="max-width:560px;">
+      <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">This Sunday</h1>
+      <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; margin:-8px 0 36px;">Welcome to Providence. Glad you're in that seat.</p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {actions.map((a) => (
+          <a href={a.href} class="seat-btn">
+            <span style="font-family:var(--serif); font-size:1.35rem; display:block;">{a.title}</span>
+            <span style="font-size:0.85rem; color:var(--gray); letter-spacing:0.04em;">{a.sub}</span>
+          </a>
+        ))}
+      </div>
+      <p style="text-align:center; margin-top:36px;"><a class="cta-link" href="/" style="font-size:0.85rem;">Explore the full site</a></p>
+    </div>
+  </section>
+
+  <style>
+    .seat-btn {
+      display: block;
+      border: 1px solid var(--ink);
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-decoration: none;
+      transition: background 0.12s ease;
+    }
+    .seat-btn:hover { background: var(--greige-light); opacity: 1; }
+  </style>
+</Base>
