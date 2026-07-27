@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+// ProvBot = the Providence chat assistant. The widget (public/chat-widget.js) injects
+// its own launcher button + panel and calls the Supabase edge function directly.
+// Ported from the chrisoswald.org proof-of-concept; same file, now native to Providence.
+---
+<Base
+  title="ProvBot | Providence Community Church"
+  description="ProvBot is Providence's digital assistant — ask questions and get answers pulled directly from the sermon archive of Pastor Chris Oswald."
+  path="/provbot/"
+>
+  <section style="padding:56px 0 72px;">
+    <div class="wrap" style="max-width:720px; text-align:center;">
+      <h1 class="masthead" style="font-size:clamp(2rem,5vw,3.4rem);">ProvBot</h1>
+      <p style="font-family:var(--serif); font-size:1.15rem; max-width:56ch; margin:0 auto 8px;">Our digital assistant. Ask about visiting, what we believe, or anything from Pastor Chris Oswald's sermon archive &mdash; ProvBot answers from Providence's own material.</p>
+      <p style="font-size:0.95rem; color:var(--gray);">Tap the chat button in the bottom-right corner to start.</p>
+
+      <div style="margin-top:44px; border:1px solid var(--line); border-radius:14px; padding:40px 32px; background:var(--greige-light); text-align:left;">
+        <p class="label" style="margin-bottom:14px;">Things to try</p>
+        <ul style="font-family:var(--serif); font-size:1.05rem; line-height:2; margin:0; padding-left:20px;">
+          <li>What time is your Sunday service?</li>
+          <li>Do you have a kids' ministry?</li>
+          <li>Has the pastor preached on anxiety, marriage, or suffering?</li>
+          <li>What does Providence believe about the gospel?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="/chat-widget.js" defer></script>
+</Base>

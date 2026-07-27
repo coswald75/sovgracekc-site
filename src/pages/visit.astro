@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 
 const testimonials = [
+  { quote: 'My family and I have been truly blessed by Providence Community Church. Here you will find sound, biblical teaching that always points you towards Christ and a community of believers that does the same.', name: 'Kyle' },
   { quote: 'Providence is a place where I have learned so much. The Bible is preached from and without shame. Prayer is central and many opportunities are available to participate with others in prayer. The people are warm and inclusive and quick to welcome newcomers. It is easy to get involved and a warm environment.', name: 'Lauren H.' },
   { quote: "One of the many things we love is that it has small groups that meet during the week. It is a place you will be loved and taught God's word.", name: 'Kate M.' },
-  { quote: "Providence offers excellent biblical, Christ-centered preaching, and you'll find a loving congregation that genuinely cares for each other!", name: 'Colton T.' },
 ];
 ---
 <Base
@@ -68,8 +68,11 @@ const testimonials = [
   <section class="section">
     <div class="wrap" style="max-width:680px; text-align:center;">
       <h2 class="caps-head">Need help or have a question?</h2>
-      <p>We're available 9 AM &ndash; 5 PM and we'd love to answer any questions you have.</p>
-      <a class="btn-dark" href="mailto:chris@sovgracekc.org">Send us a message</a>
+      <p>We'd love to answer any questions you have.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn-dark" href="mailto:chris@sovgracekc.org">Send us a message</a>
+        <a class="btn-ghost" href="/provbot/">Ask ProvBot</a>
+      </div>
     </div>
   </section>
 </Base>
