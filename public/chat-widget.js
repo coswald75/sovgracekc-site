@@ -79,6 +79,7 @@
   var root, panel, log, input, sendBtn;
 
   function build() {
+    if (root) return;
     var style = document.createElement("style"); style.textContent = css; document.head.appendChild(style);
     root = el('<div class="pccbot"></div>');
     var btn = el('<button class="pccbot-btn" aria-label="Open chat with the church assistant">'
@@ -108,7 +109,7 @@
     panel.classList.toggle("open", opened);
     if (opened) {
       if (!messages.length) {
-        addBot("Hi! I’m Providence Community Church’s automated (AI) assistant. Ask me about Pastor Chris’s preaching, questions about the church, or set up a time to meet with him. What can I help you with?");
+        addBot("Hi! I’m Providence Community Church’s automated (AI) assistant. Ask me about the church and what we believe, explore Pastor Chris’s sermons, or set up a time to meet with a leader. What can I help you with?");
       }
       setTimeout(function () { input.focus(); }, 50);
     }
@@ -182,4 +183,7 @@
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
   else build();
+
+  // Public API: let an in-page button open the chat directly.
+  window.pccBotOpen = function () { if (!root) build(); if (!opened) toggle(); };
 })();
