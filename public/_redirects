@@ -12,3 +12,6 @@
 # Broken nav link that 404s on the old site — fix it for good
 /get-involved/ /community/ 301
 /get-involved /community/ 301
+# Renamed: Marriage Mentorship became Biblical Counseling
+/marriage-mentorship/ /biblical-counseling/ 301
+/marriage-mentorship /biblical-counseling/ 301

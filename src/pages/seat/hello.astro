@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Say Hello | This Sunday | Providence Community Church"
+  description="New to Providence Community Church? Say hello — we'd love to meet you."
+  path="/seat/hello/"
+>
+  <section style="padding:40px 0 72px;">
+    <div class="wrap" style="max-width:520px;">
+      <p style="text-align:center;"><a class="cta-link" href="/seat/" style="font-size:0.8rem;">&larr; This Sunday</a></p>
+
+      <div id="form-wrap">
+        <h1 class="masthead" style="font-size:clamp(1.6rem, 6.5vw, 2.2rem); text-align:center; line-height:1.15;">We're glad you're here!</h1>
+        <p style="text-align:center; font-family:var(--serif); font-size:1.1rem; margin:6px 0 32px;">Can we get your email address?</p>
+
+        <form id="hello-form" novalidate>
+          <label class="fld">
+            <span class="lbl">Name</span>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <label class="fld">
+            <span class="lbl">Email address</span>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+          </label>
+
+          <fieldset class="fld">
+            <legend class="lbl">Would you like more information about Providence?</legend>
+            <div class="yn">
+              <label class="yn-opt"><input type="radio" name="wants_info" value="yes" /> <span>Yes</span></label>
+              <label class="yn-opt"><input type="radio" name="wants_info" value="no" checked /> <span>No</span></label>
+            </div>
+          </fieldset>
+
+          <label class="fld">
+            <span class="lbl">Do you have any prayer requests?</span>
+            <textarea id="prayer" name="prayer" rows="4"></textarea>
+          </label>
+
+          <p id="err" class="err hidden"></p>
+          <button id="submit" type="submit" class="btn-solid">Send</button>
+          <p class="fineprint">Your note goes straight to the pastor. We won't share your information.</p>
+        </form>
+      </div>
+
+      <div id="done" class="hidden" style="text-align:center; padding:40px 0;">
+        <h1 class="masthead" style="font-size:clamp(1.7rem, 6.5vw, 2.3rem);">Thank you!</h1>
+        <p style="font-family:var(--serif); font-size:1.15rem; max-width:40ch; margin:12px auto 0;">We're so glad you joined us. Someone from Providence will reach out soon.</p>
+        <p style="margin-top:32px;"><a class="cta-link" href="/seat/" style="font-size:0.9rem;">Back to This Sunday</a></p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .fld { display: block; margin-bottom: 22px; border: 0; padding: 0; }
+    .lbl {
+      display: block; font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.02em; margin-bottom: 8px; padding: 0;
+    }
+    #hello-form input[type="text"],
+    #hello-form input[type="email"],
+    #hello-form textarea {
+      width: 100%; box-sizing: border-box;
+      border: 1px solid var(--ink); border-radius: 8px;
+      padding: 13px 14px; font-family: var(--serif); font-size: 1.05rem;
+      background: #fff; color: var(--ink);
+    }
+    #hello-form textarea { resize: vertical; line-height: 1.5; }
+    #hello-form input:focus, #hello-form textarea:focus {
+      outline: 2px solid var(--ink); outline-offset: 1px;
+    }
+    .yn { display: flex; gap: 14px; }
+    .yn-opt {
+      flex: 1; display: flex; align-items: center; gap: 9px;
+      border: 1px solid var(--line); border-radius: 8px;
+      padding: 12px 16px; cursor: pointer;
+      font-family: var(--serif); font-size: 1.05rem;
+    }
+    .yn-opt input { accent-color: var(--ink); width: 18px; height: 18px; }
+    .btn-solid {
+      width: 100%; border: 1px solid var(--ink); background: var(--ink); color: #fff;
+      border-radius: 8px; padding: 15px; font-family: var(--sans); font-weight: 700;
+      font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase;
+      cursor: pointer; transition: opacity 0.12s ease;
+    }
+    .btn-solid:hover { opacity: 0.86; }
+    .btn-solid:disabled { opacity: 0.5; cursor: default; }
+    .err {
+      background: #fbeaea; border: 1px solid #e0b4b4; color: #8a2b2b;
+      border-radius: 8px; padding: 11px 14px; font-size: 0.9rem; margin: 0 0 16px;
+    }
+    .fineprint {
+      text-align: center; font-size: 0.78rem; color: var(--gray);
+      margin: 14px 0 0; line-height: 1.5;
+    }
+    .hidden { display: none !important; }
+  </style>
+
+  <script>
+    const API = "https://twbunmbzyqcqzgffdrib.supabase.co/functions/v1/guest-connect";
+    const form = document.getElementById("hello-form");
+    const btn = document.getElementById("submit");
+    const errBox = document.getElementById("err");
+
+    function showErr(msg) {
+      errBox.textContent = msg;
+      errBox.classList.remove("hidden");
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errBox.classList.add("hidden");
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const prayer = document.getElementById("prayer").value;
+      const wants = document.querySelector('input[name="wants_info"]:checked');
+      const wants_info = wants ? wants.value === "yes" : false;
+
+      if (!name) { showErr("Please enter your name."); return; }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showErr("Please enter a valid email address."); return; }
+
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      try {
+        const r = await fetch(API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, wants_info, prayer }),
+        });
+        const j = await r.json().catch(() => ({ error: "Bad response" }));
+        if (!r.ok || !j.submitted) throw new Error(j.error || ("HTTP " + r.status));
+        document.getElementById("form-wrap").classList.add("hidden");
+        document.getElementById("done").classList.remove("hidden");
+        window.scrollTo(0, 0);
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = "Send";
+        showErr("Sending failed: " + err.message + " — please try again in a moment.");
+      }
+    });
+  </script>
+</Base>

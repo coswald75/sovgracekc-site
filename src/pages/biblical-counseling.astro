@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Biblical Counseling | Providence Community Church (Lenexa, KS)"
+  description="Biblical counseling at Providence Community Church — intentionally helpful conversations that bring the whole counsel of God to bear on the struggles of an actual life."
+  path="/biblical-counseling/"
+>
+  <section class="section">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Biblical Counseling</p>
+      <h1>Behold, I am making all things new.</h1>
+      <p style="font-family:var(--serif); font-style:italic; color:var(--gray); margin:-6px 0 22px; font-size:1.05rem;">Revelation 21:5</p>
+      <p style="font-size:1.12rem;">Biblical counseling begins with a settled confidence: the God who spoke the world into being is still in the business of making broken things new. It is not therapy dressed in Christian language, nor advice traded across a coffee table &mdash; it is the patient, prayerful work of bringing the whole counsel of God to bear on the struggles of an actual life: grief and anxiety, conflict and sin, suffering and the slow labor of change.</p>
+      <p style="font-size:1.12rem;">Here you are not a case to be managed but a soul being remade. The same Word that first called light out of darkness is more than able to do it again in you. That is why we call these <em>intentionally helpful conversations</em> &mdash; ordinary talks, aimed with care at the God who heals.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="media" style="border-radius:12px; overflow:hidden;">
+        <img src="/wp-content/uploads/providence-counseling-hero.jpg" alt="Three people with hands clasped in prayer over an open Bible" loading="lazy" style="width:100%; aspect-ratio:21/9; object-fit:cover; display:block;" />
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- SECTION 1 — SELF-GUIDED -->
+  <section class="section" id="self-guided">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Self-Guided</p>
+        <h2>Resources designed for study &amp; reflection.</h2>
+        <p style="font-size:0.98rem;">Not every step forward begins in a meeting. Often the most fruitful work happens quietly &mdash; with an open Bible, an honest question, and a little time to think and pray. These resources are here for you to use at your own pace, whether you are preparing for a conversation with a counselor or simply seeking the Lord on your own.</p>
+        <p style="font-size:0.98rem;">We keep a growing library of self-guided tools for exactly this &mdash; a Bible knowledge exam, honest self-assessments, and counseling worksheets for walking through suffering. Use them on your own, or as a starting point for a conversation.</p>
+        <a class="btn" href="/topical-resources/" style="margin-top:6px;">Explore topical resources</a>
+      </div>
+      <div class="photo"><img src="/wp-content/uploads/providence-counseling-study.jpg" alt="An older woman studying an open Bible with a younger woman taking notes" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- SECTION 2 — PROVBOT APPOINTMENT -->
+  <section class="section section-panel" id="appointment">
+    <div class="wrap" style="max-width:720px; text-align:center;">
+      <p class="eyebrow">Seek an Appointment</p>
+      <h2>Talk with ProvBot to set up a time.</h2>
+      <p>When you're ready to meet with someone, ProvBot &mdash; our digital assistant &mdash; is the quickest way to start. Ask your questions, tell us a little about what you're walking through, and request an appointment. It's available any time of day, and it will make sure your note reaches Pastor Chris.</p>
+      <a class="btn" href="/provbot/">Chat with ProvBot</a>
+      <p style="font-size:0.85rem; color:var(--gray); margin-top:16px;">Prefer email? Reach out to <a href="mailto:chris@sovgracekc.org?subject=Biblical%20Counseling">chris@sovgracekc.org</a>.</p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- SECTION 3 — INTAKE FORMS -->
+  <section class="section" id="intake-forms">
+    <div class="wrap grid-2">
+      <div class="photo"><img src="/wp-content/uploads/providence-counseling-reading.jpg" alt="A couple reading through the Psalms together" loading="lazy" /></div>
+      <div>
+        <p class="eyebrow">Intake Forms</p>
+        <h2>Help us begin well.</h2>
+        <p style="font-size:0.98rem;">If you're stepping into counseling, these confidential forms let us begin from a shared understanding. Fill out whichever applies &mdash; your responses go directly and only to Pastor Chris.</p>
+        <div class="form-links">
+          <a class="form-link" href="/marriage-intake/">
+            <span class="fl-title">Marital Counseling Intake</span>
+            <span class="fl-desc">Personal history &amp; problem evaluation for those pursuing marriage counseling.</span>
+          </a>
+          <a class="form-link" href="/philosophy-of-change/">
+            <span class="fl-title">My Philosophy of Change &mdash; A Survey</span>
+            <span class="fl-desc">A brief survey about how people change, so we can begin on the same page.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .form-links { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
+    .form-link {
+      display: block; border: 1px solid var(--line); border-radius: 10px;
+      padding: 16px 20px; text-decoration: none; transition: border-color .15s, background .15s;
+    }
+    .form-link:hover { border-color: var(--ink); background: var(--greige-light); opacity: 1; }
+    .fl-title { display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
+    .fl-title::after { content: ' \2192'; color: var(--gray); }
+    .fl-desc { display: block; font-size: 0.88rem; color: var(--gray); margin-top: 4px; }
+  </style>
+</Base>

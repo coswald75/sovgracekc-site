@@ -1,40 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const sermons = [
-  {
-    title: 'The Mechanics of Happiness',
-    date: 'July 12, 2026',
-    passage: 'Ecclesiastes 5:18-19, 6:1-3',
-    audio: 'https://sermons-cdn.sermonsteward.com/providence-community-church/the-mechanics-of-happiness-2026-07-12.mp3',
-    page: 'https://sermonsteward.com/ProvidenceLenexa/sermons/the-mechanics-of-happiness-2026-07-12',
-    thesis: 'Contentment is not a circumstantial achievement but a complex gift from God that we are responsible to pursue through the gospel, and without it we will inevitably alienate those we love and forfeit the ability to enjoy what God has given.',
-  },
-  {
-    title: 'Friendship',
-    date: 'July 5, 2026',
-    passage: 'Ecclesiastes 4:7-12',
-    audio: 'https://sermons-cdn.sermonsteward.com/providence-community-church/friendship-2026-07-05.mp3',
-    page: 'https://sermonsteward.com/ProvidenceLenexa/sermons/friendship-2026-07-05',
-    thesis: 'Friendship is a great glory and potent means of grace, but like other means of grace, it rarely feels profound in the moment — it mostly just feels like doing life together, and we should treat it pragmatically rather than with romanticized expectations that rob us of contentment.',
-  },
-  {
-    title: 'Ecclesiastes as Narcan',
-    date: 'June 28, 2026',
-    passage: 'Ecclesiastes 2:13–3:22, 4:4',
-    audio: 'https://sermons-cdn.sermonsteward.com/providence-community-church/ecclesiastes-as-narcan-2026-06-28.mp3',
-    page: 'https://sermonsteward.com/ProvidenceLenexa/sermons/ecclesiastes-as-narcan-2026-06-28',
-    thesis: "The book of Ecclesiastes serves as spiritual Narcan to wake us from worldly intoxication, and while the Preacher's prescription to enjoy life and fear God is valid, Jesus the greater Solomon completes the picture by revealing that eternal life begins with enjoying the fruit of His redemptive toil on the cross.",
-  },
-  {
-    title: 'Ecclesiastes — Vapor, Vanity, and the Gift of God',
-    date: 'June 21, 2026',
-    passage: 'Ecclesiastes 1:1–11:10',
-    audio: 'https://sermons-cdn.sermonsteward.com/providence-community-church/ecclesiastes-vapor-vanity-and-the-gift-of-god-2026-06-21.mp3',
-    page: 'https://sermonsteward.com/ProvidenceLenexa/sermons/ecclesiastes-vapor-vanity-and-the-gift-of-god-2026-06-21',
-    thesis: "True contentment is found not in the pursuit of exceptional pleasures or achievements, but in receiving each ordinary day as God's gift and resting in the gospel assurance that God is pleased with us in Christ.",
-  },
-];
+import sermons from '../data/recent-sermons.json';
 ---
 <Base
   title="Sermons | Providence Community Church | Church in Lenexa, KS"

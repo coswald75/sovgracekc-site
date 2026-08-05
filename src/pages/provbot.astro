@@ -6,14 +6,18 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="ProvBot | Providence Community Church"
-  description="ProvBot is Providence's digital assistant — ask questions and get answers pulled directly from the sermon archive of Pastor Chris Oswald."
+  description="ProvBot is Providence's digital assistant — ask questions and get answers pulled directly from Providence's sermon archive."
   path="/provbot/"
+  image="/wp-content/uploads/provbot-og.jpg"
+  imageAlt="ProvBot — a friendly robot with the Providence tree on its chest, the church's AI assistant"
 >
   <section style="padding:56px 0 72px;">
     <div class="wrap" style="max-width:720px; text-align:center;">
       <h1 class="masthead" style="font-size:clamp(2rem,5vw,3.4rem);">ProvBot</h1>
-      <p style="font-family:var(--serif); font-size:1.15rem; max-width:56ch; margin:0 auto 8px;">Our digital assistant. Ask about visiting, what we believe, or anything from Pastor Chris Oswald's sermon archive &mdash; ProvBot answers from Providence's own material.</p>
-      <p style="font-size:0.95rem; color:var(--gray);">Tap the chat button in the bottom-right corner to start.</p>
+      <img src="/wp-content/uploads/provbot-mascot.jpg" alt="A friendly hand-drawn robot with the Providence tree on its chest, waving hello" width="600" height="600" style="width:min(260px,64%); height:auto; display:block; margin:6px auto 18px;" loading="eager" />
+      <p style="font-family:var(--serif); font-size:1.15rem; max-width:56ch; margin:0 auto 8px;">Our digital assistant. Ask about visiting, what we believe, or anything from Providence's sermon archive &mdash; ProvBot answers from the church's own material.</p>
+      <div style="margin:14px 0 6px;"><button id="provbot-start" class="btn" style="font-size:1.02rem; padding:14px 30px;">Start a conversation</button></div>
+      <p style="font-size:0.85rem; color:var(--gray);">&hellip;or tap the chat button in the bottom-right corner anytime.</p>
 
       <div style="margin-top:44px; border:1px solid var(--line); border-radius:14px; padding:40px 32px; background:var(--greige-light); text-align:left;">
         <p class="label" style="margin-bottom:14px;">Things to try</p>
@@ -28,4 +32,11 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <script src="/chat-widget.js" defer></script>
+  <script>
+    document.getElementById('provbot-start')?.addEventListener('click', () => {
+      if (window.pccBotOpen) return window.pccBotOpen();
+      const launcher = document.querySelector('.pccbot-btn');
+      if (launcher) launcher.click();
+    });
+  </script>
 </Base>

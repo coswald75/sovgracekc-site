@@ -1,22 +1,25 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
+import bulletin from '../../data/bulletin.json';
 
 const actions = [
-  { title: 'Sermon notes', sub: 'Recent messages, passages, and audio', href: '/sermons/' },
-  { title: 'This week at Providence', sub: 'Announcements, events, and sign-ups', href: 'https://lenexachurch.churchcenter.com/home' },
-  { title: 'New here? Say hello', sub: "Introduce yourself — we'd love to meet you", href: 'mailto:chris@sovgracekc.org?subject=Hello%20from%20a%20Sunday%20guest' },
-  { title: 'Give', sub: 'Simple, secure online giving', href: 'https://lenexachurch.churchcenter.com/giving' },
+  { title: 'New here? Say hello', sub: "Introduce yourself — we'd love to meet you", href: '/seat/hello/' },
+  { title: 'Order of service', sub: `This Sunday's worship set and songs`, href: '/seat/order/' },
+  { title: 'Announcements', sub: 'This week at Providence — news, events, sign-ups', href: '/seat/announcements/' },
+  { title: 'Sermon Outline', sub: `This Sunday's message — points, texts, and quotes`, href: '/seat/outline/' },
+  { title: 'Give', sub: 'Simple, secure online giving', href: 'https://www.churchofficegiving.com/app/giving/prov1011279' },
 ];
 ---
 <Base
   title="This Sunday | Providence Community Church"
-  description="Sermon notes, announcements, connect, and giving — everything for this Sunday at Providence Community Church."
+  description="Order of service, announcements, sermon notes, and giving — everything for this Sunday at Providence Community Church."
   path="/seat/"
 >
   <section style="padding:40px 0 64px;">
     <div class="wrap" style="max-width:560px;">
       <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">This Sunday</h1>
-      <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; margin:-8px 0 36px;">Welcome to Providence. Glad you're in that seat.</p>
+      <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; margin:-8px 0 8px;">Welcome to Providence. Glad you're in that seat.</p>
+      <p style="text-align:center; font-size:0.8rem; color:var(--gray); letter-spacing:0.06em; text-transform:uppercase; margin:0 0 36px;">Week of {bulletin.week_of}</p>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {actions.map((a) => (
           <a href={a.href} class="seat-btn">

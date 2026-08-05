@@ -1,0 +1,110 @@
+{
+  "week_of": "August 2, 2026",
+  "service_order": {
+    "flow": [
+      { "type": "element", "label": "Welcome" },
+      { "type": "element", "label": "Call to Worship" },
+      { "type": "songs", "label": "Songs", "section": "opening" },
+      { "type": "element", "label": "Kids Dismissal" },
+      { "type": "sermon", "label": "Sermon" },
+      { "type": "songs", "label": "Communion", "section": "communion" },
+      { "type": "songs", "label": "Final Songs", "section": "final" },
+      { "type": "element", "label": "Benediction" }
+    ],
+    "sermon": {
+      "title": "Yet I Know",
+      "text": "Ecclesiastes 8:10-15",
+      "thesis": "Wisdom — knowing the God who holds the future rather than trusting what our eyes observe — insulates us from the seductive lie that the prosperity of the wicked proves there is no God who sees.",
+      "outline": [
+        {
+          "type": "scripture",
+          "ref": "Ecclesiastes 8:10–15 (ESV)",
+          "body": "Then I saw the wicked buried. They used to go in and out of the holy place and were praised in the city where they had done such things. This also is vanity. Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. Though a sinner does evil a hundred times and prolongs his life, yet I know that it will be well with those who fear God, because they fear before him. But it will not be well with the wicked, neither will he prolong his days like a shadow, because he does not fear before God. There is a vanity that takes place on earth, that there are righteous people to whom it happens according to the deeds of the wicked, and there are wicked people to whom it happens according to the deeds of the righteous. I said that this also is vanity. And I commend joy, for man has nothing better under the sun but to eat and drink and be joyful, for this will go with him in his toil through the days of his life that God has given him under the sun."
+        },
+        { "type": "heading", "text": "Two kinds of people: those who fear God and those who don't" },
+        {
+          "type": "quote",
+          "body": "To fear the Lord is to be deeply aware that everything I do, say, and think — or fail to do and say — is open to the all-seeing eyes of God, my Creator, Father, and Judge; and therefore to be genuinely concerned to live in such a way as to please Him and to keep my conscience clear before Him.",
+          "cite": "Joel Beeke"
+        },
+        {
+          "type": "text",
+          "body": "The one who fears God tells the truth when a lie would help, treats people better than he has to, guards his words and his interior thought-life, and will say the hard thing — because he believes God sees. The one who does not fear God lies when it suits him, flatters his way through life, and does good only as far as it visibly pays."
+        },
+        { "type": "heading", "text": "The problem: the prosperity of the wicked seems to prove their way is right" },
+        {
+          "type": "text",
+          "body": "The wicked man in the text enjoys three evidences of prosperity — longevity, spirituality, and celebrity (v. 10). And because judgment is not swift (v. 11), the watching world learns a lie: that living as though there is no God actually works."
+        },
+        {
+          "type": "scripture",
+          "ref": "Psalm 73:2–3, 11–13 (ESV)",
+          "body": "But as for me, my feet had almost stumbled, my steps had nearly slipped. For I was envious of the arrogant when I saw the prosperity of the wicked. … And they say, “How can God know? Is there knowledge in the Most High?” Behold, these are the wicked; always at ease, they increase in riches. All in vain have I kept my heart clean and washed my hands in innocence."
+        },
+        {
+          "type": "scripture",
+          "ref": "Jeremiah 15:15–18 (ESV)",
+          "body": "O Lord, you know; remember me and visit me, and take vengeance for me on my persecutors. In your forbearance take me not away; know that for your sake I bear reproach. Your words were found, and I ate them, and your words became to me a joy and the delight of my heart, for I am called by your name, O Lord, God of hosts. I did not sit in the company of revelers, nor did I rejoice; I sat alone, because your hand was upon me, for you had filled me with indignation. Why is my pain unceasing, my wound incurable, refusing to be healed? Will you be to me like a deceitful brook, like waters that fail?"
+        },
+        {
+          "type": "text",
+          "body": "Even Asaph and Jeremiah were nearly seduced. Jeremiah names the fear exactly: has God become “a deceitful brook” — a stream you staked your whole life beside that turns out to run dry?"
+        },
+        { "type": "heading", "text": "The preacher's immunity: wisdom — “then I saw … yet I know”" },
+        {
+          "type": "scripture",
+          "ref": "Proverbs 14:12 (ESV)",
+          "body": "There is a way that seems right to a man, but its end is the way to death."
+        },
+        {
+          "type": "text",
+          "body": "Wisdom lives in the gap between what you see and what God says. “Then I saw” (v. 10) versus “yet I know” (v. 12): the preacher is not seduced because he is guided by something deeper than his own perception."
+        },
+        {
+          "type": "quote",
+          "body": "Intelligence is horsepower. Wisdom is knowing the track, the One who made the track, and what every curve is for."
+        },
+        { "type": "heading", "text": "The source of wisdom: know the Who, not the what" },
+        {
+          "type": "text",
+          "body": "For all his wisdom, the preacher confesses how much he does not know — what happens at death, the future, why God orders the days as He does (Ecc. 3:21; 8:7; 9:12; 11:5–6; 8:17). He does not know the what of a thousand things, but he knows the Who behind them all. The beginning of wisdom is the fear and knowledge of God."
+        },
+        {
+          "type": "quote",
+          "body": "I do not know what the future holds, but I know who holds the future."
+        },
+        {
+          "type": "text",
+          "body": "Illustration — the pontoon bridge: we carefully connect one section to the next (career, health, finances, marriage) and stand in the middle to admire the span, only to find it drifting. The first step must be to tether yourself to the land — to know God first. Deconstruction is simply this inverted: reading the character of God through your circumstances instead of your circumstances through the character of God."
+        },
+        { "type": "heading", "text": "How can I know God? The cross — and so, the Table" },
+        {
+          "type": "scripture",
+          "ref": "Romans 5:8 (ESV)",
+          "body": "but God shows his love for us in that while we were still sinners, Christ died for us."
+        },
+        {
+          "type": "text",
+          "body": "You come to know God at the cross of Jesus Christ — where God, who hates sin but loves sinners, placed the righteousness of His Son on us and turned enemies into sons and daughters. This is what the bread and the cup declare, and why we come to the Table."
+        }
+      ]
+    },
+    "band": [
+      { "name": "Josh L.", "role": "Lead" },
+      { "name": "Jared", "role": "Drums" },
+      { "name": "Jesse", "role": "Keys" },
+      { "name": "Shannon", "role": "Vocals" },
+      { "name": "Steven", "role": "Bass" }
+    ],
+    "songs": [
+      { "title": "How Great (Psalm 145)", "section": "opening" },
+      { "title": "How Long, O Lord", "section": "opening" },
+      { "title": "Amazing Grace vs. Yet Not I", "section": "opening" },
+      { "title": "Before The Throne of God Above", "section": "opening" },
+      { "title": "When We See Your Face", "section": "communion" },
+      { "title": "All Glory Be To Christ", "section": "final" }
+    ],
+    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv"
+  },
+  "announcements": []
+}

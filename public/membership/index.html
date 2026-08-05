@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body><style>@media print{.pcc-homebar{display:none!important}}.pcc-homebar a:hover{text-decoration:underline!important}</style><div class="pcc-homebar" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:13px;background:#ffffff;border-bottom:1px solid #e2dfd8;padding:10px clamp(16px,4vw,28px);display:flex;gap:20px;align-items:center;flex-wrap:wrap;"><a href="/" style="color:#262626;text-decoration:none;font-weight:600;">&#8592;&nbsp;Providence Community Church</a><a href="/covenant/" style="color:#075c2e;text-decoration:none;font-weight:600;margin-left:auto;">The Membership Covenant&nbsp;&#8594;</a></div>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-2e599120-cec1-412f-ba89-985155b2a208/styles.css">
+<script src="_ds/broadsheet-2e599120-cec1-412f-ba89-985155b2a208/_ds_bundle.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#22456f"/><circle cx="50" cy="50" r="26" fill="none" stroke="#f3f2f2" stroke-width="4"/><path d="M50 68V44m0 0-9-10m9 10 9-10" stroke="#f3f2f2" stroke-width="4" fill="none" stroke-linecap="round"/></svg></template>
+<style>
+  body { margin: 0; background: var(--color-bg); }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-2); }
+  textarea, input, button { font-family: var(--font-body); }
+  @media print {
+    .noprint { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="--color-accent: #22456f; --color-accent-100: #e6ebf2; --color-accent-200: #c7d3e2; --color-accent-300: #9db0c9; --color-accent-400: #6a83a6; --color-accent-500: #22456f; --color-accent-600: #1d3c61; --color-accent-700: #17314f; --color-accent-800: #12263d; --color-accent-900: #0d1c2c; --color-accent-2: #a4703c; --color-accent-2-100: #f6ece3; --color-accent-2-200: #ead6c4; --color-accent-2-300: #d9b696; --color-accent-2-400: #c0905f; --color-accent-2-500: #a4703c; --color-accent-2-600: #8f5f31; --color-accent-2-700: #764d27; --color-accent-2-800: #5c3b1e; --color-accent-2-900: #442b15; min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); padding: 0 clamp(20px, 5vw, 80px) 120px; box-sizing: border-box">
+
+  <header class="noprint" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 28px; padding: 22px 0 18px; border-bottom: 3px solid var(--color-text); max-width: 1240px; margin: 0 auto">
+    <a href="#" onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--color-text); cursor: pointer"><img src="providence-tree-mark.png" alt="" style="display: block; width: 26px; height: auto">Considering Membership</a>
+    <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600)">Providence Community Church &nbsp;·&nbsp; Lenexa, Kansas</span>
+    <span style="flex: 1 1 40px"></span>
+    <span style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600)">{{ doneCount }} of 20 read</span>
+    <span style="display: block; width: 120px; height: 6px; background: var(--color-neutral-200)"><span style="display: block; height: 6px; background: var(--color-accent); width: {{ progressPct }}"></span></span>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width: 1240px; margin: 0 auto">
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 48px; align-items: baseline; padding: 10px 0 0; border-bottom: 1px solid var(--color-text); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600)">
+        <span>Twenty lessons</span><span>Read at your own pace</span><span>Nothing to sign up for</span>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 56px; padding: clamp(40px, 6vw, 84px) 0 0">
+        <div style="flex: 3 1 460px; min-width: 300px">
+          <h1 style="font-family: var(--font-heading); font-size: clamp(46px, 8vw, 104px); line-height: 0.94; letter-spacing: -0.035em; font-weight: 600; margin: 0 0 28px; text-wrap: balance">Considering<br>membership</h1>
+          <p style="font-size: clamp(20px, 2.2vw, 27px); line-height: 1.5; max-width: 30ch; margin: 0 0 30px; font-style: italic; color: var(--color-neutral-800); text-wrap: pretty">A short course on what it means to belong to this church — and why belonging to any church matters at all.</p>
+          <p style="font-size: 17px; line-height: 1.7; max-width: 46ch; margin: 0 0 36px; color: var(--color-neutral-700); text-wrap: pretty">Read the lessons in order or wander. After each one there are questions to sit with, a passage or two to look up, and something to talk over with your spouse or a friend. When you reach the end, everything you have written can go to a pastor along with whatever you still want to ask.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px">
+            <button onClick="{{ startCourse }}" class="btn btn-primary" style="cursor: pointer">{{ startLabel }}</button>
+            <button onClick="{{ goSend }}" class="btn btn-ghost" style="cursor: pointer">Send my answers to a pastor</button>
+          </div>
+        </div>
+        <div style="flex: 2 1 300px; min-width: 260px">
+          <img src="church-gathered.webp" class="cmyk" alt="The church gathered on a Sunday" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
+        </div>
+      </div>
+
+      <h2 style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; margin: clamp(56px, 8vw, 104px) 0 0; color: var(--color-neutral-600)">The lessons</h2>
+
+      <sc-for list="{{ parts }}" as="part" hint-placeholder-count="4">
+        <div style="padding: 44px 0 0">
+          <div style="display: flex; flex-wrap: wrap; gap: 40px">
+            <div style="flex: 1 1 180px; max-width: 240px">
+              <div style="font-family: var(--font-heading); font-size: 40px; line-height: 1; color: var(--color-accent-2); font-weight: 600">{{ part.n }}</div>
+              <div style="font-family: var(--font-heading); font-size: 22px; line-height: 1.2; margin: 8px 0 0; letter-spacing: -0.01em">{{ part.name }}</div>
+              <div style="font-size: 13px; color: var(--color-neutral-600); margin: 8px 0 0">{{ part.meta }}</div>
+            </div>
+            <div style="flex: 4 1 420px; min-width: 280px; display: flex; flex-direction: column">
+              <sc-for list="{{ part.items }}" as="it" hint-placeholder-count="3">
+                <a href="#" onClick="{{ it.open }}" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding: 16px 0; border-top: 1px solid var(--color-neutral-300); cursor: pointer; color: var(--color-text)" style-hover="background: var(--color-accent-100)">
+                  <span style="width: 30px; flex: none; font-size: 13px; color: var(--color-neutral-500); font-variant-numeric: tabular-nums">{{ it.num }}</span>
+                  <span style="flex: 1 1 240px; min-width: 200px">
+                    <span style="display: block; font-family: var(--font-heading); font-size: 20px; line-height: 1.25; letter-spacing: -0.01em">{{ it.title }}</span>
+                    <span style="display: block; font-size: 15px; line-height: 1.5; color: var(--color-neutral-600); margin: 4px 0 0; max-width: 54ch; text-wrap: pretty">{{ it.standfirst }}</span>
+                  </span>
+                  <span style="flex: none; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-500); width: 92px; text-align: right">{{ it.mins }}</span>
+                  <span style="flex: none; width: 22px; text-align: right; font-size: 16px; color: {{ it.markColor }}">{{ it.mark }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; margin: clamp(64px, 9vw, 120px) 0 0; padding-top: 40px; border-top: 3px solid var(--color-text)">
+        <div style="flex: 2 1 380px">
+          <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 4vw, 44px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 600">When you get to the end</h2>
+          <p style="font-size: 17px; line-height: 1.7; max-width: 50ch; color: var(--color-neutral-700); margin: 0 0 22px; text-wrap: pretty">Your reflections stay in your browser until you decide to send them. When you are ready, we will gather them into one letter you can email to a pastor — questions, hesitations and all.</p>
+          <button onClick="{{ goSend }}" class="btn btn-secondary" style="cursor: pointer">Gather my answers</button>
+        </div>
+        <div style="flex: 1 1 220px; font-size: 13px; line-height: 1.7; color: var(--color-neutral-600)">
+          <p style="margin: 0">Originally published as a series of articles by the pastors of Providence Community Church.</p>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isLesson }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1240px; margin: 0 auto">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 40px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--color-text); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600)">
+        <span style="color: var(--color-accent-2)">Lesson {{ L.num }} of 20</span>
+        <span>{{ L.partName }}</span>
+        <span>{{ L.mins }}</span>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px); padding: clamp(36px, 5vw, 64px) 0 0">
+        <article style="flex: 3 1 520px; min-width: 300px; max-width: 68ch">
+          <h1 style="font-family: var(--font-heading); font-size: clamp(34px, 5.4vw, 62px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 600; margin: 0 0 22px; text-wrap: balance">{{ L.title }}</h1>
+          <p style="font-family: var(--font-heading); font-style: italic; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; color: var(--color-neutral-700); margin: 0 0 40px; text-wrap: pretty">{{ L.standfirst }}</p>
+
+          <sc-if value="{{ L.pending }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 26px 28px; background: var(--color-accent-100); margin: 0 0 40px">
+              <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px">Still being set</div>
+              <p style="margin: 0 0 14px; font-size: 16px; line-height: 1.65; color: var(--color-neutral-800)">The full text of this lesson has not been brought over yet. You can read it in the meantime on Medium, and the questions below still apply.</p>
+              <a href="{{ L.url }}" target="_blank" class="btn btn-secondary" style="text-decoration: none">Read this lesson on Medium</a>
+            </div>
+          </sc-if>
+
+          <sc-for list="{{ L.blocks }}" as="b" hint-placeholder-count="6">
+            <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}">
+              <p style="font-size: 19px; line-height: 1.68; margin: 0 0 26px; text-wrap: pretty">{{ b.t }}</p>
+            </sc-if>
+            <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}">
+              <h2 style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700); margin: 52px 0 20px">{{ b.t }}</h2>
+            </sc-if>
+            <sc-if value="{{ b.isQ }}" hint-placeholder-val="{{ false }}">
+              <blockquote style="margin: 0 0 28px; padding: 0 0 0 26px; box-shadow: inset 3px 0 0 var(--color-accent)">
+                <p style="font-size: 18px; line-height: 1.6; margin: 0; color: var(--color-neutral-800); text-wrap: pretty">{{ b.t }}</p>
+                <cite style="display: block; font-style: normal; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin: 12px 0 0">{{ b.ref }}</cite>
+              </blockquote>
+            </sc-if>
+            <sc-if value="{{ b.isList }}" hint-placeholder-val="{{ false }}">
+              <ul style="margin: 0 0 28px; padding: 0; list-style: none; display: grid; gap: 8px">
+                <sc-for list="{{ b.items }}" as="item" hint-placeholder-count="4">
+                  <li style="display: flex; gap: 12px; font-size: 18px; line-height: 1.5"><span style="flex: none; color: var(--color-accent-2)">·</span><span>{{ item }}</span></li>
+                </sc-for>
+              </ul>
+            </sc-if>
+            <sc-if value="{{ b.isPull }}" hint-placeholder-val="{{ false }}">
+              <p style="font-family: var(--font-heading); font-style: italic; font-size: clamp(24px, 3vw, 34px); line-height: 1.25; letter-spacing: -0.02em; margin: 44px 0 44px; color: var(--color-text); text-wrap: pretty">{{ b.t }}</p>
+            </sc-if>
+          </sc-for>
+        </article>
+
+        <aside style="flex: 1 1 240px; min-width: 220px; max-width: 320px; align-self: flex-start; position: sticky; top: 24px">
+          <sc-if value="{{ L.hasPassages }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 0 0 32px">
+              <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600); padding-bottom: 12px; border-bottom: 1px solid var(--color-text)">Passages in this lesson</div>
+              <sc-for list="{{ L.passages }}" as="ref" hint-placeholder-count="5">
+                <a href="{{ ref.href }}" target="_blank" style="display: block; font-family: var(--font-heading); font-size: 16px; padding: 9px 0; border-bottom: 1px solid var(--color-neutral-200)" style-hover="color: var(--color-accent-2)">{{ ref.label }}</a>
+              </sc-for>
+              <p style="font-size: 12px; line-height: 1.6; color: var(--color-neutral-500); margin: 12px 0 0">Opens in Bible Gateway (ESV).</p>
+            </div>
+          </sc-if>
+          <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600); padding-bottom: 12px; border-bottom: 1px solid var(--color-text)">Also in {{ L.partName }}</div>
+          <sc-for list="{{ L.siblings }}" as="s" hint-placeholder-count="3">
+            <a href="#" onClick="{{ s.open }}" style="display: flex; gap: 10px; font-size: 15px; line-height: 1.35; padding: 10px 0; border-bottom: 1px solid var(--color-neutral-200); color: {{ s.color }}; cursor: pointer" style-hover="color: var(--color-accent-2)">
+              <span style="flex: none; color: var(--color-neutral-400); font-variant-numeric: tabular-nums">{{ s.num }}</span><span>{{ s.title }}</span>
+            </a>
+          </sc-for>
+        </aside>
+      </div>
+
+      <div style="max-width: 68ch; padding: 48px 0 0"><img src="providence-tree-mark.png" alt="" style="display: block; width: 32px; height: auto"></div>
+
+      <div style="max-width: 74ch; margin: clamp(48px, 7vw, 84px) 0 0; padding-top: 34px; border-top: 3px solid var(--color-text)">
+        <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 4vw, 42px); line-height: 1.05; letter-spacing: -0.025em; font-weight: 600; margin: 0 0 10px">Sit with it</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--color-neutral-600); margin: 0 0 40px; max-width: 52ch">Answer as much or as little as you like. Everything you type is saved here in your browser, and nothing leaves it until you choose to send it.</p>
+
+        <sc-for list="{{ L.reflect }}" as="q" hint-placeholder-count="2">
+          <div style="margin: 0 0 32px">
+            <label for="{{ q.id }}" style="display: block; font-family: var(--font-heading); font-size: 20px; line-height: 1.35; margin: 0 0 12px; text-wrap: pretty">{{ q.text }}</label>
+            <textarea id="{{ q.id }}" value="{{ q.value }}" onChange="{{ q.onChange }}" rows="4" placeholder="Take your time." class="input" style="width: 100%; box-sizing: border-box; font-size: 17px; line-height: 1.6; resize: vertical"></textarea>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ L.hasCheck }}" hint-placeholder-val="{{ false }}">
+          <div style="margin: 48px 0 0; padding: 30px 32px; background: var(--color-neutral-100)">
+            <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 14px">One quick check</div>
+            <p style="font-family: var(--font-heading); font-size: 21px; line-height: 1.35; margin: 0 0 18px; text-wrap: pretty">{{ L.check.q }}</p>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <sc-for list="{{ L.check.options }}" as="o" hint-placeholder-count="3">
+                <button onClick="{{ o.pick }}" style="display: flex; align-items: baseline; gap: 12px; text-align: left; width: 100%; padding: 13px 16px; min-height: 44px; font-size: 17px; line-height: 1.45; border: 1px solid {{ o.border }}; background: {{ o.bg }}; color: var(--color-text); cursor: pointer; font-family: var(--font-body)" style-hover="border-color: var(--color-accent)">
+                  <span style="flex: none; width: 16px; color: {{ o.markColor }}">{{ o.mark }}</span><span>{{ o.text }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ L.check.answered }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size: 16px; line-height: 1.65; margin: 18px 0 0; font-style: italic; color: var(--color-neutral-800)">{{ L.check.why }}</p>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <div style="margin: 48px 0 0; padding: 28px 32px; box-shadow: inset 4px 0 0 var(--color-accent-2)">
+          <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-2); margin-bottom: 12px">Talk it over</div>
+          <p style="font-family: var(--font-heading); font-style: italic; font-size: 21px; line-height: 1.45; margin: 0; text-wrap: pretty">{{ L.discuss }}</p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 52px 0 0">
+          <button onClick="{{ toggleDone }}" class="btn btn-primary" style="cursor: pointer">{{ doneLabel }}</button>
+          <button onClick="{{ goNext }}" class="btn btn-secondary" style="cursor: pointer">{{ nextLabel }}</button>
+          <button onClick="{{ goHome }}" class="btn btn-ghost" style="cursor: pointer">All lessons</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSend }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 860px; margin: 0 auto">
+      <div style="display: flex; align-items: center; gap: 14px; padding: clamp(32px, 5vw, 56px) 0 0">
+        <img src="providence-tree-mark.png" alt="" style="display: block; width: 34px; height: auto">
+        <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600)">Providence Community Church &nbsp;·&nbsp; Lenexa, Kansas</span>
+      </div>
+      <h1 style="font-family: var(--font-heading); font-size: clamp(38px, 6vw, 68px); line-height: 1.0; letter-spacing: -0.03em; font-weight: 600; margin: 22px 0 20px; text-wrap: balance">Send this to a pastor</h1>
+      <p style="font-size: 18px; line-height: 1.7; max-width: 54ch; color: var(--color-neutral-700); margin: 0 0 44px; text-wrap: pretty">Here is everything you have written, gathered in one place. Add your name and anything you are still wondering about, then email it over. A pastor will read it and reach out to you.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; margin: 0 0 32px">
+        <div class="field" style="flex: 1 1 240px">
+          <label for="sendName">Your name</label>
+          <input id="sendName" class="input" value="{{ sendName }}" onChange="{{ onName }}" placeholder="First and last" style="width: 100%; box-sizing: border-box">
+        </div>
+        <div class="field" style="flex: 1 1 240px">
+          <label for="sendEmail">Your email</label>
+          <input id="sendEmail" class="input" value="{{ sendEmail }}" onChange="{{ onEmail }}" placeholder="so we can write back" style="width: 100%; box-sizing: border-box">
+        </div>
+      </div>
+
+      <div class="field" style="margin: 0 0 40px">
+        <label for="sendQs">Questions you still have</label>
+        <textarea id="sendQs" class="input" rows="5" value="{{ sendQs }}" onChange="{{ onQs }}" placeholder="Anything at all — doctrine, our history, your own story, what happens next." style="width: 100%; box-sizing: border-box; font-size: 17px; line-height: 1.6; resize: vertical"></textarea>
+      </div>
+
+      <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600); padding-bottom: 12px; border-bottom: 3px solid var(--color-text)">Your answers &nbsp;·&nbsp; {{ answeredCount }} responses</div>
+
+      <sc-if value="{{ hasAnswers }}" hint-placeholder-val="{{ true }}">
+        <sc-for list="{{ summary }}" as="s" hint-placeholder-count="3">
+          <div style="padding: 28px 0; border-bottom: 1px solid var(--color-neutral-300)">
+            <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-2); margin-bottom: 10px">Lesson {{ s.num }} &nbsp;·&nbsp; {{ s.title }}</div>
+            <sc-for list="{{ s.items }}" as="a" hint-placeholder-count="2">
+              <div style="margin: 0 0 18px">
+                <p style="font-family: var(--font-heading); font-style: italic; font-size: 17px; line-height: 1.45; margin: 0 0 6px; color: var(--color-neutral-700)">{{ a.q }}</p>
+                <p style="font-size: 18px; line-height: 1.65; margin: 0; white-space: pre-wrap; text-wrap: pretty">{{ a.a }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </sc-if>
+      <sc-if value="{{ noAnswers }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size: 18px; line-height: 1.7; color: var(--color-neutral-600); padding: 28px 0">You have not written anything yet. Work through a lesson or two and your reflections will collect here.</p>
+      </sc-if>
+
+      <div class="noprint" style="display: flex; flex-wrap: wrap; gap: 14px; margin: 44px 0 0">
+        <a href="{{ mailtoHref }}" class="btn btn-primary" style="text-decoration: none">Email this to a pastor</a>
+        <button onClick="{{ doPrint }}" class="btn btn-secondary" style="cursor: pointer">Print or save as PDF</button>
+        <button onClick="{{ goHome }}" class="btn btn-ghost" style="cursor: pointer">Back to the lessons</button>
+      </div>
+      <p class="noprint" style="font-size: 13px; line-height: 1.6; color: var(--color-neutral-500); margin: 18px 0 0; max-width: 52ch">If the email button opens something you would rather not use, print this page instead and bring it with you.</p>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const KEY = 'pccc-considering-membership-v1';
+
+class Component extends DCLogic {
+  state = { course: null, view: 'home', num: 1, data: { read: {}, answers: {}, checks: {}, send: {} } };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const d = JSON.parse(raw);
+        this.setState({ data: { read: d.read || {}, answers: d.answers || {}, checks: d.checks || {}, send: d.send || {} } });
+      }
+    } catch (e) {}
+    import('./course-content.js').then(m => this.setState({ course: m.course }));
+  }
+
+  save(next) {
+    this.setState({ data: next });
+    try { localStorage.setItem(KEY, JSON.stringify(next)); } catch (e) {}
+  }
+
+  setAnswer(id, val) {
+    const d = this.state.data;
+    this.save({ ...d, answers: { ...d.answers, [id]: val } });
+  }
+
+  go(view, num) {
+    this.setState({ view, num: num || this.state.num });
+    window.scrollTo(0, 0);
+  }
+
+  lessonsOf(part) {
+    const c = this.state.course;
+    return part.lessons.map(n => c.lessons.find(l => l.n === n)).filter(Boolean);
+  }
+
+  partOf(n) {
+    const c = this.state.course;
+    return c.parts.find(p => p.lessons.indexOf(n) >= 0) || c.parts[0];
+  }
+
+  refHref(ref) {
+    return 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(ref) + '&version=ESV';
+  }
+
+  answersFor(l) {
+    const out = [];
+    (l.reflect || []).forEach((q, i) => {
+      const v = this.state.data.answers[l.n + ':' + i];
+      if (v && v.trim()) out.push({ q, a: v.trim() });
+    });
+    return out;
+  }
+
+  buildLetter() {
+    const c = this.state.course, s = this.state.data.send || {};
+    const lines = [];
+    lines.push('Considering Membership — reflections');
+    if (s.name) lines.push('From: ' + s.name + (s.email ? ' <' + s.email + '>' : ''));
+    const read = Object.keys(this.state.data.read).filter(k => this.state.data.read[k]).length;
+    lines.push('Lessons read: ' + read + ' of ' + c.lessons.length);
+    lines.push('');
+    if (s.questions && s.questions.trim()) {
+      lines.push('QUESTIONS I STILL HAVE');
+      lines.push(s.questions.trim());
+      lines.push('');
+    }
+    c.lessons.forEach(l => {
+      const items = this.answersFor(l);
+      if (!items.length) return;
+      lines.push('LESSON ' + l.n + ' — ' + l.title);
+      items.forEach(it => { lines.push('Q: ' + it.q); lines.push('A: ' + it.a); lines.push(''); });
+    });
+    return lines.join('\n');
+  }
+
+  renderVals() {
+    const c = this.state.course;
+    const d = this.state.data;
+    const goHome = e => { if (e) e.preventDefault(); this.go('home'); };
+    const goSend = e => { if (e) e.preventDefault(); this.go('send'); };
+    const base = { goHome, goSend, isHome: false, isLesson: false, isSend: false, doneCount: 0, progressPct: '0%' };
+    if (!c) return { ...base, isHome: true, parts: [], startLabel: 'Begin with lesson one' };
+
+    const readCount = c.lessons.filter(l => d.read[l.n]).length;
+    const open = n => e => { if (e) e.preventDefault(); this.go('lesson', n); };
+    const firstUnread = (c.lessons.find(l => !d.read[l.n]) || c.lessons[0]).n;
+
+    const common = {
+      goHome, goSend,
+      doneCount: readCount,
+      progressPct: Math.round((readCount / c.lessons.length) * 100) + '%',
+      isHome: this.state.view === 'home',
+      isLesson: this.state.view === 'lesson',
+      isSend: this.state.view === 'send'
+    };
+
+    // ---- home
+    const parts = c.parts.map(p => {
+      const items = this.lessonsOf(p);
+      const mins = items.reduce((a, l) => a + l.mins, 0);
+      return {
+        n: p.n, name: p.name,
+        meta: items.length + ' lessons · about ' + mins + ' min',
+        items: items.map(l => ({
+          num: String(l.n).padStart(2, '0'),
+          title: l.title,
+          standfirst: l.standfirst,
+          mins: l.mins + ' min read',
+          mark: d.read[l.n] ? '✓' : '',
+          markColor: 'var(--color-accent)',
+          open: open(l.n)
+        }))
+      };
+    });
+
+    // ---- lesson
+    const l = c.lessons.find(x => x.n === this.state.num) || c.lessons[0];
+    const part = this.partOf(l.n);
+    const idx = c.lessons.indexOf(l);
+    const nextL = c.lessons[idx + 1];
+    const picked = d.checks[l.n];
+    const L = {
+      num: String(l.n).padStart(2, '0'),
+      partName: part.n + '. ' + part.name,
+      mins: l.mins + ' min read',
+      title: l.title,
+      standfirst: l.standfirst,
+      url: l.url,
+      pending: !!l.pending,
+      blocks: (l.body || []).map(b => ({
+        t: b.t, ref: b.ref || '', items: b.items || [],
+        isP: b.k === 'p', isH: b.k === 'h', isQ: b.k === 'q', isPull: b.k === 'pull', isList: b.k === 'list'
+      })),
+      hasPassages: (l.passages || []).length > 0,
+      passages: (l.passages || []).map(r => ({ label: r, href: this.refHref(r) })),
+      siblings: this.lessonsOf(part).map(s => ({
+        num: String(s.n).padStart(2, '0'),
+        title: s.title,
+        color: s.n === l.n ? 'var(--color-accent-2)' : 'var(--color-text)',
+        open: open(s.n)
+      })),
+      reflect: (l.reflect || []).map((q, i) => {
+        const id = l.n + ':' + i;
+        return { id: 'r' + l.n + '-' + i, text: q, value: d.answers[id] || '', onChange: e => this.setAnswer(id, e.target.value) };
+      }),
+      discuss: l.discuss,
+      hasCheck: !!l.check
+    };
+    if (l.check) {
+      L.check = {
+        q: l.check.q,
+        answered: picked !== undefined,
+        why: l.check.why,
+        options: l.check.options.map((t, i) => {
+          const right = i === l.check.answer;
+          const chosen = picked === i;
+          return {
+            text: t,
+            border: chosen ? (right ? 'var(--color-accent)' : 'var(--color-accent-2)') : 'var(--color-neutral-300)',
+            bg: chosen ? (right ? 'var(--color-accent-100)' : 'var(--color-accent-2-100)') : 'var(--color-bg)',
+            mark: chosen ? (right ? '✓' : '✕') : '',
+            markColor: right ? 'var(--color-accent)' : 'var(--color-accent-2)',
+            pick: () => this.save({ ...d, checks: { ...d.checks, [l.n]: i } })
+          };
+        })
+      };
+    }
+
+    // ---- send
+    const s = d.send || {};
+    const summary = c.lessons.map(x => ({ num: String(x.n).padStart(2, '0'), title: x.title, items: this.answersFor(x) })).filter(x => x.items.length);
+    const answered = summary.reduce((a, x) => a + x.items.length, 0);
+    const letter = c ? this.buildLetter() : '';
+    const mailtoHref = 'mailto:' + c.pastorEmail + '?subject=' + encodeURIComponent('Considering Membership' + (s.name ? ' — ' + s.name : '')) + '&body=' + encodeURIComponent(letter);
+
+    return {
+      ...common,
+      parts,
+      startLabel: readCount ? 'Pick up at lesson ' + firstUnread : 'Begin with lesson one',
+      startCourse: e => { if (e) e.preventDefault(); this.go('lesson', firstUnread); },
+      L,
+      toggleDone: () => this.save({ ...d, read: { ...d.read, [l.n]: !d.read[l.n] } }),
+      doneLabel: d.read[l.n] ? '✓ Marked as read' : 'Mark this lesson read',
+      goNext: e => { if (e) e.preventDefault(); if (nextL) { this.save({ ...d, read: { ...d.read, [l.n]: true } }); this.go('lesson', nextL.n); } else this.go('send'); },
+      nextLabel: nextL ? 'Next: ' + nextL.title : 'Finish and send to a pastor',
+      sendName: s.name || '',
+      sendEmail: s.email || '',
+      sendQs: s.questions || '',
+      onName: e => this.save({ ...d, send: { ...s, name: e.target.value } }),
+      onEmail: e => this.save({ ...d, send: { ...s, email: e.target.value } }),
+      onQs: e => this.save({ ...d, send: { ...s, questions: e.target.value } }),
+      summary,
+      answeredCount: answered,
+      hasAnswers: answered > 0,
+      noAnswers: answered === 0,
+      mailtoHref,
+      doPrint: () => window.print()
+    };
+  }
+}
+</script>
+</body>
+</html>

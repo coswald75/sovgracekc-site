@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Philosophy of Change — A Survey | Providence Community Church</title>
+<meta name="description" content="A brief survey about how people change, to begin counseling from a shared understanding." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink:#1c1c1a; --muted:#6b6b63; --accent:#075c2e; --accent-soft:#e8f2ec;
+    --line:#e2dfd8; --paper:#ffffff; --hover:#faf9f5; --bad:#9c2b21;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:5vh 20px 12vh}
+  h1{font-weight:600;font-size:1.95rem;margin:.2em 0 .3em}
+  h2{font-weight:500;font-size:1.4rem;margin:.25em 0 .6em}
+  .sub{font-family:var(--sans);color:var(--muted);font-size:.95rem;line-height:1.6}
+  .sec-label{font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .card{border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-top:24px;background:var(--paper)}
+  label.f{font-family:var(--sans);font-size:.86rem;font-weight:600;display:block;margin:14px 0 6px;line-height:1.45}
+  .idrow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  input[type=text],input[type=email],input[type=date],textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.95rem;background:var(--hover);color:var(--ink)}
+  textarea{min-height:120px;resize:vertical}
+  input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+  button{font-family:var(--sans);font-weight:600;font-size:.95rem;border-radius:8px;padding:12px 22px;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button:disabled{opacity:.5;cursor:default}
+  .legend{font-family:var(--sans);font-size:.8rem;color:var(--muted);line-height:1.6;margin:6px 0 0}
+  .legend b{color:var(--ink)}
+  .q{border-top:1px solid var(--line);padding:18px 0 6px}
+  .q:first-of-type{border-top:0}
+  .q .stmt{font-size:1.05rem;line-height:1.5;display:flex;gap:10px}
+  .q .num{color:var(--accent);font-weight:600;font-family:var(--sans);font-size:.95rem;flex:0 0 auto;padding-top:2px}
+  .opts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0 2px 28px}
+  .opts label{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3px;border:1px solid var(--line);border-radius:8px;padding:9px 6px;background:var(--hover);cursor:pointer;font-family:var(--sans);line-height:1.2}
+  .opts label .ab{font-weight:700;font-size:.82rem}
+  .opts label .full{font-size:.68rem;color:var(--muted)}
+  .opts label.sel{border-color:var(--accent);background:var(--accent-soft)}
+  .opts label.sel .full{color:var(--accent)}
+  .opts input{position:absolute;opacity:0;width:0;height:0}
+  .q.unanswered.flag .opts label{border-color:var(--bad)}
+  .topbar{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:6px;font-family:var(--sans);font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;z-index:5}
+  .progressbar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;flex:1;margin-left:14px;max-width:220px}
+  .progressbar>div{height:100%;background:var(--accent);transition:width .3s;width:0}
+  .err{color:var(--bad);font-family:var(--sans);font-size:.88rem;margin-top:12px;line-height:1.5}
+  .missing{border:1px solid var(--bad);border-radius:8px;padding:14px 18px;margin-top:16px;font-family:var(--sans);font-size:.86rem;line-height:1.6}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:sp 1s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .hidden{display:none}
+  .note{font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+  .big-ok{font-size:3rem;text-align:center;color:var(--accent);margin:10px 0 0}
+  @media (max-width:560px){
+    .idrow{grid-template-columns:1fr}
+    .opts{margin-left:0}
+    .opts label .full{display:none}
+    .opts label{padding:11px 6px}
+  }
+</style>
+</head>
+<body><style>@media print{.pcc-homebar{display:none!important}}.pcc-homebar a:hover{text-decoration:underline!important}</style><div class="pcc-homebar" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:13px;background:#ffffff;border-bottom:1px solid #e2dfd8;padding:10px clamp(16px,4vw,28px);display:flex;gap:20px;align-items:center;flex-wrap:wrap;"><a href="/" style="color:#262626;text-decoration:none;font-weight:600;">&#8592;&nbsp;Providence Community Church</a></div>
+<div class="wrap">
+
+  <!-- FORM -->
+  <div id="view-form">
+    <span class="sec-label">Providence Community Church, Lenexa · Counseling</span>
+    <h1>My Philosophy of Change</h1>
+    <p class="sub">Everyone arrives at counseling holding convictions about how people actually change — where change comes from, what helps it along, what gets in its way. Most of us have never had occasion to put those convictions into words. These statements are meant to surface yours, so that we can begin from a shared understanding of what we're doing together.</p>
+    <p class="sub" style="margin-top:12px">Some of these statements are blunt, and a few of them resist a simple agree or disagree. That's intentional. If your real answer is “yes, but” — or “it depends what you mean by that” — the comment space at the end is for exactly that. What you write there is often more useful to me than the numbers.</p>
+
+    <div class="card">
+      <div class="idrow">
+        <div><label class="f" for="name">Name <span style="color:var(--bad)">*</span></label><input id="name" type="text" autocomplete="name" placeholder="Your full name" /></div>
+        <div><label class="f" for="date">Date</label><input id="date" type="date" /></div>
+      </div>
+      <label class="f" for="email">Email <span class="note">(optional — so Pastor Chris can follow up)</span></label>
+      <input id="email" type="email" autocomplete="email" placeholder="you@example.com" />
+    </div>
+
+    <div class="card">
+      <p class="legend"><b>SD</b> Strongly Disagree &nbsp;·&nbsp; <b>SWD</b> Somewhat Disagree &nbsp;·&nbsp; <b>SWA</b> Somewhat Agree &nbsp;·&nbsp; <b>SA</b> Strongly Agree</p>
+      <div id="questions"></div>
+    </div>
+
+    <div class="card">
+      <label class="f" for="comments" style="margin-top:0">Comments</label>
+      <p class="note" style="margin:0 0 8px">Use this space for any statement you'd like to qualify, push back on, or explain. Note the item number.</p>
+      <textarea id="comments" placeholder="e.g. On #3, my answer depends on…"></textarea>
+    </div>
+
+    <div id="missing-box" class="missing hidden"></div>
+    <div id="submit-err" class="err hidden"></div>
+    <div style="margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <button class="primary" id="btn-submit">Send to Pastor Chris</button>
+      <span class="note" id="count-note"></span>
+    </div>
+  </div>
+
+  <!-- SENDING -->
+  <div id="view-sending" class="hidden">
+    <div class="card" style="text-align:center;padding:60px 28px">
+      <h2><span class="spin"></span>Sending your survey…</h2>
+      <p class="sub">Delivering it to Pastor Chris.</p>
+    </div>
+  </div>
+
+  <!-- DONE -->
+  <div id="view-done" class="hidden">
+    <div class="card" style="text-align:center;padding:50px 28px">
+      <div class="big-ok">✓</div>
+      <h2>Thank you — your survey has been sent</h2>
+      <p class="sub">It went directly to Pastor Chris at Providence Community Church. He'll have read it before your conversation. You can close this page.</p>
+    </div>
+  </div>
+
+</div>
+<script>
+const API = "https://twbunmbzyqcqzgffdrib.supabase.co/functions/v1/philosophy-of-change";
+const STATEMENTS = [
+  "Scripture is sufficient for addressing the deepest problems of the human heart, even when it does not speak directly to a particular psychological condition.",
+  "A skilled Christian counselor can learn genuinely useful things about people from secular research that Scripture does not directly teach.",
+  "When the Bible and the best available clinical research appear to conflict, the more likely explanation is that I have misread the Bible.",
+  "It is God's will that some people live with unhealthy bodies, in order to display His glory in a particular way.",
+  "It is God's will that some people live in less-than-healthy marriages, in order to display His glory in a particular way.",
+  "Some suffering is meant to be endured faithfully rather than resolved.",
+  "The primary goal of counseling is relief from suffering.",
+  "A person can be genuinely victimized and genuinely sinful in the same situation, and good counseling addresses both.",
+  "Even when I have been seriously wronged, my own response to that wrong is something I am responsible before God to examine.",
+  "Examining a person's own sin when they have been seriously harmed is usually re-traumatizing.",
+  "Narcissism is a common problem that clinically informed counselors deal with on a regular basis.",
+  "Most people described as “narcissists” online would not meet clinical criteria for narcissistic personality disorder.",
+  "Psychiatric medication is a legitimate part of caring for some people's suffering.",
+  "My feelings are generally a reliable guide to what is actually true about my situation.",
+  "Patriarchal domineering is a significant problem in the local church.",
+  "Church leaders should generally be given the benefit of the doubt when a member raises a concern about them.",
+  "When a person has been harmed by a church, the healthiest path usually involves leaving that church.",
+  "A counselee's local church should be involved in their counseling when serious matters are at stake.",
+  "If the church's teaching on sexuality is causing real harm to people, that is a good reason to reconsider the teaching itself.",
+  "Faithfulness to historic Christian sexual ethics can be genuinely costly for the person holding it, and that cost is not by itself evidence the ethic is mistaken.",
+  "The Christian faith must evolve over time — it has to, or it dies.",
+  "When my religion comes between me and my neighbor, I should choose my neighbor.",
+  "Lasting change comes primarily through the Spirit's work, repentance, and obedience, rather than through insight or technique."
+];
+const OPTS = [["SD","Strongly disagree"],["SWD","Somewhat disagree"],["SWA","Somewhat agree"],["SA","Strongly agree"]];
+const LS = "poc_survey_v1";
+
+let answers = {};
+const $ = (x) => document.getElementById(x);
+const views = ["form","sending","done"];
+function show(v){ views.forEach(x => $("view-"+x).classList.toggle("hidden", x!==v)); window.scrollTo(0,0); }
+function esc(s){ return String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* restore any saved progress */
+try {
+  const saved = JSON.parse(localStorage.getItem(LS) || "{}");
+  if (saved && typeof saved === "object") {
+    answers = saved.answers || {};
+    if (saved.name) $("name").value = saved.name;
+    if (saved.email) $("email").value = saved.email;
+    if (saved.comments) $("comments").value = saved.comments;
+    if (saved.date) $("date").value = saved.date;
+  }
+} catch(e){}
+if (!$("date").value) { try { $("date").value = new Date().toISOString().slice(0,10); } catch(e){} }
+
+function persist(){
+  try { localStorage.setItem(LS, JSON.stringify({
+    answers, name:$("name").value, email:$("email").value, comments:$("comments").value, date:$("date").value
+  })); } catch(e){}
+}
+
+/* build the 23 questions */
+function render(){
+  const box = $("questions");
+  box.innerHTML = STATEMENTS.map((s, i) => {
+    const n = i + 1, cur = answers[n];
+    const opts = OPTS.map(([ab,full]) =>
+      `<label class="${cur===ab?"sel":""}" data-n="${n}" data-v="${ab}">
+        <input type="radio" name="q${n}" value="${ab}" ${cur===ab?"checked":""}/>
+        <span class="ab">${ab}</span><span class="full">${full}</span>
+      </label>`).join("");
+    return `<div class="q" id="q${n}"><div class="stmt"><span class="num">${n}.</span><span>${esc(s)}</span></div><div class="opts">${opts}</div></div>`;
+  }).join("");
+  box.querySelectorAll(".opts label").forEach(el => {
+    el.onclick = () => {
+      const n = el.dataset.n, v = el.dataset.v;
+      answers[n] = v;
+      el.parentElement.querySelectorAll("label").forEach(l => l.classList.toggle("sel", l===el));
+      $("q"+n).classList.remove("unanswered","flag");
+      updateCount(); persist();
+    };
+  });
+  updateCount();
+}
+function answeredCount(){ let c=0; for(let i=1;i<=STATEMENTS.length;i++) if(answers[i]) c++; return c; }
+function updateCount(){
+  const c = answeredCount(), t = STATEMENTS.length;
+  $("count-note").textContent = c + " of " + t + " answered";
+}
+["name","email","comments","date"].forEach(id => $(id).addEventListener("input", persist));
+render();
+
+/* submit */
+$("btn-submit").onclick = async () => {
+  $("submit-err").classList.add("hidden");
+  $("missing-box").classList.add("hidden");
+  const name = $("name").value.trim();
+  const missing = [];
+  for (let i=1;i<=STATEMENTS.length;i++) if(!answers[i]) missing.push(i);
+  if (!name || missing.length) {
+    const mb = $("missing-box");
+    let msg = "";
+    if (!name) msg += "<b>Please enter your name at the top.</b><br/>";
+    if (missing.length) msg += `<b>${missing.length} statement${missing.length===1?"":"s"} still need${missing.length===1?"s":""} a response:</b> #${missing.join(", #")}`;
+    mb.innerHTML = msg; mb.classList.remove("hidden");
+    missing.forEach(n => $("q"+n).classList.add("unanswered","flag"));
+    const first = !name ? $("name") : $("q"+missing[0]);
+    first.scrollIntoView({behavior:"smooth", block:"center"});
+    if (!name) first.focus();
+    return;
+  }
+  show("sending");
+  try {
+    const r = await fetch(API, { method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ name, date:$("date").value, email:$("email").value.trim(), answers, comments:$("comments").value }) });
+    const j = await r.json().catch(()=>({error:"Bad response"}));
+    if (!r.ok) throw new Error(j.error || ("HTTP "+r.status));
+    try { localStorage.removeItem(LS); } catch(e){}
+    show("done");
+  } catch(e) {
+    show("form");
+    const err = $("submit-err");
+    err.textContent = "Sending failed: " + e.message + " — your answers are still here; please try again in a moment.";
+    err.classList.remove("hidden");
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+};
+</script>
+</body>
+</html>

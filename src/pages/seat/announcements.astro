@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import bulletin from '../../data/bulletin.json';
+
+const { announcements, week_of } = bulletin;
+const items = announcements || [];
+---
+<Base
+  title="Announcements | This Sunday | Providence Community Church"
+  description="This week at Providence Community Church — news, events, and sign-ups."
+  path="/seat/announcements/"
+>
+  <section style="padding:40px 0 64px;">
+    <div class="wrap" style="max-width:560px;">
+      <p style="text-align:center;"><a class="cta-link" href="/seat/" style="font-size:0.8rem;">&larr; This Sunday</a></p>
+      <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">Announcements</h1>
+      <p style="text-align:center; font-size:0.8rem; color:var(--gray); letter-spacing:0.06em; text-transform:uppercase; margin:-6px 0 36px;">Week of {week_of}</p>
+
+      {items.length > 0 ? (
+        <div style="display:flex; flex-direction:column; gap:0;">
+          {items.map((a, i) => (
+            <article style={`padding:${i === 0 ? '0' : '28px'} 0 28px; ${i < items.length - 1 ? 'border-bottom:1px solid var(--line);' : ''}`}>
+              {a.when && <p style="font-size:0.75rem; color:var(--gray); letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px;">{a.when}</p>}
+              <h2 style="font-size:1.3rem; margin:0 0 8px;">{a.title}</h2>
+              {a.body && <p style="font-family:var(--serif); font-size:1.02rem; margin:0 0 12px;">{a.body}</p>}
+              {a.link && <a class="cta-link" href={a.link} target="_blank" rel="noopener" style="font-size:0.85rem;">Details &amp; sign-up</a>}
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p style="text-align:center; font-family:var(--serif); color:var(--gray); padding:32px 0;">This week's announcements will be posted soon.</p>
+      )}
+    </div>
+  </section>
+</Base>

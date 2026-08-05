@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+
+const resources = [
+  {
+    kind: 'Podcast · to unwind',
+    title: 'Vespers',
+    href: 'https://vesperstonight.com/',
+    external: true,
+    desc: 'Something worthy to end the day on. Vespers is a late-night podcast of slow, edifying conversation — Scripture, the great books, and the great ideas of the ages — set to quiet nocturne jazz. Put it on and let your mind wind down on something good.',
+    meta: 'Architected by Pastor Chris via the great conversation. Opens at vesperstonight.com.',
+  },
+  {
+    kind: 'Self-test · scored',
+    title: 'Bible Knowledge Exam',
+    href: '/bible-exam/',
+    desc: '100 questions across ten sections — people, places, books, doctrine, and the storyline of Scripture. Your progress saves as you go.',
+    meta: 'Scored on-screen, with a personalized two-week study plan.',
+  },
+  {
+    kind: 'Self-assessment',
+    title: 'Self-Sabotage Stopper',
+    href: '/self-sabotage/',
+    desc: 'Shipwrecked faith and pastoral self-immolation rarely happen without warning signs. A candid self-test to catch the patterns early.',
+    meta: 'Guidance shown on-screen; your answers are never stored.',
+  },
+  {
+    kind: 'Worksheets',
+    title: 'Suffering Sheets',
+    href: '/suffering-sheets/',
+    desc: 'Ten short worksheets for walking with God through suffering — honest writing, one sheet at a time, at whatever pace your circumstances allow.',
+    meta: 'Your completed sheets are emailed to Pastor Chris.',
+  },
+  {
+    kind: 'Worksheet',
+    title: 'When Silence Is Sin',
+    href: '/when-silence-is-sin/',
+    desc: 'A guide for discerning when love requires you to speak up and "say the thing" — rather than keep a peace that isn\'t really peace.',
+    meta: 'Your completed worksheet is emailed to Pastor Chris.',
+  },
+];
+---
+<Base
+  title="Topical Resources | Providence Community Church (Lenexa, KS)"
+  description="Self-guided resources for study and reflection from Providence Community Church — exams, self-assessments, and biblical counseling worksheets."
+  path="/topical-resources/"
+>
+  <section class="section">
+    <div class="wrap res-layout">
+      <!-- Left: boundary marker -->
+      <aside class="res-marker">
+        <img src="/wp-content/uploads/topical-resources-marker.jpg" alt="A mural pasted on a city building reading: How are you, really?" loading="lazy" />
+      </aside>
+
+      <!-- Right: listings -->
+      <div class="res-listings">
+        <p class="eyebrow">Topical Resources</p>
+        <h1>For study &amp; reflection.</h1>
+        <p style="font-size:1.08rem; max-width:52ch;">A growing library of self-guided tools you can use at your own pace &mdash; to examine your walk with Christ, work through a season of suffering, or simply grow in the Word. Use them on your own, or as a starting point for a conversation with a fellow believer at Providence.</p>
+
+        <div class="res-list">
+          {resources.map((r) => (
+            <a class="res-card" href={r.href} target={r.external ? '_blank' : undefined} rel={r.external ? 'noopener noreferrer' : undefined}>
+              <p class="res-kind">{r.kind}</p>
+              <h2 class={r.external ? 'res-title ext' : 'res-title'}>{r.title}</h2>
+              <p class="res-desc">{r.desc}</p>
+              <p class="res-meta">{r.meta}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule section-panel">
+    <div class="wrap" style="max-width:720px; text-align:center;">
+      <h2>Looking for counseling?</h2>
+      <p>These resources are part of our wider Biblical Counseling ministry &mdash; intentionally helpful conversations aimed at the God who heals.</p>
+      <a class="btn" href="/biblical-counseling/">Biblical Counseling</a>
+    </div>
+  </section>
+
+  <style>
+    .res-layout { display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: 48px; align-items: start; }
+    .res-marker { position: sticky; top: 24px; }
+    .res-marker img {
+      width: 100%; height: auto; max-height: calc(100vh - 48px);
+      object-fit: cover; border-radius: 12px; display: block; aspect-ratio: 2 / 3;
+    }
+    .res-listings h1 { margin-top: 0; }
+    .res-list { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+    .res-card {
+      display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px;
+      padding: 22px 24px; text-decoration: none; background: var(--paper);
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .res-card:hover { border-color: var(--ink); box-shadow: 0 10px 30px rgba(0,0,0,0.06); transform: translateY(-2px); opacity: 1; }
+    .res-kind {
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gray); font-weight: 700; margin: 0 0 7px;
+    }
+    .res-title { font-family: var(--serif); font-size: 1.4rem; margin: 0 0 8px; color: var(--ink); }
+    .res-title::after { content: ' \2192'; color: var(--gray); font-size: 1rem; }
+    .res-title.ext::after { content: ' \2197'; }
+    .res-desc { font-size: 0.95rem; margin: 0 0 12px; color: var(--ink); }
+    .res-meta { font-family: var(--sans); font-size: 0.8rem; color: var(--gray); margin: 0; }
+    @media (max-width: 820px) {
+      .res-layout { grid-template-columns: 1fr; gap: 28px; }
+      .res-marker { position: static; }
+      .res-marker img { aspect-ratio: 16 / 10; max-height: 340px; }
+    }
+  </style>
+</Base>

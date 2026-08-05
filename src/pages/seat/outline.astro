@@ -1,0 +1,105 @@
+---
+import Base from '../../layouts/Base.astro';
+import bulletin from '../../data/bulletin.json';
+
+const { week_of } = bulletin;
+const sermon = bulletin.service_order?.sermon || null;
+const outline = sermon?.outline || [];
+const hasOutline = outline.length > 0;
+const usesScripture = outline.some((b) => b.type === 'scripture');
+---
+<Base
+  title="Sermon Outline | This Sunday | Providence Community Church"
+  description="This Sunday's sermon outline — main points, Scripture in full, and quotes — at Providence Community Church."
+  path="/seat/outline/"
+>
+  <section style="padding:40px 0 64px;">
+    <div class="wrap" style="max-width:600px;">
+      <p style="text-align:center;"><a class="cta-link" href="/seat/" style="font-size:0.8rem;">&larr; This Sunday</a></p>
+      <p style="text-align:center; font-size:0.8rem; color:var(--gray); letter-spacing:0.06em; text-transform:uppercase; margin:0 0 4px;">Sermon Outline &middot; Week of {week_of}</p>
+
+      {hasOutline && sermon ? (
+        <>
+          <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center; margin:0 0 6px;">{sermon.title}</h1>
+          {sermon.text && <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; color:var(--gray); margin:0 0 24px;">{sermon.text}</p>}
+          {sermon.thesis && <p class="thesis">{sermon.thesis}</p>}
+
+          <div class="outline">
+            {outline.map((b) => {
+              if (b.type === 'heading') return <h2 class="o-head">{b.text}</h2>;
+              if (b.type === 'scripture') return (
+                <blockquote class="o-scripture">
+                  {b.ref && <p class="o-ref">{b.ref}</p>}
+                  <p class="o-verse">{b.body}</p>
+                </blockquote>
+              );
+              if (b.type === 'quote') return (
+                <blockquote class="o-quote">
+                  <p>{b.body}</p>
+                  {b.cite && <cite class="o-cite">&mdash; {b.cite}</cite>}
+                </blockquote>
+              );
+              return <p class="o-text">{b.body}</p>;
+            })}
+          </div>
+
+          {usesScripture && (
+            <p class="o-copyright">Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+          )}
+        </>
+      ) : (
+        <>
+          <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">Sermon Outline</h1>
+          <p style="text-align:center; font-family:var(--serif); color:var(--gray); padding:32px 0;">This week's outline will be posted on Sunday morning.</p>
+        </>
+      )}
+    </div>
+  </section>
+
+  <style>
+    .thesis {
+      font-family: var(--serif); font-style: italic; font-size: 1.15rem;
+      line-height: 1.55; text-align: center; color: var(--ink);
+      max-width: 52ch; margin: 0 auto 40px; padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .outline { display: flex; flex-direction: column; }
+    .o-head {
+      font-family: var(--serif); font-size: 1.4rem; line-height: 1.25;
+      margin: 34px 0 4px; padding-top: 6px;
+    }
+    .o-head:first-child { margin-top: 0; }
+    .o-text {
+      font-family: var(--serif); font-size: 1.05rem; line-height: 1.65;
+      margin: 14px 0 0;
+    }
+    .o-scripture {
+      margin: 20px 0 0; padding: 4px 0 4px 18px;
+      border-left: 3px solid var(--ink);
+    }
+    .o-ref {
+      font-family: var(--sans); font-size: 0.72rem; color: var(--gray);
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px;
+    }
+    .o-verse {
+      font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; margin: 0;
+    }
+    .o-quote {
+      margin: 22px 0 0; padding: 18px 22px;
+      background: var(--greige-light); border-radius: 8px;
+    }
+    .o-quote p {
+      font-family: var(--serif); font-style: italic; font-size: 1.08rem;
+      line-height: 1.55; margin: 0;
+    }
+    .o-cite {
+      display: block; margin-top: 10px; font-style: normal;
+      font-family: var(--sans); font-size: 0.78rem; color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+    .o-copyright {
+      margin: 48px 0 0; padding-top: 20px; border-top: 1px solid var(--line);
+      font-size: 0.72rem; line-height: 1.5; color: var(--gray);
+    }
+  </style>
+</Base>

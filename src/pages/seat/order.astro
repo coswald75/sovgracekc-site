@@ -1,0 +1,105 @@
+---
+import Base from '../../layouts/Base.astro';
+import bulletin from '../../data/bulletin.json';
+
+const { service_order: order, week_of } = bulletin;
+const flow = order.flow || [];
+const songs = order.songs || [];
+const band = order.band || [];
+const sermon = order.sermon || null;
+const hasBand = band.length > 0;
+const songsIn = (section) => songs.filter((s) => (s.section || 'opening') === section);
+---
+<Base
+  title="Order of Service | This Sunday | Providence Community Church"
+  description="This Sunday's order of service, worship set, and sermon at Providence Community Church."
+  path="/seat/order/"
+>
+  <section style="padding:40px 0 64px;">
+    <div class="wrap" style="max-width:560px;">
+      <p style="text-align:center;"><a class="cta-link" href="/seat/" style="font-size:0.8rem;">&larr; This Sunday</a></p>
+      <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">Order of Service</h1>
+      <p style="text-align:center; font-size:0.8rem; color:var(--gray); letter-spacing:0.06em; text-transform:uppercase; margin:-6px 0 40px;">Week of {week_of}</p>
+
+      {flow.length > 0 ? (
+        <ol class="flow">
+          {flow.map((step, i) => (
+            <li class="flow-step">
+              <span class="flow-num">{String(i + 1).padStart(2, '0')}</span>
+              <div class="flow-body">
+                <p class="flow-label">{step.label}</p>
+
+                {step.type === 'songs' && songsIn(step.section || 'opening').length > 0 && (
+                  <ul class="songs">
+                    {songsIn(step.section || 'opening').map((s) => (
+                      <li class="song">
+                        <span class="song-title">{s.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {step.type === 'sermon' && sermon && (
+                  <p class="sermon">
+                    <span class="sermon-title">&ldquo;{sermon.title}&rdquo;</span>
+                    {sermon.text && <span class="sermon-text">{sermon.text}</span>}
+                  </p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p style="text-align:center; font-family:var(--serif); color:var(--gray); padding:32px 0;">This Sunday's order of service will be posted soon.</p>
+      )}
+
+      {order.playlist_url && (
+        <p style="text-align:center; margin:40px 0;">
+          <a class="btn-outline" href={order.playlist_url} target="_blank" rel="noopener">Listen to the set on Spotify</a>
+        </p>
+      )}
+
+      {hasBand && (
+        <div style="margin-top:8px;">
+          <p class="label" style="color:var(--gray); margin:0 0 14px;">On the Platform</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+            {band.map((m) => (
+              <li style="display:flex; justify-content:space-between; font-family:var(--serif); font-size:1.05rem; border-bottom:1px solid var(--line); padding-bottom:8px;">
+                <span>{m.name}</span>
+                <span style="color:var(--gray); font-size:0.9rem; align-self:center;">{m.role}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <style>
+    .flow { list-style: none; padding: 0; margin: 0; }
+    .flow-step {
+      display: flex; gap: 18px; align-items: baseline;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .flow-num {
+      font-family: var(--sans); font-size: 0.85rem; color: var(--gray);
+      min-width: 1.6em; padding-top: 4px;
+    }
+    .flow-body { flex: 1; }
+    .flow-label { font-family: var(--serif); font-size: 1.3rem; margin: 0; }
+    .songs { list-style: none; padding: 0; margin: 12px 0 2px; }
+    .song {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 5px 0; flex-wrap: wrap;
+    }
+    .song-title { font-family: var(--serif); font-size: 1.02rem; color: var(--ink); }
+    .song-note {
+      font-family: var(--sans); font-size: 0.68rem; color: var(--gray);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px;
+    }
+    .sermon { margin: 8px 0 0; }
+    .sermon-title { font-family: var(--serif); font-style: italic; font-size: 1.05rem; display: block; }
+    .sermon-text { font-size: 0.85rem; color: var(--gray); letter-spacing: 0.02em; }
+  </style>
+</Base>
