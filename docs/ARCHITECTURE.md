@@ -42,7 +42,7 @@
 `generate_members_wiki.py`, `publish_bulletin.py`, `update_church_sermons.py`,
 `members_assets/` (the standalone member docs), `wire_nations.py` (lives in a scratchpad, not the repo at all), plus assorted planning docs.
 
-**What this means:** if this Mac died, the church website source and the members-wiki/bulletin generators would be recoverable only from this machine's local disk (Time Machine / Dropbox), **not** from GitHub. See [§9 Gaps & Recommended Fixes](#9-gaps--risks--recommended-fixes).
+**What this means:** if this Mac died, the church website source and the members-wiki/bulletin generators would be recoverable only from this machine's local disk (Time Machine / Dropbox), **not** from GitHub. See [§10 Gaps & Recommended Fixes](#10-gaps--risks--recommended-fixes).
 
 > ⚠️ **Canonical working copy = `~/shepherds-guild/pipeline copy 2`.** There are also
 > stale `pipeline/` and `pipeline copy/` folders. Every live cron and every command
@@ -65,7 +65,7 @@ Everything below is reachable from **sovgracekc.org** or is the church's own too
 ### 1b. The members-only wiki — `sovgracekc.org/members/`
 - Password-gated internal ministry wiki (SOPs, care maps, leader resources, ministry manifest).
 - **Generated** from Obsidian markdown by `generate_members_wiki.py` → static HTML in `sovgracekc-site/public/members/`.
-- **Gate:** a Cloudflare **Pages Function** at `sovgracekc-site/functions/members/_middleware.js` (HMAC-signed HttpOnly cookie). **Shared password `PCC25`** (env `MEMBERS_PASSWORD`, fallback in the middleware).
+- **Gate:** a Cloudflare **Pages Function** at `sovgracekc-site/functions/members/_middleware.js` (HMAC-signed HttpOnly cookie). Shared password — value lives **only** in the `MEMBERS_PASSWORD` Cloudflare Pages secret (never printed in this public repo).
 - See [§4](#4-the-members-wiki-pipeline) for the full build/deploy.
 
 ### 1c. Sermon pages — `sermonsteward.com/ProvidenceLenexa/sermons/<slug>`
@@ -79,11 +79,11 @@ Two distinct assistants, both backed by Supabase functions (Haiku 4.5 + Voyage e
 2. **"Ask this sermon"** (`sermon-chat` function) — per-sermon assistant embedded on each Sermon Steward sermon page. Answers **page-first** from that one sermon's content, then offers to broaden into the wider corpus + public-domain voices (Pink/Spurgeon/Watson/Morgan). Widget is **inlined in `templates/sermon_page.html.j2`**, gated to Providence pages.
 
 ### 1e. Forms & self-guided tools
-Each is a static page calling a **public** Supabase Edge Function (`verify_jwt=false`, CORS `*`). Backends never live in Cloudflare. See [§6](#6-backend--supabase-edge-functions) and `CHURCH-FORMS-PORT.md`.
+Each is a static page calling a **public** Supabase Edge Function (`verify_jwt=false`, CORS `*`). Backends never live in Cloudflare. See [§7](#7-backend--supabase-edge-functions) and `CHURCH-FORMS-PORT.md`.
 
 ### 1f. The weekly bulletin — `sovgracekc.org/seat/`
-- NFC "seat" landing page showing this Sunday's Order of Service + Announcements.
-- Built via the **`weekly-bulletin` skill** + `publish_bulletin.py`; sources = Josh's Basecamp music email (Gmail) + a Google Doc.
+- NFC/QR "seat-sticker" landing page showing this Sunday's Order of Service, Announcements, Sermon Outline, a guest "say hello" form, and Give.
+- Built via the **`weekly-bulletin` skill** + `scripts/publish_bulletin.py`, all rendered from `src/data/bulletin.json`; sources = **Josh's Basecamp music email** + **Dov Cohen's announcements email** (both Gmail) + **Chris's sermon title/outline**. **Full workflow → [§6](#6-the-seat-weekly-bulletin-pipeline).**
 
 ---
 
@@ -145,7 +145,7 @@ Each is a static page calling a **public** Supabase Edge Function (`verify_jwt=f
 
 **The gate:** `sovgracekc-site/functions/members/_middleware.js` (scoped to `/members/*`).
 - No cookie → branded login screen. Correct password → HMAC-signed HttpOnly `pcc_members` cookie (30-day).
-- **Password `PCC25`** — Pages env var `MEMBERS_PASSWORD` (fallback `DEFAULT_PASSWORD` in the middleware). Compare is forgiving (whitespace/case-insensitive); token still derives from the canonical password.
+- **Password** — set in the Pages env var `MEMBERS_PASSWORD` (the literal value is **not** stored in this public repo; retrieve/rotate it via `wrangler pages secret`). Compare is forgiving (whitespace/case-insensitive); token still derives from the canonical password.
 - Canonical login form: action `/members/?__login=1`, hidden stable `username` field + guarded `next` field (so password managers behave and there's no open redirect).
 
 **To publish (repeatable):**
@@ -201,7 +201,62 @@ as of 2026-08-20 deployed to the test page `do-eden-anyway-work-2026-08-16`; the
 
 ---
 
-## 6. Backend — Supabase Edge Functions
+## 6. The `/seat` weekly-bulletin pipeline
+
+**What it is.** `sovgracekc.org/seat/` is the **NFC/QR "seat-sticker" landing page** —
+congregants scan a sticker on their seat Sunday morning and land here. It's a mobile
+card hub for *this Sunday*, **refreshed every week (draft → review → publish,
+human-in-the-loop** because it names people and events).
+
+**Page structure** — all Astro pages under `src/pages/seat/`, every one rendered from a
+single data file `src/data/bulletin.json`:
+
+| Page | Card | Renders |
+|---|---|---|
+| `seat/index.astro` | hub ("This Sunday · Week of …") | cards, in order: **New here? Say hello · Order of service · Announcements · Sermon Outline · Give** |
+| `seat/order.astro` | Order of service | the liturgy `flow` + split worship set + band + Spotify link |
+| `seat/announcements.astro` | Announcements | the week's announcement cards |
+| `seat/outline.astro` | Sermon Outline | points, full-ESV texts, quotes (auto-adds the ESV® notice); "posted Sunday morning" when empty |
+| `seat/hello.astro` | New here? Say hello | guest connect form → `guest-connect` fn (see §7) |
+| — | Give | **external** link `churchofficegiving.com/app/giving/prov1011279` (an on-site iframe embed was tried and abandoned — their giving SPA renders blank when framed) |
+
+**Publisher:** `scripts/publish_bulletin.py` — validates `bulletin.json`, `npm run build`,
+`wrangler pages deploy dist … --branch=main`, then a Resend confirmation email. `--check`
+builds without deploying (for review).
+
+**Weekly workflow — run the `weekly-bulletin` skill** (its `SKILL.md`, in the pipeline repo's `.claude/skills/weekly-bulletin/`, is the full step-by-step). Summary:
+
+1. **Gather** (all read from Chris's logged-in Chrome via the browser tools — no tokens):
+   - **Worship set** ← Josh Luffman's Basecamp email in Gmail, subject *"(Corporate Worship - Music) Sunday Worship MM/DD/YYYY"*. Read the **first** message: band, songs (mapped to liturgy sections), Spotify playlist (strip `?si=…`). Josh usually **interleaves a Scripture Reading** between the first two and next two opening songs.
+   - **Announcements** ← **Dov Cohen's** Gmail email, subject *"Announcements M/D/YYYY"*. It's just **titles + dates**; real detail lives in the slides he uploads (image-only `.pptx` — extract by unzipping `ppt/media/*` and *reading the images*) or Chris supplies it at review. **Don't invent** times/places/sign-up links. Carry over still-upcoming events (retreats, etc.) per Chris.
+   - **Sermon** ← Chris gives the **title + passage**; the **outline** he hands over Sunday morning as a manuscript, which you *reduce* to headings + full-ESV scriptures + memorable quotes (his three rules: main headings suffice, Scriptures in full ESV, include quotes).
+2. **Draft** → overwrite `bulletin.json` (`week_of` = the coming Sunday).
+3. **Review** → `python3 scripts/publish_bulletin.py --check`, start the `sovgracekc` preview, screenshot `/seat/`, `/seat/order/`, `/seat/announcements/`, `/seat/outline/` at mobile width, and get Chris's **explicit yes**.
+4. **Publish** → `python3 scripts/publish_bulletin.py`.
+
+**`bulletin.json` shape:**
+```json
+{
+  "week_of": "August 16, 2026",
+  "service_order": {
+    "flow": [ /* ordered liturgy: {type:"element"|"songs"|"sermon", label, section?, detail?} */ ],
+    "sermon": { "title": "…", "text": "…", "thesis": "…", "outline": [ /* blocks */ ] },
+    "band":  [ { "name": "…", "role": "…" } ],
+    "songs": [ { "title": "…", "section": "opening|opening2|communion|final" } ],
+    "playlist_url": "https://open.spotify.com/playlist/…"
+  },
+  "announcements": [ { "title": "…", "body": "…", "when": "…", "link": "…", "bullets": ["…"] } ]
+}
+```
+- **`flow`** renders top-to-bottom. Standard order: Welcome · Call to Worship · Songs (`opening`) · Scripture Reading (`{type:"element", detail}`) · Songs (`opening2`) · Kids Dismissal · Sermon · Communion (`{type:"songs", section:"communion"}`) · Final Songs (`final`) · Benediction. The worship set is **split** — a `{type:"songs", section}` step shows only the songs whose `section` matches (opening set before kids dismissal; communion + final after the sermon).
+- **`sermon.outline`** block types: `{type:"heading", text}`, `{type:"text", body}`, `{type:"scripture", ref, body}` (full ESV; the page auto-appends the ESV® copyright notice when any scripture block exists), `{type:"quote", body, cite?}`. Empty `outline` → the page shows the sermon title + "posted Sunday morning".
+- **announcement** `bullets:[]` renders a `<ul>`; empty `body`/`when`/`link` render gracefully (title-only cards are fine).
+
+**Analytics.** GA4 (property `392798619`) — launch data: ~98% **Direct** traffic (sticker scans), ~83% mobile, Sunday-morning peak. **Outbound-click tracking is on** (Give/RSVP/Spotify taps; forward-only from 2026-08-09). A **Looker Studio** report *"Providence — Seat Page Traffic"* (owned by chris@sovgracekc.org, id `d74d264b-00dc-4ba5-a639-2495e440e38b`) **emails Chris a `/seat/` summary every Monday** — cloud-delivered, no stored keys.
+
+---
+
+## 7. Backend — Supabase Edge Functions
 
 Project **`twbunmbzyqcqzgffdrib`**. Public functions are `verify_jwt=false` + CORS `*`.
 Manage via the Supabase MCP (`list_edge_functions`, `get_edge_function`, `deploy_edge_function`).
@@ -234,7 +289,7 @@ Manage via the Supabase MCP (`list_edge_functions`, `get_edge_function`, `deploy
 
 ---
 
-## 7. Automation (launchd crons on this Mac)
+## 8. Automation (launchd crons on this Mac)
 
 All run from `~/shepherds-guild/pipeline copy 2/`.
 
@@ -249,7 +304,7 @@ All run from `~/shepherds-guild/pipeline copy 2/`.
 
 ---
 
-## 8. Procedures index (quick reference)
+## 9. Procedures index (quick reference)
 
 | I want to… | Do this |
 |---|---|
@@ -259,12 +314,12 @@ All run from `~/shepherds-guild/pipeline copy 2/`.
 | Re-render one sermon page | `generate_sermon_pages.py render <id>` → `deploy_sermon_pages.py --sermon-ids <id>` |
 | Roll the Ask-this-sermon widget to all Providence pages | `generate_sermon_pages.py render-all --church <providence_id>` → `deploy_sermon_pages.py --all-stale` |
 | Change an edge function | edit source → `deploy_edge_function` (Supabase MCP) → curl-test |
-| Publish this week's bulletin | run the `weekly-bulletin` skill (draft → review → `publish_bulletin.py`) |
+| Publish this week's `/seat/` bulletin | run the `weekly-bulletin` skill (gather → draft `bulletin.json` → review → `scripts/publish_bulletin.py`) — full workflow in [§6](#6-the-seat-weekly-bulletin-pipeline) |
 | Add an Isaiah-series page | drop HTML in the series, add to `ORDER` in `wire_nations.py`, re-run, build + deploy |
 
 ---
 
-## 9. Gaps / risks / recommended fixes
+## 10. Gaps / risks / recommended fixes
 
 1. **`sovgracekc-site` has no GitHub remote.** The church website's source exists only
    in local git on this Mac. **Fix:** create a private `coswald75/sovgracekc-site` repo
