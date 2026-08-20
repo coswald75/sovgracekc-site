@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarshish &amp; the Coastlands — Nation Study, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4; --stone-deep:#E3E1D6; --ink:#232630; --ink-soft:#4A4D57;
+    --lapis:#34528C; --lapis-pale:#D8DEEC; --copper:#9E6428; --copper-pale:#EFE3D2;
+    --olive:#6B7042; --olive-pale:#E2E3D2; --label:#767862; --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--stone);color:var(--ink);font-family:'Source Serif 4', Georgia, serif;font-size:16px;line-height:1.55}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--lapis);margin-bottom:16px}
+  .namerow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  h1{font-family:'Marcellus', serif;font-weight:400;font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.02em;line-height:1.05}
+  .dial{width:34px;height:34px;flex:none}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.4}
+  .dial line{stroke:var(--lapis);stroke-width:2.4;stroke-linecap:round}
+  .meta{margin-top:10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+  .texts{margin-top:6px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:660px;color:var(--ink-soft);font-size:1.02rem}
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .hero-fig svg a{cursor:pointer}
+  .hero-fig svg a:hover circle{stroke-width:3}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+  section{padding-top:44px;scroll-margin-top:20px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .node{width:18px;height:18px;border-radius:50%;flex:none;border:2px solid transparent}
+  .node.copper{background:var(--copper)}
+  .node.lapis{background:var(--lapis)}
+  .node.olive{background:var(--olive)}
+  .node.ink{background:var(--stone);border-color:var(--ink)}
+  h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.6rem;letter-spacing:.02em}
+  .sec-k{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--label);font-weight:600}
+  .sec-intro{max-width:700px;color:var(--ink-soft);font-size:.95rem;margin-bottom:18px}
+  .band-body{display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);margin:6px 0;padding-left:16px;border-left:2px solid var(--copper)}
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+  .chip{background:var(--copper-pale);color:var(--copper);font-size:.85rem;padding:2px 10px;border-radius:2px;white-space:nowrap}
+  .chip .arrow{opacity:.6;padding:0 3px}
+  .t{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1px 7px;border-radius:2px;vertical-align:2px;margin-right:6px;white-space:nowrap}
+  .t-named{background:var(--copper);color:#fff}
+  .t-att{background:var(--lapis-pale);color:var(--lapis)}
+  .t-e{background:var(--lapis-pale);color:var(--lapis)}
+  .t-r{background:transparent;color:var(--label);border:1px solid var(--rule)}
+  .dated{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label);border:1px solid var(--rule);padding:2px 8px;border-radius:2px;margin-bottom:8px}
+  .live{display:block;font-size:.85rem;color:var(--ink-soft);border:1px dashed var(--label);padding:10px 14px;margin:2px 0 4px}
+  .map-fig{max-width:520px;margin:10px 0 6px}
+  .map-fig svg{width:100%;height:auto;display:block}
+  .capstone{margin-top:56px;background:var(--stone-deep);border-left:3px solid var(--copper);padding:26px 30px}
+  .capstone h2{margin-bottom:10px;font-size:1.4rem}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:9px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--label);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media (max-width:720px){header{padding-top:44px}}
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/arabia/" rel="prev">&larr;<span class="t">Arabia</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/statecraft-chemistry/" rel="next"><span class="t">The Chemistry of Nations</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Nation Study</div>
+  <div class="namerow">
+    <h1>Tarshish &amp; the Coastlands</h1>
+    <svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="4.5" y1="11" x2="8" y2="11"/><line x1="14" y1="11" x2="17.5" y2="11"/></svg>
+  </div>
+  <div class="meta">The far west, over the sea &middot; today: Spain, Greece, western Turkey</div>
+  <div class="texts">Isaiah 2:16 &middot; 42:4 &middot; 60:9 &middot; 66:19</div>
+  <p class="subtitle">The edge of the known world &mdash; the silver port at the far end of the sea, and the island-rim of peoples who had "not heard my fame." The map's last entries, and the book's whole destination: the ends of the earth, waiting.</p>
+</header>
+
+<div class="hero-fig">
+  <svg viewBox="0 0 520 500" role="img" aria-label="TARSHISH: Relation, Religion, Region at the corners. Each corner links to its section below.">
+    <polygon points="260,78 92,398 428,398" fill="#DDD9C9" opacity="0.55"/>
+    <line x1="260" y1="78"  x2="92"  y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="260" y1="78"  x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="92"  y1="398" x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <a href="#relation">
+      <circle cx="260" cy="78" r="12" fill="#9E6428"/>
+      <text x="260" y="52" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELATION</text>
+      <text x="260" y="70" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">Japheth's seafaring line</text>
+    </a>
+    <a href="#religion">
+      <circle cx="92" cy="398" r="12" fill="#34528C"/>
+      <text x="80" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELIGION</text>
+      <text x="80" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">'the coastlands wait for his law'</text>
+    </a>
+    <a href="#region">
+      <circle cx="428" cy="398" r="12" fill="#6B7042"/>
+      <text x="436" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">REGION</text>
+      <text x="436" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the far Mediterranean</text>
+    </a>
+    <a href="#word">
+      <text x="260" y="290" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#232630" letter-spacing="5">TARSHISH</text>
+      <text x="260" y="312" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" fill="#767862" font-style="italic">the center: where this tripod met Israel's God</text>
+    </a>
+  </svg>
+  <div class="fig-note">The triangle is the table of contents &mdash; tap a corner.</div>
+</div>
+
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="relation">
+  <div class="sec-head"><span class="node copper"></span><div><div class="sec-k">The copper corner</div><h2>Relation &mdash; Japheth's Far Line</h2></div></div>
+  <p class="sec-intro">Who the far west is, in the family of nations.</p>
+  <div class="band-body">
+    <div class="chips">
+      <span class="chip">Noah<span class="arrow">&rarr;</span>Japheth<span class="arrow">&rarr;</span>Javan<span class="arrow">&rarr;</span>Tarshish, Kittim&hellip;</span>
+    </div>
+    <p>The west belongs to <strong>Japheth</strong> &mdash; his son Javan (the Hebrew name for Greece) fathers <strong>Tarshish</strong> among the maritime peoples, "from these <strong>the coastland peoples spread</strong> in their lands, each with his own language" <span class="ref">(Gen 10:2&ndash;5)</span>. That verse is the Table of Nations' only use of the word Isaiah will make his signature term for the Gentile horizon: <em>the coastlands</em>.</p>
+    <p>No kinship with Abraham, no treaties, no wars &mdash; the far west is simply <em>absent</em> from Israel's story, which is the point. These are the peoples of Noah's blessing on Japheth still waiting for its punchline: "may God enlarge Japheth, and <strong>let him dwell in the tents of Shem</strong>" <span class="ref">(Gen 9:27)</span> &mdash; the west, destined to move into the covenant family's housing.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="religion">
+  <div class="sec-head"><span class="node lapis"></span><div><div class="sec-k">The lapis corner</div><h2>Religion &mdash; Gods Not Yet Met</h2></div></div>
+  <p class="sec-intro">What the far west knelt to &mdash; and Isaiah's different posture.</p>
+  <div class="band-body">
+    <p><span class="t t-r">Uncertain</span>For Tarshish &mdash; a Phoenician silver colony &mdash; the cult was presumably Tyre's exports, Melqart and Astarte; for the wider coastlands, the developing Greek pantheon that matters biblically only centuries later. Scripture names none of it in Isaiah's day: these are the peoples "that have not heard my fame or seen my glory" <span class="ref">(66:19)</span>.</p>
+    <p>So Isaiah's posture here is unique on the whole chart: <strong>not polemic but mission</strong>. The coastlands appear as courtroom audience &mdash; "Listen to me, O coastlands" <span class="ref">(49:1)</span> &mdash; and as the waiting congregation of the Servant's justice: <strong>"he will not grow faint or be discouraged till he has established justice in the earth; and the coastlands wait for his law"</strong> <span class="ref">(42:4)</span>. The idol-encounter belongs to a later book: Paul among Athens' altars, preaching "what you worship as unknown" <span class="ref">(Acts 17:23)</span>. Isaiah's text simply aims the gospel west and says: they're waiting, whether they know it or not.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="region">
+  <div class="sec-head"><span class="node olive"></span><div><div class="sec-k">The olive corner</div><h2>Region &mdash; The Far Sea</h2></div></div>
+  <p class="sec-intro">Where the west lay, and what the lands are called now.</p>
+  <div class="band-body">
+    <div class="map-fig">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Sketch map: the Mediterranean from Judah at the far right to the coastlands and islands midway and Tarshish at the far left edge">
+        <rect x="0" y="0" width="520" height="400" fill="#E2E3D2" opacity="0.35"/>
+        <rect x="0" y="90" width="520" height="220" fill="#34528C" opacity="0.26"/>
+        <text x="260" y="210" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12" font-style="italic" fill="#2A4270">the Great Sea &mdash; west, and further west</text>
+        <circle cx="60" cy="130" r="7" fill="#3F4527"/><text x="60" y="112" text-anchor="middle" font-family="Marcellus, serif" font-size="13" fill="#3F4527" letter-spacing="2">TARSHISH</text>
+        <text x="60" y="152" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#3F4527">the silver port &mdash; Spain</text>
+        <ellipse cx="230" cy="128" rx="26" ry="9" fill="#6B7042" opacity="0.5"/>
+        <ellipse cx="292" cy="150" rx="18" ry="7" fill="#6B7042" opacity="0.5"/>
+        <ellipse cx="255" cy="168" rx="12" ry="5" fill="#6B7042" opacity="0.5"/>
+        <text x="258" y="106" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#3F4527">the coastlands &amp; isles &mdash; Greece, the Aegean</text>
+        <rect x="470" y="120" width="50" height="170" fill="#6B7042" opacity="0.25"/>
+        <text x="497" y="330" text-anchor="middle" font-family="Marcellus, serif" font-size="12" fill="#767862" letter-spacing="2">JUDAH</text>
+        <path d="M 462 200 C 380 230, 200 235, 84 150" fill="none" stroke="#9E6428" stroke-width="1.6" stroke-dasharray="6 4"/>
+        <text x="250" y="262" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10" font-style="italic" fill="#6E3F1C">the ships of Tarshish &mdash; the long route out&hellip; and home (60:9)</text>
+        <text x="14" y="390" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#767862">sketch map &mdash; not to scale</text>
+      </svg>
+    </div>
+    <p><strong>Tarshish</strong> is widely identified with Tartessos in southern Spain &mdash; a silver-rich Phoenician colony at the far end of the sea, shorthand for maximum distance (it's where Jonah books passage when fleeing "away from the presence of the LORD") and for the biggest ships afloat, "the ships of Tarshish" <span class="ref">(2:16; 23:1)</span>. <strong>The coastlands</strong> are the island-and-harbor rim of the Aegean world &mdash; Javan's Greece and the shores of western Asia Minor.</p>
+    <p><span class="dated">Today &middot; current as of Aug 2026</span></p>
+    <p>Tarshish is <strong>southern Spain</strong> (Andalusia); the coastlands are <strong>Greece and western Turkey</strong> &mdash; stable states whose ancient sites are archaeology rather than politics. Western Turkey holds the ruins of Revelation's seven churches; and the fact that Paul could name <strong>Spain</strong> as his own missionary target <span class="ref">(Rom 15:24)</span> tells you how completely Isaiah's "farthest west" had entered the church's ordinary planning within one generation.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="word">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The center of the triangle</div><h2>Isaiah's Word to the Far West</h2></div></div>
+  <p class="sec-intro">What happened when the far tripod met Israel's God.</p>
+  <div class="band-body">
+    <p>The ships of Tarshish enter the book as the emblem of human pride at full sail &mdash; "the day of the LORD&hellip; against all the ships of Tarshish, and against all the beautiful craft" <span class="ref">(2:12&ndash;16)</span> &mdash; and they wail when Tyre, their harbor, falls <span class="ref">(23:1, 14)</span>. Pride's fleet, grounded.</p>
+    <p>Then the book turns the same fleet around. In Zion's dawn, the proud ships get a new commission:</p>
+    <blockquote>"For the coastlands shall hope for me, the ships of Tarshish first, to bring your children from afar, their silver and gold with them, for the name of the LORD your God."<span class="ref">Isaiah 60:9</span></blockquote>
+    <p><strong>The ships of Tarshish first</strong> &mdash; the vessels of arrogance become the ferry line of the homecoming, silver cargo and all: the repossession pattern at maximum range. And the book's final missionary sentence sends survivors <em>outbound</em> to the same addresses &mdash; "to the coastlands far away, that have not heard my fame&hellip; <strong>and they shall declare my glory among the nations</strong>" <span class="ref">(66:19)</span> &mdash; with Tarshish named first on the itinerary. The last oracle in Isaiah's atlas is a sending.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="nt">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The account closed</div><h2>In the New Testament</h2></div></div>
+  <p class="sec-intro"></p>
+  <div class="band-body">
+    <p><span class="t t-e">Echoed</span>The gospel's westward track through Acts <em>is</em> the coastlands itinerary: Cyprus, the Aegean harbors, Athens among its altars, Corinth, Ephesus &mdash; Javan's whole rim &mdash; and Matthew hangs the Servant's own banner over the mission: "and in his name <strong>the Gentiles will hope</strong>," quoting the coastlands-text of Isaiah 42 <span class="ref">(Matt 12:18&ndash;21)</span>.</p>
+    <p><span class="t t-e">Echoed</span>Paul's stated endgame is Isaiah's map-edge by name: "I go&hellip; to <strong>Spain</strong>" <span class="ref">(Rom 15:24, 28)</span> &mdash; Tarshish, on the apostle's calendar &mdash; and he grounds his whole pioneer policy in Isaiah's sending verse: "those who have never been told of him will see" <span class="ref">(Rom 15:21 &larr; Isa 52:15)</span>. Noah's old blessing lands: Japheth, at home in the tents of Shem.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Tarshish &amp; the Coastlands in one paragraph</h2>
+  <p><strong>Relation:</strong> Japheth's sea-line &mdash; no history with Israel at all, only a blessing waiting to mature. <strong>Religion:</strong> gods not yet met; a people described simply as <em>waiting</em>. <strong>Region:</strong> the silver port at the end of the sea and the island rim of the Aegean &mdash; Spain, Greece, and the coast of the seven churches.</p>
+  <p>And at the center: pride's fleet turned ferry line, the farthest port put first on both lists &mdash; first to bring the children home, first on the missionaries' itinerary &mdash; until an apostle could write "I go to Spain" as ordinary planning.</p>
+</div>
+
+<footer>
+  <div>Assembled from the Reading Isaiah atlas set &middot; references ESV</div>
+  <div>Reading Isaiah &middot; Nation Study: Tarshish &amp; the Coastlands &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/arabia/" rel="prev">&larr;<span class="t">Arabia</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/statecraft-chemistry/" rel="next"><span class="t">The Chemistry of Nations</span>&rarr;</a></nav>
+</body>
+</html>

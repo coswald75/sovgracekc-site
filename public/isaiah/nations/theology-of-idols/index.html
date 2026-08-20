@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Theology of Idols — Interlude, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .role{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .role.copper{border-top-color:var(--copper)}
+  .role.lapis{border-top-color:var(--lapis)}
+  .role.olive{border-top-color:var(--olive)}
+  .role h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .role p{font-size:.87rem;color:var(--ink-soft)}
+  .role .ref{color:var(--label);font-size:.82em}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .roles{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/edom/" rel="prev">&larr;<span class="t">Edom</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/tyre-sidon/" rel="next"><span class="t">Tyre & Sidon</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Interlude &middot; Movement II</div>
+  <h1>The Theology of Idols</h1>
+  <div class="texts">Isaiah 40&ndash;48 &middot; Exodus 12:12 &middot; Psalm 2</div>
+  <p class="subtitle">Before the Powers, a word about their gods. The empires ahead &mdash; unlike the small kin-nations behind us &mdash; get their deities named and confronted in the text itself. This page explains the house style of that confrontation: why heaven's polemic so often arrives as satire, what the satire always targets, and where the laughter finally lands.</p>
+</header>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>Scripture's case against the gods has a signature: the LORD does not merely defeat rivals &mdash; he defeats each one inside its own portfolio, with its own element, so the defeat reads as satire. He mocks gods and taunts pride; he weeps over peoples. And the mockery's terminus is never mere humiliation &mdash; it is repossession: the portfolio stripped from the idol and handed back sanctified.</p>
+</div>
+
+<!-- ============ I ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">I</span>Isaiah's Four Satires</div>
+  <div class="band-refs">Isaiah 40:18&ndash;20 &middot; 41:6&ndash;7 &middot; 44:9&ndash;20 &middot; 46:1&ndash;7</div>
+  <div class="band-body">
+    <p>Chapters 40&ndash;48 &mdash; the very chapters that carry the Bible's loftiest monotheism &mdash; also carry its broadest comedy, four escalating idol-satires. The <strong>craftsman</strong>: a deity commissioned like furniture, in whatever grade of materials the worshiper can afford, with one non-negotiable spec &mdash; "an idol that will not move" <span class="ref">(40:18&ndash;20)</span>. The <strong>assembly line</strong>: craftsmen encouraging one another over solder and nails, fastening the god down "so that it cannot be moved" <span class="ref">(41:6&ndash;7)</span> &mdash; twice now, the great achievement of these gods is successfully standing still.</p>
+    <p>Then the masterpiece, the <strong>half a log</strong> <span class="ref">(44:9&ndash;20)</span>: a man fells a tree, burns half to bake bread and warm himself &mdash; "Aha, I am warm!" &mdash; and of the remainder makes a god and falls down to it. Same log. Isaiah's verdict is diagnosis, not just derision: "a deluded heart has led him astray, and he cannot deliver himself or say, <strong>'Is there not a lie in my right hand?'</strong>" And finally the <strong>gods as cargo</strong> <span class="ref">(46:1&ndash;7)</span> &mdash; treated in full on Babylon's page: the deities that must be carried, set against the God who says "I have made, and I will bear."</p>
+    <p>Notice the satires never argue the gods are <em>weaker</em> than the LORD. The claim is stranger and kinder: they aren't <em>there</em>. The wood, stone, and silver stayed wood, stone, and silver the entire time.</p>
+  </div>
+</div>
+
+<!-- ============ II ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Signature: Beaten in Their Own Portfolio</div>
+  <div class="band-refs">Exodus 12:12 &middot; 1 Samuel 5 &middot; 1 Kings 18 &middot; Isaiah 37:38; 46:1</div>
+  <div class="band-body">
+    <p>Isaiah didn't invent the style; he inherited it. The founding document is the Exodus: <strong>"on all the gods of Egypt I will execute judgments"</strong> <span class="ref">(Ex 12:12)</span> &mdash; and the executions were jurisdictional. The Nile-god's river turns to blood; the sun-god's empire goes dark while Goshen keeps daylight; the fertility-goddess is answered with frogs until Egypt gags on fertility. Each god humiliated <em>in his own department</em>.</p>
+    <p>The pattern repeats wherever a pretender stands. <strong>Dagon</strong> is not smashed by earthquake &mdash; he is found face-down in the posture of worship before the ark, in his own temple, and the second night loses head and hands on his own threshold <span class="ref">(1 Sam 5:1&ndash;5)</span>. <strong>Baal</strong> the storm-rider loses a fire-from-heaven contest in his own specialty, while the prophet supplies the mockery out loud &mdash; "Cry aloud&hellip; perhaps he is asleep" <span class="ref">(1 Kgs 18:27)</span> &mdash; taunting canonized. <strong>Nisroch's</strong> champion is cut down at prayer, in the sanctuary, by his own sons &mdash; the god of protection failing at protection, at home <span class="ref">(Isa 37:38)</span>. <strong>Bel and Nebo's</strong> grand annual procession is run in reverse as refugee luggage <span class="ref">(Isa 46:1&ndash;2)</span>. The glory-mechanism becomes the humiliation-mechanism, every time.</p>
+    <p>Behind it all sits a stated disposition: <strong>"He who sits in the heavens laughs; the Lord holds them in derision"</strong> <span class="ref">(Ps 2:4)</span> &mdash; and a piece of throne-room furniture: "Sit at my right hand, until I make your enemies your <strong>footstool</strong>" <span class="ref">(Ps 110:1)</span>. Enemies not annihilated but incorporated into the d&eacute;cor. The New Testament capstone runs the signature at maximum depth: at the cross, where the powers mocked God &mdash; the robe, the reed, the placard &mdash; he "disarmed the rulers and authorities and put them to open shame, by triumphing over them <strong>in it</strong>" <span class="ref">(Col 2:15)</span>. Their mockery-instrument, repurposed as his triumphal procession.</p>
+  </div>
+</div>
+
+<!-- ============ III ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">III</span>Two Calibrations</div>
+  <div class="band-refs">Isaiah 15:5; 16:11 &middot; 44:21&ndash;22 &middot; 23:18</div>
+  <div class="band-body">
+    <p><strong>First: watch whom the mockery targets &mdash; and whom it never does.</strong> God mocks gods and taunts pride; he weeps over peoples. The same book that satirizes Chemosh's deaf sanctuary has the prophet moaning like a lyre for Moab <span class="ref">(16:11)</span>; the same voice that ridicules the half-log turns, in the next breath, to plead with the idolater: "return to me, for I have redeemed you" <span class="ref">(44:22)</span>. The comedy is aimed upward at the altars, never downward at the captives. If our use of this pattern ever curdles into contempt for the nations rather than laughter at their pretenders, we have left the biblical voice.</p>
+    <p><strong>Second: the satire is always in service of a repossession.</strong> The pattern's terminus is not humiliation but conversion of the portfolio: Tyre's wages made "holy to the LORD" <span class="ref">(23:18)</span>, Tarshish's proud ships ferrying Zion's children home <span class="ref">(60:9)</span>, Kedar's caravans arriving loaded with praise <span class="ref">(60:6&ndash;7)</span>, the water and the grain changing owners on Dagon's own beach <span class="ref">(Acts 8:36)</span>. God defiles the pride, strips the portfolio, and hands the goods back sanctified. The mockery is the middle of the story, never the end.</p>
+  </div>
+</div>
+
+<!-- ============ IV ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>Beyond the Canon &mdash; Held at the Right Tier</div>
+  <div class="band-refs">a Resonant-tier observation</div>
+  <div class="band-body">
+    <p>Does the signature keep appearing after the last page of Scripture? Filed honestly &mdash; this is pattern-recognition, not proof-text &mdash; the record is suggestive. Egypt's gods, whom Isaiah saw trembling, now travel the world <em>as crated cargo</em>, shipped and displayed in museums &mdash; the Isaiah 46 image running on a loop for two centuries of archaeology. Nineveh was buried so completely that skeptics doubted it existed; Ashur's capital had to be excavated to be believed. Boniface felled Thor's sacred oak before a crowd waiting for the thunder-god to answer, and built a chapel from the timber &mdash; Carmel, reenacted. Zeus and Odin, who once received hecatombs, now govern children's shelves and film franchises &mdash; demoted from worship to content, which may be the modern form of the footstool.</p>
+    <p>None of that is canon, and none of it is preached as such. But the pattern-recognition is legitimate for one reason: <strong>Scripture taught the pattern first</strong>, publicly and repeatedly, and Psalm 2 gives warrant to expect the laughter wherever thrones posture. Enjoy it at the tier where enjoyment belongs; build only on the text.</p>
+  </div>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The mercy underneath the polemic</h2>
+  <p>"For you turned to God from idols to serve the living and true God" <span class="ref">(1 Thess 1:9)</span>. Every god satirized in the pages ahead was, at some point, someone's whole hope. Isaiah's case was never merely that these gods are weaker than the LORD &mdash; it's that they were never there at all. That's the kindness inside the comedy: the invitation was never to switch to a stronger god. It was to stop praying to furniture &mdash; and to be carried, at last, by the God who carries.</p>
+</div>
+
+<footer>
+  <div>References ESV &middot; Interlude before Movement II: The Powers</div>
+  <div>Reading Isaiah &middot; The Theology of Idols &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/edom/" rel="prev">&larr;<span class="t">Edom</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/tyre-sidon/" rel="next"><span class="t">Tyre & Sidon</span>&rarr;</a></nav>
+</body>
+</html>

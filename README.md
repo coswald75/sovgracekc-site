@@ -1,31 +1,64 @@
-# sovgracekc.org — Providence Community Church
+# sovgracekc — Providence Community Church website
 
-Static replacement for the Digital Outreach WordPress site. Built with Astro, deploys to Cloudflare Pages. Every URL from the old site is preserved (see `archive/seo-map.md` for the captured titles/descriptions).
+The website and church-specific tooling for **Providence Community Church**
+(sovgracekc.org). Astro static site + Cloudflare Pages, with the members wiki,
+the weekly bulletin, ProvBot, forms, and the Isaiah series.
 
-## Commands
+> **Full architecture & operations:** see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+> It documents every surface, how each is built and deployed, the backend, the
+> automation, and a procedures index. Start there.
 
-- `npm run dev` — local preview at http://localhost:4321
-- `npm run build` — production build into `dist/`
+## Repo layout
 
-## How the site is organized
+```
+.
+├── src/                      # Astro site (pages, layouts; Base.astro = primary menu)
+├── public/                   # static assets served as-is
+│   ├── chat-widget.js        #   site-wide ProvBot widget
+│   └── members/              #   GENERATED members wiki — git-ignored (real member data)
+├── functions/                # Cloudflare Pages Functions
+│   └── members/_middleware.js#   the /members/ password gate (password = Cloudflare secret MEMBERS_PASSWORD)
+├── scripts/                  # church-specific build tooling (moved here from the pipeline repo)
+│   ├── generate_members_wiki.py   # Obsidian ministry notes → public/members/
+│   ├── members_assets/            #   standalone member HTML docs (e.g. Discerning or Earning?)
+│   ├── publish_bulletin.py        # build + deploy the /seat/ weekly bulletin
+│   ├── update_church_sermons.py   # refresh the /sermons/ list from Supabase (weekly cron)
+│   ├── .env                       #   real keys — GIT-IGNORED
+│   └── .env.example               #   the keys the scripts need (no values)
+├── supabase/functions/       # backend edge-function source (see its README for the full inventory)
+└── docs/                     # ARCHITECTURE.md, FORMS.md, PROVBOT-SPEC.md
+```
 
-- `src/pages/*.astro` — one file per page, same slug as its URL (`about.astro` → `/about/`)
-- `src/layouts/Base.astro` — header, nav, footer, fonts, GTM, SEO tags
-- `src/styles/global.css` — the whole design system (colors, type, buttons, cards)
-- `src/content/statement-of-faith.html` — the full Statement of Faith body (generated from the old site, edit carefully)
-- `public/wp-content/uploads/` — all images, at their original WordPress URLs (do not move; preserves image SEO)
-- `public/_redirects` — Cloudflare Pages redirects for retired landing-page URLs
-- `public/sitemap.xml`, `public/robots.txt`
+## Build & deploy the site
 
-## Design tokens (KC-local language, Park Church structure)
+```bash
+npm install
+npm run build
+npx wrangler pages deploy dist --project-name=sovgracekc --branch=main --commit-dirty=true
+```
+Deploy also compiles `./functions` (the members gate). `--branch=main` is required —
+without it, wrangler publishes a throwaway preview instead of production.
 
-- Cream field `#f6f2ec`, panel `#f1ece3`, cocoa text `#533d31`, muted `#6b5a4e`, hairline `#e2dcd2`, coral accent `#d85a30`
-- Fraunces (display serif) · Inter (body) · Barlow Condensed (eyebrow labels) — all Google Fonts
+## Common tasks
 
-## Still to do before cutover
+| Task | Command |
+|---|---|
+| Regenerate the members wiki | `python3 scripts/generate_members_wiki.py` → build + deploy |
+| Publish this week's bulletin | draft `src/data/bulletin.json` → `python3 scripts/publish_bulletin.py` |
+| Refresh the sermons list | `python3 scripts/update_church_sermons.py` (also runs Mon 12:00 via launchd) |
+| Rotate the members password | `wrangler pages secret put MEMBERS_PASSWORD --project-name=sovgracekc` |
 
-1. Replace the `/sermons/` link-out with the Sermon Steward sermon section for Providence
-2. Decide on a contact-form backend (currently a mailto link); thank-you pages already exist
-3. ~~Create the Cloudflare Pages project~~ DONE — live at sovgracekc.pages.dev (direct-upload deploys via wrangler)
-4. **Flip og:image host** in src/layouts/Base.astro from sovgracekc.pages.dev to sovgracekc.org (two lines)
-5. Launch = change nameservers at DirectNic to eoin/martha.ns.cloudflare.com (zone staged in Chris's account), attach custom domain to the Pages project, verify Search Console, submit sitemap, watch 2–4 weeks, then cancel Digital Outreach
+## What lives elsewhere (not in this repo)
+
+- **Backend** = Supabase project `twbunmbzyqcqzgffdrib` (edge functions + DB). See `supabase/functions/README.md`.
+- **Sermon pages** (sermonsteward.com) + the shared multi-church rendering engine = the
+  `shepherds-guild-pipeline` repo. Providence's sermon pages are hosted on Sermon Steward,
+  linked from `/sermons/`.
+- **Members wiki source content** = the Obsidian vault `~/Obsidian/Sermon_Vault/Providence 2627/`
+  (private). `public/members/` is generated from it and intentionally not committed.
+
+## Secrets
+
+No secret values live in this repo. Keys live in `scripts/.env` (git-ignored),
+Cloudflare Pages secrets (`MEMBERS_PASSWORD`), and Supabase function env. The only
+key in committed client code is the Supabase **anon** key (public by design, RLS-protected).

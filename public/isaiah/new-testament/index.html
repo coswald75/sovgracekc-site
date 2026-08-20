@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In the New Testament — Isaiah's Nations &amp; the Gospel's Advance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px 90px}
+
+  header{padding:64px 0 26px}
+  .eyebrow{
+    font-family:'Marcellus', serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lapis);
+    margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:clamp(2rem, 5.4vw, 3.2rem);
+    letter-spacing:.015em;
+    line-height:1.08;
+  }
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+  .subtitle strong{color:var(--ink)}
+
+  .legend{
+    margin-top:26px;
+    background:var(--stone-deep);
+    border-left:3px solid var(--lapis);
+    padding:16px 20px;
+    max-width:780px;
+  }
+  .legend p{font-size:.92rem;color:var(--ink-soft);margin-bottom:8px}
+  .legend p:last-child{margin-bottom:0}
+  .legend-row{display:flex;gap:10px;align-items:baseline;font-size:.9rem;color:var(--ink-soft);margin-top:6px;flex-wrap:wrap}
+
+  /* tier markers */
+  .t{
+    display:inline-block;
+    font-family:'Source Serif 4', serif;
+    font-size:.62rem;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:1px 7px;
+    border-radius:2px;
+    vertical-align:2px;
+    margin-right:5px;
+    white-space:nowrap;
+  }
+  .t-q{background:var(--copper);color:#fff}
+  .t-e{background:var(--lapis-pale);color:var(--lapis)}
+  .t-r{background:transparent;color:var(--label);border:1px solid var(--rule)}
+
+  /* surveyor's line divider */
+  .qav{display:flex;align-items:center;margin:52px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .band{margin-top:40px}
+  .band-title{
+    font-family:'Marcellus', serif;
+    font-size:1.28rem;
+    letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-sub{color:var(--ink-soft);font-size:.92rem;margin-top:4px;max-width:740px}
+
+  table{width:100%;border-collapse:collapse;margin-top:16px}
+  th{
+    text-align:left;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--label);font-weight:600;padding:8px 16px 8px 0;
+    border-bottom:1px solid var(--ink);width:34%;
+  }
+  th:first-child{width:20%}
+  th:last-child{width:46%}
+  td{
+    padding:14px 16px 14px 0;
+    border-bottom:1px solid var(--rule);
+    font-size:.93rem;
+    vertical-align:top;
+  }
+  td.nation{font-family:'Marcellus', serif;font-size:1.06rem}
+  td.nation .nm{display:flex;align-items:center;gap:9px}
+  td.nation .where{
+    display:block;font-family:'Source Serif 4', serif;font-size:.78rem;
+    color:var(--label);letter-spacing:.06em;margin-top:2px;
+  }
+  .dial{width:20px;height:20px;flex:none}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.2}
+  .dial line{stroke:var(--lapis);stroke-width:2;stroke-linecap:round}
+  .dial .dot{fill:var(--copper);stroke:none}
+  .ref{color:var(--label);font-size:.84em}
+  .promise{color:var(--ink)}
+  .promise em{font-style:italic}
+  .nt-item{display:block;margin-bottom:9px}
+  .nt-item:last-child{margin-bottom:0}
+  .nt-item .ref{white-space:nowrap}
+
+  .capstone{
+    margin-top:64px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;max-width:880px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.5rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:10px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.15rem;line-height:1.5;color:var(--ink);
+    margin:14px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.8rem;margin-top:6px}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:760px){
+    table, thead, tbody, tr{display:block}
+    th{display:none}
+    td{display:block;width:100%;border-bottom:none;padding:4px 0}
+    td.nation{padding-top:16px}
+    tr{border-bottom:1px solid var(--rule);padding-bottom:14px}
+    td:nth-child(2)::before{content:"The Promise";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--label);font-weight:600;margin-bottom:3px}
+    td:nth-child(3)::before{content:"In the New Testament";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--label);font-weight:600;margin-bottom:3px}
+    header{padding-top:44px}
+  }
+  @media print{
+    body{background:#fff}
+    tr{break-inside:avoid}
+    .t-q{background:#fff;color:var(--copper);border:1px solid var(--copper)}
+  }
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:560px){.iz-nav .t{max-width:22vw}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/gods/" rel="prev">&larr;<span class="t">The Gods of the Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/today/" rel="next"><span class="t">The Nations Today</span>&rarr;</a></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah · Companion III</div>
+  <h1>In the New Testament<br>Isaiah's Nations &amp; the Gospel's Advance</h1>
+  <p class="subtitle">Isaiah's map runs one direction: the nations stream <em>in</em> to Zion (2:2–4). The book of Acts runs the same map the other way: witnesses go <em>out</em> from Zion — "in Jerusalem and in all Judea and Samaria, and to the end of the earth" (Acts 1:8). That last phrase is lifted straight from Isaiah 49:6, and Paul claims the verse as his marching orders in Acts 13:47. <strong>The apostles read their travel itinerary out of Isaiah.</strong> This chart traces where each of Isaiah's nations shows up in the New Testament story.</p>
+
+  <div class="legend">
+    <p><strong style="color:var(--ink)">How to weigh the markers.</strong> Not every connection carries the same weight, and it matters to read honestly:</p>
+    <div class="legend-row"><span class="t t-q">Quoted</span> The New Testament cites the Isaiah text directly, often with a fulfillment formula.</div>
+    <div class="legend-row"><span class="t t-e">Echoed</span> A clear allusion — the NT writer is deliberately drawing on Isaiah's language or scene.</div>
+    <div class="legend-row"><span class="t t-r">Resonant</span> The pattern rhymes, but Scripture itself doesn't draw the line. Enjoy it; don't build on it.</div>
+  </div>
+</header>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+
+<!-- ============ BAND 1: JERUSALEM ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">Acts 1:8 — first circle</span>Jerusalem &amp; Judea</div>
+  <p class="band-sub">Everything launches from Zion — exactly as Isaiah said it would: "out of Zion shall go forth the law, and the word of the LORD from Jerusalem" (2:3).</p>
+  <table>
+    <thead><tr><th>Nation / Place</th><th>The Promise in Isaiah</th><th>In the New Testament</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><circle class="dot" cx="11" cy="11" r="2.4"/></svg>Zion / Jerusalem</span><span class="where">the launch point</span></td>
+        <td class="promise">The word goes out <em>from</em> Jerusalem <span class="ref">(2:3)</span> · a tested cornerstone laid <em>in</em> Zion <span class="ref">(28:16)</span> · a herald brings good news <em>to</em> Zion <span class="ref">(40:9; 52:7)</span> · the Servant suffers there <span class="ref">(52:13–53:12)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>The cornerstone: "whoever believes in him will not be put to shame." <span class="ref">Rom 9:33; 10:11; 1 Pet 2:6</span></span>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Isaiah 53 threads the entire passion story. <span class="ref">Matt 8:17; Luke 22:37; John 12:38; Acts 8:32; 1 Pet 2:22–25</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>"Beginning from Jerusalem" — repentance proclaimed to all nations, starting where Isaiah said the word would start. <span class="ref">Luke 24:47; Acts 1:8</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><circle class="dot" cx="11" cy="11" r="2.4"/></svg>Pentecost</span><span class="where">the tongues reversed</span></td>
+        <td class="promise">Foreign tongues as a <em>judgment</em>-sign: "by people of strange lips and with a foreign tongue the LORD will speak to this people… yet they would not hear" <span class="ref">(28:11–12)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Paul cites Isa 28:11 to explain tongues — still "a sign for unbelievers." <span class="ref">1 Cor 14:21–22</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>At Pentecost the sign runs backward: foreign tongues become intelligible to every nation — "we hear them telling in our own tongues the mighty works of God." The curse of Babel and of 28:11, inverted in one morning. <span class="ref">Acts 2:5–11</span></span>
+          <span class="nt-item"><span class="t t-r">Resonant</span>The Acts 2 nations list (Medes, Elamites, Mesopotamia, Egypt, Arabs…) reads like Genesis 10 reconvened — Isaiah's cast assembled in one courtyard. <span class="ref">Acts 2:9–11</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ BAND 2: SAMARIA & THE NORTH ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">Acts 1:8 — second circle</span>Samaria &amp; Galilee — the Old Northern Kingdom</div>
+  <p class="band-sub">Ephraim's territory. The kingdom Assyria erased in 722 BC gets its own named stage in Jesus' ministry and in the church's expansion — the family wound healed first.</p>
+  <table>
+    <thead><tr><th>Nation / Place</th><th>The Promise in Isaiah</th><th>In the New Testament</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="11" y2="3.5"/></svg>Galilee</span><span class="where">Zebulun &amp; Naphtali</span></td>
+        <td class="promise">The lands Assyria stripped <em>first</em> (733 BC) will be the first to see the light: "Galilee of the nations… the people who walked in darkness have seen a great light" <span class="ref">(9:1–2)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Matthew quotes it with a full fulfillment formula as Jesus makes Capernaum his base: first into darkness, first into dawn. <span class="ref">Matt 4:12–16</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="11" y2="3.5"/></svg>Samaria</span><span class="where">Ephraim's heartland</span></td>
+        <td class="promise">"The jealousy of Ephraim shall depart… Ephraim shall not be jealous of Judah, and Judah shall not harass Ephraim" <span class="ref">(11:13)</span> — the torn kingdoms reunited under the Root of Jesse</td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Jesus <em>must</em> pass through Samaria; a Samaritan woman becomes the first evangelist to her town. <span class="ref">John 4</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Philip preaches in Samaria; Jerusalem's apostles lay hands on Samaritan believers, and one Spirit falls on north and south alike — the 722 BC schism closed in Christ. <span class="ref">Acts 8:4–17</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ BAND 3: THE FAMILY ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">The kin-nations</span>Abraham's Wider Family</div>
+  <p class="band-sub">The relatives from the Kinship Atlas — Ishmael's tribes, Lot's line, Esau's nation, the in-laws of Aram — each brushing against the gospel story.</p>
+  <table>
+    <thead><tr><th>Nation / Place</th><th>The Promise in Isaiah</th><th>In the New Testament</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="17.5" y2="14.8"/></svg>Arabia — the Desert Tribes</span><span class="where">Kedar · Nebaioth · Sheba · Midian</span></td>
+        <td class="promise">"A multitude of camels shall cover you… all those from Sheba shall come. They shall bring gold and frankincense, and shall bring good news… all the flocks of Kedar… the rams of Nebaioth" <span class="ref">(60:6–7)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-r">Resonant</span>Magi from the east arrive with gold and frankincense for the newborn King — Isaiah 60's caravan, item for item. <span class="ref">Matt 2:1–11</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Arabs hear the mighty works of God at Pentecost. <span class="ref">Acts 2:11</span></span>
+          <span class="nt-item"><span class="t t-r">Resonant</span>Paul's first destination after meeting Christ: Arabia. <span class="ref">Gal 1:17</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="13.6" y2="4"/></svg>Aram / Damascus</span><span class="where">the in-laws' capital</span></td>
+        <td class="promise">Damascus judged and reduced <span class="ref">(17:1–3)</span> — yet the Servant is given "as a light for the nations, to open the eyes that are blind" <span class="ref">(42:6–7)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>On the Damascus road the persecutor is blinded, then given sight — and commissioned in the Servant's own vocabulary: "to open their eyes, so that they may turn from darkness to light." The Gentile mission launches from the old enemy's city. <span class="ref">Acts 9; 26:17–18</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.3" y2="11.8"/></svg>Moab</span><span class="where">Lot's line</span></td>
+        <td class="promise">Isaiah weeps through Moab's oracle <span class="ref">(15:5; 16:9–11)</span>; a refugee is told to seek shelter under the throne of David, "a throne… established in steadfast love" <span class="ref">(16:1–5)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>One Moabite refugee had already found that shelter: Ruth stands in Messiah's genealogy. The Davidic throne Moab was pointed to arrives — with Moabite blood in its line. <span class="ref">Matt 1:5</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="15.5" y2="17"/></svg>Edom</span><span class="where">Esau's nation · Idumea</span></td>
+        <td class="promise">Edom as the representative nation under final judgment <span class="ref">(34; 63:1–6)</span> — the brother-people who cheered Jerusalem's fall</td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Crowds from Idumea come to Jesus. <span class="ref">Mark 3:8</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>At the Jerusalem council, James cites the promise that "the remnant of Edom" — read "the rest of mankind" — will be gathered under David's rebuilt tent, as warrant for the Gentile mission. <span class="ref">Acts 15:16–17, citing Amos 9:11–12</span></span>
+          <span class="nt-item"><span class="t t-r">Resonant</span>The Herods were Idumeans — Esau's line seated on Jacob's throne, opposing Jacob's true King. The old rivalry's last, losing round. <span class="ref">Matt 2; Acts 12</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ BAND 4: THE GREAT POWERS ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">The empires</span>The Great Powers</div>
+  <p class="band-sub">Egypt, Cush, Assyria, Babylon — the superpowers of Isaiah's map. Two receive firstfruits, one becomes a symbol, and one still waits.</p>
+  <table>
+    <thead><tr><th>Nation / Place</th><th>The Promise in Isaiah</th><th>In the New Testament</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="9" y2="18.2"/></svg>Cush</span><span class="where">Ethiopia · the far south</span></td>
+        <td class="promise">Tribute comes to Zion from the people "tall and smooth… beyond the rivers of Cush" <span class="ref">(18:7)</span> · and the eunuch — the man the law excluded — is promised "a name better than sons and daughters" in God's house <span class="ref">(56:3–5)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>A Cushite court official — a eunuch — rides the Gaza road <em>reading Isaiah 53 aloud</em>. Philip opens his mouth, "and beginning with this Scripture told him the good news about Jesus." Isaiah's nation, Isaiah's outcast, Isaiah's scroll: baptized in one story. <span class="ref">Acts 8:26–39, quoting Isa 53:7–8</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="5.7" y2="16.3"/></svg>Egypt</span><span class="where">the other family of Ham</span></td>
+        <td class="promise">An altar to the LORD in Egypt; Egyptians crying to him and being healed; "Blessed be Egypt <em>my people</em>" <span class="ref">(19:19–25)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>The infant King is himself sheltered in Egypt — the land of bondage becomes the refuge of the Redeemer. <span class="ref">Matt 2:13–15</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Egyptians hear the gospel at Pentecost. <span class="ref">Acts 2:10</span></span>
+          <span class="nt-item"><span class="t t-r">Resonant</span>Apollos of Alexandria, "competent in the Scriptures," becomes a pillar teacher — and Egypt goes on to become one of the great centers of the early church. Isaiah 19's altar, under construction. <span class="ref">Acts 18:24–28</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="14.8" y2="4.5"/></svg>Assyria / Mesopotamia</span><span class="where">the honest row</span></td>
+        <td class="promise">"In that day Israel will be the third with Egypt and Assyria… Assyria the work of my hands" <span class="ref">(19:24–25)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>"The men of Nineveh will rise up at the judgment… for they repented at the preaching of Jonah, and behold, something greater than Jonah is here." <span class="ref">Matt 12:41</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Residents of Mesopotamia stand in the Pentecost crowd. <span class="ref">Acts 2:9</span></span>
+          <span class="nt-item"><span class="t t-r">Resonant</span>No Assyrian church appears in the canon — 19:24–25 remains largely a standing promise. (Church history adds a sequel: the gospel took deep root in Mesopotamia in the following centuries.) Honest reading keeps the "not yet" visible — it's what keeps the church on mission.</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="17" y2="7.2"/></svg>Babylon</span><span class="where">fulfilled as a symbol</span></td>
+        <td class="promise">"Fallen, fallen is Babylon; and all the carved images of her gods he has shattered" <span class="ref">(21:9)</span> · the taunt over her king <span class="ref">(14)</span> · the dethroned queen of kingdoms <span class="ref">(47)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Revelation lifts Isaiah's cry verbatim: "Fallen, fallen is Babylon the great." <span class="ref">Rev 14:8; 18:2</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Revelation 17–18 is stitched from Isaiah 13–14 and 47 — Babylon becomes Scripture's permanent name for the city of man, and Isaiah's oracle becomes the funeral liturgy for every empire that repeats her. <span class="ref">Rev 17–18; cf. 1 Pet 5:13</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.5" y2="11"/></svg>Media &amp; Elam</span><span class="where">the far east</span></td>
+        <td class="promise">Summoned by name against Babylon <span class="ref">(13:17; 21:2)</span> — pagan powers called "my consecrated ones" for God's purposes <span class="ref">(13:3)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>First names in the Pentecost roll: "Parthians and Medes and Elamites." The nations with zero family tie to Abraham hear the gospel in hour one. <span class="ref">Acts 2:9</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ BAND 5: THE COASTLANDS ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">Acts 1:8 — the end of the earth</span>The Coastlands — Japheth's World</div>
+  <p class="band-sub">Isaiah 66:19 names the itinerary: "Tarshish… Tubal and Javan, the coastlands far away, that have not heard my fame." Nearly the whole New Testament mission field — every epistle city, every church of Revelation — sits inside that verse.</p>
+  <table>
+    <thead><tr><th>Nation / Place</th><th>The Promise in Isaiah</th><th>In the New Testament</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="8.4" y2="3.9"/></svg>Tyre &amp; Sidon</span><span class="where">Phoenicia</span></td>
+        <td class="promise">Tyre's merchandise and wages "will be holy to the LORD" <span class="ref">(23:18)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Jesus deliberately withdraws to the region of Tyre and Sidon, and a woman Matthew pointedly calls a <em>Canaanite</em> is commended: "O woman, great is your faith." <span class="ref">Matt 15:21–28; Mark 3:8</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Paul finds established churches at Tyre and Sidon — disciples, families, prayer on the beach. Tyre's wealth, dedicated. <span class="ref">Acts 21:3–6; 27:3</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="4.5" y2="7.2"/></svg>Cyprus</span><span class="where">Kittim of Isa 23</span></td>
+        <td class="promise">Kittim appears in Tyre's oracle as the trade-lane to the west <span class="ref">(23:1, 12)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Barnabas's home island — and the first stop of the first missionary journey, where a Roman proconsul believes. <span class="ref">Acts 4:36; 13:4–12</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="4.5" y2="6"/></svg>Javan — Greece &amp; Asia Minor</span><span class="where">the epistle cities · the seven churches</span></td>
+        <td class="promise">"The coastlands wait for his law" <span class="ref">(42:4)</span> · survivors sent "to Tubal and Javan, to the coastlands far away, that have not heard my fame or seen my glory. And they shall declare my glory among the nations" <span class="ref">(66:19)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-e">Echoed</span>Philippi, Thessalonica, Athens, Corinth, Ephesus — Paul's entire itinerary unfolds inside Javan's territory, planting the churches that receive the epistles. <span class="ref">Acts 16–19</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>The seven churches of Revelation — Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, Laodicea — all stand on Javan's coast: the risen Christ walking among lampstands in the "coastlands far away." <span class="ref">Rev 1–3</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="3.8" y2="9"/></svg>Tarshish</span><span class="where">Spain — the end of the line</span></td>
+        <td class="promise">First on the 66:19 mission list <span class="ref">(66:19)</span> · her great ships carry Zion's children home <span class="ref">(60:9)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-r">Resonant</span>"I hope to see you in passing as I go to <em>Spain</em>" — Paul aiming at the last name on Isaiah's list, determined to run the itinerary to the end of the earth. <span class="ref">Rom 15:24, 28</span></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="nation"><span class="nm"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="4.5" y1="11" x2="8" y2="11"/><line x1="14" y1="11" x2="17.5" y2="11"/></svg>The End of the Earth</span><span class="where">every direction</span></td>
+        <td class="promise">"I will make you as a light for the nations, that my salvation may reach to the end of the earth" <span class="ref">(49:6)</span> · "a house of prayer for all peoples" <span class="ref">(56:7)</span></td>
+        <td>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Paul and Barnabas claim the Servant's verse as their own commission: "For so the Lord has commanded <em>us</em>." <span class="ref">Acts 13:47</span></span>
+          <span class="nt-item"><span class="t t-q">Quoted</span>Jesus cleanses the temple citing 56:7: "my house shall be called a house of prayer for all the nations." <span class="ref">Mark 11:17</span></span>
+          <span class="nt-item"><span class="t t-e">Echoed</span>"You will be my witnesses… to the end of the earth" — Acts' whole table of contents, in Isaiah's words. <span class="ref">Acts 1:8</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The gathering completes</h2>
+  <p>Follow the three companions in order and the story completes itself. The Reader's Atlas mapped the nations; the Kinship Atlas showed they were family; this chart shows the family being gathered. The gathering finishes in Revelation — and John describes the finish <strong>in Isaiah's own words</strong>:</p>
+  <blockquote>"The nations will walk by its light, and the kings of the earth will bring their glory into it, and its gates will never be shut by day…" <span class="ref">Revelation 21:24–25 — drawing directly on Isaiah 60:3, 11: "Nations shall come to your light, and kings to the brightness of your rising… your gates shall be open continually."</span></blockquote>
+  <p>Around the throne stands "a great multitude that no one could number, <strong>from every nation, from all tribes and peoples and languages</strong>" (Rev 7:9) — the Table of Nations, complete. Ephraim and Judah, Kedar's herdsmen and Tarshish's sailors, a Cushite eunuch with a name better than sons, Egyptians called "my people" — every dial on these charts, pointed home.</p>
+  <p>And note what remains unfinished. Isaiah 66:19 sends witnesses to peoples "that have not heard my fame" — a verse still in force. The atlas ends where the church's assignment begins.</p>
+</div>
+
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/gods/" rel="prev">&larr;<span class="t">The Gods of the Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/today/" rel="next"><span class="t">The Nations Today</span>&rarr;</a></nav>
+<footer>
+  <div>References ESV · markers: quoted / echoed / resonant per the legend above</div>
+  <div>Reading Isaiah · In the New Testament · v1</div>
+</footer>
+
+</div>
+</body>
+</html>

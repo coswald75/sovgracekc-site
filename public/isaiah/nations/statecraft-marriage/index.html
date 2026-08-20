@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dynastic Marriage — Statecraft, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .role{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .role.copper{border-top-color:var(--copper)}
+  .role.lapis{border-top-color:var(--lapis)}
+  .role.olive{border-top-color:var(--olive)}
+  .role h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .role p{font-size:.87rem;color:var(--ink-soft)}
+  .role .ref{color:var(--label);font-size:.82em}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .roles{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/statecraft-chemistry/" rel="prev">&larr;<span class="t">The Chemistry of Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/statecraft-ahaz/" rel="next"><span class="t">Servant and Son</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Statecraft I</div>
+  <h1>The Dynastic Marriage</h1>
+  <div class="texts">1 Kings 3:1 &middot; 9:16 &middot; 11:1&ndash;13</div>
+  <p class="subtitle">The first instrument of ancient statecraft, watched at full length in the one reign rich enough to run it at scale. Solomon's marriages were not appetite first &mdash; they were foreign policy, executed exactly according to the triangle. Which is why the triangle is what tore.</p>
+</header>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>Because the nation lives in the king, nations merge by marrying their kings' houses &mdash; and one wedding moves all three corners: the houses join (relation), territory arrives as dowry (region), and the bride's gods arrive with her household (religion). Solomon's portfolio of treaty-wives is 1 Kings 11:1 read as a map &mdash; and the map explains the tear.</p>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">I</span>The Portfolio</div>
+  <div class="band-refs">1 Kings 3:1; 9:16; 11:1&ndash;3</div>
+  <div class="hero-fig" style="max-width:760px">
+<svg viewBox="0 0 900 650" role="img" aria-label="Seven touching triangles tiled together: Israel at center with the king, ringed by Hatti, Sidon, Ammon, Egypt, Moab and Edom, each with its own king, all wired to Judah's king by lines labeled wife">
+      <!-- ======= tiles ======= -->
+      <!-- HATTI (far north, touching only at Judah's apex point) -->
+      <polygon points="345,27 555,27 450,209" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- SIDON (northwest, shares Judah's left edge) -->
+      <polygon points="240,209 450,209 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- AMMON (northeast, shares Judah's right edge) -->
+      <polygon points="450,209 660,209 555,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- EGYPT (southwest, down the coast road) -->
+      <polygon points="240,209 135,391 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- MOAB (east, sharing Ammon's flank — as on the ground) -->
+      <polygon points="660,209 555,391 765,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- EDOM (south, shares Judah's bottom edge) -->
+      <polygon points="345,391 555,391 450,573" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <!-- ISRAEL (center, darker; united kingdom, pre-schism) -->
+      <polygon points="450,209 345,391 555,391" fill="#CFC9B4" stroke="#6E6247" stroke-width="2.8"/>
+
+      <!-- Judah's triad vertices (reference orientation) -->
+      <circle cx="450" cy="209" r="8" fill="#9E6428"/>
+      <circle cx="345" cy="391" r="8" fill="#34528C"/>
+      <circle cx="555" cy="391" r="8" fill="#6B7042"/>
+
+      <!-- ======= wife-lines (over tiles, under nodes) ======= -->
+      <line x1="450" y1="318" x2="450" y2="88"  stroke="#232630" stroke-width="1.4"/>
+      <line x1="450" y1="318" x2="345" y2="270" stroke="#232630" stroke-width="1.4"/>
+      <line x1="450" y1="318" x2="555" y2="270" stroke="#232630" stroke-width="1.4"/>
+      <line x1="450" y1="318" x2="240" y2="330" stroke="#232630" stroke-width="1.4"/>
+      <line x1="450" y1="318" x2="660" y2="330" stroke="#232630" stroke-width="1.4"/>
+      <line x1="450" y1="318" x2="450" y2="452" stroke="#232630" stroke-width="1.4"/>
+
+      <!-- wife labels (halo so they read over edges) -->
+      <text x="450" y="152" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+      <text x="390" y="293" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+      <text x="512" y="293" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+      <text x="343" y="322" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+      <text x="343" y="347" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#767862" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">+ Gezer · + her gods</text>
+      <text x="557" y="322" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+      <text x="468" y="418" text-anchor="start" font-family="'Source Serif 4', serif" font-size="12.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">wife</text>
+
+      <!-- ======= king nodes ======= -->
+      <circle cx="450" cy="318" r="30" fill="#EDECE4" stroke="#232630" stroke-width="2"/>
+      <text x="450" y="314" text-anchor="middle" font-family="Marcellus, serif" font-size="12" fill="#232630" letter-spacing="1.2">THE</text>
+      <text x="450" y="330" text-anchor="middle" font-family="Marcellus, serif" font-size="12" fill="#232630" letter-spacing="1.2">KING</text>
+
+      <circle cx="450" cy="88"  r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="450" y="93"  text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="345" cy="270" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="345" y="275" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="555" cy="270" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="555" y="275" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="240" cy="330" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="240" y="335" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="660" cy="330" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="660" y="335" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="450" cy="452" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="450" y="457" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+
+      <!-- ======= nation labels ======= -->
+      <text x="450" y="56"  text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">HATTI</text>
+      <text x="322" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">SIDON</text>
+      <text x="580" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">AMMON</text>
+      <text x="218" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EGYPT</text>
+      <text x="678" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">MOAB</text>
+      <text x="450" y="497" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EDOM</text>
+      <text x="450" y="376" text-anchor="middle" font-family="Marcellus, serif" font-size="14.5" fill="#232630" letter-spacing="3">ISRAEL</text>
+
+      <!-- caption -->
+      <text x="450" y="614" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" font-style="italic" fill="#4A4D57">“Solomon clung to these in love… and his wives turned away his heart.” — 1 Kings 11:2–3</text>
+      <text x="450" y="634" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">Six tiles · six wife-lines · the exact portfolio of 1 Kings 11:1</text>
+    </svg>
+<div class="fig-note">Exposure 4 &mdash; six tiles, six wife-lines: "Pharaoh&rsquo;s daughter, Moabite, Ammonite, Edomite, Sidonian, and Hittite women" (11:1), each line a ratified treaty.</div>
+</div>
+
+  <div class="band-body">
+    <p>Read 1 Kings 11:1 as a diplomatic ledger and it stops being a list of indulgences: it is <strong>Israel's border policy, one treaty per neighbor</strong>, every alliance sealed the only way the ancient world knew how &mdash; in the king's own flesh. The showpiece was the Egyptian match: pharaohs famously did <em>not</em> give daughters to foreign kings (the Amarna letters preserve one telling a Babylonian king exactly that), so "Solomon made a marriage alliance with Pharaoh" <span class="ref">(3:1)</span> announced Israel's arrival as a first-rank power &mdash; and the bride came with <strong>a city for a dowry</strong>: Gezer, burned and gifted <span class="ref">(9:16)</span>. Relation joined; region transferred. The third corner came in the trousseau.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Heart Turned</div>
+  <div class="band-refs">1 Kings 11:4&ndash;8 &middot; 2 Kings 23:13</div>
+  <div class="hero-fig" style="max-width:760px">
+<svg viewBox="0 0 900 650" role="img" aria-label="The same tiled map, now with arrows running inward along the wife-lines carrying the names of foreign gods; the king's circle is displaced off center with a ghost ring at his original position, and small foreign high-places appear inside Israel's tile east of Jerusalem">
+      <defs>
+        <marker id="godflow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#34528C"/>
+        </marker>
+      </defs>
+
+      <!-- ======= tiles (identical to Exposure 3) ======= -->
+      <polygon points="345,27 555,27 450,209" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 450,209 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 660,209 555,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 135,391 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="660,209 555,391 765,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="345,391 555,391 450,573" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 345,391 555,391" fill="#CFC9B4" stroke="#6E6247" stroke-width="2.8"/>
+
+      <circle cx="450" cy="209" r="8" fill="#9E6428"/>
+      <circle cx="345" cy="391" r="8" fill="#34528C"/>
+      <circle cx="555" cy="391" r="8" fill="#6B7042"/>
+
+      <!-- ======= inbound god-lines (satellite -> king, lapis, arrowheads at king end) ======= -->
+      <line x1="450" y1="88"  x2="486" y2="295" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+      <line x1="345" y1="270" x2="459" y2="316" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+      <line x1="555" y1="270" x2="518" y2="305" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+      <line x1="240" y1="330" x2="456" y2="330" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+      <line x1="660" y1="330" x2="528" y2="330" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+      <line x1="450" y1="452" x2="480" y2="364" stroke="#34528C" stroke-width="1.6" marker-end="url(#godflow)"/>
+
+      <!-- god labels on the wires -->
+      <text x="382" y="284" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">Ashtoreth</text>
+      <text x="558" y="288" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">Milcom · Molech</text>
+      <text x="596" y="322" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="12" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:7">Chemosh</text>
+      <text x="330" y="322" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">her gods · v. 8</text>
+      <text x="450" y="152" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">their gods · v. 8</text>
+      <text x="437" y="425" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#34528C" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">their gods · v. 8</text>
+
+      <!-- ======= ghost of the original heart-position ======= -->
+      <circle cx="450" cy="318" r="30" fill="none" stroke="#767862" stroke-width="1.4" stroke-dasharray="4 5"/>
+
+      <!-- ======= displaced king node ======= -->
+      <circle cx="492" cy="330" r="30" fill="#EDECE4" stroke="#232630" stroke-width="2"/>
+      <text x="492" y="326" text-anchor="middle" font-family="Marcellus, serif" font-size="12" fill="#232630" letter-spacing="1.2">THE</text>
+      <text x="492" y="342" text-anchor="middle" font-family="Marcellus, serif" font-size="12" fill="#232630" letter-spacing="1.2">KING</text>
+
+      <!-- ======= satellite kings ======= -->
+      <circle cx="450" cy="88"  r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="450" y="93"  text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="345" cy="270" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="345" y="275" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="555" cy="270" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="555" y="275" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="240" cy="330" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="240" y="335" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="660" cy="330" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="660" y="335" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+      <circle cx="450" cy="452" r="13" fill="#EDECE4" stroke="#232630" stroke-width="1.6"/>
+      <text x="450" y="457" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630">K</text>
+
+      <!-- ======= the high places: foreign micro-tiles inside Israel, east of Jerusalem ======= -->
+      <polygon points="500,352 492,364 508,364" fill="#DDD9C9" stroke="#34528C" stroke-width="1.4"/>
+      <polygon points="522,364 514,376 530,376" fill="#DDD9C9" stroke="#34528C" stroke-width="1.4"/>
+      <polygon points="542,376 534,388 550,388" fill="#DDD9C9" stroke="#34528C" stroke-width="1.4"/>
+      <line x1="552" y1="386" x2="596" y2="408" stroke="#767862" stroke-width="0.9"/>
+      <text x="600" y="412" text-anchor="start" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#4A4D57">the high places — the hill east of Jerusalem · 11:7</text>
+
+      <!-- ======= nation labels ======= -->
+      <text x="450" y="56"  text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">HATTI</text>
+      <text x="322" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">SIDON</text>
+      <text x="580" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">AMMON</text>
+      <text x="218" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EGYPT</text>
+      <text x="678" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">MOAB</text>
+      <text x="450" y="497" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EDOM</text>
+      <text x="415" y="380" text-anchor="middle" font-family="Marcellus, serif" font-size="14.5" fill="#232630" letter-spacing="3">ISRAEL</text>
+
+      <!-- caption -->
+      <text x="450" y="614" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" font-style="italic" fill="#4A4D57">“When Solomon was old his wives turned away his heart after other gods.” — 1 Kings 11:4</text>
+      <text x="450" y="634" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">Ashtoreth of the Sidonians · Milcom and Molech of the Ammonites · Chemosh of Moab · “and so for all his foreign wives” (11:5–8)</text>
+    </svg>
+<div class="fig-note">Exposure 5 &mdash; the same lines, now carrying traffic inbound: Ashtoreth, Chemosh, Milcom riding the wife-lines to the capital; the king drifts off-center; high places rise east of the city.</div>
+</div>
+
+  <div class="band-body">
+    <p>Every treaty-wife was a <strong>resident foreign court</strong>, and a court needs its chapel. "When Solomon was old his wives turned away his heart after other gods" <span class="ref">(11:4)</span> &mdash; and the text names the arrivals by the corners they came from: Ashtoreth of the Sidonians, Chemosh of Moab, Milcom of the Ammonites, installed on the mountain east of Jerusalem <span class="ref">(11:5&ndash;7)</span>. Embassy chapels, in sight of the temple &mdash; and they stood <strong>three hundred years</strong>, until Josiah <span class="ref">(2 Kgs 23:13)</span>. The lines built to project Israel's influence outward carried the neighbors' gods inward; the man at the center, who was the weld holding all three corners, drifted &mdash; and the whole triangle drifted with him. Deuteronomy had legislated against precisely this, in triad grammar: the king "shall not acquire many wives for himself, <strong>lest his heart turn away</strong>" <span class="ref">(Deut 17:17)</span>.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">III</span>The LORD Raises Adversaries</div>
+  <div class="band-refs">1 Kings 11:9&ndash;13, 14&ndash;40</div>
+  <div class="hero-fig" style="max-width:760px">
+<svg viewBox="0 0 900 650" role="img" aria-label="The tiled map after the schism: the Israel tile torn by a jagged crack, adversaries arriving from Edom and Damascus, Jeroboam rising from within">
+      <polygon points="345,27 555,27 450,209" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 450,209 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 660,209 555,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 135,391 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="660,209 555,391 765,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="345,391 555,391 450,573" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 345,391 470,391 486,362 462,330 488,296 466,262 478,232" fill="#CFC9B4" stroke="#6E6247" stroke-width="2.8"/>
+      <polygon points="492,232 480,262 502,296 476,330 500,362 484,391 555,391" fill="#CFC9B4" opacity="0.75" stroke="#6E6247" stroke-width="2.8"/>
+      <polyline points="485,214 472,232 460,262 482,296 456,330 480,362 464,391" fill="none" stroke="#232630" stroke-width="2.4" stroke-dasharray="7 4"/>
+      <text x="420" y="330" text-anchor="middle" font-family="Marcellus, serif" font-size="12.5" fill="#232630" letter-spacing="1.6">ISRAEL</text>
+      <text x="420" y="347" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="9" font-style="italic" fill="#4A4D57">ten tribes &mdash; to Jeroboam</text>
+      <text x="524" y="345" text-anchor="middle" font-family="Marcellus, serif" font-size="11" fill="#232630" letter-spacing="1.4">JUDAH</text>
+      <text x="524" y="360" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="8.5" font-style="italic" fill="#4A4D57">one tribe kept &mdash;</text>
+      <text x="524" y="372" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="8.5" font-style="italic" fill="#4A4D57">"for the sake of David"</text>
+      <circle cx="450" cy="300" r="24" fill="#EDECE4" stroke="#232630" stroke-width="1.8" stroke-dasharray="5 4"/>
+      <text x="450" y="296" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630" letter-spacing="1">THE</text>
+      <text x="450" y="309" text-anchor="middle" font-family="Marcellus, serif" font-size="10" fill="#232630" letter-spacing="1">KING</text>
+      <line x1="450" y1="500" x2="450" y2="404" stroke="#232630" stroke-width="1.8"/>
+      <polygon points="450,398 444,412 456,412" fill="#232630"/>
+      <text x="450" y="522" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">Hadad the Edomite &mdash; "an adversary" (11:14)</text>
+      <line x1="612" y1="140" x2="510" y2="222" stroke="#232630" stroke-width="1.8"/>
+      <polygon points="505,226 519,224 512,213" fill="#232630"/>
+      <text x="648" y="128" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">Rezon seizes Damascus (11:23&ndash;25)</text>
+      <text x="360" y="252" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">Jeroboam &mdash; from within (11:26)</text>
+      <text x="450" y="56" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">HATTI</text>
+      <text x="322" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">SIDON</text>
+      <text x="580" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">AMMON</text>
+      <text x="218" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">EGYPT</text>
+      <text x="678" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">MOAB</text>
+      <text x="450" y="497" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#767862" letter-spacing="2">EDOM</text>
+      <text x="450" y="614" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" font-style="italic" fill="#4A4D57">"Since this has been your practice&hellip; I will surely tear the kingdom from you." &mdash; 1 Kings 11:11</text>
+      <text x="450" y="634" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">The treaty system's bill, arriving &mdash; adversaries at the edges, a tear at the center</text>
+    </svg>
+<div class="fig-note">Exposure 6 &mdash; the bill arrives: adversaries stirred at the edges, the tear opening at the center.</div>
+</div>
+
+  <div class="band-body">
+    <p>The judgment speaks in the diagram's own vocabulary. "Since this has been your practice&hellip; <strong>I will surely tear the kingdom from you</strong>" <span class="ref">(11:11)</span> &mdash; and then the LORD works the map: <strong>Hadad the Edomite</strong> raised from the southern tile, <strong>Rezon</strong> seizing Damascus to found the Aramean threat the Isaiah chapters inherit, and <strong>Jeroboam</strong> &mdash; not a neighbor at all but Solomon's own labor-officer &mdash; splitting the center tile from within <span class="ref">(11:14, 23, 26)</span>. One shard kept "for the sake of David my servant and for the sake of Jerusalem" <span class="ref">(11:13)</span>.</p>
+    <p>And the succession seals the diagnosis: the king who presides over the tear is <strong>Rehoboam, son of Naamah the Ammonite</strong> <span class="ref">(14:21)</span> &mdash; the treaty system's own child on the throne. The wife-line manufactured the king; the split kingdom is dynastic marriage's invoice, itemized.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>The Two Ways In</div>
+  <div class="band-refs">Ruth 1:16 &middot; Psalm 45:10&ndash;11</div>
+  <div class="band-body">
+    <p>Scripture is not against foreign brides &mdash; it is precise about <strong>terms of entry</strong>. Ruth the Moabite enters with the portfolio renounced: "your people shall be my people, and <strong>your God my God</strong>" <span class="ref">(Ruth 1:16)</span> &mdash; conversion's terms &mdash; and becomes great-grandmother to David. Naamah enters on the treaty's terms, gods intact, and mothers the schism. Same tile on the map; opposite directions on the line.</p>
+    <p>Psalm 45 &mdash; the royal wedding song &mdash; states the rule as liturgy. To the foreign bride: <strong>"Forget your people and your father's house, and the king will desire your beauty"</strong> <span class="ref">(Ps 45:10&ndash;11)</span>. The same summons Abraham obeyed ("Go from your country and your kindred and your father's house," Gen 12:1). Entry into this marriage burns the portfolio at the door &mdash; you do not bring your gods into <em>this</em> house. The New Testament will read that psalm of a greater King and a bride gathered from every tile <span class="ref">(Heb 1:8&ndash;9)</span>; the series returns there in Act IV.</p>
+  </div>
+</div>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The first instrument, audited</h2>
+  <p>Marriage-diplomacy did exactly what the triangle predicts: it moved all three corners &mdash; and so, misused, it corrupted all three at once. The next page watches the second instrument, the vassal oath &mdash; a king who solved his crisis by mailing the words "servant and son" to an emperor, and what those words cost every corner of Judah's triangle.</p>
+</div>
+
+<footer>
+  <div>References ESV &middot; Statecraft I of the Reading Isaiah series</div>
+  <div>Reading Isaiah &middot; Statecraft: The Dynastic Marriage &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/statecraft-chemistry/" rel="prev">&larr;<span class="t">The Chemistry of Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/statecraft-ahaz/" rel="next"><span class="t">Servant and Son</span>&rarr;</a></nav>
+</body>
+</html>

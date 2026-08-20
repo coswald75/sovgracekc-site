@@ -1,10 +1,12 @@
 {
-  "week_of": "August 2, 2026",
+  "week_of": "August 16, 2026",
   "service_order": {
     "flow": [
       { "type": "element", "label": "Welcome" },
       { "type": "element", "label": "Call to Worship" },
       { "type": "songs", "label": "Songs", "section": "opening" },
+      { "type": "element", "label": "Scripture Reading", "detail": "1 Corinthians 15:58; 1 Peter 2:9–10 (ESV)" },
+      { "type": "songs", "label": "Songs", "section": "opening2" },
       { "type": "element", "label": "Kids Dismissal" },
       { "type": "sermon", "label": "Sermon" },
       { "type": "songs", "label": "Communion", "section": "communion" },
@@ -12,99 +14,100 @@
       { "type": "element", "label": "Benediction" }
     ],
     "sermon": {
-      "title": "Yet I Know",
-      "text": "Ecclesiastes 8:10-15",
-      "thesis": "Wisdom — knowing the God who holds the future rather than trusting what our eyes observe — insulates us from the seductive lie that the prosperity of the wicked proves there is no God who sees.",
+      "title": "Vocational Vices and Virtues",
+      "text": "Ecclesiastes 10:1-12:14",
+      "thesis": "Ecclesiastes 10–11 walks through ten vocational vices — and their matching virtues. Every one is finally a theology problem: how you work makes visible what you actually believe about God.",
       "outline": [
-        {
-          "type": "scripture",
-          "ref": "Ecclesiastes 8:10–15 (ESV)",
-          "body": "Then I saw the wicked buried. They used to go in and out of the holy place and were praised in the city where they had done such things. This also is vanity. Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. Though a sinner does evil a hundred times and prolongs his life, yet I know that it will be well with those who fear God, because they fear before him. But it will not be well with the wicked, neither will he prolong his days like a shadow, because he does not fear before God. There is a vanity that takes place on earth, that there are righteous people to whom it happens according to the deeds of the wicked, and there are wicked people to whom it happens according to the deeds of the righteous. I said that this also is vanity. And I commend joy, for man has nothing better under the sun but to eat and drink and be joyful, for this will go with him in his toil through the days of his life that God has given him under the sun."
-        },
-        { "type": "heading", "text": "Two kinds of people: those who fear God and those who don't" },
-        {
-          "type": "quote",
-          "body": "To fear the Lord is to be deeply aware that everything I do, say, and think — or fail to do and say — is open to the all-seeing eyes of God, my Creator, Father, and Judge; and therefore to be genuinely concerned to live in such a way as to please Him and to keep my conscience clear before Him.",
-          "cite": "Joel Beeke"
-        },
-        {
-          "type": "text",
-          "body": "The one who fears God tells the truth when a lie would help, treats people better than he has to, guards his words and his interior thought-life, and will say the hard thing — because he believes God sees. The one who does not fear God lies when it suits him, flatters his way through life, and does good only as far as it visibly pays."
-        },
-        { "type": "heading", "text": "The problem: the prosperity of the wicked seems to prove their way is right" },
-        {
-          "type": "text",
-          "body": "The wicked man in the text enjoys three evidences of prosperity — longevity, spirituality, and celebrity (v. 10). And because judgment is not swift (v. 11), the watching world learns a lie: that living as though there is no God actually works."
-        },
-        {
-          "type": "scripture",
-          "ref": "Psalm 73:2–3, 11–13 (ESV)",
-          "body": "But as for me, my feet had almost stumbled, my steps had nearly slipped. For I was envious of the arrogant when I saw the prosperity of the wicked. … And they say, “How can God know? Is there knowledge in the Most High?” Behold, these are the wicked; always at ease, they increase in riches. All in vain have I kept my heart clean and washed my hands in innocence."
-        },
-        {
-          "type": "scripture",
-          "ref": "Jeremiah 15:15–18 (ESV)",
-          "body": "O Lord, you know; remember me and visit me, and take vengeance for me on my persecutors. In your forbearance take me not away; know that for your sake I bear reproach. Your words were found, and I ate them, and your words became to me a joy and the delight of my heart, for I am called by your name, O Lord, God of hosts. I did not sit in the company of revelers, nor did I rejoice; I sat alone, because your hand was upon me, for you had filled me with indignation. Why is my pain unceasing, my wound incurable, refusing to be healed? Will you be to me like a deceitful brook, like waters that fail?"
-        },
-        {
-          "type": "text",
-          "body": "Even Asaph and Jeremiah were nearly seduced. Jeremiah names the fear exactly: has God become “a deceitful brook” — a stream you staked your whole life beside that turns out to run dry?"
-        },
-        { "type": "heading", "text": "The preacher's immunity: wisdom — “then I saw … yet I know”" },
-        {
-          "type": "scripture",
-          "ref": "Proverbs 14:12 (ESV)",
-          "body": "There is a way that seems right to a man, but its end is the way to death."
-        },
-        {
-          "type": "text",
-          "body": "Wisdom lives in the gap between what you see and what God says. “Then I saw” (v. 10) versus “yet I know” (v. 12): the preacher is not seduced because he is guided by something deeper than his own perception."
-        },
-        {
-          "type": "quote",
-          "body": "Intelligence is horsepower. Wisdom is knowing the track, the One who made the track, and what every curve is for."
-        },
-        { "type": "heading", "text": "The source of wisdom: know the Who, not the what" },
-        {
-          "type": "text",
-          "body": "For all his wisdom, the preacher confesses how much he does not know — what happens at death, the future, why God orders the days as He does (Ecc. 3:21; 8:7; 9:12; 11:5–6; 8:17). He does not know the what of a thousand things, but he knows the Who behind them all. The beginning of wisdom is the fear and knowledge of God."
-        },
-        {
-          "type": "quote",
-          "body": "I do not know what the future holds, but I know who holds the future."
-        },
-        {
-          "type": "text",
-          "body": "Illustration — the pontoon bridge: we carefully connect one section to the next (career, health, finances, marriage) and stand in the middle to admire the span, only to find it drifting. The first step must be to tether yourself to the land — to know God first. Deconstruction is simply this inverted: reading the character of God through your circumstances instead of your circumstances through the character of God."
-        },
-        { "type": "heading", "text": "How can I know God? The cross — and so, the Table" },
-        {
-          "type": "scripture",
-          "ref": "Romans 5:8 (ESV)",
-          "body": "but God shows his love for us in that while we were still sinners, Christ died for us."
-        },
-        {
-          "type": "text",
-          "body": "You come to know God at the cross of Jesus Christ — where God, who hates sin but loves sinners, placed the righteousness of His Son on us and turned enemies into sons and daughters. This is what the bread and the cup declare, and why we come to the Table."
-        }
+        { "type": "heading", "text": "1. Fear vs. Fortitude" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:9 (ESV)", "body": "He who quarries stones is hurt by them, and he who splits logs is endangered by them." },
+        { "type": "text", "body": "Our work bites back — we labor in cursed ground, among the thorns (Genesis 3:17–19). But the sluggard turns that danger into an excuse: “There is a lion in the streets!” Fortitude works anyway." },
+        { "type": "heading", "text": "2. Reaction vs. Strategy" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:10 (ESV)", "body": "If the iron is blunt, and one does not sharpen the edge, he must use more strength, but wisdom helps one to succeed." },
+        { "type": "text", "body": "Don't just work harder — work wiser. Sharpen the axe; think in systems. (And v. 11: the snake-charmer who acts too late gains nothing — timing matters.)" },
+        { "type": "heading", "text": "3. Boasting vs. Discretion" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:12 (ESV)", "body": "The words of a wise man's mouth win him favor, but the lips of a fool consume him." },
+        { "type": "text", "body": "The vice is overconfidence — claiming to know more than you know, saying more than you should. “Let another praise you, and not your own mouth” (Proverbs 27:2); “If one gives an answer before he hears, it is his folly and shame” (Proverbs 18:13)." },
+        { "type": "heading", "text": "4. Gluttony vs. Temperance" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:16–17 (ESV)", "body": "Woe to you, O land, when your king is a child, and your princes feast in the morning! Happy are you, O land, when your king is the son of the nobility, and your princes feast at the proper time, for strength, and not for drunkenness!" },
+        { "type": "text", "body": "The contrast isn't feasting vs. abstaining — it's feasting in the morning vs. feasting at the proper time, for strength. Appetite running ahead of accomplishment, vs. refueling what you've already earned." },
+        { "type": "heading", "text": "5. Sloth vs. Diligence" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:18 (ESV)", "body": "Through sloth the roof sinks in, and through indolence the house leaks." },
+        { "type": "text", "body": "The most-named vocational problem in all of wisdom literature. But there's a second kind that doesn't look lazy at all — the person always in motion who still isn't doing the thing that matters. The old word is acedia, “the noonday demon”: restlessness, not just torpor. The laziest man in the room may be the busiest." },
+        { "type": "quote", "body": "The realization that I could be simultaneously busy and lazy, that I could be a hectic sluggard, that my busyness was no immunity from laziness, became a life-altering and work-altering insight.", "cite": "C. J. Mahaney, Biblical Productivity" },
+        { "type": "heading", "text": "6. Ingratitude vs. Gratitude" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:19 (ESV)", "body": "Bread is made for laughter, and wine gladdens life, and money answers everything." },
+        { "type": "text", "body": "We do need some way of marking a good day's work — a worker's hunger works for him. Receive the reward with gratitude, not as your due." },
+        { "type": "heading", "text": "7. Envy vs. Contentment" },
+        { "type": "scripture", "ref": "Ecclesiastes 10:20 (ESV)", "body": "Even in your thoughts, do not curse the king, nor in your bedroom curse the rich, for a bird of the air will carry your voice, or some winged creature tell the matter." },
+        { "type": "text", "body": "Covetousness is an old “thorn” in vocation — you eye another's success, resentment builds, and you talk yourself right out of your own agency. But God's word to Cain still stands: you know what is right; do it." },
+        { "type": "heading", "text": "8. Pessimism vs. Optimism" },
+        { "type": "scripture", "ref": "Ecclesiastes 11:6 (ESV)", "body": "In the morning sow your seed, and at evening withhold not your hand, for you do not know which will prosper, this or that, or whether both alike will be good." },
+        { "type": "text", "body": "“He who observes the wind will not sow, and he who regards the clouds will not reap” (v. 4). He isn't wrong that the future is uncertain — he's wrong that uncertainty is a reason to wait. Act boldly; spread your bets (vv. 1–2)." },
+        { "type": "heading", "text": "9. Vexation vs. Gladness of Heart" },
+        { "type": "scripture", "ref": "Ecclesiastes 11:9–10 (ESV)", "body": "Rejoice, O young man, in your youth, and let your heart cheer you in the days of your youth. Walk in the ways of your heart and the sight of your eyes. But know that for all these things God will bring you into judgment. Remove vexation from your heart, and put away pain from your body, for youth and the dawn of life are vanity." },
+        { "type": "text", "body": "Light is sweet. Rejoice in your days — and put away vexation — all while remembering you answer to God for every bit of it." },
+        { "type": "heading", "text": "10. Presumption vs. Urgency" },
+        { "type": "scripture", "ref": "Ecclesiastes 12:1 (ESV)", "body": "Remember also your Creator in the days of your youth, before the evil days come and the years draw near of which you will say, “I have no pleasure in them.”" },
+        { "type": "scripture", "ref": "James 4:13–15 (ESV)", "body": "Come now, you who say, “Today or tomorrow we will go into such and such a town and spend a year there and trade and make a profit”— yet you do not know what tomorrow will bring. What is your life? For you are a mist that appears for a little time and then vanishes. Instead you ought to say, “If the Lord wills, we will live and do this or that.”" },
+        { "type": "text", "body": "Don't presume on tomorrow — and don't keep saying you'll finally get after it tomorrow. Do what you can today. “Whoever knows the right thing to do and fails to do it, for him it is sin” (James 4:17)." },
+        { "type": "heading", "text": "The point: your work is your theology, made visible" },
+        { "type": "text", "body": "Every one of these is finally a theology problem. Show me how a person works — how they handle authority, delay, reward, unseen labor, and the gap between sowing and reaping — and I can tell you a good deal about what they actually believe about God. It's no accident that the main biblical word for worship is also the word for work." },
+        { "type": "scripture", "ref": "Ecclesiastes 12:13–14 (ESV)", "body": "The end of the matter; all has been heard. Fear God and keep his commandments, for this is the whole duty of man. For God will bring every deed into judgment, with every secret thing, whether good or evil." },
+        { "type": "text", "body": "Why was the wicked servant wicked in the parable of the talents? He had a theology problem — he didn't really know God. Which is why, more than anything, you have to have a clear view of the Lord." }
       ]
     },
     "band": [
       { "name": "Josh L.", "role": "Lead" },
       { "name": "Jared", "role": "Drums" },
       { "name": "Jesse", "role": "Keys" },
-      { "name": "Shannon", "role": "Vocals" },
-      { "name": "Steven", "role": "Bass" }
+      { "name": "Sarah", "role": "Vocals" }
     ],
     "songs": [
-      { "title": "How Great (Psalm 145)", "section": "opening" },
-      { "title": "How Long, O Lord", "section": "opening" },
-      { "title": "Amazing Grace vs. Yet Not I", "section": "opening" },
-      { "title": "Before The Throne of God Above", "section": "opening" },
-      { "title": "When We See Your Face", "section": "communion" },
-      { "title": "All Glory Be To Christ", "section": "final" }
+      { "title": "Come Praise and Glorify", "section": "opening" },
+      { "title": "Great Is Thy Faithfulness", "section": "opening" },
+      { "title": "Take My Life and Let It Be", "section": "opening2" },
+      { "title": "All Glory Be To Christ", "section": "opening2" },
+      { "title": "Wood and Nails", "section": "communion" },
+      { "title": "Praise to the Lord, The Almighty", "section": "final" }
     ],
     "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv"
   },
-  "announcements": []
+  "announcements": [
+    {
+      "title": "Church Potluck",
+      "body": "Theme: Midwest Dinner. What to bring by last name — A–I: a main dish; J–R: a side dish or salad; S–Z: a dessert or drink. Newcomers don't need to bring anything, and bring a cooler if you need to keep something cold.",
+      "when": "Sunday, August 23 · after the service, in the gym",
+      "link": ""
+    },
+    {
+      "title": "Men's Ministry",
+      "body": "",
+      "when": "Wednesday, August 26 · 7:00 PM",
+      "link": ""
+    },
+    {
+      "title": "Corporate Prayer Meeting",
+      "body": "Held at the church.",
+      "when": "September 2",
+      "link": ""
+    },
+    {
+      "title": "New to Providence? BBQ",
+      "body": "If you've been attending Providence for six months or less, come for an afternoon of food and fellowship at the Gimottys' home (near 119th & Pflumm).",
+      "when": "Sunday, September 13 · 12:30 PM",
+      "link": "https://lenexachurch.churchcenter.com/registrations/events/3791245"
+    },
+    {
+      "title": "Providence Women's Retreat",
+      "body": "Join the women of Providence for a refreshing weekend on The Attributes of God, with special guest speaker Katie Faris — biblical teaching, worship, fellowship, and encouragement. Friday evening (6:30–9pm) through Saturday afternoon (9am–2pm) at the church. $25; registration is open.",
+      "when": "September 18–19",
+      "link": "https://lenexachurch.churchcenter.com/registrations/events/3618665"
+    },
+    {
+      "title": "Men's Retreat",
+      "body": "Men, mark your calendars for our annual Men's Retreat. Meet Justin Lackmacher, founder of Redemption House. Chris and Dov have gotten to know Justin over the years and are absolutely thrilled to have him spend time with the men at Providence. Justin is a former addict, a current minister to addicts, and — as Pastor Chris puts it — has serious Biblical Counseling game.",
+      "when": "October 23–25",
+      "link": "https://lenexachurch.churchcenter.com/registrations/events/3776061"
+    }
+  ]
 }

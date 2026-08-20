@@ -29,14 +29,16 @@ const songsIn = (section) => songs.filter((s) => (s.section || 'opening') === se
               <div class="flow-body">
                 <p class="flow-label">{step.label}</p>
 
-                {step.type === 'songs' && songsIn(step.section || 'opening').length > 0 && (
-                  <ul class="songs">
-                    {songsIn(step.section || 'opening').map((s) => (
-                      <li class="song">
-                        <span class="song-title">{s.title}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {step.type === 'songs' && (
+                  songsIn(step.section || 'opening').length > 0 ? (
+                    <ul class="songs">
+                      {songsIn(step.section || 'opening').map((s) => (
+                        <li class="song">
+                          <span class="song-title">{s.title}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (songs.length === 0 && <p class="songs-pending">Posted soon</p>)
                 )}
 
                 {step.type === 'sermon' && sermon && (
@@ -44,6 +46,10 @@ const songsIn = (section) => songs.filter((s) => (s.section || 'opening') === se
                     <span class="sermon-title">&ldquo;{sermon.title}&rdquo;</span>
                     {sermon.text && <span class="sermon-text">{sermon.text}</span>}
                   </p>
+                )}
+
+                {step.type === 'element' && step.detail && (
+                  <p class="element-detail">{step.detail}</p>
                 )}
               </div>
             </li>
@@ -93,6 +99,10 @@ const songsIn = (section) => songs.filter((s) => (s.section || 'opening') === se
       padding: 5px 0; flex-wrap: wrap;
     }
     .song-title { font-family: var(--serif); font-size: 1.02rem; color: var(--ink); }
+    .songs-pending {
+      font-family: var(--sans); font-size: 0.8rem; color: var(--gray);
+      font-style: italic; margin: 8px 0 0;
+    }
     .song-note {
       font-family: var(--sans); font-size: 0.68rem; color: var(--gray);
       letter-spacing: 0.08em; text-transform: uppercase;
@@ -101,5 +111,6 @@ const songsIn = (section) => songs.filter((s) => (s.section || 'opening') === se
     .sermon { margin: 8px 0 0; }
     .sermon-title { font-family: var(--serif); font-style: italic; font-size: 1.05rem; display: block; }
     .sermon-text { font-size: 0.85rem; color: var(--gray); letter-spacing: 0.02em; }
+    .element-detail { font-family: var(--serif); font-size: 0.9rem; color: var(--gray); margin: 6px 0 0; }
   </style>
 </Base>

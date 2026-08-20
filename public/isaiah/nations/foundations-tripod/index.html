@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is a Nation? — Foundations, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .legs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .leg{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .leg.copper{border-top-color:var(--copper)}
+  .leg.lapis{border-top-color:var(--lapis)}
+  .leg.olive{border-top-color:var(--olive)}
+  .leg h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .leg p{font-size:.87rem;color:var(--ink-soft)}
+  .leg .ref{color:var(--label);font-size:.82em}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .legs{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><span class="btn dis">&larr;<span class="t">Start</span></span><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/foundations-king/" rel="next"><span class="t">The King Revealed</span>&rarr;</a></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah · Foundations</div>
+  <h1>What Is a Nation?</h1>
+  <div class="texts">Genesis 10 · Deuteronomy 32:8–9 · 1 Kings 21</div>
+  <p class="subtitle">Before this series can read Isaiah's oracles well, one modern assumption has to come out — the idea that a nation is a set of people who agree about ideas. No nation in Isaiah's world was that, and neither was Israel. What a nation was is drawable: three legs, welded.</p>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero-fig">
+  <svg viewBox="0 0 520 500" role="img" aria-label="The tripod: Relation, Religion and Region as vertices; the welds as edges; the enclosed area is the nation">
+    <polygon points="260,78 92,398 428,398" fill="#DDD9C9" opacity="0.55"/>
+    <line x1="260" y1="78"  x2="92"  y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="260" y1="78"  x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="92"  y1="398" x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="168" y1="230" x2="184" y2="246" stroke="#232630" stroke-width="2"/>
+    <line x1="352" y1="230" x2="336" y2="246" stroke="#232630" stroke-width="2"/>
+    <line x1="260" y1="389" x2="260" y2="407" stroke="#232630" stroke-width="2"/>
+    <circle cx="260" cy="78"  r="11" fill="#9E6428"/>
+    <circle cx="92"  cy="398" r="11" fill="#34528C"/>
+    <circle cx="428" cy="398" r="11" fill="#6B7042"/>
+    <text x="260" y="52" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELATION</text>
+    <text x="260" y="70" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the kin — "sons of…"</text>
+    <text x="80" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELIGION</text>
+    <text x="80" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the god of the people</text>
+    <text x="436" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">REGION</text>
+    <text x="436" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the allotted land</text>
+    <text x="260" y="292" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#232630" letter-spacing="6">NATION</text>
+    <text x="260" y="313" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" fill="#767862" font-style="italic">clans · languages · lands — Gen 10:5, 20, 31</text>
+  </svg>
+  <div class="fig-note">A family, under a god, on a land. Every nation in Isaiah is this shape.</div>
+</div>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>In Scripture and across the ancient world, a nation is not an idea people agree to. It is a family, under a god, on a land — three legs welded together, so that touching any one of them touches all three. Learn to see this shape, and the whole drama of Isaiah's nations — their pride, their gods, their wars, their marriages — becomes legible.</p>
+</div>
+
+<!-- ============ I ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">I</span>The Assumption We Bring</div>
+  <div class="band-body">
+    <p>Modern people — Americans especially — carry a definition of nationhood so deep we don't notice it: a nation is a population united by <strong>propositions</strong>. Ideals, founding documents, shared values. You can join one by agreeing. On this view, blood is incidental, land is real estate, and religion is a private preference the state stays out of.</p>
+    <p>That conception is real, and it is <strong>recent</strong> — a late-eighteenth-century novelty, and even where it took hold it ran for generations on older ballast underneath. Nobody in Isaiah's world, from Pharaoh's court to Judah's, held it or could have understood it. If we read Isaiah's oracles with the propositional lens on, the nations become abstractions with flags, and half of what the prophet says stops making sense — why gods fall when armies do, why exile unmakes a people, why kings seal treaties with weddings.</p>
+    <p>So this page does one job: <strong>uninstall the assumption</strong>, and replace it with the definition Scripture itself uses.</p>
+  </div>
+</div>
+
+<!-- ============ II ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Bible's Own Taxonomy</div>
+  <div class="band-refs">Genesis 10 · Deuteronomy 32:8–9 · Micah 4:5</div>
+  <div class="band-body">
+    <p>The Table of Nations closes each of its three sections with a formula:</p>
+    <blockquote>"These are the sons of Ham, by their clans, their languages, their lands, and their nations."<span class="ref">Genesis 10:20 — nearly identically at 10:5 and 10:31</span></blockquote>
+    <p><strong>Clan. Tongue. Land. Nation.</strong> Relation and region are named outright — language rides with relation, since you speak your family's speech. The third leg is supplied one book over, in the Bible's political metaphysics: "When the Most High gave to the nations their inheritance… he fixed the borders of the peoples. But the LORD's portion is his people" <span class="ref">(Deut 32:8–9)</span> — every nation allotted its territory, and standing in relation to its own divine patron. Micah states the religious leg as a plain observed fact: <strong>"all the peoples walk each in the name of its god"</strong> <span class="ref">(Micah 4:5)</span>.</p>
+    <p>A <em>goy</em> in Scripture is a lineage, on a land, under a god. The triad isn't a modern theory imposed on the text; it's Genesis 10 plus Deuteronomy 32.</p>
+  </div>
+</div>
+
+<!-- ============ III ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">III</span>The Welds</div>
+  <div class="band-refs">Judges 11:24 · Deuteronomy 2 · 1 Kings 21</div>
+  <div class="band-body">
+    <p>The three legs aren't a checklist; they're a tripod, <strong>welded at the joints</strong> — and each weld is where the theology lives:</p>
+    <div class="legs">
+      <div class="leg copper">
+        <h3>Relation ↔ Religion: the ancestor</h3>
+        <p>You inherit your gods the way you inherit your name. "The God of Abraham, Isaac, and Jacob" is the covenant's sanctification of a universal pattern: the god <em>of the fathers</em>.</p>
+      </div>
+      <div class="leg olive">
+        <h3>Religion ↔ Region: the land-grant</h3>
+        <p>Territory is not real estate but <em>inheritance</em> (naḥalah), bestowed by the deity. Scripture honors this even for pagans: "Will you not possess what Chemosh your god gives you?" <span class="ref">(Judg 11:24)</span> — and God fences Moab and Edom's lands from Israel's sword because <em>He</em> granted them <span class="ref">(Deut 2)</span>.</p>
+      </div>
+      <div class="leg lapis">
+        <h3>Relation ↔ Region: inheritance law</h3>
+        <p>Land descends through blood — which is why Naboth cannot sell his vineyard to the king at any price: "The LORD forbid that I should give you <em>the inheritance of my fathers</em>" <span class="ref">(1 Kgs 21:3)</span>. Ahab offers a propositional transaction; Naboth defends the tripod.</p>
+      </div>
+    </div>
+    <p>Now run the test that kills the propositional model by demonstration: take any leg <strong>alone</strong>. A family alone is a clan. A cult alone is a mystery religion. A territory alone is dirt. <strong>No leg by itself produces a people</strong> — and no proposition ever did either. Nations are not founded by agreement; they are grown, granted, and inherited.</p>
+  </div>
+</div>
+
+<!-- ============ IV ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>Israel — the Deliberate Anomaly</div>
+  <div class="band-refs">Exodus 12:38; 19:5–6 · Ruth 1:16</div>
+  <div class="band-body">
+    <p>One guard-rail before we use this lens on Isaiah: Israel has the full triad — sons of Jacob, land of promise, God of the fathers — and yet it is the ancient world's one deliberate <strong>anomaly</strong>. It was constituted at Sinai by covenant words; it absorbed a "mixed multitude" on the way out of Egypt <span class="ref">(Ex 12:38)</span>; and its boundary had a <strong>porous, covenantal membrane</strong> that a Rahab or a Ruth could pass through into full membership — tribe, land, and inheritance included.</p>
+    <p>Note carefully what that is not: it is not propositional nationhood. Ruth does not sign on to ideas. Her formula joins a <em>people</em> and a <em>God</em> in one breath — "your people shall be my people, and your God my God" — and she is grafted into relation, religion, and region all at once. The category Scripture gives us sits between "racial" and "propositional" and reduces to neither: <strong>covenantal</strong>. Hold that word; the whole series runs on it, and Isaiah 56 will throw its doors wide open.</p>
+  </div>
+</div>
+
+<!-- ============ V ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">V</span>Why This Unlocks Isaiah</div>
+  <div class="band-body">
+    <p>Install the triad, and watch the book come into focus:</p>
+    <p><strong>Nations are persons with pedigrees.</strong> "Daughter of Zion," "virgin daughter of Babylon," Moab who weeps — corporate personality, because a nation is a family, and a family has a face.</p>
+    <p><strong>War is theological all the way down.</strong> The Rabshakeh taunts Jerusalem's wall with a triad-argument — "has any god of any nation delivered his land?" <span class="ref">(36:18–20)</span> — and Isaiah 46 answers by showing Babylon's gods hauled away on oxcarts.</p>
+    <p><strong>Exile is the un-making of a nation.</strong> Assyria's deportation machine dismantled the tripod leg by leg: scatter the kin, sever the land, burn the shrine. Which is why restoration prophecy must restore all three — seed regathered, land repossessed, glory returned to Zion — and in Isaiah, does.</p>
+    <p><strong>And treaties are sealed with weddings.</strong> If a nation is a family under a god on a land, then merging two nations' policies means merging their houses — which is the door into Solomon's marriages, Ahaz's tribute, and the whole alliance drama this series will walk through. That door opens on the next page: the figure who stands at the center of every triangle.</p>
+  </div>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Carry this shape with you</h2>
+  <p>Every nation page in this series is built on this triangle: a copper corner for the kin, a lapis corner for the god, an olive corner for the land — and at the center, what happened when that tripod met the God of Israel, who made every family, owns every land, and answers to no pantheon. "All the peoples walk each in the name of its god — but we will walk in the name of the LORD our God forever and ever" (Micah 4:5).</p>
+</div>
+
+<footer>
+  <div>References ESV · companion to the Reading Isaiah atlas set</div>
+  <div>Reading Isaiah · Foundations: What Is a Nation? · v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><span class="btn dis">&larr;<span class="t">Start</span></span><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/foundations-king/" rel="next"><span class="t">The King Revealed</span>&rarr;</a></nav>
+</body>
+</html>

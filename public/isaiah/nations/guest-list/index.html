@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Guest List — Finale, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .role{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .role.copper{border-top-color:var(--copper)}
+  .role.lapis{border-top-color:var(--lapis)}
+  .role.olive{border-top-color:var(--olive)}
+  .role h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .role p{font-size:.87rem;color:var(--ink-soft)}
+  .role .ref{color:var(--label);font-size:.82em}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .roles{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/new-covenant-people/" rel="prev">&larr;<span class="t">A New Covenant People</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><span class="btn dis"><span class="t">End</span>&rarr;</span></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Act IV &middot; Finale</div>
+  <h1>The Guest List</h1>
+  <div class="texts">Isaiah 60 &middot; 66:18&ndash;23 &middot; Revelation 7:9&ndash;10; 21:22&ndash;22:5</div>
+  <p class="subtitle">The Bible's last two chapters are Isaiah's last two chapters, kept. John does not invent an ending &mdash; he reports Isaiah's ending as accomplished, in Isaiah's own vocabulary. And when the gates open and the procession begins, the guest list is this series' cast, name for name.</p>
+</header>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>Revelation finishes the two movements Isaiah started: Babylon falls in Isaiah's words, and the nations gather in Isaiah's words. Every study in this series was a seating chart for Revelation 7:9 &mdash; and one verse of the invitation is still being delivered.</p>
+</div>
+
+<!-- ============ I ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">I</span>The City with Open Gates</div>
+  <div class="band-refs">Isaiah 60:3, 11, 19&ndash;20 &middot; Revelation 21:22&ndash;26</div>
+  <div class="band-body">
+    <p>Lay the two texts side by side and watch John transcribe. Isaiah: "Nations shall come to your light, and kings to the brightness of your rising&hellip; your gates shall be open continually; day and night they shall not be shut" <span class="ref">(60:3, 11)</span>. John: <strong>"The nations will walk by its light, and the kings of the earth will bring their glory into it, and its gates will never be shut by day &mdash; and there will be no night there"</strong> <span class="ref">(Rev 21:24&ndash;25)</span>. Isaiah: "The sun shall be no more your light by day&hellip; the LORD will be your everlasting light" <span class="ref">(60:19&ndash;20)</span>. John: "the city has no need of sun or moon&hellip; for the glory of God gives it light, and <strong>its lamp is the Lamb</strong>" <span class="ref">(21:23)</span>.</p>
+    <p>One addition changes everything: <em>the Lamb</em>. The city Isaiah surveyed from a distance now has its center named &mdash; the series' last diagram in a single clause. Open gates are the architecture of the inverted hegemony: a city that fears no invasion because its King has no rivals, receiving the nations' glory without confiscating the nations' names.</p>
+  </div>
+</div>
+
+<!-- ============ II ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Roll Call</div>
+  <div class="band-refs">Revelation 7:9&ndash;10 &middot; the twelve studies, pointed home</div>
+  <div class="band-body">
+    <blockquote>"Behold, a great multitude that no one could number, from every nation, from all tribes and peoples and languages, standing before the throne and before the Lamb."<span class="ref">Revelation 7:9</span></blockquote>
+    <p>Read that verse with this series behind you and it stops being a blur of crowd and becomes <strong>faces</strong>. Egypt is in it &mdash; the house of bondage answering to "my people." Assyria is in it &mdash; the rod, adopted as "the work of my hands." Tyre's merchants are in it, their wages long since made holy; Kedar's herdsmen, their flocks accepted on the altar; a Cushite treasurer with a name better than sons and daughters. Moab is in it twice &mdash; in the multitude, and in the King's own bloodline. The Medes and Elamites who stood first in the Pentecost roll; the coastlands that waited and were not disappointed, their seven lampstands burning on Javan's shore; Aram, whose capital road cradled the apostle to the nations; Philistia, whose beach hosted the water that prevented nothing. Even Edom &mdash; the brother, the betrayer &mdash; stands in the phrase James used for everyone: <em>the rest of mankind</em>.</p>
+    <p>"All tribes and peoples and <strong>languages</strong>" &mdash; plural to the end. Pentecost's policy holds at the throne: one confession, many tongues. The Table of Nations, complete, and still a table of <em>nations</em>.</p>
+  </div>
+</div>
+
+<!-- ============ III ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">III</span>The Other List</div>
+  <div class="band-refs">Revelation 18:2; 19:13&ndash;15 &middot; Isaiah 21:9; 63:1&ndash;6 &middot; Revelation 21:27</div>
+  <div class="band-body">
+    <p>There is no guest list without its opposite, and Revelation completes Isaiah's judgment movement with the same fidelity. The angel's cry over the world-city is Isaiah's watchman verbatim: <strong>"Fallen, fallen is Babylon the great"</strong> <span class="ref">(Rev 18:2 &larr; Isa 21:9)</span> &mdash; the funeral liturgy Isaiah drafted, read at last over every empire that repeated her. The rider on the white horse wears "a robe dipped in blood" and "treads the winepress of the fury of the wrath of God" <span class="ref">(Rev 19:13&ndash;15)</span> &mdash; John naming the crimson figure the watchman saw on the Bozrah road <span class="ref">(Isa 63:1&ndash;3)</span>.</p>
+    <p>And the gates that never shut still have a threshold: "nothing unclean will ever enter it&hellip; but only those who are written in <strong>the Lamb's book of life</strong>" <span class="ref">(21:27)</span>. What is excluded from the city is exactly what the series watched die on every tile: the idols that were never alive, the pride that trusted them, and the covenant with death &mdash; annulled. The nations enter; their lies do not.</p>
+  </div>
+</div>
+
+<!-- ============ IV ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>The Healing of the Nations &mdash; and the Standing Assignment</div>
+  <div class="band-refs">Revelation 22:1&ndash;2 &middot; Isaiah 66:19&ndash;23</div>
+  <div class="band-body">
+    <p>The canon's final image of the nations is medical: the tree of life, "and the leaves of the tree were <strong>for the healing of the nations</strong>" <span class="ref">(22:2)</span>. Not their replacement &mdash; their healing. Isaiah's own last page had already scheduled the liturgy: "From new moon to new moon, and from Sabbath to Sabbath, <strong>all flesh</strong> shall come to worship before me" <span class="ref">(66:23)</span> &mdash; with Gentile priests serving in the house <span class="ref">(66:21)</span>.</p>
+    <p>But between here and there, one verse of the invitation is still in the courier's bag: survivors sent "to the coastlands far away, <strong>that have not heard my fame</strong> or seen my glory &mdash; and they shall declare my glory among the nations" <span class="ref">(66:19)</span>. That verse has not expired. Paul died still aiming at its last name; the church holds the same itinerary. The guest list is written in the Lamb's book &mdash; and the invitations go out through us.</p>
+  </div>
+</div>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The series, in one paragraph</h2>
+  <p>A nation is a family, under a god, on a land, embodied in a king &mdash; and every triangle on Isaiah's map failed at every corner: the kinships betrayed, the gods that were furniture, the lands overrun, the kings who knelt to each other. Into that map God spoke oracles that judged the pride, mocked the idols, wept over the peoples &mdash; and kept promising a Center. The Center came. The gods lost their portfolios; the portfolios came back sanctified; the wedding was held without a single treaty; and the city at the end has open gates, a numberless multitude in every language, and one name where the king should be. The nations were never the backdrop of the story. They were the inheritance &mdash; "Ask of me, and I will make the nations your heritage" &mdash; and the Son has asked.</p>
+</div>
+
+<footer>
+  <div>References ESV &middot; the finale of the Reading Isaiah series</div>
+  <div>Reading Isaiah &middot; The Guest List &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/new-covenant-people/" rel="prev">&larr;<span class="t">A New Covenant People</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><span class="btn dis"><span class="t">End</span>&rarr;</span></nav>
+</body>
+</html>

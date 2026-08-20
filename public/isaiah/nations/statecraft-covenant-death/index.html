@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Covenant with Death — Statecraft, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .role{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .role.copper{border-top-color:var(--copper)}
+  .role.lapis{border-top-color:var(--lapis)}
+  .role.olive{border-top-color:var(--olive)}
+  .role h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .role p{font-size:.87rem;color:var(--ink-soft)}
+  .role .ref{color:var(--label);font-size:.82em}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .roles{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/statecraft-ahaz/" rel="prev">&larr;<span class="t">Servant and Son</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/nations-in-nt/" rel="next"><span class="t">The Nations in the NT</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Statecraft III</div>
+  <h1>A Covenant with Death</h1>
+  <div class="texts">Isaiah 28:14&ndash;22 &middot; 30:1&ndash;17 &middot; 31:1&ndash;3</div>
+  <p class="subtitle">The third instrument: the secret treaty. A generation after Ahaz, Jerusalem's operators cut a deal with Egypt against Assyria &mdash; and Isaiah refuses to call it diplomacy. He gives the treaty its true legal name, and sets against it the only architecture that survives the storm.</p>
+</header>
+
+<div class="hero-fig" style="max-width:700px">
+<svg viewBox="0 0 760 380" role="img" aria-label="Two architectures: a collapsing shelter labeled the refuge of lies, and a foundation stone with a plumb line, labeled a tested stone">
+  <g>
+    <path d="M 80 250 L 150 130 L 250 150 L 300 250" fill="none" stroke="#767862" stroke-width="2.4" stroke-dasharray="7 5"/>
+    <line x1="110" y1="250" x2="128" y2="196" stroke="#767862" stroke-width="1.6" stroke-dasharray="4 4"/>
+    <line x1="196" y1="250" x2="188" y2="168" stroke="#767862" stroke-width="1.6" stroke-dasharray="4 4"/>
+    <line x1="262" y1="250" x2="248" y2="176" stroke="#767862" stroke-width="1.6" stroke-dasharray="4 4"/>
+    <text x="190" y="290" text-anchor="middle" font-family="Marcellus, serif" font-size="14" fill="#4A4D57" letter-spacing="2">THE REFUGE OF LIES</text>
+    <text x="190" y="310" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">"we have made a covenant with death&hellip;</text>
+    <text x="190" y="325" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">the overwhelming scourge will not reach us" (28:15)</text>
+    <path d="M 60 118 C 130 92, 230 92, 322 116" fill="none" stroke="#232630" stroke-width="2"/>
+    <polygon points="328,118 314,110 312,122" fill="#232630"/>
+    <text x="190" y="82" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630">hail sweeps away the refuge (28:17)</text>
+  </g>
+  <g>
+    <rect x="470" y="196" width="200" height="88" fill="#CFC9B4" stroke="#232630" stroke-width="2.6"/>
+    <text x="570" y="232" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">A TESTED STONE</text>
+    <text x="570" y="252" text-anchor="middle" font-family="Marcellus, serif" font-size="11" fill="#232630" letter-spacing="1.6">A PRECIOUS CORNERSTONE</text>
+    <text x="570" y="270" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#4A4D57">a sure foundation &mdash; laid in Zion (28:16)</text>
+    <line x1="570" y1="90" x2="570" y2="188" stroke="#34528C" stroke-width="1.6"/>
+    <circle cx="570" cy="188" r="5" fill="#34528C"/>
+    <text x="588" y="112" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#34528C">the plumb line &mdash;</text>
+    <text x="588" y="127" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#34528C">"righteousness the plummet,</text>
+    <text x="588" y="142" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#34528C">justice the line" (28:17)</text>
+    <text x="570" y="318" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#232630">"Whoever believes will not be in haste."</text>
+  </g>
+  <text x="380" y="362" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" font-style="italic" fill="#767862">Two architectures &mdash; the same storm passes over both</text>
+</svg>
+<div class="fig-note">Exposure 8 &mdash; the refuge of lies and the tested stone: two foundations, one storm.</div>
+</div>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>Isaiah names the Egyptian alliance a "covenant with death" &mdash; treaty language for a treaty sin. Against it God announces not an argument but a construction project: a tested stone laid in Zion, with justice for a line and righteousness for a plummet. The question of chapters 28&ndash;31 is architectural: what are you standing on when the scourge passes through?</p>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">I</span>The Deal</div>
+  <div class="band-refs">Isaiah 28:14&ndash;15 &middot; 30:1&ndash;6</div>
+  <div class="band-body">
+    <p>The speakers now are not kings but the smart set &mdash; "you scoffers, who rule this people in Jerusalem" <span class="ref">(28:14)</span>, the same operators who mocked Isaiah's teaching as baby-talk earlier in the chapter. Their Egypt policy travels in secret &mdash; envoys and treasure on donkeys through the Negev "without asking for my direction" <span class="ref">(30:1&ndash;6)</span> &mdash; but Isaiah publishes the contract and supplies its honest title:</p>
+    <blockquote>"We have made a covenant with death, and with Sheol we have an agreement; when the overwhelming whip passes through it will not come to us, for we have made lies our refuge, and in falsehood we have taken shelter."<span class="ref">Isaiah 28:15</span></blockquote>
+    <p>Whether or not the negotiators invoked Egypt's underworld gods over the oath-cutting, Isaiah's satire stands: a defense pact with a corpse-kingdom. Every treaty is sworn before someone's gods; swear before Egypt's, says the prophet, and your counterparty is Death &mdash; who always collects.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Stone</div>
+  <div class="band-refs">Isaiah 28:16&ndash;18</div>
+  <div class="band-body">
+    <p>God's counter-offer is not a better alliance. It is <strong>masonry</strong>:</p>
+    <blockquote>"Behold, I am the one who has laid as a foundation in Zion a stone, a tested stone, a precious cornerstone, of a sure foundation: 'Whoever believes will not be in haste.'"<span class="ref">Isaiah 28:16</span></blockquote>
+    <p>Set the two architectures side by side. Theirs: a refuge engineered from lies, load-rated by wishful thinking. His: one stone, already laid, already tested &mdash; and a building code: <strong>"I will make justice the line, and righteousness the plumb line"</strong> <span class="ref">(28:17)</span> &mdash; the surveyor's <em>qav</em>, the same word the drunkards slurred back at Isaiah as gibberish (28:10, 13). The tools they mocked become the tools of inspection: hail sweeps the refuge, waters overwhelm the shelter, and <strong>"your covenant with death will be annulled"</strong> <span class="ref">(28:18)</span> &mdash; the one mercy hidden inside the demolition, since a contract with Death is exactly the contract you want voided. <em>Not in haste</em>: the believer doesn't run to Egypt, because the believer is standing on something.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">III</span>The Diagnosis</div>
+  <div class="band-refs">Isaiah 30:7, 15&ndash;16 &middot; 31:1&ndash;3</div>
+  <div class="band-body">
+    <p>Isaiah's case against the treaty is not that Egypt is wicked but that Egypt is <strong>weightless</strong>: "Egypt's help is worthless and empty; therefore I have called her 'Rahab who sits still'" <span class="ref">(30:7)</span> &mdash; the blustering monster that never leaves its chair. The alternative was always on the table, stated in the series' quietest verse: <strong>"In returning and rest you shall be saved; in quietness and in trust shall be your strength."</strong> And the reply that indicts a whole foreign policy: <strong>"But you were unwilling, and you said, 'No! We will flee upon horses'"</strong> <span class="ref">(30:15&ndash;16)</span>.</p>
+    <p>Chapter 31 gives the ontology under the politics: "The Egyptians are <strong>man, and not God</strong>, and their horses are <strong>flesh, and not spirit</strong>" <span class="ref">(31:3)</span>. Alliance-hunting is category error &mdash; stacking flesh against spirit and calling the pile security. The triangle can lean on the God above it, or on another triangle. There is no third option, and only one of the two can bear weight.</p>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>The Vindication &mdash; 701 BC</div>
+  <div class="band-refs">Isaiah 36&ndash;37</div>
+  <div class="band-body">
+    <p>Then history runs the load test. Sennacherib arrives; the Rabshakeh stands at the wall and &mdash; astonishingly &mdash; <em>preaches Isaiah's own point back at Jerusalem</em>: "you are trusting in Egypt, that broken reed of a staff" <span class="ref">(36:6)</span>. Egypt's relief force accomplishes nothing, exactly as advertised. And Hezekiah, at the last, does what Ahaz would not: no letter to a third empire, no raid on the treasury &mdash; he takes the enemy's letter <strong>up to the house of the LORD and spreads it before the LORD</strong> <span class="ref">(37:14)</span>, the anti-Ahaz in a single gesture. That night the scourge passes through &mdash; and does not reach the city standing on the stone <span class="ref">(37:36)</span>. Quietness and trust, vindicated in the open field of history, one time, unforgettably &mdash; the down payment on every promise in the book.</p>
+    <p><span class="t t-named" style="background:#9E6428;color:#fff;display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1px 7px;border-radius:2px;vertical-align:2px;margin-right:6px">Quoted</span>And the stone outlives the siege. Paul lays Isaiah 28:16 at the center of his gospel &mdash; "whoever believes in him will not be put to shame" <span class="ref">(Rom 9:33; 10:11)</span> &mdash; and Peter builds the church's whole architecture on it: the living stone, the cornerstone chosen and precious, and believers themselves as stones in the house <span class="ref">(1 Pet 2:4&ndash;6)</span>. The foundation laid against an Egyptian treaty in 705 BC turns out to have been load-rated for the nations.</p>
+  </div>
+</div>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The third instrument, audited &mdash; and the act closed</h2>
+  <p>Three instruments, one sin in three costumes: the marriage that moved the corners, the oath that re-filed the sonship, the secret pact that contracted with Death &mdash; each a relocation of trust from the God above the triangle to another triangle's king. Against all three, one alternative, stated in stone: whoever believes will not be in haste. Act IV asks what happened when the tested stone became a Man, and the nations' triangles met their true Center.</p>
+</div>
+
+<footer>
+  <div>References ESV &middot; Statecraft III of the Reading Isaiah series</div>
+  <div>Reading Isaiah &middot; Statecraft: A Covenant with Death &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/statecraft-ahaz/" rel="prev">&larr;<span class="t">Servant and Son</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/nations-in-nt/" rel="next"><span class="t">The Nations in the NT</span>&rarr;</a></nav>
+</body>
+</html>

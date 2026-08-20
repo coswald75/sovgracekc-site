@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why the Nations? — Series Opener, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+
+  header{padding:64px 0 26px}
+  .eyebrow{
+    font-family:'Marcellus', serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lapis);
+    margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);
+    letter-spacing:.015em;
+    line-height:1.08;
+  }
+  .texts{
+    margin-top:14px;
+    font-family:'Marcellus', serif;
+    font-size:1.05rem;
+    color:var(--copper);
+    letter-spacing:.02em;
+  }
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:52px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  /* ---------- the canonical arc (signature element) ---------- */
+  .arc{
+    margin-top:36px;
+    display:flex;
+    gap:0;
+    overflow-x:auto;
+    padding-bottom:6px;
+  }
+  .arc-stop{
+    flex:1;
+    min-width:150px;
+    position:relative;
+    padding:0 18px 0 0;
+  }
+  .arc-stop:not(:last-child)::after{
+    content:"→";
+    position:absolute;
+    right:-2px;
+    top:6px;
+    color:var(--label);
+    font-size:.9rem;
+  }
+  .arc-stop .era{
+    font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--lapis);font-weight:600;margin-bottom:6px;
+  }
+  .arc-stop .stop-title{
+    font-family:'Marcellus', serif;font-size:1.02rem;color:var(--ink);
+    line-height:1.25;margin-bottom:6px;
+  }
+  .arc-stop .stop-ref{font-size:.78rem;color:var(--label)}
+
+  /* ---------- big idea ---------- */
+  .bigidea{
+    margin-top:44px;
+    background:var(--stone-deep);
+    border-left:3px solid var(--copper);
+    padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{
+    font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink);
+  }
+
+  /* ---------- movements ---------- */
+  .band{margin-top:48px}
+  .band-title{
+    font-family:'Marcellus', serif;
+    font-size:1.32rem;
+    letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-title .k.roman{color:var(--copper)}
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  /* ---------- application (deliberately unfinished) ---------- */
+  .application{
+    margin-top:48px;
+    border:1px dashed var(--label);
+    padding:22px 26px;
+    background:transparent;
+  }
+  .application .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:10px;display:block;
+  }
+  .application p{font-size:.95rem;color:var(--ink-soft);margin-bottom:10px}
+  .application p:last-child{margin-bottom:0}
+  .application .fill{
+    font-style:italic;color:var(--label);
+  }
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:720px){
+    .arc{flex-direction:column;gap:22px}
+    .arc-stop{padding:0 0 0 0}
+    .arc-stop:not(:last-child)::after{content:"↓";right:auto;left:0;top:auto;bottom:-16px}
+    header{padding-top:44px}
+  }
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:560px){.iz-nav .t{max-width:22vw}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/foundations-king/" rel="prev">&larr;<span class="t">The King Revealed</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/hub/" rel="next"><span class="t">The Nations of Isaiah</span>&rarr;</a></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah · Act I · Foundations III</div>
+  <h1>Why the Nations?</h1>
+  <div class="texts">Isaiah 2:1–4 · Genesis 12:1–3</div>
+  <p class="subtitle">The last two pages built the lens: a nation is a family, under a god, on a land, embodied in a king. This page supplies the motive — the case that God's purpose for Israel was never Israel alone, traced from Abraham's call to the last page of Revelation. Everything the coming weeks do with Moab, Egypt, and Babylon serves this one argument; none of it competes with it.</p>
+</header>
+
+<!-- ============ THE CANONICAL ARC ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="arc">
+  <div class="arc-stop">
+    <div class="era">Genesis 12</div>
+    <div class="stop-title">The Promise</div>
+    <div class="stop-ref">Abraham, for the nations</div>
+  </div>
+  <div class="arc-stop">
+    <div class="era">Exodus 9, 19</div>
+    <div class="stop-title">The Purpose Stated</div>
+    <div class="stop-ref">"My name in all the earth"</div>
+  </div>
+  <div class="arc-stop">
+    <div class="era">Isaiah</div>
+    <div class="stop-title">The Pattern</div>
+    <div class="stop-ref">Judgment, then gathering</div>
+  </div>
+  <div class="arc-stop">
+    <div class="era">Matt 28 · Acts</div>
+    <div class="stop-title">The Purpose Repeated</div>
+    <div class="stop-ref">"To the end of the earth"</div>
+  </div>
+  <div class="arc-stop">
+    <div class="era">Revelation</div>
+    <div class="stop-title">The Purpose Fulfilled</div>
+    <div class="stop-ref">Every tribe, gathered in</div>
+  </div>
+</div>
+
+<!-- ============ BIG IDEA ============ -->
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>God's purpose for Israel was never Israel alone. From the call of Abraham to the last page of Revelation, the nations are not a footnote to the covenant — they are its object. The oracles this series spends the next several weeks inside are not a detour from the gospel. They are the gospel doing what it has always done.</p>
+</div>
+
+<!-- ============ I ============ -->
+<div class="band">
+  <div class="band-title"><span class="k roman">I</span>The Promise Stated</div>
+  <div class="band-refs">Genesis 12:1–3</div>
+  <div class="band-body">
+    <p>Abraham is chosen, but the choice is instrumental, not terminal: <strong>"in you all the families of the earth shall be blessed."</strong> Not a one-off line — repeated at every major hinge of the patriarchal narrative: after Sodom <span class="ref">(18:18)</span>, after the Akedah <span class="ref">(22:18)</span>, to Isaac <span class="ref">(26:4)</span>, to Jacob <span class="ref">(28:14)</span>. The text will not let the promise be forgotten.</p>
+    <p>The target is <strong>"all the families of the earth"</strong> — the same phrase that opens Genesis 10's Table of Nations. Abraham's family is called out of that table in order to bless the rest of it.</p>
+  </div>
+</div>
+
+<!-- ============ II ============ -->
+<div class="band">
+  <div class="band-title"><span class="k roman">II</span>The Purpose Demonstrated</div>
+  <div class="band-refs">Exodus 9, 19</div>
+  <div class="band-body">
+    <p>The Exodus is staged for an audience beyond Israel:</p>
+    <blockquote>"For this purpose I have raised you up… so that my name may be proclaimed in all the earth."<span class="ref">Exodus 9:16 — cited by Paul as evidence of God's global dealings, Rom 9:17</span></blockquote>
+    <p>It works, inside the book: Jethro, a Midianite priest, hears the report and confesses <strong>"now I know that the LORD is greater than all gods"</strong> <span class="ref">(18:11)</span>. The Song of Moses has the surrounding peoples trembling at the news <span class="ref">(15:14–16)</span>.</p>
+    <p>At Sinai the purpose is written into Israel's own charter:</p>
+    <blockquote>"You shall be my treasured possession among all peoples, for all the earth is mine… a kingdom of priests."<span class="ref">Exodus 19:5–6</span></blockquote>
+    <p>Cosmic ownership grounds a mediatorial calling. <strong>Israel is elected for the nations, not instead of them.</strong></p>
+  </div>
+</div>
+
+<!-- ============ III ============ -->
+<div class="band">
+  <div class="band-title"><span class="k roman">III</span>The Pattern in Isaiah</div>
+  <div class="band-refs">Isaiah 2; 13–23; 34; 40–66</div>
+  <div class="band-body">
+    <p>Two movements run through the whole book: judgment on the nations' pride and their gods <span class="ref">(chs. 13–23; 34)</span>, and promise of their gathering in <span class="ref">(chs. 2; 19; 42; 49; 56; 60; 66)</span>. This series takes up both halves, nation by nation — kinship, the gods they trusted, Isaiah's word, and how the New Testament closes the account.</p>
+    <p>2:2–4 is the series' target verse:</p>
+    <blockquote>"All the nations shall flow to it… out of Zion shall go forth the law."<span class="ref">Isaiah 2:2–3</span></blockquote>
+    <p>Every oracle against Moab, Egypt, and Babylon that follows serves this end. None of them rival it.</p>
+  </div>
+</div>
+
+<!-- ============ IV ============ -->
+<div class="band">
+  <div class="band-title"><span class="k roman">IV</span>The Purpose Repeated</div>
+  <div class="band-refs">Matthew 28; Acts 1, 13</div>
+  <div class="band-body">
+    <p>The Great Commission grounds itself the same way Sinai did:</p>
+    <blockquote>"All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations…"<span class="ref">Matthew 28:18–19</span></blockquote>
+    <p><strong>"All authority"</strong> mirrors <strong>"all the earth is mine"</strong> — cosmic authority, then a global commission. Acts 1:8's "to the end of the earth" is the Septuagint's own clause from Isaiah 49:6, and Paul cites the verse by name as the missionaries' job description <span class="ref">(Acts 13:47, "for so the Lord has commanded us")</span>.</p>
+    <p>Acts then walks Isaiah's map in real history — an official from Cush <span class="ref">(Acts 8)</span>, a convert on the Damascus road <span class="ref">(Acts 9)</span>, the coastland cities of Paul's journeys <span class="ref">(Acts 16–19)</span>, Rome. Pentecost's nation list <span class="ref">(2:9–11)</span> reads like Genesis 10 reconvened in one room.</p>
+  </div>
+</div>
+
+<!-- ============ V ============ -->
+<div class="band">
+  <div class="band-title"><span class="k roman">V</span>The Purpose Fulfilled</div>
+  <div class="band-refs">Revelation 18; 21–22</div>
+  <div class="band-body">
+    <p>Both halves of Isaiah's pattern, completed. The judgment half — Revelation 18 lifts Isaiah's Babylon oracle almost word for word <span class="ref">(cf. Isa 21:9)</span>. The gathering half:</p>
+    <blockquote>"The nations will walk by its light, and the kings of the earth will bring their glory into it."<span class="ref">Revelation 21:24 — drawing directly on Isaiah 60:3, 11</span></blockquote>
+    <p>The last image of the whole canon: leaves <strong>"for the healing of the nations"</strong> <span class="ref">(22:2)</span> — the promise to Abraham, kept, at the furthest possible remove from where it started.</p>
+  </div>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The whole argument, in one line</h2>
+  <p>Genesis 12 promises it. Exodus 9 and 19 state it as the reason for everything that follows. Isaiah spends thirty chapters proving God means it, nation by nation. Matthew 28 and Acts repeat it as marching orders, in Isaiah's own words. Revelation shows it finished. Five books, one purpose, and this series lives entirely inside the middle of it.</p>
+</div>
+
+<footer>
+  <div>References ESV · Foundations III of the Reading Isaiah series</div>
+  <div>Reading Isaiah · Why the Nations? · v2</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/foundations-king/" rel="prev">&larr;<span class="t">The King Revealed</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/hub/" rel="next"><span class="t">The Nations of Isaiah</span>&rarr;</a></nav>
+</body>
+</html>

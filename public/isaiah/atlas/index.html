@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nations of Isaiah — A Reader's Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px 90px}
+
+  /* ---------- header ---------- */
+  header{padding:64px 0 30px;text-align:left}
+  .eyebrow{
+    font-family:'Marcellus', serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lapis);
+    margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:clamp(2rem, 5.4vw, 3.3rem);
+    letter-spacing:.015em;
+    line-height:1.08;
+  }
+  .subtitle{
+    margin-top:16px;
+    max-width:620px;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+  .orientation{
+    margin-top:26px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    background:var(--stone-deep);
+    border-left:3px solid var(--lapis);
+    padding:14px 18px;
+    max-width:720px;
+  }
+  .orientation svg{flex:none;margin-top:2px}
+  .orientation p{font-size:.92rem;color:var(--ink-soft)}
+  .orientation strong{color:var(--ink)}
+
+  /* ---------- primer: how the dials work (Kansas example) ---------- */
+  .primer{margin-top:14px;background:var(--stone-deep);border-left:3px solid var(--copper);
+    padding:14px 18px 16px;max-width:720px}
+  .primer p{font-size:.92rem;color:var(--ink-soft)}
+  .primer strong{color:var(--ink)}
+  .primer-row{display:flex;flex-wrap:wrap;gap:22px 26px;margin:16px 2px 4px}
+  .primer .ex{display:flex;align-items:center;gap:10px}
+  .primer .ex .dial{width:34px;height:34px;flex:none}
+  .primer .ex b{font-family:'Marcellus', serif;font-weight:400;font-size:1.04rem;
+    letter-spacing:.02em;display:block}
+  .primer .ex span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--label)}
+
+  /* ---------- surveyor's line divider (Isa 28:17) ---------- */
+  .qav{
+    display:flex;align-items:center;gap:0;
+    margin:58px 0 0;
+    height:14px;
+  }
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{
+    content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule);
+  }
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  /* ---------- sections ---------- */
+  section{padding-top:26px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sec-num{
+    font-family:'Marcellus', serif;
+    color:var(--label);
+    font-size:.85rem;
+    letter-spacing:.22em;
+  }
+  h2{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:1.65rem;
+    letter-spacing:.02em;
+  }
+  .sec-intro{max-width:700px;color:var(--ink-soft);font-size:.95rem;margin-bottom:26px}
+  .sec-intro em{font-style:italic}
+
+  /* ---------- nation entry ---------- */
+  .nation{
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:0 34px;
+    padding:26px 0;
+    border-top:1px solid var(--rule);
+  }
+  .nation:last-of-type{border-bottom:1px solid var(--rule)}
+  .id-block{padding-top:2px}
+  .n-name{
+    font-family:'Marcellus', serif;
+    font-size:1.32rem;
+    letter-spacing:.02em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .covenant .n-name{color:var(--copper)}
+  .n-name .dial{flex:none}
+  .n-meta{
+    margin-top:7px;
+    font-size:.8rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--label);
+    line-height:1.7;
+  }
+  .n-today{margin-top:8px;font-size:.88rem;color:var(--ink-soft);font-style:italic}
+
+  .detail{display:flex;flex-direction:column;gap:11px}
+  .row{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:baseline}
+  .row-label{
+    font-size:.7rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--label);
+    font-weight:600;
+    font-family:'Source Serif 4', serif;
+    padding-top:3px;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{
+    background:var(--lapis-pale);
+    color:var(--lapis);
+    font-size:.85rem;
+    padding:2px 10px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .covenant .chip{background:var(--copper-pale);color:var(--copper)}
+  .chip small{opacity:.75;font-size:.78em}
+  .places{font-size:.93rem;color:var(--ink)}
+  .places .ref{color:var(--label);font-size:.83em}
+  .chapters{font-size:.93rem;color:var(--ink)}
+  .note{
+    font-size:.95rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--stone-deep);
+    padding-left:12px;
+  }
+  .note strong{color:var(--ink)}
+
+  /* compass dial: tick rotated to bearing from Jerusalem */
+  .dial{width:22px;height:22px}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.2}
+  .dial line{stroke:var(--lapis);stroke-width:2;stroke-linecap:round}
+  .covenant .dial line{stroke:var(--copper)}
+  .dial .dot{fill:var(--copper);stroke:none}
+
+  /* ---------- glossary table ---------- */
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th{
+    text-align:left;
+    font-family:'Source Serif 4', serif;
+    font-size:.7rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--label);
+    font-weight:600;
+    padding:8px 14px 8px 0;
+    border-bottom:1px solid var(--ink);
+  }
+  td{
+    padding:9px 14px 9px 0;
+    border-bottom:1px solid var(--rule);
+    font-size:.94rem;
+    vertical-align:top;
+  }
+  td.code{font-family:'Marcellus', serif;font-size:1.02rem;white-space:nowrap}
+  td .ref{color:var(--label);font-size:.85em;white-space:nowrap}
+
+  footer{
+    margin-top:70px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-size:.85rem;
+    color:var(--label);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  @media (max-width:720px){
+    .nation{grid-template-columns:1fr;gap:16px}
+    .row{grid-template-columns:1fr;gap:2px}
+    header{padding-top:44px}
+  }
+  @media print{
+    body{background:#fff}
+    .nation{break-inside:avoid}
+    section{break-inside:auto}
+  }
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:560px){.iz-nav .t{max-width:22vw}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/why-the-nations/" rel="prev">&larr;<span class="t">Why the Nations?</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/kinship/" rel="next"><span class="t">The Family of Nations</span>&rarr;</a></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah</div>
+  <h1>The Nations of Isaiah<br>A Reader's Atlas</h1>
+  <p class="subtitle">Isaiah preaches to the whole map. One nation can wear four or five different names, and one name can mean two different nations. This chart is meant to sit beside your Bible: when you meet a place name, find it here.</p>
+  <div class="orientation">
+    <svg class="dial" viewBox="0 0 22 22" width="26" height="26" aria-hidden="true"><circle cx="11" cy="11" r="9"/><circle class="dot" cx="11" cy="11" r="2.4"/></svg>
+    <p><strong>How to read the dials.</strong> Every small compass shows a nation's direction <strong>from Jerusalem</strong> — Isaiah's vantage point for the entire book. The solid dot is Jerusalem itself. One quirk to know: Assyria and Babylon lie east, but their armies marched the caravan route around the desert and always <em>arrived from the north</em> — which is why the prophets speak of danger "out of the north."</p>
+  </div>
+
+  <div class="primer">
+    <p><strong>A quick example, close to home.</strong> A dial points the way you would travel to reach a place. Picture yourself standing in <strong>Kansas</strong>:</p>
+    <div class="primer-row">
+      <div class="ex"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="3.5" y2="11"/></svg><div><b>Colorado</b><span>West</span></div></div>
+      <div class="ex"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.5" y2="11"/></svg><div><b>Missouri</b><span>East</span></div></div>
+      <div class="ex"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="11" y2="18.5"/></svg><div><b>Oklahoma</b><span>South</span></div></div>
+      <div class="ex"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="16.3" y2="5.7"/></svg><div><b>Iowa</b><span>Northeast</span></div></div>
+    </div>
+    <p>On the chart below, simply swap Kansas for <strong>Jerusalem</strong> — Isaiah's vantage point — and read every dial the same way.</p>
+  </div>
+</header>
+
+<!-- ============ SECTION I ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="covenant">
+  <div class="sec-head"><span class="sec-num">I</span><h2>The Covenant People — Two Kingdoms</h2></div>
+  <p class="sec-intro">After Solomon (about 930&nbsp;BC) the nation split in two. This is the single most important fact for reading Isaiah, because the word <em>Israel</em> is now ambiguous: sometimes it means the northern kingdom only, sometimes the whole covenant people, north and south together. The same is true of <em>Jacob</em>. Context decides — but when Isaiah says <strong>Ephraim</strong> or <strong>Samaria</strong>, he always means the north.</p>
+
+  <div class="nation covenant">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="11" y2="3.5"/></svg>Israel <span style="font-size:.72em;color:var(--label)">·</span> <span style="font-size:.78em">the Northern Kingdom</span></div>
+      <div class="n-meta">North of Judah · capital Samaria</div>
+      <div class="n-today">Ten tribes; fell to Assyria, 722 BC</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Ephraim <small>7:2; 28:1</small></span>
+        <span class="chip">Samaria <small>7:9; 10:11</small></span>
+        <span class="chip">Jacob <small>9:8 — sometimes</small></span>
+        <span class="chip">Israel <small>sometimes</small></span>
+        <span class="chip">"Remaliah's son" <small>7:4 — its king</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Places within</div><div class="places">Samaria (capital) · Galilee, Zebulun &amp; Naphtali <span class="ref">(9:1)</span> · "the way of the sea, beyond the Jordan"</div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">7–9 · 17 · 28:1–6</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note"><strong>Ephraim</strong> was the dominant northern tribe, so its name stands for the whole kingdom — the way "Washington" can mean America. When Isaiah pronounces woe on "the drunkards of Ephraim" (28:1), he is talking about the north, not Judah.</div></div>
+    </div>
+  </div>
+
+  <div class="nation covenant">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><circle class="dot" cx="11" cy="11" r="2.4"/></svg>Judah <span style="font-size:.72em;color:var(--label)">·</span> <span style="font-size:.78em">the Southern Kingdom</span></div>
+      <div class="n-meta">Isaiah's home &amp; audience · capital Jerusalem</div>
+      <div class="n-today">Two tribes; spared in 701, fell to Babylon 586 BC</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Zion / Mount Zion</span>
+        <span class="chip">Jerusalem</span>
+        <span class="chip">Daughter of Zion <small>1:8</small></span>
+        <span class="chip">Ariel <small>29:1</small></span>
+        <span class="chip">City of David <small>22:9</small></span>
+        <span class="chip">the Valley of Vision <small>22:1</small></span>
+        <span class="chip">the vineyard <small>5:1–7</small></span>
+        <span class="chip">Immanuel's land <small>8:8</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Places within</div><div class="places">Jerusalem &amp; the temple mount · waters of Shiloah <span class="ref">(8:6)</span> · the upper pool &amp; conduit <span class="ref">(7:3; 36:2)</span> · Lachish &amp; Libnah <span class="ref">(36:2; 37:8)</span> · Topheth, valley of Hinnom <span class="ref">(30:33)</span> · the invasion route: Aiath, Michmash, Geba, Ramah, Gibeah, Anathoth, Nob <span class="ref">(10:28–32)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">1–5 · 7–8 · 22 · 28:7–29 · 29 · 36–39 · 40–66 throughout</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note"><strong>Zion</strong> is the book's center of gravity — judged in the early chapters, besieged in the middle, comforted and glorified at the end. When Isaiah says "this people," he almost always means Judah, standing right in front of him.</div></div>
+    </div>
+  </div>
+
+  <div class="nation covenant">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><circle class="dot" cx="11" cy="11" r="2.4"/></svg><span style="font-size:.82em">Landmarks of the Land</span></div>
+      <div class="n-meta">Mountains, forests &amp; plains used as images</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">The names</div><div class="chips">
+        <span class="chip">Lebanon <small>cedar forests, N</small></span>
+        <span class="chip">Carmel <small>coastal ridge, NW</small></span>
+        <span class="chip">Sharon <small>fertile plain, W</small></span>
+        <span class="chip">Bashan <small>oak country, NE</small></span>
+        <span class="chip">Valley of Achor <small>65:10</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">These are real regions, but Isaiah mostly uses them as <strong>symbols of glory and fruitfulness</strong> — when they "wither and mourn" (33:9) the land is under judgment; when the desert blooms "like the glory of Lebanon, the majesty of Carmel and Sharon" (35:2), salvation has come.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION II ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="powers">
+  <div class="sec-head"><span class="sec-num">II</span><h2>The Great Powers</h2></div>
+  <p class="sec-intro">Four superpowers frame the book. <em>Assyria</em> is the live threat of Isaiah's own lifetime; <em>Babylon</em> is the storm on the far horizon; <em>Egypt</em> and <em>Cush</em> are the tempting ally to the south — the "help" Judah keeps wanting to trust instead of the LORD.</p>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="14.8" y2="4.5"/></svg>Assyria</div>
+      <div class="n-meta">Far northeast · arrives from the north</div>
+      <div class="n-today">Northern Iraq today · capital Nineveh</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">the rod of my anger <small>10:5</small></span>
+        <span class="chip">the hired razor <small>7:20</small></span>
+        <span class="chip">the River's flood <small>8:7–8</small></span>
+        <span class="chip">"the Assyrian"</span>
+      </div></div>
+      <div class="row"><div class="row-label">Places &amp; kings</div><div class="places">Nineveh <span class="ref">(37:37)</span> · kings Sargon <span class="ref">(20:1)</span> &amp; Sennacherib <span class="ref">(36–37)</span> · its trophy list: Calno, Carchemish, Hamath, Arpad <span class="ref">(10:9)</span>; Gozan, Haran, Rezeph <span class="ref">(37:12)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">7–8 · 10 · 14:24–27 · 20 · 30–31 · 36–37</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">The empire that swallowed the north in 722 and stood at Jerusalem's wall in 701. Isaiah's shocking claim: Assyria is <strong>God's own tool</strong> — a rod in His hand — which will itself be judged for its arrogance (10:5–19).</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="17" y2="7.2"/></svg>Babylon</div>
+      <div class="n-meta">Far east · arrives from the north</div>
+      <div class="n-today">Southern Iraq today · on the Euphrates</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Chaldea / the Chaldeans <small>43:14; 47:1</small></span>
+        <span class="chip">daughter of Babylon <small>47:1</small></span>
+        <span class="chip">Shinar <small>11:11</small></span>
+        <span class="chip">the wilderness of the sea <small>21:1</small></span>
+        <span class="chip">glory of kingdoms <small>13:19</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Places &amp; figures</div><div class="places">Merodach-baladan its king <span class="ref">(39:1)</span> · its gods Bel &amp; Nebo <span class="ref">(46:1)</span> · its king taunted as "Day Star, son of Dawn" <span class="ref">(14:12)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">13–14 · 21 · 39 · 46–48</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">In Isaiah's lifetime Babylon was Assyria's rebellious province — but the book sees ahead: Babylon will destroy Jerusalem (586 BC) and carry Judah into exile, and chapters 40–55 speak <strong>into</strong> that exile with comfort. Babylon also becomes Scripture's standing symbol of proud human empire.</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="5.7" y2="16.3"/></svg>Egypt</div>
+      <div class="n-meta">Southwest · the Nile kingdom</div>
+      <div class="n-today">Egypt today · the tempting ally</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Rahab <small>30:7; 51:9</small></span>
+        <span class="chip">"Rahab who sits still" <small>30:7</small></span>
+        <span class="chip">the shadow of Egypt <small>30:2</small></span>
+        <span class="chip">that broken reed <small>36:6</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Places within</div><div class="places">Zoan &amp; Hanes <span class="ref">(19:11; 30:4)</span> · Memphis <span class="ref">(19:13)</span> · Pathros, Upper Egypt <span class="ref">(11:11)</span> · the Nile &amp; its canals <span class="ref">(19:5–8)</span> · the Brook of Egypt, its border <span class="ref">(27:12)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">19–20 · 30–31 · 36:6</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Judah's politicians kept riding south to buy Egyptian chariots against Assyria; Isaiah calls the whole project trusting <strong>"Rahab who sits still"</strong> — a blustering sea-monster that never actually helps. Yet 19:18–25 ends with one of the Bible's most stunning promises: Egypt healed, worshiping, called "my people."</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="9" y2="18.2"/></svg>Cush</div>
+      <div class="n-meta">Far south · beyond Egypt</div>
+      <div class="n-today">Nubia — today's Sudan / "Ethiopia" in older Bibles</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Ethiopia <small>KJV &amp; older translations</small></span>
+        <span class="chip">land of whirring wings <small>18:1</small></span>
+        <span class="chip">Seba <small>43:3</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Figures</div><div class="places">Tirhakah, king of Cush <span class="ref">(37:9)</span> — Cushite pharaohs ruled Egypt itself in Isaiah's day (the 25th Dynasty)</div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">18 · 20 · 45:14</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">The tall, smooth-skinned people "beyond the rivers" (18:2) — the far edge of Isaiah's map. Because Cushite kings sat on Egypt's throne, "Egypt and Cush" travel together in these oracles (20:3–5). Even distant Cush brings tribute to Zion in the end (18:7).</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.5" y2="11"/></svg>Media &amp; Elam</div>
+      <div class="n-meta">Far east · beyond Babylon</div>
+      <div class="n-today">Iran today · Babylon's future destroyers</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">the Medes <small>13:17</small></span>
+        <span class="chip">Elam <small>21:2; 22:6</small></span>
+        <span class="chip">Kir <small>22:6 — with Elam</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key figure</div><div class="places"><strong>Cyrus</strong>, named two centuries early <span class="ref">(44:28; 45:1)</span> — also "a bird of prey from the east" <span class="ref">(46:11)</span>, the one "stirred up from the north/east" <span class="ref">(41:2, 25)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">13:17 · 21:2 · 41 · 44:28–45:13</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">God's answer to Babylon. The Medes and Persians take Babylon in 539 BC, and Cyrus — a pagan king whom God calls "my shepherd" and "his anointed" — sends the exiles home. Isaiah names him long before his birth as proof that God alone declares the end from the beginning.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION III ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="neighbors">
+  <div class="sec-head"><span class="sec-num">III</span><h2>The Neighbors</h2></div>
+  <p class="sec-intro">The small nations ringing Israel and Judah — sometimes enemies, sometimes tempting alliance partners, all addressed in the "oracles against the nations" (chapters 13–23). The message to each: no nation, however near or clever, is outside the LORD's rule.</p>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="13.6" y2="4"/></svg>Aram (Syria)</div>
+      <div class="n-meta">Northeast · capital Damascus</div>
+      <div class="n-today">Syria today</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Syria</span>
+        <span class="chip">Damascus <small>its capital, ch. 17</small></span>
+        <span class="chip">"Rezin" <small>its king, 7:1</small></span>
+        <span class="chip">a smoldering stump <small>7:4</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">7–8 · 17</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Aram and northern Israel teamed up to strong-arm Judah into their anti-Assyrian revolt (the crisis behind chapter 7 and the Immanuel sign). Isaiah dismisses the fearsome pair as <strong>"two smoldering stumps of firebrands"</strong> — nearly burnt out already. Assyria destroyed Damascus in 732 BC.</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="3.5" y2="11"/></svg>Philistia</div>
+      <div class="n-meta">West · the coastal plain</div>
+      <div class="n-today">Gaza coast today</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">the Philistines <small>9:12</small></span>
+        <span class="chip">"Philistia, all of you" <small>14:29</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Places within</div><div class="places">Ashdod <span class="ref">(20:1)</span> — one of its five great cities</div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">14:28–32 · 20</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Israel's ancient coastal rival (Goliath's people, centuries earlier). Warned not to celebrate one Assyrian king's death — a worse "serpent" is coming (14:29).</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.3" y2="11.8"/></svg>Moab</div>
+      <div class="n-meta">East · across the Dead Sea</div>
+      <div class="n-today">Central Jordan today</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Places within</div><div class="places">Ar &amp; Kir <span class="ref">(15:1)</span> · Dibon, Nebo, Medeba <span class="ref">(15:2)</span> · Heshbon &amp; Elealeh <span class="ref">(15:4)</span> · Zoar <span class="ref">(15:5)</span> · Kir-hareseth <span class="ref">(16:7)</span> · Sibmah &amp; Jazer <span class="ref">(16:8–9)</span> · Sela <span class="ref">(16:1)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">15–16 · 25:10–12</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Kin to Israel through Lot, and Ruth's homeland. The oracle is dense with town names because it traces <strong>refugees fleeing town to town</strong> — and remarkably, Isaiah weeps for Moab as he pronounces it (15:5; 16:9–11). Judgment, delivered in tears.</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="15.5" y2="17"/></svg>Edom</div>
+      <div class="n-meta">Southeast · the red-rock country</div>
+      <div class="n-today">Southern Jordan today · descendants of Esau</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">Dumah <small>21:11 — a grim pun: "silence"</small></span>
+        <span class="chip">Seir <small>21:11</small></span>
+        <span class="chip">Bozrah <small>34:6; 63:1 — its chief city</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">21:11–12 · 34 · 63:1–6</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Esau's nation — the brother-people who cheered Jerusalem's fall. In chapters 34 and 63 Edom becomes the <strong>representative</strong> of all nations set against God: the figure striding from Bozrah with garments stained red (63:1–6) is the LORD returning from judgment.</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="8.4" y2="3.9"/></svg>Tyre &amp; Sidon</div>
+      <div class="n-meta">Northwest · the Phoenician coast</div>
+      <div class="n-today">Lebanon's coast today</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">daughter of Sidon <small>23:12</small></span>
+        <span class="chip">the merchant of the nations <small>23:3</small></span>
+        <span class="chip">the bestower of crowns <small>23:8</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Trade partners</div><div class="places">ships of Tarshish <span class="ref">(23:1, 14)</span> · Cyprus <span class="ref">(23:1, 12)</span> · Shihor &amp; the Nile's grain <span class="ref">(23:3)</span></div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">23</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">The Wall Street of the ancient world — sea-trading cities whose merchants were princes. Their oracle targets not military pride but <strong>commercial pride</strong>: wealth, too, must bow. Astonishingly, Tyre's profits end up "dedicated to the LORD" (23:18).</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="16.8" y2="14.9"/></svg>The Desert Tribes</div>
+      <div class="n-meta">East &amp; southeast · Arabia</div>
+      <div class="n-today">Northern Arabia today · caravan peoples</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">The tribes</div><div class="chips">
+        <span class="chip">Kedar <small>21:16; 42:11; 60:7</small></span>
+        <span class="chip">Dedan <small>21:13</small></span>
+        <span class="chip">Tema <small>21:14</small></span>
+        <span class="chip">Nebaioth <small>60:7</small></span>
+        <span class="chip">Midian, Ephah &amp; Sheba <small>60:6</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">21:13–17 · 42:11 · 60:6–7</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">Bedouin traders descended largely from Ishmael and Abraham's other sons. Judged in chapter 21 — but look where they reappear: in chapter 60 their <strong>camels and flocks come to Zion carrying gold and frankincense</strong>, praise on their lips. (Matthew's magi fit this picture.)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION IV ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="horizon">
+  <div class="sec-head"><span class="sec-num">IV</span><h2>The Far Horizon</h2></div>
+  <p class="sec-intro">The edges of the known world — which is exactly where Isaiah's gospel is headed. "It is too light a thing that you should… restore the preserved of Israel; I will make you as a light for the nations, that my salvation may reach to the end of the earth" (49:6).</p>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="3.8" y2="9"/></svg>Tarshish</div>
+      <div class="n-meta">Far west · across the Mediterranean</div>
+      <div class="n-today">Likely southern Spain — the end of the sea</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Watch for</div><div class="chips">
+        <span class="chip">ships of Tarshish <small>2:16; 23:1; 60:9</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">2:16 · 23 · 60:9 · 66:19</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">"Ships of Tarshish" means the biggest ocean-going vessels afloat — symbols of human reach and pride in 2:16, but in 60:9 the same great ships are <strong>ferrying Zion's children home</strong> with silver and gold. What pride built, grace repurposes.</div></div>
+    </div>
+  </div>
+
+  <div class="nation">
+    <div class="id-block">
+      <div class="n-name"><svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="4.5" y1="11" x2="8" y2="11"/><line x1="14" y1="11" x2="17.5" y2="11"/></svg>The Coastlands</div>
+      <div class="n-meta">Every direction · the ends of the earth</div>
+      <div class="n-today">Distant maritime peoples — "the isles" in older Bibles</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Also called</div><div class="chips">
+        <span class="chip">the islands / isles</span>
+        <span class="chip">the ends of the earth <small>41:5</small></span>
+        <span class="chip">Tubal &amp; Javan (Greece) <small>66:19</small></span>
+        <span class="chip">Put &amp; Lud <small>66:19</small></span>
+      </div></div>
+      <div class="row"><div class="row-label">Key chapters</div><div class="chapters">11:11 · 41:1, 5 · 42:4, 10 · 49:1 · 51:5 · 60:9 · 66:19</div></div>
+      <div class="row"><div class="row-label">Reader's note</div><div class="note">A favorite word of chapters 40–66: the unnamed far-off peoples who have never heard of the LORD. Note the trajectory — the coastlands <strong>wait for His law</strong> (42:4), are summoned to listen (49:1), and receive missionaries who "declare my glory among the nations" (66:19). This is the Great Commission in seed form.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION V ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="codenames">
+  <div class="sec-head"><span class="sec-num">V</span><h2>Code Names &amp; Poetry</h2></div>
+  <p class="sec-intro">Isaiah loves to rename. Some names are satire, some are grief, some are promises. When a strange name appears and no map will help, check here.</p>
+  <table>
+    <thead><tr><th style="width:26%">The name</th><th style="width:30%">Refers to</th><th>Why the name</th></tr></thead>
+    <tbody>
+      <tr><td class="code">Ariel <span class="ref">29:1</span></td><td>Jerusalem</td><td>Likely "altar hearth" — the city God will make burn like its own altar, then deliver.</td></tr>
+      <tr><td class="code">Rahab <span class="ref">30:7; 51:9</span></td><td>Egypt</td><td>A mythic sea-monster's name — Egypt as a blustering dragon that "sits still" and helps no one.</td></tr>
+      <tr><td class="code">Day Star, son of Dawn <span class="ref">14:12</span></td><td>the king of Babylon</td><td>A taunt-song for a fallen tyrant who reached for heaven (Latin: <em>Lucifer</em>).</td></tr>
+      <tr><td class="code">Dumah <span class="ref">21:11</span></td><td>Edom</td><td>A pun — <em>dumah</em> means "silence." Edom's future in one word.</td></tr>
+      <tr><td class="code">Wilderness of the Sea <span class="ref">21:1</span></td><td>Babylon</td><td>The flood-plain empire, destined to become a desert.</td></tr>
+      <tr><td class="code">Valley of Vision <span class="ref">22:1</span></td><td>Jerusalem</td><td>Bitter irony — the city of prophets that cannot see what's coming.</td></tr>
+      <tr><td class="code">Sodom &amp; Gomorrah <span class="ref">1:9–10</span></td><td>Judah's leaders &amp; people</td><td>The most insulting address possible: God's own city talked to as the bywords of wickedness.</td></tr>
+      <tr><td class="code">The River <span class="ref">7:20; 8:7</span></td><td>the Euphrates → Assyria</td><td>Assyria as a river in flood, rising over its banks and reaching to Judah's neck.</td></tr>
+      <tr><td class="code">Leviathan <span class="ref">27:1</span></td><td>evil &amp; the powers behind the empires</td><td>The chaos-serpent God will slay "in that day" — judgment reaching behind the nations to the dragon itself.</td></tr>
+      <tr><td class="code">Jeshurun <span class="ref">44:2</span></td><td>Israel, God's people</td><td>An affectionate name, "upright one" — used while forgiving them.</td></tr>
+      <tr><td class="code">Hephzibah &amp; Beulah <span class="ref">62:4</span></td><td>Zion restored</td><td>"My delight is in her" and "Married" — the renamed bride, no longer Forsaken and Desolate.</td></tr>
+      <tr><td class="code">Immanuel <span class="ref">7:14; 8:8</span></td><td>the promised child — and Judah as "your land, O Immanuel"</td><td>"God with us": the sign-child whose name holds the whole book's hope.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/why-the-nations/" rel="prev">&larr;<span class="t">Why the Nations?</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/kinship/" rel="next"><span class="t">The Family of Nations</span>&rarr;</a></nav>
+<footer>
+  <div>Chapter &amp; verse references follow the ESV numbering.</div>
+  <div>Reading Isaiah · Reader's Atlas · v1</div>
+</footer>
+
+</div>
+</body>
+</html>

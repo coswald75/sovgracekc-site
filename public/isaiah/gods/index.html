@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gods of the Nations — Isaiah's Idol Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --ember:#8C3A2B;
+    --ember-pale:#F0DAD3;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px 90px}
+
+  header{padding:64px 0 26px}
+  .eyebrow{
+    font-family:'Marcellus', serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lapis);
+    margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:clamp(2rem, 5.4vw, 3.2rem);
+    letter-spacing:.015em;
+    line-height:1.08;
+  }
+  .subtitle{margin-top:16px;max-width:700px;color:var(--ink-soft);font-size:1.02rem}
+  .subtitle strong{color:var(--ink)}
+
+  .legend{
+    margin-top:26px;
+    background:var(--stone-deep);
+    border-left:3px solid var(--ember);
+    padding:16px 20px;
+    max-width:800px;
+  }
+  .legend p{font-size:.92rem;color:var(--ink-soft);margin-bottom:8px}
+  .legend p:last-child{margin-bottom:0}
+  .legend-row{display:flex;gap:10px;align-items:baseline;font-size:.9rem;color:var(--ink-soft);margin-top:6px;flex-wrap:wrap}
+
+  .t{
+    display:inline-block;
+    font-family:'Source Serif 4', serif;
+    font-size:.62rem;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    padding:1px 7px;
+    border-radius:2px;
+    vertical-align:2px;
+    margin-right:5px;
+    white-space:nowrap;
+  }
+  .t-n{background:var(--ember);color:#fff}
+  .t-a{background:var(--copper-pale);color:var(--copper)}
+  .t-u{background:transparent;color:var(--label);border:1px solid var(--rule)}
+
+  .qav{display:flex;align-items:center;margin:52px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .band{margin-top:40px}
+  .band-title{
+    font-family:'Marcellus', serif;
+    font-size:1.28rem;
+    letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-sub{color:var(--ink-soft);font-size:.92rem;margin-top:4px;max-width:760px}
+
+  /* ---------- polemic band (standalone, no nation column) ---------- */
+  .polemic{
+    background:var(--stone-deep);
+    border-left:3px solid var(--ember);
+    padding:22px 26px;
+    margin-top:18px;
+  }
+  .polemic-item{margin-top:16px}
+  .polemic-item:first-child{margin-top:0}
+  .polemic-item h4{
+    font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;
+    color:var(--ink);margin-bottom:4px;
+  }
+  .polemic-item p{font-size:.94rem;color:var(--ink-soft)}
+  .polemic-item .ref{color:var(--label);font-size:.85em}
+
+  table{width:100%;border-collapse:collapse;margin-top:16px}
+  th{
+    text-align:left;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--label);font-weight:600;padding:8px 16px 8px 0;
+    border-bottom:1px solid var(--ink);width:20%;
+  }
+  th:nth-child(2){width:26%}
+  th:last-child{width:54%}
+  td{
+    padding:14px 16px 14px 0;
+    border-bottom:1px solid var(--rule);
+    font-size:.93rem;
+    vertical-align:top;
+  }
+  td.nation{font-family:'Marcellus', serif;font-size:1.06rem}
+  td.nation .where{
+    display:block;font-family:'Source Serif 4', serif;font-size:.78rem;
+    color:var(--label);letter-spacing:.06em;margin-top:2px;font-weight:400;
+  }
+  .ref{color:var(--label);font-size:.84em}
+  .deity{font-family:'Marcellus', serif;font-size:1rem;color:var(--ink);display:block}
+  .deity-role{font-size:.82rem;color:var(--label);text-transform:uppercase;letter-spacing:.1em}
+  .gloss{display:block;margin-top:6px;color:var(--ink-soft);font-size:.93rem}
+  .isaiah-note{
+    margin-top:10px;padding-left:12px;border-left:2px solid var(--stone-deep);
+    color:var(--ink-soft);font-size:.93rem;
+  }
+  .isaiah-note strong{color:var(--ink)}
+
+  .capstone{
+    margin-top:64px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;max-width:880px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.5rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:10px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.15rem;line-height:1.5;color:var(--ink);
+    margin:14px 0;padding-left:16px;border-left:2px solid var(--ember);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.8rem;margin-top:6px}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:760px){
+    table, thead, tbody, tr{display:block}
+    th{display:none}
+    td{display:block;width:100%;border-bottom:none;padding:4px 0}
+    td.nation{padding-top:16px}
+    tr{border-bottom:1px solid var(--rule);padding-bottom:14px}
+    td:nth-child(2)::before{content:"The God(s)";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--label);font-weight:600;margin-bottom:3px}
+    td:nth-child(3)::before{content:"Isaiah's Word";display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--label);font-weight:600;margin-bottom:3px}
+    header{padding-top:44px}
+  }
+  @media print{
+    body{background:#fff}
+    tr{break-inside:avoid}
+    .t-n{background:#fff;color:var(--ember);border:1px solid var(--ember)}
+  }
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:560px){.iz-nav .t{max-width:22vw}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/kinship/" rel="prev">&larr;<span class="t">The Family of Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/new-testament/" rel="next"><span class="t">Isaiah in the New Testament</span>&rarr;</a></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah · Companion IV</div>
+  <h1>The Gods of the Nations<br>Isaiah's Idol Atlas</h1>
+  <p class="subtitle">Isaiah's argument is never just "these nations will fall." It's "these nations' gods are nothing, and I am God — there is no other" (45:5). Every oracle against a nation is, underneath, an oracle against an altar. This chart names what each nation actually trusted, so the polemic lands the way Isaiah meant it to.</p>
+
+  <div class="legend">
+    <p><strong style="color:var(--ink)">How to weigh the evidence.</strong> Not every deity carries the same textual weight, and it matters to be honest about which is which before it goes in a manuscript:</p>
+    <div class="legend-row"><span class="t t-n">Named</span> The deity appears by name in Scripture itself — safe to preach as stated fact.</div>
+    <div class="legend-row"><span class="t t-a">Attested</span> Confirmed by extrabiblical sources — inscriptions, seals, ANE records — but not named in the biblical text. Solid background, worth a footnote.</div>
+    <div class="legend-row"><span class="t t-u">Uncertain</span> Inferred from regional pattern or later sources. Useful color, not a fact to hang weight on.</div>
+  </div>
+</header>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+
+<!-- ============ THE POLEMIC ITSELF ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">Before the nations</span>Isaiah's Theology of Idols</div>
+  <p class="band-sub">Chapters 40–48 step back from any single nation to make the general case. This is the engine behind every entry below — read it first.</p>
+  <div class="polemic">
+    <div class="polemic-item">
+      <h4>The craftsman's god <span class="ref">40:18–20</span></h4>
+      <p>"To whom then will you liken God?" — the question opens onto a workman casting an idol, overlaying it with gold, fastening silver chains to it so it won't tip.</p>
+    </div>
+    <div class="polemic-item">
+      <h4>Nailed down so it won't fall <span class="ref">41:6–7</span></h4>
+      <p>The craftsmen encourage one another as they work — then nail the finished god to its base, "that it might not move." The idol needs to be stabilized by the hands that made it.</p>
+    </div>
+    <div class="polemic-item">
+      <h4>Half a log for dinner, half a log for a god <span class="ref">44:9–20</span></h4>
+      <p>Isaiah's fullest and most extended satire. A man plants a tree; he burns half of it to warm himself and bake bread, and carves the other half into an idol, bows down, and prays, "Deliver me, for you are my god!" The same fire that cooked his meal is used to make the thing he now begs for rescue.</p>
+    </div>
+    <div class="polemic-item">
+      <h4>The gods as cargo <span class="ref">46:1–7</span></h4>
+      <p>Bel and Nebo — Babylon's own named gods — loaded onto beasts of burden, a weary weight the animals stagger under, versus the LORD: "I have made, and I will bear; I will carry and will save." Babylon's gods are carried away; Israel's God carries His people.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MOVEMENT I ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement I</span>The Family Feud</div>
+  <p class="band-sub">Near kin, near altars. What the closest relatives actually knelt to.</p>
+  <table>
+    <thead><tr><th>Nation</th><th>The God(s)</th><th>Isaiah's Word</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation">Aram / Damascus<span class="where">Isa 7–8; 17</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Hadad-Rimmon</span><span class="deity-role">storm god</span><span class="gloss">2 Kgs 5:18 — Naaman asks pardon for bowing "in the house of Rimmon." <span class="ref">Zech 12:11 preserves the compound name.</span></span></td>
+        <td>Isaiah never names Rimmon directly — instead he dismisses the whole kingdom as "two smoldering stumps of firebrands" (7:4). The polemic here isn't against an idol by name; it's against a throne reduced to ash while its god does nothing.</td>
+      </tr>
+      <tr>
+        <td class="nation">Philistia<span class="where">Isa 14:28–32; 20</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Dagon</span><span class="deity-role">grain / fish god</span><span class="gloss">Judg 16:23; 1 Sam 5:1–5 — the ark of the covenant is set beside Dagon's statue overnight, and by morning it has fallen face-down before the LORD.</span></td>
+        <td>Isaiah's oracle (14:29–32) doesn't invoke Dagon by name, but the tone — "do not rejoice… a worse serpent is coming" — assumes a people who already learned this lesson once, in their own temple, generations earlier.</td>
+      </tr>
+      <tr>
+        <td class="nation">Moab<span class="where">Isa 15–16; 25:10–12</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Chemosh</span><span class="deity-role">national god, tied to child sacrifice</span><span class="gloss">Num 21:29; 1 Kgs 11:7, 33; Jer 48:46 ("the people of Chemosh are undone"). <span class="ref">2 Kgs 3:27 — the Moabite king sacrifices his own son on the city wall.</span></span></td>
+        <td>Isaiah pictures Moab "wearied at the high place" in fruitless prayer (16:12) — almost certainly Chemosh's shrine at Bamoth. All that grief in chapters 15–16, and it never once reaches an ear.</td>
+      </tr>
+      <tr>
+        <td class="nation">Ammon<span class="where">Isa 11:14</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Milcom</span><span class="deity-role">national god, associated with Molech-worship</span><span class="gloss">1 Kgs 11:5, 7, 33; 2 Kgs 23:13 — Josiah defiles Milcom's high place centuries later.</span></td>
+        <td>Isaiah's material on Ammon is too thin for a standalone entry (11:14 only) — worth pairing with Moab's week, and Milcom's association with child sacrifice sharpens the same point Chemosh does.</td>
+      </tr>
+      <tr>
+        <td class="nation">Edom<span class="where">Isa 21:11–12; 34; 63:1–6</span></td>
+        <td><span class="t t-a">Attested</span><span class="deity">Qos (Qaus)</span><span class="deity-role">national god</span><span class="gloss">Not named in the Hebrew Bible itself, but well attested in Edomite seals, inscriptions, and theophoric royal names (e.g. Qos-gabr, an Edomite king in Assyrian annals).</span></td>
+        <td>Isaiah's Edom material never engages Qos directly — the polemic in ch. 34 and 63 is about Edom as the representative nation under judgment, not a named-idol confrontation.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ MOVEMENT II ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement II</span>The Powers</div>
+  <p class="band-sub">The empires' gods get named in the text more often than the small nations' do — because Isaiah is willing to fight at the top of the pantheon, not just the edges.</p>
+  <table>
+    <thead><tr><th>Nation</th><th>The God(s)</th><th>Isaiah's Word</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation">Tyre &amp; Sidon<span class="where">Isa 23</span></td>
+        <td><span class="t t-a">Attested</span><span class="deity">Baal-Melqart &amp; Astarte</span><span class="deity-role">Melqart, "king of the city" — Tyre's patron</span><span class="gloss">1 Kgs 16:31 — Jezebel, a Sidonian princess, imports Baal worship into Israel; the OT's clearest window into Phoenician religion, even though it's about Israel's own syncretism rather than a direct oracle against Tyre.</span></td>
+        <td>Isaiah 23 targets commercial pride, not idolatry by name — wealth itself functions as the god under indictment. Ezekiel's later parallel oracle (28:1–19) makes explicit what Isaiah leaves implicit: the king of Tyre corrupted by his own splendor.</td>
+      </tr>
+      <tr>
+        <td class="nation">Egypt<span class="where">Isa 19–20; 30–31</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">The Egyptian pantheon</span><span class="deity-role">Ra (sun), Osiris, Isis, Apis (the bull), Hapi (the Nile)</span><span class="gloss">Exod 12:12 — "on all the gods of Egypt I will execute judgments." The ten plagues read as a systematic dismantling of specific deities: the Nile (Hapi) turned to blood, the sun (Ra) darkened, cattle (Apis) struck by pestilence.</span></td>
+        <td>Isaiah 19:1 draws directly on that memory: "the idols of Egypt will tremble at his presence." This is the strongest tie back to the Exodus material in the series' opening sermon — the same purpose, run a second time against the same country.</td>
+      </tr>
+      <tr>
+        <td class="nation">Cush<span class="where">Isa 18; 20; 45:14</span></td>
+        <td><span class="t t-u">Uncertain</span><span class="deity">Egyptian-influenced cult, plus native Nubian deities</span><span class="deity-role">e.g. Apedemak, a lion-headed war-god</span><span class="gloss">Not named in Scripture. Attested in Meroitic temple inscriptions from centuries after Isaiah, under the Kingdom of Kush at Meroë.</span></td>
+        <td>The thinnest entry on this chart — treat as background color, not preached fact. Isaiah's own interest in Cush is geographic (18:1–2, "beyond the rivers") more than religious.</td>
+      </tr>
+      <tr>
+        <td class="nation">Assyria<span class="where">Isa 7–10; 36–37</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Ashur &amp; Nisroch</span><span class="deity-role">Ashur, the empire's namesake state god; Nisroch, named at Sennacherib's death</span><span class="gloss">Isa 37:38 (paralleling 2 Kgs 19:37) — Sennacherib is assassinated by his own sons "as he was worshiping in the house of Nisroch his god." The god is named inside Isaiah's own narrative, at the exact moment it fails to protect him.</span></td>
+        <td>Rare among these entries: the idol-name and its failure sit in the same verse, inside the very book you're preaching.</td>
+      </tr>
+      <tr>
+        <td class="nation">Babylon<span class="where">Isa 13–14; 21; 46–48</span></td>
+        <td><span class="t t-n">Named</span><span class="deity">Bel (Marduk) &amp; Nebo</span><span class="deity-role">Bel, chief of the pantheon; Nebo, god of wisdom and writing</span><span class="gloss">Isa 46:1 — "Bel bows down, Nebo stoops." Named directly inside your own preaching text, then narrated collapsing.</span></td>
+        <td>The strongest entry on the whole chart. Isa 21:9: "all the carved images of her gods he has shattered." Isaiah doesn't just claim Babylon's gods are false — he stages their public downfall in the text itself.</td>
+      </tr>
+      <tr>
+        <td class="nation">Media &amp; Elam<span class="where">Isa 13:17; 21:2; 41; 44:28–45:13</span></td>
+        <td><span class="t t-u">Uncertain</span><span class="deity">Inshushinak (Elam) · regional cults (Media)</span><span class="deity-role">Inshushinak, city-god of Susa</span><span class="gloss">Attested in Elamite inscriptions; Susa is also Esther's later setting. Median religion in Isaiah's own era predates the rise of Zoroastrianism and is poorly documented.</span></td>
+        <td>Isaiah has no idol-polemic against these two — they appear as God's chosen instrument against Babylon, not as worshipers under indictment. Worth naming so the absence itself doesn't go unnoticed.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ MOVEMENT III ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement III</span>The Ends of the Earth</div>
+  <p class="band-sub">The far horizon is where the evidence runs thinnest — fittingly, since these are also the peoples Isaiah says have "not heard my fame."</p>
+  <table>
+    <thead><tr><th>Nation</th><th>The God(s)</th><th>Isaiah's Word</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="nation">Arabia / Desert Tribes<span class="where">Isa 21:13–17; 42:11; 60:6–7</span></td>
+        <td><span class="t t-a">Attested</span><span class="deity">Astral religion</span><span class="deity-role">moon-god and star worship, well documented among pre-Islamic Arabian tribes</span><span class="gloss">Amos 5:26 and its NT citation in Acts 7:43 ("Sikkuth your king, and Kiyyun your star-god") describe Israel's own wilderness-era lapse into this same regional astral cult.</span></td>
+        <td>The biblical citation is about Israel's borrowed idolatry, not a direct oracle against Kedar or Dedan's own gods — moderate confidence, useful for texture rather than a headline claim.</td>
+      </tr>
+      <tr>
+        <td class="nation">Tarshish<span class="where">Isa 2:16; 23; 60:9; 66:19</span></td>
+        <td><span class="t t-u">Uncertain</span><span class="deity">Presumably the Tyrian pantheon</span><span class="deity-role">Melqart, Astarte — inherited from its origin as a Phoenician colony</span><span class="gloss">No direct data; inferred from Tarshish's colonial relationship to Tyre.</span></td>
+        <td>No idol-polemic in the text — Tarshish functions in Isaiah as a symbol of pride and distance (its great ships), not as a religious target.</td>
+      </tr>
+      <tr>
+        <td class="nation">The Coastlands<span class="where">Isa 11:11; 41–42; 60:9; 66:19</span></td>
+        <td><span class="t t-u">Uncertain</span><span class="deity">The developing Greek pantheon</span><span class="deity-role">relevant mainly by the NT period, not Isaiah's own 8th–6th c. BC</span><span class="gloss">Acts 14:11–13 (Lystra — the crowd calls Paul and Barnabas Zeus and Hermes) and Acts 17:16–23 (Athens — "the city was full of idols," the altar "to the unknown god") give the NT-side texture this atlas otherwise lacks for Isaiah's own day.</span></td>
+        <td>Isaiah's interest here is missional, not confrontational — "the coastlands wait for his law" (42:4). The idol-encounter belongs to Acts, not to Isaiah's own text.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Where the polemic lands</h2>
+  <p>The same purpose that dismantled Egypt's gods in the Exodus — "so that my name may be proclaimed in all the earth" (Exod 9:16) — is still running when Isaiah names Bel and Nebo centuries later. It's the same purpose again in Athens, where Paul stands among altars to gods this chart never had biblical grounds to name, and says plainly: "what therefore you worship as unknown, this I proclaim to you" (Acts 17:23).</p>
+  <blockquote>"For you turned to God from idols to serve the living and true God."<span class="ref">1 Thessalonians 1:9</span></blockquote>
+  <p>Every entry above was, at some point, someone's whole hope. Isaiah's case was never merely that these gods are weaker than the LORD — it's that they don't exist at all, and the wood, stone, and silver stayed wood, stone, and silver the entire time. <strong>That's the mercy underneath the polemic:</strong> the invitation was never to switch to a stronger god. It was to stop praying to furniture.</p>
+</div>
+
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/kinship/" rel="prev">&larr;<span class="t">The Family of Nations</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><a href="/isaiah/new-testament/" rel="next"><span class="t">Isaiah in the New Testament</span>&rarr;</a></nav>
+<footer>
+  <div>References ESV · confidence tiers: named / attested / uncertain per the legend above</div>
+  <div>Reading Isaiah · The Gods of the Nations · v1</div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nations Today — Isaiah's Map, Present Tense</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --slate:#3F5761;
+    --slate-pale:#DCE6E8;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px 90px}
+
+  header{padding:64px 0 26px}
+  .eyebrow{
+    font-family:'Marcellus', serif;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lapis);
+    margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;
+    font-weight:400;
+    font-size:clamp(2rem, 5.4vw, 3.2rem);
+    letter-spacing:.015em;
+    line-height:1.08;
+  }
+  .subtitle{margin-top:16px;max-width:700px;color:var(--ink-soft);font-size:1.02rem}
+
+  .stamp{
+    margin-top:24px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--slate);
+    color:#fff;
+    padding:8px 16px;
+    font-family:'Source Serif 4', serif;
+    font-size:.82rem;
+    letter-spacing:.04em;
+  }
+  .stamp .dot{width:7px;height:7px;border-radius:50%;background:#fff;flex:none}
+
+  .caveat{
+    margin-top:18px;
+    background:var(--stone-deep);
+    border-left:3px solid var(--slate);
+    padding:16px 20px;
+    max-width:800px;
+  }
+  .caveat p{font-size:.92rem;color:var(--ink-soft)}
+  .caveat strong{color:var(--ink)}
+
+  .qav{display:flex;align-items:center;margin:52px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .band{margin-top:40px}
+  .band-title{
+    font-family:'Marcellus', serif;
+    font-size:1.28rem;
+    letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-sub{color:var(--ink-soft);font-size:.92rem;margin-top:4px;max-width:760px}
+
+  .nation-card{
+    padding:24px 0;
+    border-top:1px solid var(--rule);
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:0 30px;
+  }
+  .nation-card:last-of-type{border-bottom:1px solid var(--rule)}
+  .n-name{
+    font-family:'Marcellus', serif;
+    font-size:1.24rem;
+    letter-spacing:.02em;
+  }
+  .n-today{
+    margin-top:8px;
+    font-size:.78rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--slate);
+    font-weight:600;
+  }
+  .n-where{margin-top:14px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+  .detail{display:flex;flex-direction:column;gap:14px}
+  .row{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:baseline}
+  .row-label{
+    font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--label);font-weight:600;font-family:'Source Serif 4', serif;
+    padding-top:3px;
+  }
+  .row-body{font-size:.94rem;color:var(--ink)}
+  .row-body.ancient{color:var(--ink-soft)}
+  .row-body .ref{color:var(--label);font-size:.85em}
+  .current-tag{
+    display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--slate-pale);color:var(--slate);padding:1px 7px;border-radius:2px;margin-bottom:6px;
+  }
+
+  .capstone{
+    margin-top:64px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;max-width:880px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.5rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:10px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:720px){
+    .nation-card{grid-template-columns:1fr;gap:16px}
+    .row{grid-template-columns:1fr;gap:2px}
+    header{padding-top:44px}
+  }
+  @media print{
+    body{background:#fff}
+    .nation-card{break-inside:avoid}
+  }
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:560px){.iz-nav .t{max-width:22vw}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/new-testament/" rel="prev">&larr;<span class="t">Isaiah in the New Testament</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><span class="btn dis"><span class="t">End</span>&rarr;</span></nav>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Providence Community Church · Reading Isaiah · Companion V</div>
+  <h1>The Nations Today<br>Isaiah's Map, Present Tense</h1>
+  <p class="subtitle">Where each nation sits now — its ancient political arc, its modern location, and (unlike the rest of this set) a snapshot of current politics that will need refreshing every time this series is preached again.</p>
+  <div class="stamp"><span class="dot"></span>Current as of August 2026</div>
+  <div class="caveat">
+    <p><strong>A pastoral note before you use this page.</strong> Several of these entries — Syria, Gaza, Lebanon, Sudan, Iran — are live, ongoing, casualty-heavy situations, not settled history. The entries below are descriptive, not comment: they report what is publicly documented, without taking a position on any of it. That's a deliberate choice, and worth keeping in view of the congregation too — the modern-day beat carries more weight on those weeks than it does on, say, Jordan's.</p>
+  </div>
+</header>
+
+<!-- ============ MOVEMENT I ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement I</span>The Family Feud</div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Aram / Damascus</div>
+      <div class="n-today">Today: Syria</div>
+      <div class="n-where">Isa 7–8; 17</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Rival Aramean kingdom on Damascus, in and out of war with Israel for centuries (1 Kgs 20, 22), allied with the north against Judah in Isaiah 7's crisis, crushed by Assyria in 732 BC. Later capital of the Umayyad Caliphate, then Ottoman, French-mandate, and Assad-family territory.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Assad fled to Russia in December 2024, ending 54 years of family rule. Interim president Ahmed al-Sharaa now leads a fragile transitional government — a new parliament seated October 2025 — but the country remains fractured: Kurdish-led forces hold the northeast, Turkish-backed factions hold pockets elsewhere, and sectarian violence against Alawite and Druze communities has continued into 2026.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Philistia</div>
+      <div class="n-today">Today: the Gaza Strip</div>
+      <div class="n-where">Isa 14:28–32; 20</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">A five-city league (Gaza, Ashkelon, Ashdod, Gath, Ekron) of Sea Peoples, Israel's oldest military rival, eventually absorbed by Assyria, Babylon, Persia, and Rome — Rome's name for the region, "Palestina," derives from these people.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Governed by Hamas since 2007. The 2023–2025 war left the territory devastated — over 80% of structures damaged as of mid-2026. An October 2025 ceasefire holds only partially; observers describe conditions as "neither war nor peace," with continuing strikes and a planned international transitional authority still unable to enter the territory. The most active situation on this chart.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Moab &amp; Ammon</div>
+      <div class="n-today">Today: Jordan</div>
+      <div class="n-where">Isa 15–16; 25:10–12; 11:14</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Moab centered near modern Kerak; Ammon around Rabbah, which still carries Ammon's name as Amman, Jordan's capital. Frequent regional rivals of Israel through Judges and Kings, later absorbed by Assyria, Babylon, Persia, and Nabataean Arab rule.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>A stable constitutional monarchy under King Abdullah II, home to one of the largest Palestinian populations of any Arab state. Jordan has navigated the Gaza war as an anxious neighbor — publicly rejecting any plan to resettle Gazans on its soil — and reinstated military conscription in 2026 amid regional tension.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Edom</div>
+      <div class="n-today">Today: southern Jordan</div>
+      <div class="n-where">Isa 21:11–12; 34; 63:1–6</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Esau's people, centered south of the Dead Sea around Bozrah. Later displaced by Nabataean Arabs (whose capital, Petra, sits in old Edomite country) and separately conquered and forcibly converted to Judaism by the Hasmoneans — becoming "Idumea." Herod the Great was an Idumean.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Southern Jordan; Petra is the country's flagship tourist site. No distinct current-political thread separate from Jordan as a whole.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MOVEMENT II ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement II</span>The Powers</div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Tyre &amp; Sidon</div>
+      <div class="n-today">Today: Lebanon</div>
+      <div class="n-where">Isa 23</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Phoenician port cities and colonizers (Carthage was a Tyrian colony), suppliers of Solomon's temple cedar. Tyre held out against Babylon for thirteen years before falling to Alexander in 332 BC.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>A nation run by a fragile sectarian power-sharing system, hollowed out by economic collapse since 2019. Southern Lebanon has been the front line of the Hezbollah–Israel conflict; a November 2024 ceasefire broke down into renewed war in March 2026, tied to the wider Iran conflict. Hezbollah's disarmament — a condition of peace — remains incomplete and contested.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Egypt</div>
+      <div class="n-today">Today: Egypt</div>
+      <div class="n-where">Isa 19–20; 30–31; 36:6</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Judah's tempting-but-untrustworthy ally throughout the OT, ruled in Isaiah's own lifetime by Cushite pharaohs (the 25th Dynasty). Later conquered by Assyria, Persia, Alexander's Ptolemaic dynasty, then Rome.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Under President Abdel Fattah el-Sisi (in power since 2014, eligible to serve until 2030), Egypt has leaned into a mediating role in the Gaza war — hosting the October 2025 Sharm el-Sheikh peace summit — while managing a serious economic crisis and an authoritarian domestic record. The Suez Canal remains central to its global economic relevance.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Cush</div>
+      <div class="n-today">Today: Sudan</div>
+      <div class="n-where">Isa 18; 20; 45:14</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">The Nubian kingdom south of Egypt, powerful enough to rule Egypt itself as the 25th Dynasty during Isaiah's own century, later centered at Meroë with its own pyramids and script.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>One of the world's worst current humanitarian crises. A civil war between the Sudanese Armed Forces and the paramilitary RSF has raged since April 2023; famine has been confirmed in Darfur, roughly 14 million people are displaced, and there is no resolution in sight.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Assyria</div>
+      <div class="n-today">Today: northern Iraq</div>
+      <div class="n-where">Isa 7–10; 14:24–27; 36–37</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Destroyed the northern kingdom in 722 BC, besieged Jerusalem in 701. Its capital Nineveh (near modern Mosul) fell to a Babylonian-Median coalition in 612 BC — Nahum's prophecy fulfilled to the letter.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Northern Iraq, including the semi-autonomous Kurdistan Region — a region that endured ISIS occupation in the 2010s and still disputes oil revenue and territory with Baghdad, even as national security has broadly stabilized since 2022.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Babylon</div>
+      <div class="n-today">Today: Iraq</div>
+      <div class="n-where">Isa 13–14; 21; 39; 46–48</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Rose from Assyrian vassal to conqueror of both Nineveh and Jerusalem, then itself fell without a fight to Cyrus in 539 BC — fulfilling Isaiah's Cyrus prophecy given more than a century early.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>The ruins sit near Hillah, about 55 miles south of Baghdad. Iraq only formed a new government in May 2026, six months after a November 2025 election, and continues balancing U.S. security ties against Iran-aligned militias operating inside its own borders.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Media &amp; Elam</div>
+      <div class="n-today">Today: Iran</div>
+      <div class="n-where">Isa 13:17; 21:2; 41; 44:28–45:13</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Elam centered at Susa, one of the world's oldest civilizations, occasionally clashing even with Abraham (Gen 14). Media allied with Babylon to topple Assyria, then was absorbed into the Persian Empire under Cyrus — the deliverer Isaiah names two centuries in advance.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>On February 28, 2026, Israel and the U.S. struck Iranian nuclear and military sites; Supreme Leader Ali Khamenei was killed and succeeded by his son. A Pakistan-brokered ceasefire has held since April, though strikes have continued intermittently, alongside a severe internal crackdown following the mass protests that preceded the war.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MOVEMENT III ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="band">
+  <div class="band-title"><span class="k">Movement III</span>The Ends of the Earth</div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Arabia / Desert Tribes</div>
+      <div class="n-today">Today: Saudi Arabia, Yemen, the Gulf</div>
+      <div class="n-where">Isa 21:13–17; 42:11; 60:6–7</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Ishmael's and Keturah's descendants — Kedar, Dedan, Tema, Sheba — a network of trading tribes controlling the incense routes, never a unified nation in the ancient sense.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Saudi Arabia is pursuing "Vision 2030" economic diversification under Crown Prince Mohammed bin Salman and has positioned itself as a regional mediator (Sudan, Gaza, Syria, Iran). Yemen remains fractured after a decade-plus civil war, with fresh factional fighting inside the internationally recognized government's own coalition in 2026.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">Tarshish</div>
+      <div class="n-today">Today: likely southern Spain</div>
+      <div class="n-where">Isa 2:16; 23; 60:9; 66:19</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Widely identified with Tartessos, a silver-rich Phoenician trading colony — the far edge of the known Mediterranean, shorthand for the largest ships afloat.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Southern Spain (Andalusia) — a stable EU/NATO state. The ancient site is archaeology, not politics, which is part of what makes Paul naming "Spain" as his own destination (Rom 15:24) such a fitting close to Isaiah's list.</div></div>
+    </div>
+  </div>
+
+  <div class="nation-card">
+    <div>
+      <div class="n-name">The Coastlands</div>
+      <div class="n-today">Today: Greece, western Turkey, the Aegean</div>
+      <div class="n-where">Isa 11:11; 41–42; 49; 60:9; 66:19</div>
+    </div>
+    <div class="detail">
+      <div class="row"><div class="row-label">Ancient arc</div><div class="row-body ancient">Javan and Tubal, Japheth's maritime line, essentially off Israel's radar until Alexander's conquests brought Greek language and culture to the whole Near East — setting up the very language the New Testament would be written in.</div></div>
+      <div class="row"><div class="row-label">Current politics</div><div class="row-body"><span class="current-tag">as of Aug 2026</span>Modern Greece and Turkey, both NATO states with their own regional roles — Turkey is deeply involved in Syria's transition and hosts millions of Syrian refugees. The sites of Revelation's seven churches (Ephesus, Smyrna, and the rest) sit in western Turkey today, mostly as ruins rather than living congregations.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CAPSTONE ============ -->
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Reading this page in five years</h2>
+  <p>Unlike the other four companions, this one has an expiration date built in. Isaiah's oracles don't change; Syria's government might, again, before you preach this series a second time. That's not a flaw in the project — it's the point of doing it at all. The nations Isaiah addressed were never abstractions to him; they were the news of his own day, and the only faithful way to keep that same weight is to check this page against the news of yours before every use.</p>
+  <p><strong>Before your next pass through this series:</strong> re-verify each "Current politics" row, update the stamp date at the top, and note in the margin what changed since the last preaching — that record will end up being its own small witness to how fast the nations actually move, and how unmoved the text addressing them has stayed.</p>
+</div>
+
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/new-testament/" rel="prev">&larr;<span class="t">Isaiah in the New Testament</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">All the nations</a><span class="sp"></span><span class="btn dis"><span class="t">End</span>&rarr;</span></nav>
+<footer>
+  <div>Political summaries drawn from public reporting, current as of the stamp above · geography stable, politics is not</div>
+  <div>Reading Isaiah · The Nations Today · v1</div>
+</footer>
+
+</div>
+</body>
+</html>

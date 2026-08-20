@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A New Covenant People — Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4;
+    --stone-deep:#E3E1D6;
+    --ink:#232630;
+    --ink-soft:#4A4D57;
+    --lapis:#34528C;
+    --lapis-pale:#D8DEEC;
+    --copper:#9E6428;
+    --copper-pale:#EFE3D2;
+    --olive:#6B7042;
+    --olive-pale:#E2E3D2;
+    --label:#767862;
+    --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{
+    font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;
+    font-size:.72rem;color:var(--lapis);margin-bottom:16px;
+  }
+  h1{
+    font-family:'Marcellus', serif;font-weight:400;
+    font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.015em;line-height:1.08;
+  }
+  .texts{margin-top:12px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+
+  .bigidea{
+    margin-top:44px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:24px 28px;
+  }
+  .bigidea .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--label);font-weight:600;margin-bottom:8px;display:block;
+  }
+  .bigidea p{font-family:'Marcellus', serif;font-size:1.2rem;line-height:1.45;color:var(--ink)}
+
+  .band{margin-top:46px}
+  .band-title{
+    font-family:'Marcellus', serif;font-size:1.32rem;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  .band-title .k{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--copper);font-family:'Source Serif 4', serif;font-weight:600;
+  }
+  .band-refs{margin-top:4px;font-size:.86rem;color:var(--lapis);font-family:'Marcellus', serif}
+  .band-body{margin-top:14px;display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{
+    font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    margin:6px 0;padding-left:16px;border-left:2px solid var(--copper);
+  }
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .role{background:var(--stone-deep);padding:16px 18px;border-top:3px solid var(--rule)}
+  .role.copper{border-top-color:var(--copper)}
+  .role.lapis{border-top-color:var(--lapis)}
+  .role.olive{border-top-color:var(--olive)}
+  .role h3{font-family:'Marcellus', serif;font-weight:400;font-size:1.05rem;margin-bottom:6px}
+  .role p{font-size:.87rem;color:var(--ink-soft)}
+  .role .ref{color:var(--label);font-size:.82em}
+
+  .capstone{
+    margin-top:56px;background:var(--stone-deep);
+    border-left:3px solid var(--copper);padding:26px 30px;
+  }
+  .capstone h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.4rem;margin-bottom:10px}
+  .capstone p{color:var(--ink-soft);font-size:.98rem}
+
+  footer{
+    margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);
+    font-size:.85rem;color:var(--label);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  @media (max-width:720px){
+    .roles{grid-template-columns:1fr}
+    header{padding-top:44px}
+  }
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/nations-in-nt/" rel="prev">&larr;<span class="t">The Nations in the NT</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/guest-list/" rel="next"><span class="t">The Guest List</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Act IV</div>
+  <h1>A New Covenant People</h1>
+  <div class="texts">1 Peter 2:9&ndash;10 &middot; Psalm 45 &middot; Isaiah 56 &middot; Revelation 21:24</div>
+  <p class="subtitle">The series taught a triangle: a nation is a family, under a god, on a land, embodied in a king. Now the question the whole New Testament forces: what kind of nation is the church? Peter answers in the triad's own grammar &mdash; every corner kept, every corner transposed.</p>
+</header>
+
+<div class="hero-fig" style="max-width:760px">
+<svg viewBox="0 0 900 650" role="img" aria-label="The tiled map inverted: every surrounding nation-tile keeps its name, but all lines now run inward to Christ at the center, carrying worship instead of gods">
+      <polygon points="345,27 555,27 450,209" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 450,209 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 660,209 555,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="240,209 135,391 345,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="660,209 555,391 765,391" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="345,391 555,391 450,573" fill="#DDD9C9" opacity="0.5" stroke="#8A7A5A" stroke-width="2"/>
+      <polygon points="450,209 345,391 555,391" fill="#CFC9B4" stroke="#6E6247" stroke-width="2.8"/>
+      <!-- inbound lines: from each tile's heart to the center -->
+      <line x1="450" y1="96" x2="450" y2="266" stroke="#232630" stroke-width="1.5"/><polygon points="450,272 444,258 456,258" fill="#232630"/>
+      <line x1="332" y1="262" x2="418" y2="292" stroke="#232630" stroke-width="1.5"/><polygon points="424,294 410,296 414,284" fill="#232630"/>
+      <line x1="568" y1="262" x2="482" y2="292" stroke="#232630" stroke-width="1.5"/><polygon points="476,294 486,284 490,296" fill="#232630"/>
+      <line x1="238" y1="342" x2="414" y2="312" stroke="#232630" stroke-width="1.5"/><polygon points="420,311 407,317 405,305" fill="#232630"/>
+      <line x1="662" y1="342" x2="486" y2="312" stroke="#232630" stroke-width="1.5"/><polygon points="480,311 495,305 493,317" fill="#232630"/>
+      <line x1="450" y1="470" x2="450" y2="344" stroke="#232630" stroke-width="1.5"/><polygon points="450,338 444,352 456,352" fill="#232630"/>
+      <!-- gift labels on the lines -->
+      <text x="450" y="150" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">glory &amp; honor</text>
+      <text x="352" y="288" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">wages, made holy</text>
+      <text x="556" y="288" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">obedience</text>
+      <text x="308" y="334" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">"my people"</text>
+      <text x="596" y="334" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">praise</text>
+      <text x="450" y="438" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#232630" style="paint-order:stroke;stroke:#EDECE4;stroke-width:6">gold &amp; frankincense</text>
+      <!-- the one center -->
+      <circle cx="450" cy="305" r="34" fill="#EDECE4" stroke="#232630" stroke-width="2.4"/>
+      <text x="450" y="310" text-anchor="middle" font-family="Marcellus, serif" font-size="12.5" fill="#232630" letter-spacing="1.6">CHRIST</text>
+      <text x="450" y="371" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#4A4D57">one center &mdash; one bride</text>
+      <!-- tile names retained -->
+      <text x="450" y="56" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">HATTI</text>
+      <text x="322" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">SIDON</text>
+      <text x="580" y="238" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">AMMON</text>
+      <text x="218" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EGYPT</text>
+      <text x="678" y="372" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">MOAB</text>
+      <text x="450" y="497" text-anchor="middle" font-family="Marcellus, serif" font-size="13.5" fill="#232630" letter-spacing="2">EDOM</text>
+      <text x="450" y="614" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" font-style="italic" fill="#4A4D57">"The nations will walk by its light, and the kings of the earth will bring their glory into it." &mdash; Revelation 21:24</text>
+      <text x="450" y="634" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#767862">Every tile keeps its name &mdash; every line runs inward &mdash; nothing rides the lines out</text>
+    </svg>
+<div class="fig-note">Exposure 9 &mdash; the map, inverted: compare Exposure 5, where the gods rode the lines inward and the king drifted. Now the lines carry worship, and the center holds.</div>
+</div>
+
+<div class="bigidea">
+  <span class="k">Big idea</span>
+  <p>The church is a real nation on Isaiah's own definition &mdash; a chosen race, a royal priesthood, a holy possession, with a King at the center &mdash; but every leg is transposed: blood by new birth, cult without idols, inheritance without borders. And because its King needs no treaties, it is the first nation in history that gathers the others without erasing them.</p>
+</div>
+
+<!-- ============ I ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">I</span>The Triad, Transposed</div>
+  <div class="band-refs">1 Peter 2:9&ndash;10 &middot; Galatians 3:7&ndash;9, 29 &middot; 1 Peter 2:4&ndash;5</div>
+  <div class="band-body">
+    <blockquote>"But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light."<span class="ref">1 Peter 2:9</span></blockquote>
+    <p>Peter is writing to scattered Gentile congregations &mdash; and he hands them the full triad, corner by corner. <strong>Chosen race</strong> (the relation leg): a real lineage, but by new birth &mdash; "born again&hellip; through the living and abiding word" <span class="ref">(1 Pet 1:3, 23)</span>, Abraham's offspring by faith <span class="ref">(Gal 3:7, 29)</span>. The membrane that let Rahab and Ruth in has become the door. <strong>Royal priesthood</strong> (the religion leg): a cult with sacrifices &mdash; spiritual ones &mdash; and no idol anywhere in the sanctuary, because the priesthood now includes every member and the temple is the people <span class="ref">(1 Pet 2:5)</span>.</p>
+    <p><strong>A people for his own possession</strong> (the region leg, transposed): the old word is <em>segullah</em>, the Sinai term for Israel as God's treasured holding <span class="ref">(Ex 19:5&ndash;6 &mdash; the very passage Peter is quoting)</span>. But notice the address on the letter: "elect <strong>exiles of the dispersion</strong>" <span class="ref">(1:1)</span>, "sojourners" <span class="ref">(2:11)</span> &mdash; a nation with no tile on the map, whose land-leg is "an inheritance&hellip; kept in heaven for you" <span class="ref">(1:4)</span>, whose stones are living ones built on the tested cornerstone of Isaiah 28:16 <span class="ref">(2:4&ndash;6)</span> &mdash; the stone from the statecraft pages, now load-bearing. And the punchline is Hosea, applied to Gentiles: <strong>"Once you were not a people, but now you are God's people"</strong> <span class="ref">(2:10)</span>. The triad's proudest word &mdash; <em>people</em> &mdash; conferred on those who had no claim to it.</p>
+  </div>
+</div>
+
+<!-- ============ II ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">II</span>The Wedding That Ends Statecraft</div>
+  <div class="band-refs">Psalm 45:10&ndash;11 &middot; Hebrews 1:8&ndash;9 &middot; Revelation 19:7&ndash;9; 21:2</div>
+  <div class="band-body">
+    <p>Act III showed statecraft's first instrument: the treaty-wedding, where two portfolios merge and the gods come in the trousseau. Psalm 45 &mdash; the royal wedding song &mdash; already contained its abolition: <strong>"Forget your people and your father's house"</strong> <span class="ref">(45:10)</span>. Hebrews removes any doubt about whose wedding the psalm finally sings: "of the Son he says, 'Your throne, O God, is forever'" <span class="ref">(Heb 1:8&ndash;9, quoting Ps 45:6&ndash;7)</span>.</p>
+    <p>So run the wedding on the diagram. One King &mdash; not a king per tile negotiating parity, but the Son at the one center. <strong>One bride</strong> &mdash; not six treaty-wives holding six portfolios, but a single people gathered from every tile <span class="ref">(Rev 19:7; 21:2)</span>. And the bride enters on Ruth's terms, universalized: portfolio burned at the door, no gods in the luggage, "your God my God" scaled to the nations. There is no dynastic diplomacy in the new covenant for the simplest structural reason: <strong>the King has no rivals to marry</strong>. Where Solomon's wedding-lines carried Ashtoreth, Chemosh, and Milcom inbound, this wedding's lines carry only the bride &mdash; and she brings her dowry to him: the wealth, the camels, the ships, the wages made holy.</p>
+  </div>
+</div>
+
+<!-- ============ III ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">III</span>The Inverted Hegemony</div>
+  <div class="band-refs">Acts 2:5&ndash;11 &middot; Isaiah 19:24&ndash;25; 66:18&ndash;21 &middot; Revelation 21:24&ndash;26</div>
+  <div class="band-body">
+    <p>Every empire on the series' map ran the same trade: <strong>keep your gods, surrender your allegiance</strong>. Rome perfected it &mdash; a pantheon of tolerated cults under one Caesar. The kingdom of Christ runs the trade precisely inverted: <strong>surrender your gods, keep your nation</strong>. Exclusive worship; cultural liberty. One Lord, one faith, one baptism &mdash; and at Pentecost, deliberately, <em>many tongues</em>: the Spirit does not restore a single pre-Babel language but sanctifies every native one, "each of us in his own tongue&hellip; the mighty works of God" <span class="ref">(Acts 2:8&ndash;11)</span>. Unity of confession, plurality of tongues &mdash; Babel healed without being flattened.</p>
+    <p>Isaiah saw the retained-nations ending all along: Egypt still Egypt and Assyria still Assyria in the triple blessing, each with its own title <span class="ref">(19:24&ndash;25)</span>; survivors sent to the coastlands and &mdash; the astonishment of 66:21 &mdash; "some of them also I will take <strong>for priests and for Levites</strong>"; and at the very end, not a monoculture but a procession: <strong>"the kings of the earth will bring their glory into it"</strong> <span class="ref">(Rev 21:24&ndash;26 &larr; Isa 60:3, 11)</span> &mdash; plural kings, plural glories, one light. The nations enter the city <em>as nations</em>. What dies at the gates is not Egyptian-ness or Kedar's flocks or Tarshish's shipwright craft; what dies is the idols &mdash; and Act II already showed they were never alive.</p>
+  </div>
+</div>
+
+<!-- ============ IV ============ -->
+<div class="band">
+  <div class="band-title"><span class="k">IV</span>Living as the Tile-less Nation</div>
+  <div class="band-refs">1 Peter 2:11&ndash;17 &middot; Isaiah 2:4 &middot; Micah 4:5</div>
+  <div class="band-body">
+    <p>What follows for a congregation in Lenexa is what followed for Peter's congregations in Pontus and Cappadocia. A nation with no tile <strong>defends no borders</strong> &mdash; its King forbade the sword at his arrest, and its only conquest is the one Isaiah pictured as beaten swords <span class="ref">(2:4)</span>. A nation whose relation-leg is new birth <strong>recruits by proclamation, not procreation or conquest</strong> &mdash; "that you may proclaim the excellencies" is the national industry <span class="ref">(1 Pet 2:9)</span>. A nation whose region is kept in heaven can be <strong>loyal residents of any tile</strong> &mdash; "honor the emperor" sits two verses from "you are a holy nation" without contradiction <span class="ref">(2:13&ndash;17)</span>, because the church asks of every land exactly what it renounces in every land: room to worship the one God, and nothing else at swordpoint.</p>
+    <p>Micah's old resolution &mdash; "all the peoples walk each in the name of its god, but we will walk in the name of the LORD our God forever" <span class="ref">(Mic 4:5)</span> &mdash; was one small nation's defiance. It is now the anthem of a nation drawn <em>from</em> all the peoples: still exclusive at the center, now boundless at the membrane.</p>
+  </div>
+</div>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>The triangle, kept and transfigured</h2>
+  <p>Isaiah's definition of a nation survives all the way to the end &mdash; family, worship, inheritance, King. What the gospel abolishes is not nationhood but the two lies that corrupted every triangle on the map: the god who wasn't there, and the treaty that relocated trust. One page remains: John's vision of the finished gathering &mdash; the nations walking in the light of the city whose lamp is the Lamb.</p>
+</div>
+
+<footer>
+  <div>References ESV &middot; Act IV of the Reading Isaiah series</div>
+  <div>Reading Isaiah &middot; A New Covenant People &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/nations-in-nt/" rel="prev">&larr;<span class="t">The Nations in the NT</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/guest-list/" rel="next"><span class="t">The Guest List</span>&rarr;</a></nav>
+</body>
+</html>

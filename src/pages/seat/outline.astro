@@ -47,6 +47,12 @@ const usesScripture = outline.some((b) => b.type === 'scripture');
             <p class="o-copyright">Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
           )}
         </>
+      ) : sermon && sermon.title ? (
+        <>
+          <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center; margin:0 0 6px;">{sermon.title}</h1>
+          {sermon.text && <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; color:var(--gray); margin:0 0 24px;">{sermon.text}</p>}
+          <p style="text-align:center; font-family:var(--serif); color:var(--gray); padding:20px 0 32px;">The full outline will be posted here on Sunday morning.</p>
+        </>
       ) : (
         <>
           <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center;">Sermon Outline</h1>

@@ -3,3 +3,8 @@ https://sovgracekc.pages.dev/*
   X-Robots-Tag: noindex
 https://:version.sovgracekc.pages.dev/*
   X-Robots-Tag: noindex
+
+# The chat widget changes often (greeting, behavior). Make browsers revalidate it
+# every load so greeting/prompt updates go live immediately (no 4-hour stale cache).
+/chat-widget.js
+  Cache-Control: public, max-age=0, must-revalidate

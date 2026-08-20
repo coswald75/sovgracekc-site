@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Babylon — Nation Study, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4; --stone-deep:#E3E1D6; --ink:#232630; --ink-soft:#4A4D57;
+    --lapis:#34528C; --lapis-pale:#D8DEEC; --copper:#9E6428; --copper-pale:#EFE3D2;
+    --olive:#6B7042; --olive-pale:#E2E3D2; --label:#767862; --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--stone);color:var(--ink);font-family:'Source Serif 4', Georgia, serif;font-size:16px;line-height:1.55}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--lapis);margin-bottom:16px}
+  .namerow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  h1{font-family:'Marcellus', serif;font-weight:400;font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.02em;line-height:1.05}
+  .dial{width:34px;height:34px;flex:none}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.4}
+  .dial line{stroke:var(--lapis);stroke-width:2.4;stroke-linecap:round}
+  .meta{margin-top:10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+  .texts{margin-top:6px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:660px;color:var(--ink-soft);font-size:1.02rem}
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .hero-fig svg a{cursor:pointer}
+  .hero-fig svg a:hover circle{stroke-width:3}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+  section{padding-top:44px;scroll-margin-top:20px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .node{width:18px;height:18px;border-radius:50%;flex:none;border:2px solid transparent}
+  .node.copper{background:var(--copper)}
+  .node.lapis{background:var(--lapis)}
+  .node.olive{background:var(--olive)}
+  .node.ink{background:var(--stone);border-color:var(--ink)}
+  h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.6rem;letter-spacing:.02em}
+  .sec-k{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--label);font-weight:600}
+  .sec-intro{max-width:700px;color:var(--ink-soft);font-size:.95rem;margin-bottom:18px}
+  .band-body{display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);margin:6px 0;padding-left:16px;border-left:2px solid var(--copper)}
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+  .chip{background:var(--copper-pale);color:var(--copper);font-size:.85rem;padding:2px 10px;border-radius:2px;white-space:nowrap}
+  .chip .arrow{opacity:.6;padding:0 3px}
+  .t{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1px 7px;border-radius:2px;vertical-align:2px;margin-right:6px;white-space:nowrap}
+  .t-named{background:var(--copper);color:#fff}
+  .t-att{background:var(--lapis-pale);color:var(--lapis)}
+  .t-e{background:var(--lapis-pale);color:var(--lapis)}
+  .t-r{background:transparent;color:var(--label);border:1px solid var(--rule)}
+  .dated{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label);border:1px solid var(--rule);padding:2px 8px;border-radius:2px;margin-bottom:8px}
+  .live{display:block;font-size:.85rem;color:var(--ink-soft);border:1px dashed var(--label);padding:10px 14px;margin:2px 0 4px}
+  .map-fig{max-width:520px;margin:10px 0 6px}
+  .map-fig svg{width:100%;height:auto;display:block}
+  .capstone{margin-top:56px;background:var(--stone-deep);border-left:3px solid var(--copper);padding:26px 30px}
+  .capstone h2{margin-bottom:10px;font-size:1.4rem}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:9px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--label);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media (max-width:720px){header{padding-top:44px}}
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/assyria/" rel="prev">&larr;<span class="t">Assyria</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/media-elam/" rel="next"><span class="t">Media & Elam</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Nation Study</div>
+  <div class="namerow">
+    <h1>Babylon</h1>
+    <svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="17" y2="7.2"/></svg>
+  </div>
+  <div class="meta">East &mdash; arriving from the north &middot; today: Iraq</div>
+  <div class="texts">Isaiah 13&ndash;14 &middot; 21 &middot; 39 &middot; 46&ndash;48</div>
+  <p class="subtitle">The glory of kingdoms &mdash; the city of the tower, the empire that would burn Jerusalem a century after Isaiah died. No nation gets more chapters, a longer arc, or a louder fall: Isaiah stages Babylon's collapse twice, names its conqueror before his birth, and hands Revelation its vocabulary.</p>
+</header>
+
+<div class="hero-fig">
+  <svg viewBox="0 0 520 500" role="img" aria-label="BABYLON: Relation, Religion, Region at the corners. Each corner links to its section below.">
+    <polygon points="260,78 92,398 428,398" fill="#DDD9C9" opacity="0.55"/>
+    <line x1="260" y1="78"  x2="92"  y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="260" y1="78"  x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="92"  y1="398" x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <a href="#relation">
+      <circle cx="260" cy="78" r="12" fill="#9E6428"/>
+      <text x="260" y="52" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELATION</text>
+      <text x="260" y="70" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">Nimrod's Babel &mdash; Abraham's 'before'</text>
+    </a>
+    <a href="#religion">
+      <circle cx="92" cy="398" r="12" fill="#34528C"/>
+      <text x="80" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELIGION</text>
+      <text x="80" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">Bel &amp; Nebo, gods on oxcarts</text>
+    </a>
+    <a href="#region">
+      <circle cx="428" cy="398" r="12" fill="#6B7042"/>
+      <text x="436" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">REGION</text>
+      <text x="436" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the Euphrates plain</text>
+    </a>
+    <a href="#word">
+      <text x="260" y="290" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#232630" letter-spacing="5">BABYLON</text>
+      <text x="260" y="312" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" fill="#767862" font-style="italic">the center: where this tripod met Israel's God</text>
+    </a>
+  </svg>
+  <div class="fig-note">The triangle is the table of contents &mdash; tap a corner.</div>
+</div>
+
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="relation">
+  <div class="sec-head"><span class="node copper"></span><div><div class="sec-k">The copper corner</div><h2>Relation &mdash; The Tower and the Call</h2></div></div>
+  <p class="sec-intro">Who Babylon is, in the family of nations.</p>
+  <div class="band-body">
+    <div class="chips">
+      <span class="chip">Noah<span class="arrow">&rarr;</span>Ham<span class="arrow">&rarr;</span>Cush<span class="arrow">&rarr;</span>Nimrod<span class="arrow">&rarr;</span>Babel</span>
+    </div>
+    <p>"The beginning of his kingdom was <strong>Babel</strong>" <span class="ref">(Gen 10:10)</span> &mdash; Nimrod's city, where the nations were born in judgment: one language confounded, the peoples scattered from a half-built tower whose name meant "gate of the gods" and became "confusion" <span class="ref">(Gen 11)</span>. Babylon is not just <em>a</em> nation to Scripture; it is the <strong>anti-Zion</strong> &mdash; the city man builds to reach heaven, set against the city God founds.</p>
+    <p>And it is Abraham's <strong>"before"</strong>: the covenant begins with a man called <em>out</em> "from Ur of the Chaldeans" <span class="ref">(Gen 11:31; 15:7)</span> &mdash; out of Babylonian civilization itself. Israel's story starts as an exit from Babylon; Isaiah will end his book commanding the exit again: "Go out from Babylon, flee from Chaldea!" <span class="ref">(48:20)</span>.</p>
+    <p>The live connection in Isaiah's own lifetime is chapter 39: envoys of <strong>Merodach-baladan</strong> arrive with letters and a gift, and Hezekiah shows them everything in his storehouses. Flattery &mdash; the third instrument of statecraft after marriage and vassalage &mdash; and it works. Isaiah's response names the future: "the days are coming when all that is in your house&hellip; shall be carried to Babylon" <span class="ref">(39:6)</span>.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="religion">
+  <div class="sec-head"><span class="node lapis"></span><div><div class="sec-k">The lapis corner</div><h2>Religion &mdash; Bel, Nebo &amp; the Horoscope Bureau</h2></div></div>
+  <p class="sec-intro">What Babylon knelt to &mdash; and the procession run in reverse.</p>
+  <div class="band-body">
+    <p><span class="t t-named">Named</span><strong>"Bel bows down; Nebo stoops"</strong> <span class="ref">(46:1)</span> &mdash; Isaiah names Babylon's chief gods inside the preaching text and then narrates their collapse. The satire is aimed at Babylon's grandest liturgy: the new-year <em>akitu</em> festival, when Bel-Marduk and Nebo were carried in triumph through the streets. Isaiah runs the same procession in reverse &mdash; same gods, same carrying, now as <strong>refugee luggage</strong> making the pack-animals stagger, "they themselves go into captivity" <span class="ref">(46:1&ndash;2)</span> &mdash; against the God who thunders the difference: <strong>"even to your old age I am he&hellip; I have made, and I will bear; I will carry and will save"</strong> <span class="ref">(46:3&ndash;4)</span>. Their gods must be carried; ours carries us.</p>
+    <p><span class="t t-named">Named</span>The other department mocked in its own specialty is the famous astrology bureau: "Let them stand forth and save you, those who divide the heavens, who gaze at the stars&hellip; behold, they are like stubble; the fire consumes them; <strong>they cannot deliver themselves</strong> from the power of the flame" <span class="ref">(47:13&ndash;14)</span>. The empire that read everyone's future is denied foreknowledge of its own &mdash; while the LORD, in the same chapters, stakes his deity precisely on "declaring the end from the beginning" <span class="ref">(46:10)</span>, and proves it by naming Cyrus.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="region">
+  <div class="sec-head"><span class="node olive"></span><div><div class="sec-k">The olive corner</div><h2>Region &mdash; The Euphrates Plain</h2></div></div>
+  <p class="sec-intro">Where Babylon sat, and what the land is called now.</p>
+  <div class="band-body">
+    <div class="map-fig">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Sketch map: the Euphrates plain with Babylon and Ur, Assyria upstream to the north">
+        <rect x="0" y="0" width="520" height="400" fill="#E2E3D2" opacity="0.35"/>
+        <path d="M 200 0 C 220 80, 260 160, 290 240 C 310 290, 330 340, 350 400" fill="none" stroke="#34528C" stroke-width="4" opacity="0.55"/>
+        <text x="180 " y="120" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#2A4270">the Euphrates</text>
+        <circle cx="286" cy="230" r="6" fill="#3F4527"/><text x="298" y="226" font-family="'Source Serif 4', serif" font-size="11" fill="#3F4527">Babylon (near Hillah)</text>
+        <circle cx="332" cy="336" r="5" fill="#3F4527"/><text x="344" y="332" font-family="'Source Serif 4', serif" font-size="11" fill="#3F4527">Ur &mdash; Abraham's "before"</text>
+        <text x="230" y="300" text-anchor="middle" font-family="Marcellus, serif" font-size="18" fill="#3F4527" letter-spacing="4">CHALDEA</text>
+        <text x="150" y="40" font-family="Marcellus, serif" font-size="12" fill="#767862" letter-spacing="2">&uarr; ASSYRIA upstream</text>
+        <text x="410" y="386" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10" font-style="italic" fill="#767862">&darr; to the Gulf</text>
+        <text x="14" y="390" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#767862">sketch map &mdash; not to scale</text>
+      </svg>
+    </div>
+    <p>Babylon commanded the lower Euphrates flood-plain &mdash; irrigation-rich, flat, and open, "the wilderness of the sea" in Isaiah's code <span class="ref">(21:1)</span>. Like Assyria's armies, Babylon's marched the northern arc around the desert &mdash; the eastern empire that always arrived from the north. In 539 BC the city fell to Cyrus <strong>without a battle</strong>, the Euphrates diverted, the gates open &mdash; as Isaiah had written more than a century earlier <span class="ref">(45:1&ndash;2)</span>.</p>
+    <p><span class="dated">Today &middot; current as of Aug 2026</span></p>
+    <p>The ruins sit near <strong>Hillah, Iraq</strong>, about 55 miles south of Baghdad &mdash; excavated, partially and controversially reconstructed, a UNESCO site. Iraq seated a new government in May 2026 after the November 2025 elections and continues balancing U.S. security ties against Iran-aligned militias inside its borders. The city that named itself the eternal mistress <span class="ref">(47:7)</span> is archaeology.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="word">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The center of the triangle</div><h2>Isaiah's Word to Babylon</h2></div></div>
+  <p class="sec-intro">What happened when the tower's tripod met Israel's God.</p>
+  <div class="band-body">
+    <p>Babylon opens the oracles <span class="ref">(chs. 13&ndash;14)</span> even though Assyria was the reigning terror &mdash; Isaiah aims first at the deeper enemy. The day of the LORD falls on "the glory of kingdoms, the splendor and pomp of the Chaldeans" <span class="ref">(13:19)</span>, and then heaven's taunt-song is handed to the redeemed to sing over the tyrant:</p>
+    <blockquote>"How you are fallen from heaven, O Day Star, son of Dawn!&hellip; You said in your heart, 'I will ascend to heaven; above the stars of God I will set my throne'&hellip; But you are brought down to Sheol."<span class="ref">Isaiah 14:12&ndash;15</span></blockquote>
+    <p>Babel's tower-logic &mdash; <em>I will ascend</em> &mdash; sung to its grave. The watchman hears the verdict early: <strong>"Fallen, fallen is Babylon; and all the carved images of her gods he has shattered to the ground"</strong> <span class="ref">(21:9)</span>. Chapters 46&ndash;47 stage the fall as theater &mdash; the gods carted, the virgin daughter unthroned to grind meal in the dust, the astrologers ash &mdash; and chapter 48 issues the marching orders out. Above the whole arc stands the proof-of-deity: <strong>Cyrus, named</strong> <span class="ref">(44:28&ndash;45:1)</span>, history's course announced in advance because "I am God, and there is no other" <span class="ref">(46:9&ndash;10)</span>.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="nt">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The account closed</div><h2>In the New Testament</h2></div></div>
+  <p class="sec-intro"></p>
+  <div class="band-body">
+    <p><span class="t t-named">Quoted</span>Revelation lifts Isaiah's watchman-cry verbatim into the angel's mouth: <strong>"Fallen, fallen is Babylon the great"</strong> <span class="ref">(Rev 14:8; 18:2 &larr; Isa 21:9)</span> &mdash; the only oracle-sentence in the series that Scripture re-preaches word for word.</p>
+    <p><span class="t t-e">Echoed</span>Revelation 17&ndash;18 is stitched from Isaiah's Babylon fabric &mdash; the boast "I sit as a queen" lifted from 47:7&ndash;8, the merchants wailing over the fallen mistress, the summons "come out of her, my people" reissuing 48:20. Babylon becomes Scripture's permanent name for the world-city set against God &mdash; Peter even signs a letter from "she who is at Babylon" <span class="ref">(1 Pet 5:13)</span>. And Matthew hangs the Messiah's own genealogy on the wound: the generations counted "to the deportation to Babylon&hellip; and from the deportation to Babylon to the Christ" <span class="ref">(Matt 1:11&ndash;17)</span> &mdash; the exile as the hinge on which the family history turns toward its King.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Babylon in one paragraph</h2>
+  <p><strong>Relation:</strong> Nimrod's tower-city &mdash; the anti-Zion, the civilization Abraham was called out of and the exiles called out of again. <strong>Religion:</strong> Bel and Nebo, paraded in glory once a year &mdash; re-paraded by Isaiah as luggage &mdash; and a horoscope bureau that couldn't read its own chart. <strong>Region:</strong> the Euphrates plain; ruins near Hillah in today's Iraq.</p>
+  <p>And at the center: the empire whose fall God announced by name, a century early, so exactly that Revelation needed only to quote it: Fallen, fallen is Babylon the great.</p>
+</div>
+
+<footer>
+  <div>Assembled from the Reading Isaiah atlas set &middot; references ESV</div>
+  <div>Reading Isaiah &middot; Nation Study: Babylon &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/assyria/" rel="prev">&larr;<span class="t">Assyria</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/media-elam/" rel="next"><span class="t">Media & Elam</span>&rarr;</a></nav>
+</body>
+</html>

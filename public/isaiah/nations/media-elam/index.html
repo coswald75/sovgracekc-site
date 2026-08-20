@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media &amp; Elam — Nation Study, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4; --stone-deep:#E3E1D6; --ink:#232630; --ink-soft:#4A4D57;
+    --lapis:#34528C; --lapis-pale:#D8DEEC; --copper:#9E6428; --copper-pale:#EFE3D2;
+    --olive:#6B7042; --olive-pale:#E2E3D2; --label:#767862; --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--stone);color:var(--ink);font-family:'Source Serif 4', Georgia, serif;font-size:16px;line-height:1.55}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--lapis);margin-bottom:16px}
+  .namerow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  h1{font-family:'Marcellus', serif;font-weight:400;font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.02em;line-height:1.05}
+  .dial{width:34px;height:34px;flex:none}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.4}
+  .dial line{stroke:var(--lapis);stroke-width:2.4;stroke-linecap:round}
+  .meta{margin-top:10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+  .texts{margin-top:6px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:660px;color:var(--ink-soft);font-size:1.02rem}
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .hero-fig svg a{cursor:pointer}
+  .hero-fig svg a:hover circle{stroke-width:3}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+  section{padding-top:44px;scroll-margin-top:20px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .node{width:18px;height:18px;border-radius:50%;flex:none;border:2px solid transparent}
+  .node.copper{background:var(--copper)}
+  .node.lapis{background:var(--lapis)}
+  .node.olive{background:var(--olive)}
+  .node.ink{background:var(--stone);border-color:var(--ink)}
+  h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.6rem;letter-spacing:.02em}
+  .sec-k{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--label);font-weight:600}
+  .sec-intro{max-width:700px;color:var(--ink-soft);font-size:.95rem;margin-bottom:18px}
+  .band-body{display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);margin:6px 0;padding-left:16px;border-left:2px solid var(--copper)}
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+  .chip{background:var(--copper-pale);color:var(--copper);font-size:.85rem;padding:2px 10px;border-radius:2px;white-space:nowrap}
+  .chip .arrow{opacity:.6;padding:0 3px}
+  .t{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1px 7px;border-radius:2px;vertical-align:2px;margin-right:6px;white-space:nowrap}
+  .t-named{background:var(--copper);color:#fff}
+  .t-att{background:var(--lapis-pale);color:var(--lapis)}
+  .t-e{background:var(--lapis-pale);color:var(--lapis)}
+  .t-r{background:transparent;color:var(--label);border:1px solid var(--rule)}
+  .dated{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label);border:1px solid var(--rule);padding:2px 8px;border-radius:2px;margin-bottom:8px}
+  .live{display:block;font-size:.85rem;color:var(--ink-soft);border:1px dashed var(--label);padding:10px 14px;margin:2px 0 4px}
+  .map-fig{max-width:520px;margin:10px 0 6px}
+  .map-fig svg{width:100%;height:auto;display:block}
+  .capstone{margin-top:56px;background:var(--stone-deep);border-left:3px solid var(--copper);padding:26px 30px}
+  .capstone h2{margin-bottom:10px;font-size:1.4rem}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:9px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--label);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media (max-width:720px){header{padding-top:44px}}
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/babylon/" rel="prev">&larr;<span class="t">Babylon</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/arabia/" rel="next"><span class="t">Arabia</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Nation Study</div>
+  <div class="namerow">
+    <h1>Media &amp; Elam</h1>
+    <svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="18.5" y2="11"/></svg>
+  </div>
+  <div class="meta">Due east, beyond Babylon &middot; today: Iran</div>
+  <div class="texts">Isaiah 13:17 &middot; 21:2 &middot; 44:28&ndash;45:13</div>
+  <p class="subtitle">The nations with no family tie to Israel at all &mdash; and the only ones in the oracles who receive no satire, no indictment, no woe. Instead God calls their soldiers "my consecrated ones" and their king "my shepherd" &mdash; a man who did not know Him.</p>
+</header>
+
+<div class="hero-fig">
+  <svg viewBox="0 0 520 500" role="img" aria-label="MEDIA &amp; ELAM: Relation, Religion, Region at the corners. Each corner links to its section below.">
+    <polygon points="260,78 92,398 428,398" fill="#DDD9C9" opacity="0.55"/>
+    <line x1="260" y1="78"  x2="92"  y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="260" y1="78"  x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="92"  y1="398" x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <a href="#relation">
+      <circle cx="260" cy="78" r="12" fill="#9E6428"/>
+      <text x="260" y="52" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELATION</text>
+      <text x="260" y="70" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">Japheth's Madai, Shem's Elam &mdash; strangers</text>
+    </a>
+    <a href="#religion">
+      <circle cx="92" cy="398" r="12" fill="#34528C"/>
+      <text x="80" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELIGION</text>
+      <text x="80" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">unnamed &mdash; hired, not indicted</text>
+    </a>
+    <a href="#region">
+      <circle cx="428" cy="398" r="12" fill="#6B7042"/>
+      <text x="436" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">REGION</text>
+      <text x="436" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the Zagros east &mdash; Iran</text>
+    </a>
+    <a href="#word">
+      <text x="260" y="290" text-anchor="middle" font-family="Marcellus, serif" font-size="20" fill="#232630" letter-spacing="3">MEDIA &amp; ELAM</text>
+      <text x="260" y="312" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" fill="#767862" font-style="italic">the center: where this tripod met Israel's God</text>
+    </a>
+  </svg>
+  <div class="fig-note">The triangle is the table of contents &mdash; tap a corner.</div>
+</div>
+
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="relation">
+  <div class="sec-head"><span class="node copper"></span><div><div class="sec-k">The copper corner</div><h2>Relation &mdash; The Strangers</h2></div></div>
+  <p class="sec-intro">Who Media and Elam are, in the family of nations.</p>
+  <div class="band-body">
+    <div class="chips">
+      <span class="chip">Noah<span class="arrow">&rarr;</span>Japheth<span class="arrow">&rarr;</span>Madai</span>
+      <span class="chip">Noah<span class="arrow">&rarr;</span>Shem<span class="arrow">&rarr;</span>Elam</span>
+    </div>
+    <p>Two peoples east of everything: <strong>Madai</strong> from Japheth's line, <strong>Elam</strong> heading Shem's list <span class="ref">(Gen 10:2, 22)</span> &mdash; ancient beyond most of the map (Elam's civilization at Susa is among the world's oldest). With Abraham's family they have <strong>no tie whatsoever</strong>. Scripture's single early contact is hostile and brief: Chedorlaomer, king of Elam, leads the coalition that kidnaps Lot, and Abraham's 318 men rout him by night <span class="ref">(Gen 14)</span>. Then a thousand years of silence.</p>
+    <p>That blankness is the copper corner's whole point: when these nations enter Isaiah, they enter with <em>no kinship claim, no covenant history, no treaty record</em> &mdash; nothing but God's summons. The nations most foreign to the story are the ones God reaches for.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="religion">
+  <div class="sec-head"><span class="node lapis"></span><div><div class="sec-k">The lapis corner</div><h2>Religion &mdash; The Polemic That Isn't There</h2></div></div>
+  <p class="sec-intro">What the east knelt to &mdash; and the striking silence.</p>
+  <div class="band-body">
+    <p><span class="t t-r">Uncertain</span>Elam's city-god <strong>Inshushinak</strong>, lord of Susa, is attested in Elamite inscriptions; Median religion in Isaiah's era predates Zoroastrianism's rise and is poorly documented. None of it is named in Scripture &mdash; background color only.</p>
+    <p>But the structural fact is louder than any data: <strong>Isaiah aims no idol-polemic at Media or Elam.</strong> Every other power gets its gods mocked in their own portfolio; these two appear only as instruments in God's hand. The polemic is inverted &mdash; instead of dismantling their religion, God <em>staffs his purposes with their armies</em>:</p>
+    <blockquote>"I myself have commanded my consecrated ones, and have summoned my mighty men to execute my anger."<span class="ref">Isaiah 13:3</span></blockquote>
+    <p>Sanctuary language &mdash; <em>consecrated</em> &mdash; laid on pagan soldiers who never heard of Zion. And to their coming king, twice in two verses: <strong>"I name you, though you do not know me&hellip; I equip you, though you do not know me"</strong> <span class="ref">(45:4&ndash;5)</span>. The LORD's reach does not wait for recognition.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="region">
+  <div class="sec-head"><span class="node olive"></span><div><div class="sec-k">The olive corner</div><h2>Region &mdash; The Zagros East</h2></div></div>
+  <p class="sec-intro">Where Media and Elam sat, and what the land is called now.</p>
+  <div class="band-body">
+    <div class="map-fig">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Sketch map: the Zagros mountains with Ecbatana in Media to the north and Susa in Elam to the south, Babylon to the west">
+        <rect x="0" y="0" width="520" height="400" fill="#E2E3D2" opacity="0.35"/>
+        <path d="M 150 40 L 176 86 M 190 90 L 216 136 M 230 140 L 256 186 M 270 190 L 296 236 M 310 240 L 336 286" stroke="#8A7A5A" stroke-width="6" opacity="0.45" stroke-linecap="round"/>
+        <text x="160" y="200" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#4A4D57" transform="rotate(45 160 200)">the Zagros mountains</text>
+        <path d="M 300 40 L 480 40 L 480 180 L 300 180 Z" fill="#6B7042" opacity="0.2"/>
+        <text x="390" y="86" text-anchor="middle" font-family="Marcellus, serif" font-size="17" fill="#3F4527" letter-spacing="3">MEDIA</text>
+        <circle cx="390" cy="118" r="5" fill="#3F4527"/><text x="400" y="114" font-family="'Source Serif 4', serif" font-size="11" fill="#3F4527">Ecbatana</text>
+        <path d="M 330 230 L 500 230 L 500 370 L 330 370 Z" fill="#6B7042" opacity="0.2"/>
+        <text x="414" y="278" text-anchor="middle" font-family="Marcellus, serif" font-size="17" fill="#3F4527" letter-spacing="3">ELAM</text>
+        <circle cx="410" cy="310" r="5" fill="#3F4527"/><text x="420" y="306" font-family="'Source Serif 4', serif" font-size="11" fill="#3F4527">Susa</text>
+        <text x="70" y="330" text-anchor="middle" font-family="Marcellus, serif" font-size="13" fill="#767862" letter-spacing="2">&larr; BABYLON</text>
+        <text x="14" y="390" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#767862">sketch map &mdash; not to scale</text>
+      </svg>
+    </div>
+    <p>Beyond Babylon's plain the Zagros ranges climb to the Iranian plateau: <strong>Media</strong> in the north around Ecbatana, <strong>Elam</strong> in the south around Susa. Media allied with Babylon to destroy Nineveh (612 BC); then Cyrus fused Median, Elamite, and Persian power into the empire that swallowed Babylon whole. Susa became a Persian capital &mdash; the setting, later, of Esther and Nehemiah's cupbearing <span class="ref">(Est 1:2; Neh 1:1)</span>.</p>
+    <p><span class="dated">Today &middot; current as of Aug 2026</span></p>
+    <span class="live">A live situation &mdash; descriptive, not comment; hold its weight in view.</span>
+    <p>Media and Elam are <strong>Iran</strong>. In February 2026 Israeli and U.S. strikes on nuclear and military sites killed Supreme Leader Khamenei, who was succeeded by his son; a Pakistan-brokered ceasefire has held since April amid intermittent strikes and a severe internal crackdown. Worth knowing as you pray: by many accounts Iran has one of the fastest-growing underground churches in the world &mdash; the "consecrated ones" summons still landing east of Babylon.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="word">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The center of the triangle</div><h2>Isaiah's Word to Media &amp; Elam</h2></div></div>
+  <p class="sec-intro">What happened when the strangers' tripod met Israel's God.</p>
+  <div class="band-body">
+    <p>They enter as the answer to Babylon. "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold" <span class="ref">(13:17)</span> &mdash; an army Babylon's fabled wealth cannot bribe. The watchman's vision gives the order like a battlefield dispatch: <strong>"Go up, O Elam; lay siege, O Media; all the sighing she has caused I bring to an end"</strong> <span class="ref">(21:2)</span> &mdash; and the next voice heard is "Fallen, fallen is Babylon."</p>
+    <p>Then the summit of it: a pagan king, named a century and a half before his birth, given the LORD's own royal titles:</p>
+    <blockquote>"Thus says the LORD to his anointed, to Cyrus, whose right hand I have grasped&hellip; 'I will go before you and level the exalted places, I will break in pieces the doors of bronze&hellip; that you may know that it is I, the LORD, the God of Israel, who call you by your name.'"<span class="ref">Isaiah 45:1&ndash;3</span></blockquote>
+    <p><em>My shepherd</em> <span class="ref">(44:28)</span>, <em>his anointed</em> &mdash; messiah-language on a Persian. The scandal is the point, and Isaiah defends it in advance: "Woe to him who strives with him who formed him&hellip; Shall the clay say to him who forms it, 'What are you making?'" <span class="ref">(45:9)</span>. In 539 the doors of bronze opened; in 538 Cyrus's decree sent the exiles home to build <span class="ref">(Ezra 1:1&ndash;4)</span> &mdash; history keeping the appointment the text had published.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="nt">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The account closed</div><h2>In the New Testament</h2></div></div>
+  <p class="sec-intro"></p>
+  <div class="band-body">
+    <p><span class="t t-e">Echoed</span>At Pentecost, the roll-call of nations hearing the mighty works of God <strong>opens in the east</strong>: "Parthians and <strong>Medes</strong> and <strong>Elamites</strong> and residents of Mesopotamia&hellip;" <span class="ref">(Acts 2:9)</span> &mdash; the strangers listed first at the reversal of Babel. The summons that once raised their armies now raises their worship.</p>
+    <p><span class="t t-r">Resonant</span>Magi "from the east" &mdash; the old Median priestly caste's own title &mdash; arrive at the true Anointed's cradle <span class="ref">(Matt 2:1&ndash;2)</span>: the east that produced God's anointed instrument comes to kneel before God's Anointed Son. And Susa's palace, where Esther saved the exiles Cyrus's decree had planted, stands behind the whole survival of the story.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Media &amp; Elam in one paragraph</h2>
+  <p><strong>Relation:</strong> the strangers &mdash; Japheth's and Shem's far east, owing Israel nothing, owed nothing, summoned anyway. <strong>Religion:</strong> the one entry with no polemic at all &mdash; God does not mock their gods; He hires their armies and names their king. <strong>Region:</strong> the Zagros east; Iran today, at war and, underground, turning.</p>
+  <p>And at the center: "my consecrated ones," "my shepherd," "his anointed &mdash; though you do not know me." The nations farthest outside the story, drafted into its climax &mdash; and standing first in line at Pentecost.</p>
+</div>
+
+<footer>
+  <div>Assembled from the Reading Isaiah atlas set &middot; references ESV</div>
+  <div>Reading Isaiah &middot; Nation Study: Media &amp; Elam &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/babylon/" rel="prev">&larr;<span class="t">Babylon</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/arabia/" rel="next"><span class="t">Arabia</span>&rarr;</a></nav>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arabia &amp; the Desert Tribes — Nation Study, Reading Isaiah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EDECE4; --stone-deep:#E3E1D6; --ink:#232630; --ink-soft:#4A4D57;
+    --lapis:#34528C; --lapis-pale:#D8DEEC; --copper:#9E6428; --copper-pale:#EFE3D2;
+    --olive:#6B7042; --olive-pale:#E2E3D2; --label:#767862; --rule:#C9C7BA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--stone);color:var(--ink);font-family:'Source Serif 4', Georgia, serif;font-size:16px;line-height:1.55}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 90px}
+  header{padding:60px 0 10px}
+  .eyebrow{font-family:'Marcellus', serif;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--lapis);margin-bottom:16px}
+  .namerow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  h1{font-family:'Marcellus', serif;font-weight:400;font-size:clamp(2.1rem, 5.8vw, 3.4rem);letter-spacing:.02em;line-height:1.05}
+  .dial{width:34px;height:34px;flex:none}
+  .dial circle{fill:none;stroke:var(--label);stroke-width:1.4}
+  .dial line{stroke:var(--lapis);stroke-width:2.4;stroke-linecap:round}
+  .meta{margin-top:10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label)}
+  .texts{margin-top:6px;font-family:'Marcellus', serif;font-size:1.02rem;color:var(--copper)}
+  .subtitle{margin-top:16px;max-width:660px;color:var(--ink-soft);font-size:1.02rem}
+  .qav{display:flex;align-items:center;margin:48px 0 0;height:14px}
+  .qav .line{flex:1;height:1px;background:var(--rule);position:relative}
+  .qav .line::before,.qav .line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--rule)}
+  .qav .line::before{left:25%}
+  .qav .line::after{left:75%}
+  .qav .tick-mid{width:1px;height:14px;background:var(--label)}
+  .hero-fig{max-width:560px;margin:34px auto 0}
+  .hero-fig svg{width:100%;height:auto;display:block}
+  .hero-fig svg a{cursor:pointer}
+  .hero-fig svg a:hover circle{stroke-width:3}
+  .fig-note{text-align:center;font-size:.85rem;color:var(--label);font-style:italic;margin-top:10px}
+  section{padding-top:44px;scroll-margin-top:20px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .node{width:18px;height:18px;border-radius:50%;flex:none;border:2px solid transparent}
+  .node.copper{background:var(--copper)}
+  .node.lapis{background:var(--lapis)}
+  .node.olive{background:var(--olive)}
+  .node.ink{background:var(--stone);border-color:var(--ink)}
+  h2{font-family:'Marcellus', serif;font-weight:400;font-size:1.6rem;letter-spacing:.02em}
+  .sec-k{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--label);font-weight:600}
+  .sec-intro{max-width:700px;color:var(--ink-soft);font-size:.95rem;margin-bottom:18px}
+  .band-body{display:flex;flex-direction:column;gap:13px;max-width:760px}
+  .band-body p{font-size:.97rem;color:var(--ink-soft)}
+  .band-body strong{color:var(--ink)}
+  .band-body .ref{color:var(--label);font-size:.85em}
+  blockquote{font-family:'Marcellus', serif;font-size:1.08rem;line-height:1.5;color:var(--ink);margin:6px 0;padding-left:16px;border-left:2px solid var(--copper)}
+  blockquote .ref{display:block;font-family:'Source Serif 4',serif;font-size:.78rem;margin-top:5px;color:var(--label)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+  .chip{background:var(--copper-pale);color:var(--copper);font-size:.85rem;padding:2px 10px;border-radius:2px;white-space:nowrap}
+  .chip .arrow{opacity:.6;padding:0 3px}
+  .t{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1px 7px;border-radius:2px;vertical-align:2px;margin-right:6px;white-space:nowrap}
+  .t-named{background:var(--copper);color:#fff}
+  .t-att{background:var(--lapis-pale);color:var(--lapis)}
+  .t-e{background:var(--lapis-pale);color:var(--lapis)}
+  .t-r{background:transparent;color:var(--label);border:1px solid var(--rule)}
+  .dated{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--label);border:1px solid var(--rule);padding:2px 8px;border-radius:2px;margin-bottom:8px}
+  .live{display:block;font-size:.85rem;color:var(--ink-soft);border:1px dashed var(--label);padding:10px 14px;margin:2px 0 4px}
+  .map-fig{max-width:520px;margin:10px 0 6px}
+  .map-fig svg{width:100%;height:auto;display:block}
+  .capstone{margin-top:56px;background:var(--stone-deep);border-left:3px solid var(--copper);padding:26px 30px}
+  .capstone h2{margin-bottom:10px;font-size:1.4rem}
+  .capstone p{color:var(--ink-soft);font-size:.98rem;margin-bottom:9px}
+  .capstone p:last-child{margin-bottom:0}
+  .capstone strong{color:var(--ink)}
+  footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--rule);font-size:.85rem;color:var(--label);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media (max-width:720px){header{padding-top:44px}}
+  @media print{body{background:#fff}}
+</style>
+<style id="iz-nav-css">
+.iz-nav{max-width:980px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:8px;box-sizing:border-box;
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:.8rem}
+.iz-nav a,.iz-nav .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#3f3d36;
+ border:1px solid #d8d2c6;background:#fff;border-radius:8px;padding:8px 12px;line-height:1.15;white-space:nowrap}
+.iz-nav a:hover{border-color:#2E2C27;color:#111}
+.iz-nav .btn.dis{opacity:.35}
+.iz-nav .home{font-weight:600}
+.iz-nav .sp{flex:1}
+.iz-nav .t{overflow:hidden;text-overflow:ellipsis;max-width:30vw}
+.iz-nav-top{border-bottom:1px solid #e3ddd1}
+.iz-nav-bottom{border-top:1px solid #e3ddd1;margin-top:46px}
+@media(max-width:600px){.iz-nav .t{display:none}}
+</style>
+</head>
+<body>
+<nav class="iz-nav iz-nav-top"><a href="/isaiah/nations/media-elam/" rel="prev">&larr;<span class="t">Media & Elam</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/tarshish-coastlands/" rel="next"><span class="t">Tarshish & the Coastlands</span>&rarr;</a></nav>
+<div class="wrap">
+
+
+<header>
+  <div class="eyebrow">Providence Community Church &middot; Reading Isaiah &middot; Nation Study</div>
+  <div class="namerow">
+    <h1>Arabia &amp; the Desert Tribes</h1>
+    <svg class="dial" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9"/><line x1="11" y1="11" x2="16.8" y2="14.9"/></svg>
+  </div>
+  <div class="meta">Southeast, the desert &middot; today: Saudi Arabia &amp; the Gulf</div>
+  <div class="texts">Isaiah 21:13&ndash;17 &middot; 42:11 &middot; 60:6&ndash;7</div>
+  <p class="subtitle">Not a nation but a network &mdash; Kedar, Dedan, Tema, Sheba, the caravan tribes of the incense roads. The sent-away side of Abraham's own family, who get the shortest oracle in the book and one of the longest homecomings at its end.</p>
+</header>
+
+<div class="hero-fig">
+  <svg viewBox="0 0 520 500" role="img" aria-label="ARABIA: Relation, Religion, Region at the corners. Each corner links to its section below.">
+    <polygon points="260,78 92,398 428,398" fill="#DDD9C9" opacity="0.55"/>
+    <line x1="260" y1="78"  x2="92"  y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="260" y1="78"  x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <line x1="92"  y1="398" x2="428" y2="398" stroke="#8A7A5A" stroke-width="2.5"/>
+    <a href="#relation">
+      <circle cx="260" cy="78" r="12" fill="#9E6428"/>
+      <text x="260" y="52" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELATION</text>
+      <text x="260" y="70" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">Ishmael's princes, Keturah's sons</text>
+    </a>
+    <a href="#religion">
+      <circle cx="92" cy="398" r="12" fill="#34528C"/>
+      <text x="80" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">RELIGION</text>
+      <text x="80" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the desert's unnamed cults</text>
+    </a>
+    <a href="#region">
+      <circle cx="428" cy="398" r="12" fill="#6B7042"/>
+      <text x="436" y="432" text-anchor="middle" font-family="Marcellus, serif" font-size="19" fill="#232630" letter-spacing="2">REGION</text>
+      <text x="436" y="450" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11.5" fill="#767862" font-style="italic">the incense roads</text>
+    </a>
+    <a href="#word">
+      <text x="260" y="290" text-anchor="middle" font-family="Marcellus, serif" font-size="26" fill="#232630" letter-spacing="6">ARABIA</text>
+      <text x="260" y="312" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="11" fill="#767862" font-style="italic">the center: where this tripod met Israel's God</text>
+    </a>
+  </svg>
+  <div class="fig-note">The triangle is the table of contents &mdash; tap a corner.</div>
+</div>
+
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="relation">
+  <div class="sec-head"><span class="node copper"></span><div><div class="sec-k">The copper corner</div><h2>Relation &mdash; The Sent-Away Family</h2></div></div>
+  <p class="sec-intro">Who the desert tribes are, in the family of nations.</p>
+  <div class="band-body">
+    <div class="chips">
+      <span class="chip">Abraham<span class="arrow">&rarr;</span>Ishmael<span class="arrow">&rarr;</span>Kedar, Tema, Dumah&hellip;</span>
+      <span class="chip">Abraham<span class="arrow">&rarr;</span>Keturah<span class="arrow">&rarr;</span>Midian, Sheba, Dedan&hellip;</span>
+    </div>
+    <p>The desert tribes are <strong>Abraham's own house by his other lines</strong>. Ishmael's twelve princes include <strong>Kedar</strong>, <strong>Tema</strong>, and <strong>Dumah</strong> &mdash; names straight off Isaiah's oracle headings <span class="ref">(Gen 25:13&ndash;15)</span>. Keturah's sons add <strong>Midian</strong>, <strong>Sheba</strong>, and <strong>Dedan</strong> <span class="ref">(Gen 25:1&ndash;4)</span>. These are the children "sent away&hellip; eastward to the east country" with gifts, while Isaac kept the covenant line <span class="ref">(Gen 25:6)</span> &mdash; family, but family outside the promise's main channel.</p>
+    <p>Yet the channel keeps them close: Ishmael too carries a promise ("I will make him a great nation," Gen 21:18, with God's own "I have blessed him," 17:20); Moses shelters, marries, and learns in Midian; and the queen of Sheba's caravan to Solomon <span class="ref">(1 Kgs 10)</span> is the Old Testament's dress rehearsal for the ending this study is headed toward.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="religion">
+  <div class="sec-head"><span class="node lapis"></span><div><div class="sec-k">The lapis corner</div><h2>Religion &mdash; Under the Desert Stars</h2></div></div>
+  <p class="sec-intro">What the tribes knelt to &mdash; held at the right confidence.</p>
+  <div class="band-body">
+    <p><span class="t t-att">Attested</span>Pre-Islamic Arabia's tribal cults were dominated by <strong>astral religion</strong> &mdash; moon-god and star worship, well documented archaeologically across the peninsula. Scripture's nearest touch is oblique: Amos indicts <em>Israel's</em> wilderness generation for carrying "Sikkuth your king and Kiyyun your star-god" <span class="ref">(Amos 5:26; cited in Acts 7:43)</span> &mdash; a lapse into the same regional star-cult, useful for texture rather than headline claims about Kedar's own shrines.</p>
+    <p>Isaiah, notably, never satirizes a desert god. As with Cush, the far tribes draw no idol-polemic &mdash; what they draw is an <em>invitation</em>: "Let the desert and its cities lift up their voice, the villages that <strong>Kedar</strong> inhabits; let the habitants of Sela sing for joy" <span class="ref">(42:11)</span> &mdash; the tribes summoned into the new song before they've left the old cults. The polemic is skipped; the choir robe is issued directly.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="region">
+  <div class="sec-head"><span class="node olive"></span><div><div class="sec-k">The olive corner</div><h2>Region &mdash; The Incense Roads</h2></div></div>
+  <p class="sec-intro">Where the tribes ranged, and what the land is called now.</p>
+  <div class="band-body">
+    <div class="map-fig">
+      <svg viewBox="0 0 520 400" role="img" aria-label="Sketch map: the north Arabian desert with the oases of Tema and Dedan, Kedar's ranges, and the incense road running north toward Judah">
+        <rect x="0" y="0" width="520" height="400" fill="#E2E3D2" opacity="0.35"/>
+        <path d="M 130 60 L 480 60 L 480 380 L 130 380 Z" fill="#9E6428" opacity="0.10"/>
+        <text x="300" y="120" text-anchor="middle" font-family="Marcellus, serif" font-size="18" fill="#6E3F1C" letter-spacing="5">THE DESERT</text>
+        <text x="300" y="142" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10.5" font-style="italic" fill="#8A5A30">Kedar's tent-ranges &mdash; "the villages that Kedar inhabits"</text>
+        <circle cx="250" cy="220" r="5" fill="#5C3418"/><text x="260" y="216" font-family="'Source Serif 4', serif" font-size="11" fill="#5C3418">Tema &mdash; the oasis</text>
+        <circle cx="298" cy="300" r="5" fill="#5C3418"/><text x="308" y="296" font-family="'Source Serif 4', serif" font-size="11" fill="#5C3418">Dedan</text>
+        <text x="360" y="368" font-family="'Source Serif 4', serif" font-size="10" font-style="italic" fill="#767862">&darr; on to Sheba, the incense country</text>
+        <path d="M 262 214 C 200 160, 150 110, 110 50" fill="none" stroke="#767862" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <text x="96" y="36" font-family="'Source Serif 4', serif" font-size="10" font-style="italic" fill="#767862">the incense road &mdash; north to Judah &amp; the sea</text>
+        <text x="14" y="390" font-family="'Source Serif 4', serif" font-size="9.5" font-style="italic" fill="#767862">sketch map &mdash; not to scale</text>
+      </svg>
+    </div>
+    <p>No borders &mdash; <em>routes</em>. The tribes ranged the north Arabian steppe and its oases (Tema, Dedan), running frankincense and myrrh up from Sheba's south to the Mediterranean world; their wealth walked on camels <span class="ref">(60:6)</span>. Kedar's "villages" were tent-camps; its glory was flocks and archers <span class="ref">(21:16&ndash;17; 60:7)</span>.</p>
+    <p><span class="dated">Today &middot; current as of Aug 2026</span></p>
+    <p>The tribes' ranges are <strong>Saudi Arabia, Yemen, and the Gulf states</strong>. Saudi Arabia pursues its Vision 2030 diversification and has played regional mediator across the Sudan, Gaza, and Iran files; Yemen remains fractured after a decade-plus of civil war. The incense roads' successor is the oil economy &mdash; the desert still exports what the world burns.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="word">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The center of the triangle</div><h2>Isaiah's Word to the Desert</h2></div></div>
+  <p class="sec-intro">What happened when the caravan tripod met Israel's God.</p>
+  <div class="band-body">
+    <p>The oracle "concerning Arabia" is the book's briefest and most human: caravans of Dedanites, driven off the trade roads by war, camp in the thickets while <strong>the oasis of Tema is told to carry bread and water out to the fugitives</strong> <span class="ref">(21:13&ndash;15)</span> &mdash; desert hospitality commanded by the God of Zion. Then the timestamp: "Within a year&hellip; all the glory of Kedar will come to an end" <span class="ref">(21:16)</span> &mdash; the Assyrian tide reaching even the tents.</p>
+    <p>But Kedar's fuller story runs through the servant songs to the book's finale. The new song's choir list drafts the desert <span class="ref">(42:10&ndash;11)</span>; and when Zion's lights come up, the caravans arrive &mdash; carrying the old trade goods to a new address:</p>
+    <blockquote>"A multitude of camels shall cover you&hellip; all those from Sheba shall come. They shall bring gold and frankincense, and shall bring good news, the praises of the LORD. All the flocks of Kedar shall be gathered to you&hellip; they shall come up with acceptance on my altar."<span class="ref">Isaiah 60:6&ndash;7</span></blockquote>
+    <p>Gold and frankincense, northbound, with good news on the drivers' lips &mdash; the incense-road economy repossessed for worship, and even Kedar's flocks welcomed <em>on the altar</em>: the sent-away family, brought all the way in.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<section id="nt">
+  <div class="sec-head"><span class="node ink"></span><div><div class="sec-k">The account closed</div><h2>In the New Testament</h2></div></div>
+  <p class="sec-intro"></p>
+  <div class="band-body">
+    <p><span class="t t-e">Echoed</span>Matthew's magi arrive "from the east" bearing <strong>gold and frankincense</strong> <span class="ref">(Matt 2:11)</span> &mdash; Isaiah 60:6's exact cargo, delivered a generation early to the Light himself. The church has always heard the caravan text underneath the nativity, and rightly.</p>
+    <p><span class="t t-e">Echoed</span>Paul, newly commissioned, "went away into <strong>Arabia</strong>" <span class="ref">(Gal 1:17)</span> &mdash; the apostle to the nations begins in Ishmael's country. And the Pentecost roll call ends with "<strong>Arabs</strong>" hearing the mighty works of God in their own tongue <span class="ref">(Acts 2:11)</span> &mdash; the desert's name, last on the list, inside the door.</p>
+  </div>
+</section>
+
+<div class="qav"><div class="line"></div><div class="tick-mid"></div><div class="line"></div></div>
+<div class="capstone">
+  <h2>Arabia in one paragraph</h2>
+  <p><strong>Relation:</strong> Abraham's other children &mdash; Ishmael's princes and Keturah's sons, sent east with gifts, never sent beyond reach. <strong>Religion:</strong> the star-cults of the steppe, never satirized &mdash; the tribes are handed a hymnal instead. <strong>Region:</strong> the incense roads; the Gulf's oil roads today.</p>
+  <p>And at the center: fugitives given bread at Tema, Kedar's glory ended within a year &mdash; and then camels on the horizon at daybreak, gold and frankincense northbound, the sent-away family arriving with praise for cargo.</p>
+</div>
+
+<footer>
+  <div>Assembled from the Reading Isaiah atlas set &middot; references ESV</div>
+  <div>Reading Isaiah &middot; Nation Study: Arabia &amp; the Desert Tribes &middot; v1</div>
+</footer>
+
+</div>
+<nav class="iz-nav iz-nav-bottom"><a href="/isaiah/nations/media-elam/" rel="prev">&larr;<span class="t">Media & Elam</span></a><span class="sp"></span><a class="home" href="/isaiah/nations/">Table of Contents</a><span class="sp"></span><a href="/isaiah/nations/tarshish-coastlands/" rel="next"><span class="t">Tarshish & the Coastlands</span>&rarr;</a></nav>
+</body>
+</html>

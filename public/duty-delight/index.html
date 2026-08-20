@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Duty &amp; Delight as Co-Pilots — Chris Oswald</title>
+<meta name="description" content="A road-trip parable about doing what God says, with a worksheet for getting unstuck. What you write stays on your device." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink:#1c1c1a; --muted:#6b6b63; --accent:#075c2e; --accent-soft:#e8f2ec;
+    --line:#e2dfd8; --paper:#ffffff; --hover:#faf9f5; --bad:#9c2b21;
+    --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:5vh 20px 12vh}
+  h1{font-weight:600;font-size:1.9rem;margin:.2em 0 .3em}
+  .sec-label{font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .subtitle{font-style:italic;color:var(--muted);font-size:1.05rem;margin:.1em 0 .8em}
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:14px}
+  .topbar a{cursor:pointer;color:var(--accent);text-decoration:none}
+  .savestate{font-family:var(--sans);font-size:.78rem;color:var(--muted)}
+  .story p{font-size:1.05rem;line-height:1.7;margin:0 0 16px}
+  .privacy{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:12px 16px;margin:22px 0;font-family:var(--sans);font-size:.84rem;line-height:1.55}
+  .scripture{border-left:3px solid var(--accent);padding:6px 18px;margin:20px 0;font-style:italic;font-size:1.05rem;line-height:1.6}
+  .scripture .ref{display:block;font-style:normal;font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:6px}
+  .bh{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:34px 0 6px}
+  .bp{line-height:1.65;margin:10px 0;font-family:var(--sans);color:#3a3a36;font-size:.93rem}
+  .prompt{font-size:1.02rem;line-height:1.55;margin:16px 0 8px}
+  textarea{width:100%;min-height:110px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.95rem;background:var(--hover);resize:vertical;line-height:1.6}
+  input[type=text],input[type=email]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.95rem;background:var(--hover)}
+  input.short{min-width:110px;width:auto;display:inline-block;padding:6px 10px;margin:0 4px}
+  textarea:focus,input:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .fillline{font-size:1.05rem;line-height:2.2;margin:14px 0}
+  .choice-row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+  .choice-row label{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:8px;padding:8px 14px;background:var(--hover);cursor:pointer;font-family:var(--sans);font-size:.9rem}
+  .choice-row label.sel{border-color:var(--accent);background:var(--accent-soft)}
+  .remember{border:1px solid var(--line);border-radius:10px;background:var(--accent-soft);padding:18px 22px;margin:38px 0 0;line-height:1.65}
+  .remember .gt{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;font-weight:600;color:var(--accent);display:block;margin-bottom:6px}
+  .attrib{font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-top:26px;line-height:1.5}
+  button{font-family:var(--sans);font-weight:600;font-size:.95rem;border-radius:8px;padding:11px 20px;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button:disabled{opacity:.5;cursor:default}
+  .actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+  .sendcard{border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-top:18px}
+  .sendcard label{font-family:var(--sans);font-size:.84rem;font-weight:600;display:block;margin:12px 0 5px}
+  .note{font-family:var(--sans);font-size:.82rem;color:var(--muted);line-height:1.55}
+  .err{color:var(--bad);font-family:var(--sans);font-size:.88rem;margin-top:10px}
+  .ok{color:var(--accent);font-family:var(--sans);font-size:.95rem;font-weight:600;margin-top:10px}
+  .hidden{display:none}
+  @media print {
+    .topbar,.actions,.sendcard,button{display:none !important}
+    textarea,input{border:none;background:#fff;padding:2px 0}
+    body{font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="/topical-resources/">← Study &amp; Reflection</a>
+    <span class="savestate" id="savestate">saved on this device</span>
+  </div>
+  <span class="sec-label">A parable, with homework</span>
+  <h1>Duty &amp; Delight as Co-Pilots</h1>
+  <p class="subtitle">A road-trip parable about doing what God says — and a worksheet for getting unstuck.</p>
+
+  <div class="story">
+    <p>Imagine you are a back-seat passenger in a car headed out on a long road trip. You won't be driving — indeed, you won't even be in the front seats — and that's okay. You have work to do and could certainly catch up on some sleep.</p>
+    <p>You have two people driving on this road trip. One is Mr. Duty, and the other is Mrs. Delight.</p>
+    <p>They are a married couple, and though they are quite different, they have managed to work together for many years. In fact, they have one of the best and most productive marriages you know about.</p>
+    <p>Although it must be said, they have very different driving styles. Mr. Duty is very serious and a bit less capable of driving for long stretches because he's very careful. Frankly, he doesn't really like to drive, but he's got this massive sense of responsibility (see his name), and he's good at it. It's just that it feels a bit more tedious when he drives.</p>
+    <p>Mrs. Delight is a blast to ride with. She drives a little zippier and can go much longer without having to stop because she actually just enjoys driving. She's always got a playlist figured out and has a bag of snacks ready to go. The only problem is that there are times when she just doesn't want to drive and refuses altogether.</p>
+    <p>Would it be better if Mrs. Delight were willing and able to drive all the time? Of course! But that's not an option. Thankfully, you have Mr. Duty, who has strengths that perfectly complement Mrs. Delight's weaknesses. All told, it's a pretty good setup.</p>
+    <p>Now, do you understand what I'm getting at here? God has given you places to be, things to do, and so on. From little things like spending time with Him in prayer every day to big things like getting married and raising kids and working a career and so forth.</p>
+    <p>When Mrs. Delight is willing to drive you into these things, then you're going to enjoy it much more than when Mr. Duty does. But in spite of all of her many strengths, Mrs. Delight is a bit of a flake. Yeah, I know she's your favorite, but let's be honest, she's a bit of a flake. And Mr. Duty isn't your favorite, but one thing can be said for him: he always shows up when he's needed.</p>
+    <p>So there you go. This is almost everything in your life. Identify what God tells you to do. See if you can get Mrs. Delight to drive you there. If not, put Mr. Duty behind the wheel and get on down the road. Most of the time, you'll find Mrs. Delight soon getting interested in the trip and feeling up for taking over.</p>
+  </div>
+
+  <div class="privacy"><b>What you write stays on this device.</b> Nothing is stored online and nothing is sent anywhere — unless you choose to share your finished worksheet with Pastor Chris, which emails it to him directly and still stores nothing.</div>
+
+  <div id="blocks"></div>
+
+  <div class="remember"><span class="gt">FOR THE ROAD</span>Identify what God tells you to do. See if you can get Mrs. Delight to drive you there. If not, put Mr. Duty behind the wheel and get on down the road.</div>
+  <p class="attrib">"Duty &amp; Delight as Co-Pilots" by Pastor Chris Oswald, Providence Community Church of Lenexa. Scripture quotations are from the ESV.</p>
+
+  <div class="actions">
+    <button onclick="window.print()">Print this worksheet</button>
+    <button id="btn-show-send">Share with Pastor Chris…</button>
+  </div>
+  <div class="sendcard hidden" id="sendcard">
+    <p class="note">This emails your completed worksheet directly — and only — to Pastor Chris. Nothing is stored online; the email is the only copy. He'll know it's from you and can follow up.</p>
+    <label for="send-name">Your name</label>
+    <input id="send-name" type="text" autocomplete="name" />
+    <label for="send-email">Your email</label>
+    <input id="send-email" type="email" autocomplete="email" />
+    <button class="primary" id="btn-send" style="margin-top:14px">Send to Pastor Chris</button>
+    <div id="send-err" class="err hidden"></div>
+    <div id="send-ok" class="ok hidden"></div>
+  </div>
+</div>
+<script>
+const API = "https://twbunmbzyqcqzgffdrib.supabase.co/functions/v1/duty-delight";
+const BLOCKS = [
+  {t:"h", text:"First, an honest question"},
+  {t:"choice", id:"q0", prompt:"Be honest — who's your favorite to ride with?", options:["Mrs. Delight","Mr. Duty","Depends on the day"]},
+  {t:"p", text:"No wrong answer. Almost everybody says Mrs. Delight. The point of this worksheet isn't to shame you for that — it's to make sure the car keeps moving when she won't drive."},
+
+  {t:"h", text:"1. The trip manifest"},
+  {t:"p", text:"God has given you places to be and things to do. List them — little and big. Daily time with Him, your marriage, your kids, your work, your church, the hard conversation you've been assigned, the habit you know He's after."},
+  {t:"q", id:"m1", prompt:"What has God given you to do in this season? List everything that comes to mind."},
+
+  {t:"h", text:"2. Who's driving?"},
+  {t:"p", text:"Go back through your list and sort it into three seats."},
+  {t:"q", id:"d1", prompt:"Where is Mrs. Delight gladly driving right now — the obediences you actually enjoy?"},
+  {t:"q", id:"d2", prompt:"Where is Mr. Duty at the wheel — things you're doing faithfully, but without much joy?"},
+  {t:"q", id:"d3", prompt:"And where is the car just parked — things God has told you to do that nobody is driving you to at all?"},
+
+  {t:"h", text:"3. The refusal"},
+  {t:"p", text:"Pick one parked item — the one that matters most. Let's get it on the road."},
+  {t:"q", id:"r1", kind:"short", prompt:"The one thing:"},
+  {t:"q", id:"r2", prompt:"Why won't Mrs. Delight drive there? What makes it feel tedious, scary, or joyless right now?"},
+  {t:"choice", id:"r3", prompt:"How long has this one been parked?", options:["A week or two","A few months","A year or more","So long I stopped noticing"]},
+
+  {t:"h", text:"4. Put Mr. Duty behind the wheel"},
+  {t:"p", text:"Mr. Duty doesn't need to feel like it. He needs a time, a place, and a job. Give him one."},
+  {t:"fill", id:"f1", template:"This week I will ___ on ___ at ___, whether I feel like it or not."},
+  {t:"q", id:"w1", prompt:"What will make this hard — and what will you do when it gets hard?"},
+  {t:"scripture", text:"For it is God who works in you, both to will and to work for his good pleasure.", ref:"Philippians 2:13"},
+
+  {t:"h", text:"5. Help Mrs. Delight warm up"},
+  {t:"p", text:"Remember how the story ends: most of the time, once Mr. Duty gets the car moving, Mrs. Delight gets interested in the trip and takes over. You can help her along — a playlist, a friend in the passenger seat, a better time of day, and above all, asking God for the desire itself."},
+  {t:"q", id:"h1", prompt:"What might help this obedience become a delight over time? Ask God for that specifically."},
+  {t:"scripture", text:"I delight to do your will, O my God; your law is within my heart.", ref:"Psalm 40:8"},
+
+  {t:"h", text:"6. A prayer for the road"},
+  {t:"scripture", text:"For this is the love of God, that we keep his commandments. And his commandments are not burdensome.", ref:"1 John 5:3"},
+  {t:"q", id:"p1", prompt:"Write a short prayer asking God to help you take action — even if it only means acting out of a sense of duty. Affirm that His commandments are not burdensome (1 John 5:3), and that over time you will learn to love what He's called you to do."}
+];
+
+let answers = {}, saveTimer = null;
+const $ = (x) => document.getElementById(x);
+function esc(s){ return String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+const LS = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k) || "null"); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+};
+answers = LS.get("dd_answers") || {};
+
+const box = $("blocks");
+for(const b of BLOCKS){
+  const div = document.createElement("div");
+  if(b.t === "h") div.innerHTML = `<div class="bh">${esc(b.text)}</div>`;
+  else if(b.t === "p") div.innerHTML = `<p class="bp">${esc(b.text)}</p>`;
+  else if(b.t === "scripture") div.innerHTML = `<div class="scripture">${esc(b.text)}<span class="ref">${esc(b.ref)}</span></div>`;
+  else if(b.t === "q"){
+    div.innerHTML = (b.prompt ? `<p class="prompt">${esc(b.prompt)}</p>` : "") +
+      (b.kind === "short"
+        ? `<input type="text" data-q="${b.id}" value="${esc(answers[b.id] || "")}"/>`
+        : `<textarea data-q="${b.id}">${esc(answers[b.id] || "")}</textarea>`);
+  }
+  else if(b.t === "fill"){
+    const vals = Array.isArray(answers[b.id]) ? answers[b.id] : [];
+    const parts = b.template.split("___");
+    let h = `<p class="fillline">`;
+    parts.forEach((p, i) => {
+      h += esc(p);
+      if(i < parts.length - 1) h += `<input class="short" type="text" data-fill="${b.id}" data-i="${i}" value="${esc(vals[i] || "")}"/>`;
+    });
+    div.innerHTML = h + `</p>`;
+  }
+  else if(b.t === "choice"){
+    div.innerHTML = (b.prompt ? `<p class="prompt">${esc(b.prompt)}</p>` : "") + `<div class="choice-row">` +
+      b.options.map(o => `<label class="${answers[b.id]===o?"sel":""}"><input type="radio" name="c_${b.id}" value="${esc(o)}"${answers[b.id]===o?" checked":""}/>${esc(o)}</label>`).join("") + `</div>`;
+  }
+  box.appendChild(div);
+}
+function saved(){
+  clearTimeout(saveTimer);
+  $("savestate").textContent = "…";
+  saveTimer = setTimeout(() => { LS.set("dd_answers", answers); $("savestate").textContent = "saved on this device"; }, 400);
+}
+box.querySelectorAll("[data-q]").forEach(el => { el.oninput = () => { answers[el.dataset.q] = el.value; saved(); }; });
+box.querySelectorAll("[data-fill]").forEach(el => { el.oninput = () => {
+  const arr = Array.isArray(answers[el.dataset.fill]) ? answers[el.dataset.fill] : [];
+  arr[Number(el.dataset.i)] = el.value; answers[el.dataset.fill] = arr; saved();
+}; });
+box.querySelectorAll("input[type=radio]").forEach(el => { el.onchange = () => {
+  const id = el.name.slice(2); answers[id] = el.value; saved();
+  el.closest(".choice-row").querySelectorAll("label").forEach(l => l.classList.toggle("sel", l.contains(el) && el.checked));
+}; });
+
+const prev = LS.get("dd_id") || LS.get("sfs_id") || {};
+$("send-name").value = prev.name || ""; $("send-email").value = prev.email || "";
+$("btn-show-send").onclick = () => $("sendcard").classList.toggle("hidden");
+$("btn-send").onclick = async () => {
+  const name = $("send-name").value.trim(), email = $("send-email").value.trim();
+  const err = $("send-err"), ok = $("send-ok");
+  err.classList.add("hidden"); ok.classList.add("hidden");
+  if(!name || !/^\S+@\S+\.\S+$/.test(email)){ err.textContent = "Enter your name and a valid email."; err.classList.remove("hidden"); return; }
+  $("btn-send").disabled = true; $("btn-send").textContent = "Sending…";
+  try{
+    const r = await fetch(API, { method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ action:"send", name, email, answers }) });
+    const j = await r.json().catch(()=>({error:"Bad response"}));
+    if(!r.ok) throw new Error(j.error || ("HTTP " + r.status));
+    LS.set("dd_id", { name, email });
+    ok.textContent = "Sent. Pastor Chris has it — nothing was stored online.";
+    ok.classList.remove("hidden");
+  }catch(e){ err.textContent = "Sending failed: " + e.message; err.classList.remove("hidden"); }
+  $("btn-send").disabled = false; $("btn-send").textContent = "Send to Pastor Chris";
+};
+</script>
+</body>
+</html>
