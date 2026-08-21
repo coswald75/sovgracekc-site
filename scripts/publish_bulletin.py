@@ -12,6 +12,7 @@ Once that data file is reviewed and approved, run this to make it live:
 Mirrors update_church_sermons.py: same site, same Cloudflare Pages deploy
 (MUST pass --branch=main or it publishes a throwaway preview), same Resend
 notify. Idempotent-ish: pass --check to build only (no deploy) for review.
+A successful deploy also PATCHes faq_content slug=announcements (best-effort).
 
 Data file shape (src/data/bulletin.json):
     {
@@ -38,6 +39,9 @@ SITE_DIR = pathlib.Path.home() / "shepherds-guild" / "sovgracekc-site"
 DATA_FILE = SITE_DIR / "src" / "data" / "bulletin.json"
 DEPLOY_ENV = dict(os.environ, PATH="/usr/local/bin:/usr/bin:/bin")
 SEAT_URL = "https://sovgracekc.org/seat/"
+SEAT_ANNOUNCEMENTS_URL = "https://sovgracekc.org/seat/announcements/"
+FAQ_ANNOUNCEMENTS_SLUG = "announcements"
+FAQ_ANNOUNCEMENTS_TITLE = "This Week's Announcements & Events"
 
 
 def log(msg):
@@ -105,6 +109,69 @@ def notify(data):
         log(f"(notify skipped: {e})")
 
 
+def build_announcements_faq_body(data):
+    """Markdown for faq_content slug=announcements: intro + title/when/body/link."""
+    lines = [
+        "Upcoming events at Providence Community Church in Lenexa. "
+        f"Full details and weekly updates: {SEAT_ANNOUNCEMENTS_URL}",
+        "",
+    ]
+    for item in data.get("announcements") or []:
+        title = (item.get("title") or "").strip()
+        if not title:
+            continue
+        when = (item.get("when") or "").strip()
+        body = (item.get("body") or "").strip()
+        link = (item.get("link") or "").strip()
+        rest = []
+        if when:
+            rest.append(when if when.endswith((".", "!", "?")) else when + ".")
+        if body:
+            rest.append(body)
+        if link:
+            rest.append(link)
+        if rest:
+            lines.append(f"- **{title}** — {' '.join(rest)}")
+        else:
+            lines.append(f"- **{title}**")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def sync_announcements_faq(data):
+    """PATCH faq_content slug=announcements after a live deploy. Never fails the job."""
+    try:
+        import requests
+        url = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
+        key = os.environ.get("SUPABASE_KEY")
+        if not url or not key:
+            log("ERROR: FAQ announcements sync skipped — SUPABASE_URL / SUPABASE_KEY missing")
+            return
+        now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        resp = requests.patch(
+            f"{url}/rest/v1/faq_content?slug=eq.{FAQ_ANNOUNCEMENTS_SLUG}",
+            headers={
+                "apikey": key,
+                "Authorization": f"Bearer {key}",
+                "Content-Type": "application/json",
+                "Prefer": "return=minimal",
+            },
+            json={
+                "body": build_announcements_faq_body(data),
+                "title": FAQ_ANNOUNCEMENTS_TITLE,
+                "updated_at": now,
+            },
+            timeout=20,
+        )
+        if resp.status_code >= 400:
+            log(f"ERROR: FAQ announcements sync failed (HTTP {resp.status_code})")
+            return
+        count = len(data.get("announcements") or [])
+        log(f"FAQ announcements synced ({count} events).")
+    except Exception as e:
+        log(f"ERROR: FAQ announcements sync failed: {e}")
+
+
 def main():
     load_dotenv(dotenv_path=PIPELINE_DIR / ".env", override=True)
     check_only = "--check" in sys.argv
@@ -121,6 +188,7 @@ def main():
     log("Deploying to Cloudflare Pages (branch=main)…")
     deploy()
     log(f"Deploy complete — live at {SEAT_URL}")
+    sync_announcements_faq(data)
     notify(data)
 
 
