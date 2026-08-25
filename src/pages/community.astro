@@ -23,6 +23,42 @@ const ministries = [
     </div>
   </section>
 
+  <section class="section section-rule" id="find-a-group" style="scroll-margin-top:24px;">
+    <div class="wrap" style="max-width:820px;">
+      <p class="eyebrow">Community Groups</p>
+      <h2>Find a group near you.</h2>
+      <p style="font-size:1.05rem;">Our Community Groups gather on the <strong>first and third weeks</strong> of each month, in the evening, in homes across the Kansas City area &mdash; most on <strong>Wednesdays</strong>, with one Lenexa group meeting Thursdays. Most meet on the Kansas (Johnson County) side; a couple meet on the Missouri side. Here's the general lay of the land &mdash; find the area closest to you.</p>
+
+      <div class="cg-cols">
+        <div>
+          <h3 class="cg-head">Kansas &middot; Johnson County</h3>
+          <ul class="cg-list">
+            <li><strong>Northwest Shawnee</strong> &mdash; convenient to Bonner Springs and the Legends</li>
+            <li><strong>Central Lenexa</strong> &mdash; near 87th Street &amp; I-435 <span class="cg-note">(two groups here &mdash; one Wednesdays, one Thursdays)</span></li>
+            <li><strong>Central Overland Park</strong> &mdash; around 103rd Street</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="cg-head">Missouri &middot; South Kansas City</h3>
+          <ul class="cg-list">
+            <li><strong>Near the state line</strong> &mdash; the Waldo / Wornall area (easy from Leawood, too)</li>
+            <li><strong>Red Bridge area</strong> &mdash; the best fit if you're coming from further into Missouri</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:24px;">Not sure which one fits? Tell us the part of town you're in and we'll point you to the nearest group. Write to <a href="mailto:info@kcprovidence.org">info@kcprovidence.org</a>, or say hello on a Sunday. You can also ask <strong>ProvBot</strong>, our website assistant &mdash; <a href="/provbot/">it can point you to the group nearest you</a>.</p>
+    </div>
+    <style>
+      .cg-cols { display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:28px; }
+      .cg-head { font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 12px; color:var(--gray); }
+      .cg-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+      .cg-list li { font-size:0.98rem; line-height:1.5; padding-left:16px; border-left:2px solid var(--line, #e6e3db); }
+      .cg-note { color:var(--gray); font-size:0.9rem; }
+      @media (max-width:640px) { .cg-cols { grid-template-columns:1fr; gap:28px; } }
+    </style>
+  </section>
+
   {ministries.map((m, i) => (
     <section class="section section-rule" id={m.id} style="scroll-margin-top:24px;">
       <div class="wrap grid-2">
@@ -50,42 +86,6 @@ const ministries = [
       </div>
     </section>
   ))}
-
-  <section class="section section-rule" id="find-a-group" style="scroll-margin-top:24px;">
-    <div class="wrap" style="max-width:820px;">
-      <p class="eyebrow">Community Groups</p>
-      <h2>Find a group near you.</h2>
-      <p style="font-size:1.05rem;">Our Community Groups gather on the <strong>first and third weeks</strong> of each month, in the evening, in homes across the Kansas City area &mdash; most on <strong>Wednesdays</strong>, with one Lenexa group meeting Thursdays. Most meet on the Kansas (Johnson County) side; a couple meet on the Missouri side. Here's the general lay of the land &mdash; find the area closest to you.</p>
-
-      <div class="cg-cols">
-        <div>
-          <h3 class="cg-head">Kansas &middot; Johnson County</h3>
-          <ul class="cg-list">
-            <li><strong>Northwest Shawnee</strong> &mdash; convenient to Bonner Springs and the Legends</li>
-            <li><strong>Central Lenexa</strong> &mdash; near 87th Street &amp; I-435 <span class="cg-note">(two groups here &mdash; one Wednesdays, one Thursdays)</span></li>
-            <li><strong>Central Overland Park</strong> &mdash; around 103rd Street</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="cg-head">Missouri &middot; South Kansas City</h3>
-          <ul class="cg-list">
-            <li><strong>Near the state line</strong> &mdash; the Waldo / Wornall area (easy from Leawood, too)</li>
-            <li><strong>Red Bridge area</strong> &mdash; the best fit if you're coming from further into Missouri</li>
-          </ul>
-        </div>
-      </div>
-
-      <p style="margin-top:24px;">Not sure which one fits? Tell us the part of town you're in and we'll point you to the nearest group. Write to <a href="mailto:info@kcprovidence.org">info@kcprovidence.org</a>, or say hello on a Sunday.</p>
-    </div>
-    <style>
-      .cg-cols { display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:28px; }
-      .cg-head { font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 12px; color:var(--gray); }
-      .cg-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
-      .cg-list li { font-size:0.98rem; line-height:1.5; padding-left:16px; border-left:2px solid var(--line, #e6e3db); }
-      .cg-note { color:var(--gray); font-size:0.9rem; }
-      @media (max-width:640px) { .cg-cols { grid-template-columns:1fr; gap:28px; } }
-    </style>
-  </section>
 
   <section class="section section-rule section-panel">
     <div class="wrap" style="max-width:720px; text-align:center;">
