@@ -54,7 +54,15 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
       members token): ministry filter collapses cards per ministry, summary updates
       (157/412 → Children's 140/140 → Worship 17/119), and an assignment made in the
       browser persisted to Supabase (confirmed by round‑trip query) and turned green.
-- [ ] Basecamp publish Edge Function + OAuth token storage
+- [x] Basecamp tokens stored in `scheduler.config` (access + refresh + HQ project +
+      schedule tool id). HQ project is **Providence Community Church HQ**; its
+      Schedule tool is enabled, To-dos are not, so publish writes a schedule entry
+      (roster HTML in the description) and does not create to-dos.
+- [x] `scheduler-api` `action=publish` (members-token gated). `dry_run: true` returns
+      the payload without writing. Live publish defaults to `notify: false` so
+      nobody is emailed until we have Basecamp person IDs. Sunday times corrected
+      to 10:00–11:30 America/Chicago. Verified live: 30 Aug 2026 roster is on HQ
+      as schedule entry `10240770324` (9 filled names + TBD slots, no notify).
 - [ ] Wire the members gate + deploy (merge PR → `wrangler pages deploy`; the page and
       token function are under `/members/`, so the existing password gate protects them)
 - [ ] (nice‑to‑have) A re‑sync Edge Function that pulls people fresh from Planning Center
