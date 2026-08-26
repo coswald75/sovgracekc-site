@@ -49,9 +49,14 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
       Cursor Secrets panel — no Supabase access needed). A `/members/scheduler/token` CF
       Pages Function (uses the existing Cloudflare `MEMBERS_PASSWORD`) hands the page its
       token; comes with the frontend.
-- [ ] Static scheduler UI under `/members/scheduler/`
+- [x] Static scheduler UI at `src/pages/members/scheduler/` + `/members/scheduler/token`
+      CF Pages Function. Verified end‑to‑end against the live API (locally, with the real
+      members token): ministry filter collapses cards per ministry, summary updates
+      (157/412 → Children's 140/140 → Worship 17/119), and an assignment made in the
+      browser persisted to Supabase (confirmed by round‑trip query) and turned green.
 - [ ] Basecamp publish Edge Function + OAuth token storage
-- [ ] Wire the members gate + deploy
+- [ ] Wire the members gate + deploy (merge PR → `wrangler pages deploy`; the page and
+      token function are under `/members/`, so the existing password gate protects them)
 - [ ] (nice‑to‑have) A re‑sync Edge Function that pulls people fresh from Planning Center
 
 > Initial data was ported from the validated prototype into the `scheduler` schema

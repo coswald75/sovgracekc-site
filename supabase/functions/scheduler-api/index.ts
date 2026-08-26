@@ -16,18 +16,23 @@ import postgres from "https://deno.land/x/postgresjs@v3.4.4/mod.js";
 
 const sql = postgres(Deno.env.get("SUPABASE_DB_URL")!, { prepare: false });
 
-const ALLOW_ORIGIN = "https://sovgracekc.org";
-const cors = {
-  "Access-Control-Allow-Origin": ALLOW_ORIGIN,
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "content-type, x-members-token",
-  "Access-Control-Allow-Credentials": "true",
-};
+// Allow the church site plus localhost for local development. Access is gated by
+// the members token regardless of origin, so this only controls browser CORS.
+function corsFor(req: Request): Record<string, string> {
+  const origin = req.headers.get("Origin") ?? "";
+  const allowed = origin === "https://sovgracekc.org" || /^http:\/\/localhost(:\d+)?$/.test(origin);
+  return {
+    "Access-Control-Allow-Origin": allowed ? origin : "https://sovgracekc.org",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "content-type, x-members-token",
+    "Vary": "Origin",
+  };
+}
 
-function json(body: unknown, status = 200): Response {
+function json(body: unknown, status: number, req: Request): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "content-type": "application/json", ...cors },
+    headers: { "content-type": "application/json", ...corsFor(req) },
   });
 }
 
@@ -51,7 +56,8 @@ async function isMember(req: Request): Promise<boolean> {
 }
 
 Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
+  const j = (body: unknown, status = 200) => json(body, status, req);
+  if (req.method === "OPTIONS") return new Response("ok", { headers: corsFor(req) });
 
   const url = new URL(req.url);
   const action = url.searchParams.get("action") ?? "health";
@@ -60,18 +66,18 @@ Deno.serve(async (req) => {
     // Ungated health check — DB connectivity only, no member data.
     if (action === "health") {
       const [{ count }] = await sql`select count(*)::int as count from scheduler.services`;
-      return json({ ok: true, services: count });
+      return j({ ok: true, services: count });
     }
 
     // Everything else requires a valid members token.
-    if (!(await isMember(req))) return json({ error: "Not authenticated" }, 401);
+    if (!(await isMember(req))) return j({ error: "Not authenticated" }, 401);
 
     if (action === "directory") {
       const rows = await sql`
         select id, trim(coalesce(first_name,'') || ' ' || coalesce(last_name,'')) as name,
                is_free_text
         from scheduler.people order by first_name, last_name`;
-      return json({ people: rows });
+      return j({ people: rows });
     }
 
     if (action === "ministries") {
@@ -83,7 +89,7 @@ Deno.serve(async (req) => {
         from scheduler.ministries m
         left join scheduler.roles r on r.ministry_id = m.id
         group by m.id order by m.name`;
-      return json({ ministries: rows });
+      return j({ ministries: rows });
     }
 
     if (action === "schedule") {
@@ -102,7 +108,7 @@ Deno.serve(async (req) => {
         left join scheduler.people p on a.person_id = p.id
         ${teamId ? sql`where m.id = ${Number(teamId)}` : sql``}
         order by s.service_date, m.name, r.sort_order, r.name, a.slot_index`;
-      return json({ rows });
+      return j({ rows });
     }
 
     if (action === "assign" && req.method === "POST") {
@@ -110,16 +116,16 @@ Deno.serve(async (req) => {
       const assignmentId = Number(body.assignment_id);
       const personId = body.person_id === null || body.person_id === undefined
         ? null : Number(body.person_id);
-      const status = personId ? "pending" : "pending";
-      if (!assignmentId) return json({ error: "assignment_id required" }, 400);
+      
+      if (!assignmentId) return j({ error: "assignment_id required" }, 400);
       await sql`update scheduler.assignments
-                set person_id = ${personId}, status = ${status}
+                set person_id = ${personId}, status = 'pending'
                 where id = ${assignmentId}`;
-      return json({ ok: true });
+      return j({ ok: true });
     }
 
-    return json({ error: "unknown action" }, 400);
+    return j({ error: "unknown action" }, 400);
   } catch (e) {
-    return json({ error: "server error", detail: String(e) }, 500);
+    return j({ error: "server error", detail: String(e) }, 500);
   }
 });
