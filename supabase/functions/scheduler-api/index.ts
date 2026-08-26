@@ -6,9 +6,9 @@
 //
 // Auth: every data action requires the members token in `x-members-token`,
 // which equals HMAC-SHA256(MEMBERS_PASSWORD, "providence-members-v1") — the same
-// token the /members/ Cloudflare gate issues. MEMBERS_PASSWORD must be set as a
-// Supabase function secret. Fails CLOSED if it is unset. `action=health` is the
-// only ungated action and returns no member data.
+// token the /members/ Cloudflare gate issues. The expected token is stored in the
+// scheduler.config table (no Supabase env secret needed); fails CLOSED if absent.
+// `action=health` is the only ungated action and returns no member data.
 //
 // Deploy: MCP deploy_edge_function (verify_jwt=false; auth is the members token).
 
@@ -31,15 +31,6 @@ function json(body: unknown, status = 200): Response {
   });
 }
 
-async function membersToken(password: string): Promise<string> {
-  const key = await crypto.subtle.importKey(
-    "raw", new TextEncoder().encode(password),
-    { name: "HMAC", hash: "SHA-256" }, false, ["sign"],
-  );
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode("providence-members-v1"));
-  return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
 function timingSafeEqual(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
   let out = 0;
@@ -47,12 +38,16 @@ function timingSafeEqual(a: string, b: string): boolean {
   return out === 0;
 }
 
+// The expected members token lives in scheduler.config (managed via the DB), so
+// no Supabase env secret is needed. It equals HMAC(MEMBERS_PASSWORD,
+// "providence-members-v1") — the same token the /members/ Cloudflare gate issues.
+// Fails CLOSED if the config row is absent.
 async function isMember(req: Request): Promise<boolean> {
-  const password = Deno.env.get("MEMBERS_PASSWORD");
-  if (!password) return false; // fail closed if the shared secret isn't configured
   const provided = req.headers.get("x-members-token") ?? "";
   if (!provided) return false;
-  return timingSafeEqual(provided, await membersToken(password));
+  const rows = await sql`select value from scheduler.config where key = 'members_token'`;
+  if (!rows.length) return false;
+  return timingSafeEqual(provided, rows[0].value as string);
 }
 
 Deno.serve(async (req) => {

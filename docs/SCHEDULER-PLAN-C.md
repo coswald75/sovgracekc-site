@@ -41,9 +41,14 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
       `schedule`, `assign` (gated by the members token). Direct DB via `SUPABASE_DB_URL`
       (schema stays unexposed). Verified: `health` → `{ok:true, services:17}`; gated actions
       → `401` without a valid token (fail-closed; no PII exposed).
-      **Needs:** `MEMBERS_PASSWORD` set as a Supabase function secret (same value as the
-      Cloudflare `/members/` gate) for the authed path; a `/members/scheduler/token` CF
-      Pages Function to hand the members token to the page (comes with the frontend).
+      **Auth secret handling:** the expected members token lives in `scheduler.config`
+      (managed via SQL) — **no Supabase env secret**. Verified end-to-end with a test
+      token: authed `schedule`/`directory` return live data; wrong/no token → 401.
+      To accept real member logins, store `HMAC(MEMBERS_PASSWORD,'providence-members-v1')`
+      in that row (I compute it once the members password value is provided via the
+      Cursor Secrets panel — no Supabase access needed). A `/members/scheduler/token` CF
+      Pages Function (uses the existing Cloudflare `MEMBERS_PASSWORD`) hands the page its
+      token; comes with the frontend.
 - [ ] Static scheduler UI under `/members/scheduler/`
 - [ ] Basecamp publish Edge Function + OAuth token storage
 - [ ] Wire the members gate + deploy
