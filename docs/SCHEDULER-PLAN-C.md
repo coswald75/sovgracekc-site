@@ -63,8 +63,11 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
       nobody is emailed until we have Basecamp person IDs. Sunday times corrected
       to 10:00–11:30 America/Chicago. Verified live: 30 Aug 2026 roster is on HQ
       as schedule entry `10240770324` (9 filled names + TBD slots, no notify).
-- [ ] Wire the members gate + deploy (merge PR → `wrangler pages deploy`; the page and
-      token function are under `/members/`, so the existing password gate protects them)
+- [x] Wire the members gate + deploy (`wrangler pages deploy` of `main` `689cfe0` to
+      Pages project `sovgracekc`, deployment `e8cd3977`). `/members/scheduler/` and
+      `/members/scheduler/token` are behind the existing password gate. Verified live:
+      authed page is the scheduler UI; unauth still gets the members login; wiki pages
+      (Manifest, His Kids, Worship, Community Groups) still serve.
 - [ ] (nice‑to‑have) A re‑sync Edge Function that pulls people fresh from Planning Center
 
 > Initial data was ported from the validated prototype into the `scheduler` schema
