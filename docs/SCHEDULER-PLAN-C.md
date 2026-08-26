@@ -37,7 +37,13 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
 - [x] Data loaded & verified: **364 people** (359 PCO + 5 free‑text), **412 assignment slots**,
       **157 filled** (Cassie's Children's roster + Josh as Worship Leader on all 17 Sundays).
       FK integrity confirmed via join (service 1 Children's slots match Cassie's roster).
-- [ ] Edge Functions: directory / services / assignments / assign (gated by the members cookie)
+- [x] Edge Function `scheduler-api` deployed: `health` (ungated), `directory`, `ministries`,
+      `schedule`, `assign` (gated by the members token). Direct DB via `SUPABASE_DB_URL`
+      (schema stays unexposed). Verified: `health` → `{ok:true, services:17}`; gated actions
+      → `401` without a valid token (fail-closed; no PII exposed).
+      **Needs:** `MEMBERS_PASSWORD` set as a Supabase function secret (same value as the
+      Cloudflare `/members/` gate) for the authed path; a `/members/scheduler/token` CF
+      Pages Function to hand the members token to the page (comes with the frontend).
 - [ ] Static scheduler UI under `/members/scheduler/`
 - [ ] Basecamp publish Edge Function + OAuth token storage
 - [ ] Wire the members gate + deploy
