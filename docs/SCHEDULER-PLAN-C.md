@@ -61,7 +61,8 @@ See `supabase/migrations/20260825170000_scheduler_schema_init.sql`.
 - [x] `scheduler-api` `action=publish` (members-token gated). `dry_run: true` returns
       the payload without writing. Live publish defaults to `notify: false` so
       nobody is emailed until we have Basecamp person IDs. Sunday times corrected
-      to 10:00–11:30 America/Chicago.
+      to 10:00–11:30 America/Chicago. Verified live: 30 Aug 2026 roster is on HQ
+      as schedule entry `10240770324` (9 filled names + TBD slots, no notify).
 - [ ] Wire the members gate + deploy (merge PR → `wrangler pages deploy`; the page and
       token function are under `/members/`, so the existing password gate protects them)
 - [ ] (nice‑to‑have) A re‑sync Edge Function that pulls people fresh from Planning Center
