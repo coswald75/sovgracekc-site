@@ -9,6 +9,7 @@
 // token the /members/ Cloudflare gate issues. The expected token is stored in the
 // scheduler.config table (no Supabase env secret needed); fails CLOSED if absent.
 // `action=health` is the only ungated action and returns no member data.
+// `action=publish` writes one Sunday roster to the HQ Basecamp schedule.
 //
 // Deploy: MCP deploy_edge_function (verify_jwt=false; auth is the members token).
 
@@ -55,6 +56,191 @@ async function isMember(req: Request): Promise<boolean> {
   return timingSafeEqual(provided, rows[0].value as string);
 }
 
+function escapeHtml(s: string): string {
+  return s.replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!,
+  );
+}
+
+function iso(value: unknown): string {
+  if (value instanceof Date) return value.toISOString();
+  const raw = String(value ?? "");
+  const d = new Date(raw);
+  if (!Number.isNaN(d.getTime())) return d.toISOString();
+  return raw;
+}
+
+async function loadConfig(): Promise<Record<string, string>> {
+  const rows = await sql`select key, value from scheduler.config`;
+  return Object.fromEntries(rows.map((r) => [r.key as string, r.value as string]));
+}
+
+async function refreshBasecampToken(cfg: Record<string, string>): Promise<Record<string, string>> {
+  const expiresAt = cfg.basecamp_token_expires_at;
+  const needsRefresh = expiresAt
+    ? Date.now() > new Date(expiresAt).getTime() - 5 * 60 * 1000
+    : false;
+  if (!needsRefresh) return cfg;
+  if (!cfg.basecamp_client_id || !cfg.basecamp_client_secret || !cfg.basecamp_refresh_token) {
+    throw new Error("Basecamp token expired and refresh credentials are not in scheduler.config");
+  }
+  const body = new URLSearchParams({
+    type: "refresh",
+    refresh_token: cfg.basecamp_refresh_token,
+    client_id: cfg.basecamp_client_id,
+    client_secret: cfg.basecamp_client_secret,
+  });
+  const resp = await fetch("https://launchpad.37signals.com/authorization/token", {
+    method: "POST",
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+    body,
+  });
+  if (!resp.ok) throw new Error(`Basecamp token refresh failed (${resp.status})`);
+  const data = await resp.json();
+  const nextExpires = new Date(Date.now() + (data.expires_in ?? 1209600) * 1000).toISOString();
+  const nextRefresh = data.refresh_token ?? cfg.basecamp_refresh_token;
+  await sql`
+    insert into scheduler.config (key, value) values
+      ('basecamp_access_token', ${data.access_token}),
+      ('basecamp_refresh_token', ${nextRefresh}),
+      ('basecamp_token_expires_at', ${nextExpires})
+    on conflict (key) do update set value = excluded.value, updated_at = now()`;
+  return {
+    ...cfg,
+    basecamp_access_token: data.access_token,
+    basecamp_refresh_token: nextRefresh,
+    basecamp_token_expires_at: nextExpires,
+  };
+}
+
+async function basecamp(
+  cfg: Record<string, string>,
+  method: string,
+  path: string,
+  jsonBody?: unknown,
+): Promise<{ status: number; data: Record<string, unknown> }> {
+  const url = `${cfg.basecamp_api_url.replace(/\/$/, "")}${path}`;
+  const resp = await fetch(url, {
+    method,
+    headers: {
+      Authorization: `Bearer ${cfg.basecamp_access_token}`,
+      "User-Agent": cfg.basecamp_user_agent || "BasecampScheduler (chris@sovgracekc.org)",
+      "Content-Type": "application/json",
+    },
+    body: jsonBody === undefined ? undefined : JSON.stringify(jsonBody),
+  });
+  const text = await resp.text();
+  let data: Record<string, unknown> = {};
+  if (text) {
+    try { data = JSON.parse(text); } catch { data = { raw: text.slice(0, 300) }; }
+  }
+  if (!resp.ok) {
+    throw new Error(`Basecamp ${method} ${path} failed (${resp.status})`);
+  }
+  return { status: resp.status, data };
+}
+
+type JsonFn = (body: unknown, status?: number) => Response;
+
+async function publishService(req: Request, j: JsonFn): Promise<Response> {
+  const body = await req.json();
+  const serviceId = Number(body.service_id);
+  const dryRun = body.dry_run === true;
+  const notify = body.notify === true;
+  if (!serviceId) return j({ error: "service_id required" }, 400);
+
+  let cfg = await loadConfig();
+  const missing = [
+    "basecamp_access_token",
+    "basecamp_api_url",
+    "basecamp_hq_schedule_id",
+  ].filter((k) => !cfg[k]);
+  if (missing.length) return j({ error: "Basecamp is not configured", missing }, 400);
+
+  const [service] = await sql`
+    select id, title, starts_at, ends_at, status, bc_schedule_entry_id
+    from scheduler.services where id = ${serviceId}`;
+  if (!service) return j({ error: "Service not found" }, 404);
+
+  const slots = await sql`
+    select m.name as ministry_name, r.name as role_name, a.slot_index,
+           trim(coalesce(p.first_name,'') || ' ' || coalesce(p.last_name,'')) as person_name,
+           p.bc_person_id
+    from scheduler.assignments a
+    join scheduler.roles r on a.role_id = r.id
+    join scheduler.ministries m on r.ministry_id = m.id
+    left join scheduler.people p on a.person_id = p.id
+    where a.service_id = ${serviceId}
+    order by m.name, r.sort_order, r.name, a.slot_index`;
+
+  const teams = new Map<string, string[]>();
+  const participantIds: number[] = [];
+  let filled = 0;
+  for (const slot of slots) {
+    const team = String(slot.ministry_name);
+    const person = String(slot.person_name || "").trim() || "TBD";
+    if (person !== "TBD") filled++;
+    if (!teams.has(team)) teams.set(team, []);
+    teams.get(team)!.push(`${slot.role_name}: ${person}`);
+    if (slot.bc_person_id) participantIds.push(Number(slot.bc_person_id));
+  }
+
+  const desc: string[] = [];
+  for (const [team, roles] of teams) {
+    desc.push(`<h3>${escapeHtml(team)}</h3><ul>`);
+    for (const line of roles) desc.push(`<li>${escapeHtml(line)}</li>`);
+    desc.push("</ul>");
+  }
+
+  const payload = {
+    summary: service.title as string,
+    starts_at: iso(service.starts_at),
+    ends_at: iso(service.ends_at),
+    description: desc.join("\n"),
+    participant_ids: [...new Set(participantIds)],
+    notify,
+  };
+
+  if (dryRun) {
+    return j({
+      ok: true,
+      dry_run: true,
+      service_id: serviceId,
+      hq_project: cfg.basecamp_hq_project_name || "Providence Community Church HQ",
+      filled,
+      slots: slots.length,
+      already_published: Boolean(service.bc_schedule_entry_id),
+      payload: { ...payload, description_chars: payload.description.length, description: undefined },
+    });
+  }
+
+  cfg = await refreshBasecampToken(cfg);
+  const scheduleId = cfg.basecamp_hq_schedule_id;
+  let entryId = service.bc_schedule_entry_id ? Number(service.bc_schedule_entry_id) : null;
+  let result: Record<string, unknown>;
+  if (entryId) {
+    ({ data: result } = await basecamp(cfg, "PUT", `/schedule_entries/${entryId}.json`, payload));
+  } else {
+    ({ data: result } = await basecamp(cfg, "POST", `/schedules/${scheduleId}/entries.json`, payload));
+    entryId = Number(result.id);
+  }
+
+  await sql`
+    update scheduler.services
+    set bc_schedule_entry_id = ${entryId}, status = 'published'
+    where id = ${serviceId}`;
+
+  return j({
+    ok: true,
+    dry_run: false,
+    service_id: serviceId,
+    entry_id: entryId,
+    app_url: typeof result.app_url === "string" ? result.app_url : null,
+    filled,
+    slots: slots.length,
+  });
+}
+
 Deno.serve(async (req) => {
   const j = (body: unknown, status = 200) => json(body, status, req);
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsFor(req) });
@@ -96,6 +282,7 @@ Deno.serve(async (req) => {
       const teamId = url.searchParams.get("ministry_id");
       const rows = await sql`
         select s.id as service_id, s.service_date, s.title, s.status,
+               s.bc_schedule_entry_id,
                a.id as assignment_id, a.slot_index, a.status as assignment_status,
                r.id as role_id, r.name as role_name, r.required, r.needed_count,
                m.id as ministry_id, m.name as ministry_name,
@@ -122,6 +309,10 @@ Deno.serve(async (req) => {
                 set person_id = ${personId}, status = 'pending'
                 where id = ${assignmentId}`;
       return j({ ok: true });
+    }
+
+    if (action === "publish" && req.method === "POST") {
+      return await publishService(req, j);
     }
 
     return j({ error: "unknown action" }, 400);
