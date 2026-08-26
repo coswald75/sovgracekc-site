@@ -1,0 +1,211 @@
+---
+// Volunteer scheduler (Plan C) — member-gated page under /members/.
+// Static page + client JS that calls the Supabase `scheduler-api` Edge Function
+// using the members token from /members/scheduler/token. Access is gated by
+// functions/members/_middleware.js (the shared members password).
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Scheduler — Providence Members</title>
+  <style>
+    :root{--ink:#262626;--gray:#6b6b63;--line:#e2dfd8;--greige:#ede8e2;--accent:#075c2e;
+      --green:#1f7a44;--red:#9c2b21;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      --serif:'Newsreader',Georgia,serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--greige);color:var(--ink);font-family:var(--sans);font-size:15px}
+    header{background:#fff;border-bottom:1px solid var(--line);padding:14px 20px;position:sticky;top:0;z-index:10}
+    header h1{margin:0;font-family:var(--serif);font-size:1.3rem;font-weight:600}
+    header a{color:var(--accent);text-decoration:none;font-size:.85rem}
+    .wrap{max-width:900px;margin:0 auto;padding:20px}
+    .bar{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;
+      gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+    .bar label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--gray)}
+    select{font-family:var(--sans);font-size:.9rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#faf9f5}
+    .summary{font-size:.85rem;color:var(--gray)}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+    .card h2{margin:0 0 4px;font-family:var(--serif);font-size:1.05rem}
+    .card .date{font-size:.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:.05em}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);font-size:.85rem;vertical-align:middle}
+    th{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gray)}
+    .team-row td{font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gray);background:#f3f1ed}
+    .role{white-space:nowrap;min-width:150px}
+    .role .req{color:var(--red);margin-left:2px}
+    td select.slot{min-width:180px;width:100%}
+    td select.filled{border-color:var(--green);background:#f1f8f1}
+    .muted{color:var(--gray)}
+    .loading{padding:40px;text-align:center;color:var(--gray)}
+    .err{color:var(--red);padding:16px}
+    .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .badge{font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+      padding:3px 8px;border-radius:999px;background:#e8efe8;color:var(--green)}
+    .actions{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .btn{font-family:var(--sans);font-size:.8rem;padding:7px 12px;border-radius:8px;border:1px solid var(--line);
+      background:#fff;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn:disabled{opacity:.6;cursor:wait}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Providence Scheduler</h1>
+    <a href="/members/">&larr; Members</a>
+  </header>
+  <div class="wrap">
+    <div class="bar">
+      <label for="ministry">Ministry</label>
+      <select id="ministry"><option value="">All ministries</option></select>
+      <span class="summary" id="summary"></span>
+    </div>
+    <div id="content"><div class="loading">Loading schedule…</div></div>
+  </div>
+
+  <script is:inline>
+    const API = "https://twbunmbzyqcqzgffdrib.supabase.co/functions/v1/scheduler-api";
+    let TOKEN = null;
+    let directory = [];
+    let rows = [];
+    let filterMinistry = "";
+
+    const $ = (s) => document.querySelector(s);
+    const el = (t, a = {}, html) => { const e = document.createElement(t); for (const k in a) e.setAttribute(k, a[k]); if (html != null) e.innerHTML = html; return e; };
+
+    async function getToken() {
+      const r = await fetch("/members/scheduler/token", { credentials: "same-origin" });
+      if (!r.ok) throw new Error("Could not get members token");
+      return (await r.json()).token;
+    }
+    async function api(action, opts = {}) {
+      const r = await fetch(API + "?action=" + action + (opts.qs || ""), {
+        method: opts.method || "GET",
+        headers: { "x-members-token": TOKEN, ...(opts.body ? { "content-type": "application/json" } : {}) },
+        body: opts.body ? JSON.stringify(opts.body) : undefined,
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(data.error || (action + " failed (" + r.status + ")"));
+      return data;
+    }
+
+    async function init() {
+      try {
+        TOKEN = await getToken();
+        const [dir, mins] = await Promise.all([api("directory"), api("ministries")]);
+        directory = dir.people;
+        const sel = $("#ministry");
+        for (const m of mins.ministries) sel.appendChild(el("option", { value: String(m.id) }, m.name));
+        sel.addEventListener("change", () => { filterMinistry = sel.value; loadSchedule(); });
+        await loadSchedule();
+      } catch (e) {
+        $("#content").innerHTML = '<div class="err">' + e.message + "</div>";
+      }
+    }
+
+    async function loadSchedule() {
+      const data = await api("schedule", { qs: filterMinistry ? "&ministry_id=" + filterMinistry : "" });
+      rows = data.rows;
+      render();
+    }
+
+    function render() {
+      const content = $("#content");
+      content.innerHTML = "";
+      // group rows by service
+      const services = {};
+      for (const r of rows) {
+        (services[r.service_id] ||= {
+          date: r.service_date, title: r.title, status: r.status,
+          entryId: r.bc_schedule_entry_id, rows: []
+        }).rows.push(r);
+      }
+      let filled = 0, total = 0;
+      const ids = Object.keys(services).sort((a, b) => new Date(services[a].date) - new Date(services[b].date));
+      for (const sid of ids) {
+        const s = services[sid];
+        const card = el("div", { class: "card" });
+        const d = new Date(s.date);
+        const head = el("div", { class: "card-head" });
+        const dateEl = el("div", { class: "date" }, d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: "UTC" }));
+        head.appendChild(dateEl);
+        if (s.status === "published") head.appendChild(el("span", { class: "badge" }, "On Basecamp HQ"));
+        card.appendChild(head);
+        const tbl = el("table");
+        tbl.appendChild(el("thead", {}, "<tr><th>Role</th><th>Assigned to</th></tr>"));
+        const tb = el("tbody");
+        let curTeam = "";
+        for (const a of s.rows) {
+          total++; if (a.person_id) filled++;
+          if (a.ministry_name !== curTeam) { curTeam = a.ministry_name; tb.appendChild(el("tr", { class: "team-row" }, "<td colspan=2>" + curTeam + "</td>")); }
+          const tr = el("tr");
+          tr.appendChild(el("td", { class: "role" }, a.role_name + (a.required ? '<span class="req">*</span>' : "")));
+          const td = el("td");
+          const opts = ['<option value="">— select —</option>']
+            .concat(directory.map((p) => '<option value="' + p.id + '"' + (p.id === a.person_id ? " selected" : "") + ">" + p.name + "</option>"));
+          const s2 = el("select", { class: "slot " + (a.person_id ? "filled" : "") });
+          s2.innerHTML = opts.join("");
+          s2.addEventListener("change", () => assign(a.assignment_id, s2));
+          td.appendChild(s2);
+          tr.appendChild(td);
+          tb.appendChild(tr);
+        }
+        tbl.appendChild(tb);
+        card.appendChild(tbl);
+        const actions = el("div", { class: "actions" });
+        const btn = el("button", { class: "btn btn-primary", type: "button" },
+          s.status === "published" ? "Update on Basecamp HQ" : "Publish to Basecamp HQ");
+        btn.addEventListener("click", () => publishService(Number(sid), btn));
+        actions.appendChild(btn);
+        card.appendChild(actions);
+        content.appendChild(card);
+      }
+      const name = filterMinistry ? $("#ministry").options[$("#ministry").selectedIndex].textContent : "All ministries";
+      $("#summary").textContent = name + ": " + filled + "/" + total + " slots filled across " + ids.length + " Sundays";
+    }
+
+    async function assign(assignmentId, selectEl) {
+      const personId = selectEl.value ? Number(selectEl.value) : null;
+      selectEl.disabled = true;
+      try {
+        await api("assign", { method: "POST", body: { assignment_id: assignmentId, person_id: personId } });
+        selectEl.className = "slot " + (personId ? "filled" : "");
+        // reflect in local state for the summary
+        const r = rows.find((x) => x.assignment_id === assignmentId);
+        if (r) r.person_id = personId;
+        const name = filterMinistry ? $("#ministry").options[$("#ministry").selectedIndex].textContent : "All ministries";
+        let filled = 0, total = 0; for (const x of rows) { total++; if (x.person_id) filled++; }
+        const sundays = new Set(rows.map((x) => x.service_id)).size;
+        $("#summary").textContent = name + ": " + filled + "/" + total + " slots filled across " + sundays + " Sundays";
+      } catch (e) {
+        alert("Could not save: " + e.message);
+      }
+      selectEl.disabled = false;
+    }
+
+    async function publishService(serviceId, btn) {
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Publishing…";
+      try {
+        const result = await api("publish", { method: "POST", body: { service_id: serviceId, notify: false } });
+        if (!result.ok) throw new Error(result.error || "Publish failed");
+        for (const r of rows) {
+          if (r.service_id === serviceId) {
+            r.status = "published";
+            r.bc_schedule_entry_id = result.entry_id;
+          }
+        }
+        render();
+      } catch (e) {
+        alert("Could not publish: " + e.message);
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
