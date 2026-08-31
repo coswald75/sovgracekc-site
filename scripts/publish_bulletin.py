@@ -64,7 +64,23 @@ def load_bulletin():
     return data
 
 
+def regenerate_members_wiki():
+    """Regenerate the git-ignored members wiki into public/members/ before building,
+    so a deploy can never ship without it (the gated /members/ pages would 404).
+    Best-effort: if it fails (e.g. the Obsidian vault isn't here), we keep any
+    existing public/members/ and let the members-wiki-guard in astro.config.mjs
+    block the build if the wiki is genuinely missing."""
+    gen = PIPELINE_DIR / "generate_members_wiki.py"
+    try:
+        subprocess.run(["python3", str(gen)], env=DEPLOY_ENV, check=True)
+        log("Regenerated members wiki (public/members/).")
+    except Exception as e:
+        log(f"WARNING: could not regenerate members wiki ({e}); "
+            "relying on existing public/members/ + the build guard.")
+
+
 def build():
+    regenerate_members_wiki()
     subprocess.run(["npm", "run", "build"], cwd=SITE_DIR, env=DEPLOY_ENV, check=True)
 
 
