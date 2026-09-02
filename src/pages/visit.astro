@@ -322,8 +322,10 @@ const testimonials = [
               website: honeypot,
             }),
           });
-          var j = await r.json().catch(function () { return { error: 'Bad response' }; });
-          if (!r.ok || !j.ok) throw new Error(j.error || ('HTTP ' + r.status));
+          var j = await r.json().catch(function () { return {}; });
+          if (!r.ok || !j.ok) {
+            throw new Error(j.error || 'Could not send your note. Please try again, or email chris@sovgracekc.org.');
+          }
           fireGtag('Visit');
           document.getElementById('visit-form-wrap').classList.add('hidden');
           document.getElementById('visit-done').classList.remove('hidden');
