@@ -1,5 +1,37 @@
 ---
+import fs from 'node:fs';
 import Base from '../layouts/Base.astro';
+
+// ── Pastor Chris visit video (ONE slot — the only video on this page) ─────
+// Recording is not ready yet. When it is, do ONE of these and rebuild:
+//   1. Save the file as  public/media/pastor-chris-visit.mp4
+//   2. Or paste a direct video URL on the next line (mp4 / Vimeo file URL).
+// Do NOT paste a YouTube embed (including any Revelation lecture).
+const pastorChrisVideoUrl = '';
+const pastorChrisFile = 'public/media/pastor-chris-visit.mp4';
+const pastorChrisSrc = pastorChrisVideoUrl || (fs.existsSync(pastorChrisFile) ? '/media/pastor-chris-visit.mp4' : '');
+// Poster is the church building — not a likeness of Pastor Chris.
+// After recording, you can swap this to a still from the video.
+const pastorChrisPoster = '/wp-content/uploads/Providence_Visit_ChurchBuilding.jpg';
+
+function nextSundayInChicago(now = new Date()) {
+  const weekday = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    weekday: 'short',
+  }).format(now);
+  const ymd = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Chicago',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now);
+  const [y, m, d] = ymd.split('-').map(Number);
+  const map = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const add = map[weekday] === 0 ? 0 : 7 - map[weekday];
+  return new Date(Date.UTC(y, m - 1, d + add)).toISOString().slice(0, 10);
+}
+
+const defaultSunday = nextSundayInChicago();
 
 const testimonials = [
   { quote: 'My family and I have been truly blessed by Providence Community Church. Here you will find sound, biblical teaching that always points you towards Christ and a community of believers that does the same.', name: 'Kyle' },
@@ -19,8 +51,61 @@ const testimonials = [
         <p style="font-family:var(--sans); font-weight:600; font-size:1.05rem; letter-spacing:0.04em; margin-bottom:4px;">10:00 AM</p>
         <p style="font-family:var(--sans); font-size:0.92rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">10113 Lenexa Dr, Lenexa, KS 66215</p>
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin:22px 0 40px;">
-          <a class="btn" href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a>
+          <a class="btn" id="get-directions" href="https://goo.gl/maps/UuJfdQ5WBd6SA6H5A">Get directions</a>
           <a class="btn-dark" href="/community/#childrens-ministry">Providence Kids</a>
+        </div>
+
+        <figure class:list={['pastor-video', pastorChrisSrc ? null : 'pastor-video--soon']} id="pastor-chris-video">
+          <video
+            controls={!!pastorChrisSrc}
+            playsinline
+            preload="metadata"
+            poster={pastorChrisPoster}
+            aria-label="A word from Pastor Chris Oswald about visiting Providence Community Church"
+          >
+            {pastorChrisSrc && <source src={pastorChrisSrc} type="video/mp4" />}
+          </video>
+          {!pastorChrisSrc && (
+            <figcaption class="pastor-video-label">Video from Pastor Chris coming soon</figcaption>
+          )}
+        </figure>
+
+        <div id="visit-form-wrap" class="visit-intent">
+          <h2 class="caps-head">I&rsquo;m coming this Sunday</h2>
+          <p>Tell us you&rsquo;re coming &mdash; we&rsquo;ll look for you at Providence Community Church, Lenexa.</p>
+          <form id="visit-form" action="/api/sunday-visit" method="post" novalidate>
+            <label class="fld">
+              <span class="lbl">Name</span>
+              <input id="visit-name" name="name" type="text" autocomplete="name" required maxlength="120" />
+            </label>
+            <label class="fld">
+              <span class="lbl">Email</span>
+              <input id="visit-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" />
+            </label>
+            <label class="fld">
+              <span class="lbl">Which Sunday</span>
+              <input id="visit-sunday" name="sunday" type="date" required value={defaultSunday} min={defaultSunday} step="7" />
+            </label>
+            <fieldset class="fld">
+              <legend class="lbl">Kids coming?</legend>
+              <div class="yn">
+                <label class="yn-opt"><input type="radio" name="kids" value="yes" required /> <span>Yes</span></label>
+                <label class="yn-opt"><input type="radio" name="kids" value="no" /> <span>No</span></label>
+              </div>
+            </fieldset>
+            <div class="hp" aria-hidden="true">
+              <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            <p id="visit-err" class="err hidden"></p>
+            <button id="visit-submit" type="submit" class="btn visit-submit">I&rsquo;m coming this Sunday</button>
+          </form>
+        </div>
+
+        <div id="visit-done" class="visit-done hidden">
+          <h2 class="caps-head">See you Sunday</h2>
+          <p>Thank you &mdash; we&rsquo;re glad you&rsquo;re coming. We&rsquo;ll look for you at Providence Community Church, Lenexa.</p>
+          <p style="font-family:var(--sans); font-weight:600; font-size:1.05rem; letter-spacing:0.04em; margin-bottom:4px;">10:00am</p>
+          <p style="font-family:var(--sans); font-size:0.92rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">10113 Lenexa Dr, Lenexa, KS</p>
         </div>
 
         <h2 class="caps-head">01 &mdash; Arrive</h2>
@@ -75,4 +160,179 @@ const testimonials = [
       </div>
     </div>
   </section>
+
+  <style>
+    .pastor-video {
+      position: relative;
+      margin: 0 0 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--greige-light);
+    }
+    .pastor-video video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: var(--greige-light);
+    }
+    .pastor-video--soon video { pointer-events: none; }
+    .pastor-video-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 24px;
+      text-align: center;
+      background: rgba(38, 38, 38, 0.42);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .visit-intent { margin: 0 0 48px; }
+    .visit-intent .caps-head, .visit-done .caps-head { margin-top: 0; }
+    .visit-done { margin: 0 0 48px; }
+    .fld { display: block; margin-bottom: 20px; border: 0; padding: 0; min-width: 0; }
+    .lbl {
+      display: block; font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; padding: 0;
+    }
+    #visit-form input[type="text"],
+    #visit-form input[type="email"],
+    #visit-form input[type="date"] {
+      width: 100%; box-sizing: border-box;
+      border: 1px solid var(--ink); border-radius: 6px;
+      padding: 13px 14px; font-family: var(--serif); font-size: 1.05rem;
+      background: #fff; color: var(--ink);
+    }
+    #visit-form input:focus {
+      outline: 2px solid var(--ink); outline-offset: 1px;
+    }
+    .yn { display: flex; gap: 14px; }
+    .yn-opt {
+      flex: 1; display: flex; align-items: center; gap: 9px;
+      border: 1px solid var(--line); border-radius: 6px;
+      padding: 12px 16px; cursor: pointer;
+      font-family: var(--serif); font-size: 1.05rem;
+    }
+    .yn-opt input { accent-color: var(--ink); width: 18px; height: 18px; }
+    .visit-submit {
+      border: 0; cursor: pointer; width: 100%;
+      font-size: 0.9rem;
+    }
+    .visit-submit:disabled { opacity: 0.5; cursor: default; }
+    .err {
+      background: #fbeaea; border: 1px solid #e0b4b4; color: #8a2b2b;
+      border-radius: 6px; padding: 11px 14px; font-size: 0.9rem; margin: 0 0 16px;
+    }
+    .hp {
+      position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;
+    }
+    .hidden { display: none !important; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function nextSundayInChicago(now) {
+        now = now || new Date();
+        var weekday = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Chicago',
+          weekday: 'short',
+        }).format(now);
+        var ymd = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'America/Chicago',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }).format(now);
+        var parts = ymd.split('-');
+        var y = Number(parts[0]);
+        var m = Number(parts[1]);
+        var d = Number(parts[2]);
+        var map = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+        var add = map[weekday] === 0 ? 0 : 7 - map[weekday];
+        return new Date(Date.UTC(y, m - 1, d + add)).toISOString().slice(0, 10);
+      }
+
+      function fireGtag(name) {
+        if (typeof gtag === 'function') {
+          gtag('event', name);
+          return;
+        }
+        window.gtag = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+        window.gtag('event', name);
+      }
+
+      var directions = document.getElementById('get-directions');
+      if (directions) {
+        directions.addEventListener('click', function () {
+          fireGtag('Directions');
+        });
+      }
+
+      var sunday = document.getElementById('visit-sunday');
+      if (sunday) {
+        var next = nextSundayInChicago();
+        sunday.value = next;
+        sunday.min = next;
+      }
+
+      var form = document.getElementById('visit-form');
+      var btn = document.getElementById('visit-submit');
+      var errBox = document.getElementById('visit-err');
+      if (!form || !btn || !errBox) return;
+
+      function showErr(msg) {
+        errBox.textContent = msg;
+        errBox.classList.remove('hidden');
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errBox.classList.add('hidden');
+
+        var name = document.getElementById('visit-name').value.trim();
+        var email = document.getElementById('visit-email').value.trim();
+        var sundayVal = document.getElementById('visit-sunday').value;
+        var kidsEl = document.querySelector('#visit-form input[name="kids"]:checked');
+        var kids = kidsEl ? kidsEl.value : '';
+        var honeypot = (form.elements.website && form.elements.website.value) || '';
+
+        if (!name) { showErr('Please enter your name.'); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showErr('Please enter a valid email address.'); return; }
+        if (!sundayVal) { showErr('Please choose a Sunday.'); return; }
+        if (kids !== 'yes' && kids !== 'no') { showErr('Please tell us if kids are coming.'); return; }
+
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        try {
+          var r = await fetch('/api/sunday-visit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              sunday: sundayVal,
+              kids: kids,
+              website: honeypot,
+            }),
+          });
+          var j = await r.json().catch(function () { return { error: 'Bad response' }; });
+          if (!r.ok || !j.ok) throw new Error(j.error || ('HTTP ' + r.status));
+          fireGtag('Visit');
+          document.getElementById('visit-form-wrap').classList.add('hidden');
+          document.getElementById('visit-done').classList.remove('hidden');
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = "I'm coming this Sunday";
+          showErr(err.message || 'Sending failed. Please try again, or email chris@sovgracekc.org.');
+        }
+      });
+    })();
+  </script>
 </Base>
