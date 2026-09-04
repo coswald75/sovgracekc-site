@@ -18,7 +18,7 @@
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Galatians 5:13 (ESV)"
+        "detail": "Congregational readings from Psalm 18"
       },
       {
         "type": "songs",
@@ -600,45 +600,37 @@
         "role": "Lead"
       },
       {
-        "name": "Jared",
-        "role": "Drums"
-      },
-      {
-        "name": "Steven",
-        "role": "Bass"
-      },
-      {
-        "name": "Kyle",
-        "role": "Electric"
-      },
-      {
-        "name": "Shannon",
+        "name": "Sarah Hoit",
         "role": "Keys, Vocals"
+      },
+      {
+        "name": "Steven Luffman",
+        "role": "Bass"
       }
     ],
     "songs": [
       {
-        "title": "There Is a Fountain",
+        "title": "Behold Our God",
         "section": "opening"
       },
       {
-        "title": "How Vast the Love",
+        "title": "How Firm a Foundation",
         "section": "opening"
       },
       {
-        "title": "It Was Finished Upon That Cross",
+        "title": "Crown Him With Many Crowns",
         "section": "opening2"
       },
       {
-        "title": "Yours Alone vs. Your Will Be Done",
+        "title": "Ancient of Days",
         "section": "opening2"
       },
       {
-        "title": "Jesus Paid It All",
+        "title": "Revelation Song vs. Jesus Our Judge and Our Saviour",
         "section": "communion"
       },
       {
-        "title": "Hold Him High vs. TBD",
+        "title": "All Glory be to Christ vs. TBD",
         "section": "final"
       }
     ],
