@@ -1,5 +1,5 @@
 {
-  "week_of": "August 23, 2026",
+  "week_of": "September 6, 2026",
   "service_order": {
     "flow": [
       {
@@ -18,7 +18,7 @@
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Galatians 5:13 (ESV)"
+        "detail": "Congregational readings from Psalm 18"
       },
       {
         "type": "songs",
@@ -49,125 +49,548 @@
       }
     ],
     "sermon": {
-      "title": "Do Eden Anyway: Spouse",
-      "text": "Ecclesiastes 9:7-10",
-      "thesis": "We keep doing Eden anyway — and this week the category is the spouse. The enjoyable spouse of Ecclesiastes 9:9 is a cultivated garden: you tend it with words — love, promise, praise — so that you have someone to share the good life with.",
+      "title": "Revelation: An Overview",
+      "text": "The book of Revelation (office recording; more Bible study than sermon)",
+      "thesis": "We are in both the best of times and the worst of times for reading this book. Six disadvantages. Three advantages. The aim is endurance, not decoding.",
       "outline": [
         {
+          "type": "heading",
+          "text": "Setup"
+        },
+        {
           "type": "text",
-          "body": "Ecclesiastes commends four things to enjoy under the sun — “Worship · Work · Wife · Wine”. Last week was Work (Ecclesiastes 10). This week: the Wife — or, more broadly, the spouse. (Introduction: the letter of Heinrich Marx to his son Karl, March 2, 1837.)"
+          "body": "Two objectives: understand the book, and find a way to teach it."
+        },
+        {
+          "type": "text",
+          "body": "Nobody visits Revelation without presuppositions. We are in both the best of times and the worst of times for reading this book."
+        },
+        {
+          "type": "quote",
+          "body": "It was the best of times, it was the worst of times.",
+          "cite": "Charles Dickens, A Tale of Two Cities"
+        },
+        {
+          "type": "text",
+          "body": "The frame for this study: six disadvantages and three advantages that we at Providence Community Church carry into the book."
+        },
+        {
+          "type": "text",
+          "body": "Ask: extra commitment to attention. Stay engaged."
+        },
+        {
+          "type": "text",
+          "body": "Close of setup: more hopeful than expected. Separate noise from signal. Glean the intended effect."
         },
         {
           "type": "heading",
-          "text": "I. Marriage frames the whole thing"
-        },
-        {
-          "type": "text",
-          "body": "A word about a word: “wife” → “spouse”."
-        },
-        {
-          "type": "scripture",
-          "ref": "Ecclesiastes 9:7–10 (ESV)",
-          "body": "Go, eat your bread with joy, and drink your wine with a merry heart, for God has already approved what you do. Let your garments be always white. Let not oil be lacking on your head. Enjoy life with the wife whom you love, all the days of your vain life that he has given you under the sun, because that is your portion in life and in your toil at which you toil under the sun. Whatever your hand finds to do, do it with your might, for there is no work or thought or knowledge or wisdom in Sheol, to which you are going."
-        },
-        {
-          "type": "text",
-          "body": "Read canonically, marriage sits on a shelf: Proverbs 31 (the excellent wife) — Ecclesiastes — the Song of Solomon."
-        },
-        {
-          "type": "scripture",
-          "ref": "Proverbs 18:22 (ESV)",
-          "body": "He who finds a wife finds a good thing and obtains favor from the Lord."
-        },
-        {
-          "type": "text",
-          "body": "Bread, wine, oil — all cultivated. So is the enjoyable spouse: a cultivated product."
+          "text": "Part One: Six Disadvantages"
         },
         {
           "type": "heading",
-          "text": "II. Insight one — a garden within a garden"
-        },
-        {
-          "type": "scripture",
-          "ref": "Song of Solomon 4:12, 16; 5:1 (ESV)",
-          "body": "“A garden locked is my sister, my bride…” “Let my beloved come to his garden…” “I came to my garden, my sister, my bride.”"
+          "text": "1. Written to the persecuted. We are largely not."
         },
         {
           "type": "text",
-          "body": "Eve in Eden — a garden within the garden (Genesis 2). Plant your garden before you build your house."
-        },
-        {
-          "type": "scripture",
-          "ref": "Proverbs 24:27 (ESV)",
-          "body": "Prepare your work outside; get everything ready for yourself in the field, and after that build your house."
+          "body": "You cannot read any biblical book well without the original audience."
         },
         {
           "type": "text",
-          "body": "Tend your garden — “he who loves his wife loves himself” (Ephesians 5:28)."
+          "body": "We have to imagine persecution we have not yet lived. Intentional. Historical. Mental adjustment, constantly."
+        },
+        {
+          "type": "text",
+          "body": "Key word: ὑπομονή (hupomonē), endurance. Seven times:"
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 1:9; 2:2, 3, 19; 3:10; 13:10; 14:12",
+          "body": "Endurance — ὑπομονή — seven times in the book. You do not tell comfortable people, seven times, to endure."
+        },
+        {
+          "type": "text",
+          "body": "If this became a series: martyrdom stories, to get the atmosphere right."
         },
         {
           "type": "heading",
-          "text": "III. Insight two — you tend a garden with words"
+          "text": "2. Expansive symbolism. We are symbolically thin."
+        },
+        {
+          "type": "quote",
+          "body": "Western Christians lost the instinct for biblical literature. Liberal criticism and conservative literalism are both fallout from that breakdown.",
+          "cite": "Hans Frei, The Eclipse of Biblical Narrative (1974)"
+        },
+        {
+          "type": "quote",
+          "body": "From typographic culture — sustained, layered, figural reading — to image and entertainment culture.",
+          "cite": "Neil Postman, Amusing Ourselves to Death"
         },
         {
           "type": "text",
-          "body": "How Christ gardens his bride — with the word:"
-        },
-        {
-          "type": "scripture",
-          "ref": "Ephesians 5:25–26, 29 (ESV)",
-          "body": "Husbands, love your wives, as Christ loved the church and gave himself up for her, that he might sanctify her, having cleansed her by the washing of water with the word… he nourishes and cherishes her."
+          "body": "Symbols are not codes. A code is one-to-one. Revelation’s symbols are compressions of large meaning."
         },
         {
           "type": "text",
-          "body": "What kind of words? Teaching, reproof, correction, and training in righteousness (2 Timothy 3:16–17). Three in particular —"
-        },
-        {
-          "type": "text",
-          "body": "“Love” — “As the Father has loved me, so have I loved you” (John 15:9); “having loved his own… he loved them to the end” (John 13:1); “I have loved you with an everlasting love” (Jeremiah 31:3)."
-        },
-        {
-          "type": "text",
-          "body": "“Promises” — feed your spouse the promises of God."
-        },
-        {
-          "type": "text",
-          "body": "“Praise” — the Song, and the acrostic wife: “Her husband also… praises her: 'Many women have done excellently, but you surpass them all'” (Proverbs 31:28–29)."
-        },
-        {
-          "type": "text",
-          "body": "Two qualifiers: never flatter — “a flattering mouth works ruin” (Proverbs 26:28); and never be a words-only man — “let us not love in word or talk but in deed and in truth” (1 John 3:18). Resource: “Practicing Affirmation” by Sam Crabtree."
+          "body": "“Lamb” in Revelation 5 compresses: Abraham and the ram; Passover blood on the doorpost; morning and evening sacrifice for centuries; the silent lamb of Isaiah 53."
         },
         {
           "type": "heading",
-          "text": "IV. The outcome — someone to share the good with"
+          "text": "3. Depends on a deep Old Testament. That is a modern weakness."
         },
         {
           "type": "text",
-          "body": "C. S. Lewis (Reflections on the Psalms): praise completes the enjoyment. And the man alone has no one to share it with —"
+          "body": "We are not symbolically dead. Logos, flags, emojis all day. Our library is advertising and movies. For about 1,500 years the West’s library was Old Testament images."
+        },
+        {
+          "type": "text",
+          "body": "Lego illustration: box-build kits (helicopter rotor, police hat) versus the big bucket. Two kinds of kids. Two kinds of parents."
+        },
+        {
+          "type": "text",
+          "body": "Revelation is a bucket of Old Testament Legos. Specialty parts recall old concepts and do something new."
         },
         {
           "type": "scripture",
-          "ref": "Ecclesiastes 4:8–9 (ESV)",
-          "body": "…yet there is no end to all his toil, and his eyes are never satisfied with riches, so that he never asks, “For whom am I toiling and depriving myself of pleasure?” This also is vanity and an unhappy business. Two are better than one, because they have a good reward for their toil."
+          "ref": "Revelation 5:6",
+          "body": "A Lamb standing as though slain, seven horns, seven eyes."
+        },
+        {
+          "type": "text",
+          "body": "Lamb: Abraham, Passover, Isaiah 53."
+        },
+        {
+          "type": "text",
+          "body": "Horns: Daniel’s kit. Horn = royal power. Seven = complete, unrivaled."
+        },
+        {
+          "type": "text",
+          "body": "Eyes: Zechariah 4:10. The seven eyes of the LORD range through the whole earth."
         },
         {
           "type": "scripture",
-          "ref": "Genesis 2:18 (ESV)",
-          "body": "Then the Lord God said, “It is not good that the man should be alone; I will make him a helper fit for him.”"
+          "ref": "Zechariah 4:10",
+          "body": "The seven eyes of the LORD range through the whole earth."
+        },
+        {
+          "type": "text",
+          "body": "Complex only because we lack OT familiarity and turn symbols into codes."
+        },
+        {
+          "type": "text",
+          "body": "Everybody reads Revelation figuratively. Wrong readings reach into the newspaper. Locusts in chapter 9: Old Testament bucket, or attack helicopters. Both symbolic. One is Scripture. One is the news."
         },
         {
           "type": "heading",
-          "text": "Conclusion"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Peter 3:7 (ESV)",
-          "body": "Likewise, husbands, live with your wives in an understanding way, showing honor to the woman as the weaker vessel, since they are heirs with you of the grace of life, so that your prayers may not be hindered."
+          "text": "4. We have misunderstood what prophecy mostly is."
         },
         {
           "type": "text",
-          "body": "Coheirs of the grace of life — look at all that God has done."
+          "body": "Older generation: prophecy is more forthtelling than foretelling. Less predicting, more pronouncing."
+        },
+        {
+          "type": "text",
+          "body": "In the OT prophets, prediction is God throwing punches and giving promises: condemnation and comfort."
+        },
+        {
+          "type": "text",
+          "body": "Revelation calls itself prophecy (prophēteia) five times."
+        },
+        {
+          "type": "text",
+          "body": "Largely forthtelling. Not saying there is no prediction. Most people enter as if it were mostly a predictive document. It is not."
+        },
+        {
+          "type": "text",
+          "body": "A full seventh of the book (chs. 2–3) is direct address to living congregations: command, rebuke, repent (2:5, 16, 21–22; 3:3, 19)."
+        },
+        {
+          "type": "text",
+          "body": "Blessing formula: not “Blessed is the one who decodes.” Blessed is the one who reads aloud, hears, and keeps what is written. Same at the end: keep the words."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 1:3",
+          "body": "Blessed is the one who reads aloud, hears, and keeps what is written."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 22:7",
+          "body": "Blessed is the one who keeps the words of the prophecy of this book."
+        },
+        {
+          "type": "text",
+          "body": "Exhortations dropped into the visions. This is preaching, not prediction:"
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 13:9–10",
+          "body": "If anyone has an ear, let him hear. Here is a call for the endurance and faith of the saints."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 14:12",
+          "body": "Here is a call for the endurance of the saints, those who keep the commandments of God and their faith in Jesus."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 16:15",
+          "body": "Behold, I am coming like a thief! Blessed is the one who stays awake, keeping his garments on."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 18:4",
+          "body": "Come out of her, my people, lest you take part in her sins."
+        },
+        {
+          "type": "text",
+          "body": "The Comfort Playbook — twelve ways God comforts the weary. Revelation runs every play. That is a main reason prophecy exists as a genre. Not for prediction. For comfort."
+        },
+        {
+          "type": "text",
+          "body": "1. He shows his presence. He is near."
+        },
+        {
+          "type": "text",
+          "body": "2. He reminds them of his character."
+        },
+        {
+          "type": "text",
+          "body": "3. He reminds them of his goodwill toward his elect."
+        },
+        {
+          "type": "text",
+          "body": "4. He shows more forces on the side of good than the weary can see. Dothan: Elisha’s servant; “O LORD, open his eyes”; horses and chariots of fire; those with us are more."
+        },
+        {
+          "type": "scripture",
+          "ref": "2 Kings 6:16–17",
+          "body": "O LORD, open his eyes. Horses and chariots of fire. Those who are with us are more than those who are with them."
+        },
+        {
+          "type": "text",
+          "body": "5. He pulls back the cosmic curtain. The unseen realm."
+        },
+        {
+          "type": "text",
+          "body": "6. He sends angels, ministering spirits."
+        },
+        {
+          "type": "text",
+          "body": "7. He speaks promises, usually “fear not.”"
+        },
+        {
+          "type": "text",
+          "body": "8. He recounts past acts. Care in history. Sovereignty over history."
+        },
+        {
+          "type": "text",
+          "body": "9. He sets a limit on hardship. A clock. Dates, periods, or “a little while.”"
+        },
+        {
+          "type": "text",
+          "body": "10. He promises vindication. He will judge his enemies."
+        },
+        {
+          "type": "text",
+          "body": "11. He reminds the suffering they have brothers and sisters in the same situation."
+        },
+        {
+          "type": "text",
+          "body": "12. He shows the final outcome. Where the suffering leads."
+        },
+        {
+          "type": "heading",
+          "text": "5. We have flattened works out of our gospel theology. Law and gospel categories are childish and unbiblical."
+        },
+        {
+          "type": "text",
+          "body": "Revelation has an extensive, sophisticated sense of deeds, consequences, outcomes."
+        },
+        {
+          "type": "text",
+          "body": "Sevenfold: “I know your works.” He searches mind and heart and gives to each according to works. Every church is also told they will be blessed for the deed of overcoming."
+        },
+        {
+          "type": "text",
+          "body": "Flattened Reformed soteriology makes every imperative an act of law. We do not like to think about the role works play, the way God does."
+        },
+        {
+          "type": "text",
+          "body": "Clarity: these works are downstream of real conversion. Washed white in the blood of the Lamb (7:14). Conquer by the blood of the Lamb (12:11). Not works-based righteousness. A righteousness that expresses itself in works. We do not know how to talk like this."
+        },
+        {
+          "type": "heading",
+          "text": "6. We do not like the Jesus of Revelation as much as the Jesus of our selective Gospels."
+        },
+        {
+          "type": "text",
+          "body": "Church culture built around the nice Jesus. Revelation’s Christ is not nice. He is kind."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 1:12–17",
+          "body": "Eyes like flame, feet like burnished bronze, voice like many waters, sharp two-edged sword from his mouth, face like the sun. Glorious. None of it weak."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 2:16",
+          "body": "Therefore repent. If not, I will come to you soon and war against them with the sword of my mouth."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 2:22–23",
+          "body": "Jezebel onto a sickbed. Strike her children dead. All the churches will know I search mind and heart."
+        },
+        {
+          "type": "text",
+          "body": "2:27: rod of iron."
+        },
+        {
+          "type": "text",
+          "body": "14: treading the winepress of the wrath of God."
+        },
+        {
+          "type": "text",
+          "body": "19: rider on the white horse, robe dipped in blood, striking down the nations."
+        },
+        {
+          "type": "text",
+          "body": "Some of the last information the church received about the nature of Jesus. If Jesus is only gentle and lowly, we do not know what to do with this book."
+        },
+        {
+          "type": "heading",
+          "text": "Part Two: Three Advantages"
+        },
+        {
+          "type": "heading",
+          "text": "1. We have watched the state become a religion."
+        },
+        {
+          "type": "text",
+          "body": "Political power using Christless religious imagery to consolidate power."
+        },
+        {
+          "type": "text",
+          "body": "Main enemy of the book, if you are not thinking of Satan and demons: statism."
+        },
+        {
+          "type": "text",
+          "body": "Statism: the conviction that the state is the highest authority in human life. Political power as ultimate power. The state claiming what belongs to God: final allegiance, deepest trust, worship. Not merely big government. Government as god."
+        },
+        {
+          "type": "text",
+          "body": "Cancel culture as a category: you cannot buy bread if you will not burn incense to the state’s chosen deity."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 13:16–17",
+          "body": "Marked on right hand or forehead, so that no one can buy or sell unless he has the mark, the name of the beast or the number of its name."
+        },
+        {
+          "type": "text",
+          "body": "A thirty-year-old saint now has more capacity to understand this than a thirty-year-old in the mid-eighties."
+        },
+        {
+          "type": "text",
+          "body": "You know about losing a job if you will not pour out wine to the pronoun gods. Dominant theme in the book."
+        },
+        {
+          "type": "heading",
+          "text": "2. We are familiar with deconstruction and apostasy."
+        },
+        {
+          "type": "text",
+          "body": "People who used to call themselves Christians and no longer do."
+        },
+        {
+          "type": "text",
+          "body": "Age of compromise. Encouragement for those ready to die. Warning to those tempted to switch teams. Most of us know someone who switched."
+        },
+        {
+          "type": "text",
+          "body": "Practical rule: assume everything in the book is for the benefit of the seven churches in chapters 2–3. The problems named there are addressed through the rest of the book."
+        },
+        {
+          "type": "text",
+          "body": "Compromise is not the only church problem. It is massive. Pergamum seduced. Thyatira tolerates Jezebel. Laodicea assimilated so successfully it feels no pressure."
+        },
+        {
+          "type": "text",
+          "body": "Pliny the Younger to Trajan, about 20–40 years after Revelation, near the seven churches. Appointed provincial governor writing the emperor for legal guidance."
+        },
+        {
+          "type": "text",
+          "body": "He does not quite know how to interrogate and torture Christians. Direct question: are you a Christian. A few chances, with threats, to deny."
+        },
+        {
+          "type": "text",
+          "body": "If they said they were not Christians, three things:"
+        },
+        {
+          "type": "text",
+          "body": "1. Offer wine and incense to the emperor’s image."
+        },
+        {
+          "type": "text",
+          "body": "2. Curse Christ."
+        },
+        {
+          "type": "text",
+          "body": "3. Invoke the gods Pliny dictated, some of the Roman pantheon."
+        },
+        {
+          "type": "text",
+          "body": "Names came from informants. Many informants seem to have been former Christians. People who had been Christians and were no longer."
+        },
+        {
+          "type": "text",
+          "body": "If yes: chance to denounce Christ and re-enter normal society, or die."
+        },
+        {
+          "type": "text",
+          "body": "Christianity as contagion. Temples almost deserted. Sacrificial meat almost no buyers. Then temples filling again, meat selling again. Emperor cult and Roman commerce restored."
+        },
+        {
+          "type": "scripture",
+          "ref": "1 John 2:19",
+          "body": "They went out from us, but they were not of us."
+        },
+        {
+          "type": "text",
+          "body": "Meeting in secret. Suspicion inside the churches because of informant lists."
+        },
+        {
+          "type": "text",
+          "body": "We are not persecuted exactly. Not yet. We are living in an age of defection. People defect and often throw a grenade back into the church on the way out."
+        },
+        {
+          "type": "heading",
+          "text": "3. We are becoming aware of the cost of cowardice."
+        },
+        {
+          "type": "text",
+          "body": "Core theme."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 21:8",
+          "body": "The cowardly, the faithless, the detestable, murderers, the sexually immoral, sorcerers, idolaters, and all liars. Their portion: the lake that burns with fire and sulfur."
+        },
+        {
+          "type": "text",
+          "body": "Why is cowardice first, ahead of murderer, sorcerer, idolater? Most of us would not put it on the list at all."
+        },
+        {
+          "type": "text",
+          "body": "In intense persecutorial pressure, cowardice is the gateway to the rest."
+        },
+        {
+          "type": "text",
+          "body": "Pair with “conquer.” Verse 8 holds cowardice as the headwaters of the other sins."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 21:7–8",
+          "body": "The one who conquers will have this heritage, and I will be his God and he will be my son. But as for the cowardly…"
+        },
+        {
+          "type": "text",
+          "body": "“Faithless”: failure of nerve in that environment. Faithfulness is first the character of Jesus:"
+        },
+        {
+          "type": "text",
+          "body": "1:5 faithful witness"
+        },
+        {
+          "type": "text",
+          "body": "3:14 faithful and true witness"
+        },
+        {
+          "type": "text",
+          "body": "19:11 Faithful and True"
+        },
+        {
+          "type": "text",
+          "body": "2:13 Antipas the faithful witness"
+        },
+        {
+          "type": "text",
+          "body": "2:10 Smyrna: faithful unto death"
+        },
+        {
+          "type": "text",
+          "body": "“Detestable”: polluted with idols. Compromised with the world. Laodicea lukewarm. Jesus would spit them out. Easiest path: add the idols of the age alongside Jesus. Love Caesar and Jesus."
+        },
+        {
+          "type": "text",
+          "body": "Cowardice as doorway. Not faithless overnight. Afraid. Not polluted overnight. Succumb because afraid."
+        },
+        {
+          "type": "text",
+          "body": "“Murderers”: 17:6 Babylon drunk on the blood of the saints. Blood largely from so-called Christian informants: denounce Christ as God alone, and disclose who else was at that secret baptism. Not random murderers. Blood on their hands because of cowardice."
+        },
+        {
+          "type": "text",
+          "body": "“Sexually immoral”: not generic only. Tied to chapter 2. Pergamum and Thyatira in cultic sexual practices of Roman worship. Rome as a church-and-state complex held together by a brothel."
+        },
+        {
+          "type": "text",
+          "body": "“Sorcery”: deceived by the beast’s charms, spells, signs, wonders. Rome’s false religion: just enough spirituality to make Rome’s metaphysical claims feel real."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 18:23",
+          "body": "…all nations were deceived by your sorcery."
+        },
+        {
+          "type": "text",
+          "body": "“Idolaters”: main idea of the book. Cowardice leads here."
+        },
+        {
+          "type": "text",
+          "body": "“All liars”: the lie you say to get out of trouble. “Caesar is Lord.” “I am not a Christian.” “Christ is not King of all kings.”"
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 14:5",
+          "body": "The 144,000; in their mouth was found no lie."
+        },
+        {
+          "type": "heading",
+          "text": "The Close"
+        },
+        {
+          "type": "text",
+          "body": "The world system. Rome one expression of it."
+        },
+        {
+          "type": "text",
+          "body": "Image: a bold Marilyn Monroe, seductress, spilling out of her dress, leaning over the first-century Christian: “Come my way. It’s so much better.” Sword in her hand. Painted lips: we can do this the easy way or the hard way. That is the original audience’s environment."
+        },
+        {
+          "type": "text",
+          "body": "Final image of Revelation, the one that brings tears: against the seductress with the sword, 22:17."
+        },
+        {
+          "type": "scripture",
+          "ref": "Revelation 22:17",
+          "body": "The Spirit and the Bride say, “Come.” And let the one who hears say, “Come.” And let the one who is thirsty come; let the one who desires take the water of life without price."
+        },
+        {
+          "type": "text",
+          "body": "The whore banished. Now the Bride. Purchased by Christ. Cleansed by his Word. Saying, with the Spirit:"
+        },
+        {
+          "type": "text",
+          "body": "Endure."
+        },
+        {
+          "type": "text",
+          "body": "Conquer."
+        },
+        {
+          "type": "text",
+          "body": "Come."
         }
       ]
     },
@@ -177,69 +600,43 @@
         "role": "Lead"
       },
       {
-        "name": "Jared",
-        "role": "Drums"
-      },
-      {
-        "name": "Steven",
-        "role": "Bass"
-      },
-      {
-        "name": "Kyle",
-        "role": "Electric"
-      },
-      {
-        "name": "Shannon",
+        "name": "Sarah Hoit",
         "role": "Keys, Vocals"
+      },
+      {
+        "name": "Steven Luffman",
+        "role": "Bass"
       }
     ],
     "songs": [
       {
-        "title": "There Is a Fountain",
+        "title": "Behold Our God",
         "section": "opening"
       },
       {
-        "title": "How Vast the Love",
+        "title": "How Firm a Foundation",
         "section": "opening"
       },
       {
-        "title": "It Was Finished Upon That Cross",
+        "title": "Crown Him With Many Crowns",
         "section": "opening2"
       },
       {
-        "title": "Yours Alone vs. Your Will Be Done",
+        "title": "Ancient of Days",
         "section": "opening2"
       },
       {
-        "title": "Jesus Paid It All",
+        "title": "Revelation Song vs. Jesus Our Judge and Our Saviour",
         "section": "communion"
       },
       {
-        "title": "Hold Him High vs. TBD",
+        "title": "All Glory be to Christ vs. TBD",
         "section": "final"
       }
     ],
     "playlist_url": ""
   },
   "announcements": [
-    {
-      "title": "Church Potluck",
-      "body": "Theme: Midwest Dinner. What to bring by last name — A–I: a main dish; J–R: a side dish or salad; S–Z: a dessert or drink. Newcomers don't need to bring anything, and bring a cooler if you need to keep something cold.",
-      "when": "Sunday, August 23 · after the service, in the gym",
-      "link": ""
-    },
-    {
-      "title": "Men's Ministry",
-      "body": "",
-      "when": "Wednesday, August 26 · 7:00 PM",
-      "link": ""
-    },
-    {
-      "title": "Corporate Prayer Meeting",
-      "body": "Held at the church.",
-      "when": "September 2",
-      "link": ""
-    },
     {
       "title": "New to Providence? BBQ",
       "body": "If you've been attending Providence for six months or less, come for an afternoon of food and fellowship at the Gimottys' home (near 119th & Pflumm).",
