@@ -131,6 +131,7 @@ import Base from '../../layouts/Base.astro';
         });
         const j = await r.json().catch(() => ({ error: "Bad response" }));
         if (!r.ok || !j.submitted) throw new Error(j.error || ("HTTP " + r.status));
+        if (typeof fbq === "function") fbq("track", "Lead", { content_name: "Seat — Say hello" });
         document.getElementById("form-wrap").classList.add("hidden");
         document.getElementById("done").classList.remove("hidden");
         window.scrollTo(0, 0);

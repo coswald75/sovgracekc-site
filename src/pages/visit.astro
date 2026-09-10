@@ -325,6 +325,7 @@ const testimonials = [
           var j = await r.json().catch(function () { return { error: 'Bad response' }; });
           if (!r.ok || !j.ok) throw new Error(j.error || ('HTTP ' + r.status));
           fireGtag('Visit');
+          if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Visit — Coming this Sunday' });
           document.getElementById('visit-form-wrap').classList.add('hidden');
           document.getElementById('visit-done').classList.remove('hidden');
         } catch (err) {
