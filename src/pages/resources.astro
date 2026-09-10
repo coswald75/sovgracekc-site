@@ -39,6 +39,13 @@ const resources = [
     desc: 'Outfitting the congregation for our upcoming journey through the book of Isaiah.',
   },
   {
+    kind: 'Bible seminar · self-paced',
+    title: 'Knowing the Bible’s Story',
+    href: 'https://sermonsteward.com/biblestory/',
+    external: true,
+    desc: 'A nine-lesson seminar tracing Scripture’s single storyline from creation to new creation — reading the key passages of each era and seeing how each one prepared for Jesus. Interactive; your answers save as you go.',
+  },
+  {
     kind: 'Lecture series',
     title: 'Those Hideous Lectures',
     href: '/those-hideous-lectures/',
@@ -69,7 +76,7 @@ const resources = [
     <div class="wrap">
       <div class="res-grid">
         {resources.map((r) => (
-          <a class="res-card" href={r.href}>
+          <a class="res-card" href={r.href} target={r.external ? '_blank' : undefined} rel={r.external ? 'noopener' : undefined}>
             <p class="res-kind">{r.kind}</p>
             <h2 class="res-title">{r.title}</h2>
             <p class="res-desc">{r.desc}</p>
