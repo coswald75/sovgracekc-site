@@ -1,5 +1,5 @@
 {
-  "week_of": "September 6, 2026",
+  "week_of": "September 13, 2026",
   "service_order": {
     "flow": [
       {
@@ -18,7 +18,7 @@
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Congregational readings from Psalm 18"
+        "detail": "Titus 3:3–7 (ESV)"
       },
       {
         "type": "songs",
@@ -49,589 +49,394 @@
       }
     ],
     "sermon": {
-      "title": "Revelation: An Overview",
-      "text": "The book of Revelation (office recording; more Bible study than sermon)",
-      "thesis": "We are in both the best of times and the worst of times for reading this book. Six disadvantages. Three advantages. The aim is endurance, not decoding.",
+      "title": "The Father’s Joy",
+      "text": "Luke 15:11–32",
+      "thesis": "God joyfully receives repentant sinners, and He calls self-righteous sinners to join His celebration.",
       "outline": [
         {
           "type": "heading",
-          "text": "Setup"
-        },
-        {
-          "type": "text",
-          "body": "Two objectives: understand the book, and find a way to teach it."
-        },
-        {
-          "type": "text",
-          "body": "Nobody visits Revelation without presuppositions. We are in both the best of times and the worst of times for reading this book."
+          "text": "Open"
         },
         {
           "type": "quote",
-          "body": "It was the best of times, it was the worst of times.",
-          "cite": "Charles Dickens, A Tale of Two Cities"
+          "body": "What comes into our minds when we think about God is the most important thing about us.",
+          "cite": "A. W. Tozer, The Knowledge of the Holy"
         },
         {
           "type": "text",
-          "body": "The frame for this study: six disadvantages and three advantages that we at Providence Community Church carry into the book."
+          "body": "Aim: the nature of God the Father — what brings Him joy, and what grieves Him."
         },
         {
           "type": "text",
-          "body": "Ask: extra commitment to attention. Stay engaged."
+          "body": "Preview: God gives grace to the humble and opposes the proud; He rejoices when sinners repent; He lovingly confronts and entreats the self-righteous who stand outside His joy."
         },
         {
           "type": "text",
-          "body": "Close of setup: more hopeful than expected. Separate noise from signal. Glean the intended effect."
+          "body": "Prayer ask: repent of remaining rebellion and pride. Whether you are the younger brother or the older brother, find the way home to the Father’s joy."
+        },
+        {
+          "type": "text",
+          "body": "Read Luke 15:11–32; pray."
+        },
+        {
+          "type": "scripture",
+          "ref": "Luke 15:11–32 (ESV)",
+          "body": "And he said, “There was a man who had two sons. And the younger of them said to his father, ‘Father, give me the share of property that is coming to me.’ And he divided his property between them. Not many days later, the younger son gathered all he had and took a journey into a far country, and there he squandered his property in reckless living. And when he had spent everything, a severe famine arose in that country, and he began to be in need. So he went and hired himself out to one of the citizens of that country, who sent him into his fields to feed pigs. And he was longing to be fed with the pods that the pigs ate, and no one gave him anything. “But when he came to himself, he said, ‘How many of my father's hired servants have more than enough bread, but I perish here with hunger! I will arise and go to my father, and I will say to him, “Father, I have sinned against heaven and before you. I am no longer worthy to be called your son. Treat me as one of your hired servants.”’ And he arose and came to his father. But while he was still a long way off, his father saw him and felt compassion, and ran and embraced him and kissed him. And the son said to him, ‘Father, I have sinned against heaven and before you. I am no longer worthy to be called your son.’ But the father said to his servants, ‘Bring quickly the best robe, and put it on him, and put a ring on his hand, and shoes on his feet. And bring the fattened calf and kill it, and let us eat and celebrate. For this my son was dead, and is alive again; he was lost, and is found.’ And they began to celebrate. “Now his older son was in the field, and as he came and drew near to the house, he heard music and dancing. And he called one of the servants and asked what these things meant. And he said to him, ‘Your brother has come, and your father has killed the fattened calf, because he has received him back safe and sound.’ But he was angry and refused to go in. His father came out and entreated him, but he answered his father, ‘Look, these many years I have served you, and I never disobeyed your command, yet you never gave me a young goat, that I might celebrate with my friends. But when this son of yours came, who has devoured your property with prostitutes, you killed the fattened calf for him!’ And he said to him, ‘Son, you are always with me, and all that is mine is yours. It was fitting to celebrate and be glad, for this your brother was dead, and is alive; he was lost, and is found.’”"
         },
         {
           "type": "heading",
-          "text": "Part One: Six Disadvantages"
+          "text": "Context"
+        },
+        {
+          "type": "text",
+          "body": "Luke: Jesus came to seek and save the lost — Jews and Gentiles; tax collectors, the poor, outcasts, sinners."
+        },
+        {
+          "type": "text",
+          "body": "Luke 15 opens with Pharisees grumbling that Jesus receives sinners and eats with them."
+        },
+        {
+          "type": "text",
+          "body": "The parable confronts self-righteous hearts by showing heaven’s joy over one sinner who repents."
+        },
+        {
+          "type": "text",
+          "body": "It is preached by One walking toward Jerusalem to give His life for the sinners He describes."
         },
         {
           "type": "heading",
-          "text": "1. Written to the persecuted. We are largely not."
+          "text": "Structure — Three Acts"
         },
         {
           "type": "text",
-          "body": "You cannot read any biblical book well without the original audience."
+          "body": "1. Deserting the Father (vv. 11–16)"
         },
         {
           "type": "text",
-          "body": "We have to imagine persecution we have not yet lived. Intentional. Historical. Mental adjustment, constantly."
+          "body": "2. Returning to the Father (vv. 17–24)"
         },
         {
           "type": "text",
-          "body": "Key word: ὑπομονή (hupomonē), endurance. Seven times:"
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 1:9; 2:2, 3, 19; 3:10; 13:10; 14:12",
-          "body": "Endurance — ὑπομονή — seven times in the book. You do not tell comfortable people, seven times, to endure."
-        },
-        {
-          "type": "text",
-          "body": "If this became a series: martyrdom stories, to get the atmosphere right."
+          "body": "3. Refusing the Father (vv. 25–32)"
         },
         {
           "type": "heading",
-          "text": "2. Expansive symbolism. We are symbolically thin."
-        },
-        {
-          "type": "quote",
-          "body": "Western Christians lost the instinct for biblical literature. Liberal criticism and conservative literalism are both fallout from that breakdown.",
-          "cite": "Hans Frei, The Eclipse of Biblical Narrative (1974)"
-        },
-        {
-          "type": "quote",
-          "body": "From typographic culture — sustained, layered, figural reading — to image and entertainment culture.",
-          "cite": "Neil Postman, Amusing Ourselves to Death"
+          "text": "Act 1 — Deserting the Father (vv. 11–16)"
         },
         {
           "type": "text",
-          "body": "Symbols are not codes. A code is one-to-one. Revelation’s symbols are compressions of large meaning."
+          "body": "The younger son’s offense: he forgets the riches and benefits of being the Father’s son. He wants reckless living far from the Father’s nearness."
         },
         {
           "type": "text",
-          "body": "“Lamb” in Revelation 5 compresses: Abraham and the ram; Passover blood on the doorpost; morning and evening sacrifice for centuries; the silent lamb of Isaiah 53."
+          "body": "The life-sermon of the younger son: “Give me what you owe me — so I can be happy without you.”"
+        },
+        {
+          "type": "text",
+          "body": "The tragedy is not only leaving home, but leaving a good father."
+        },
+        {
+          "type": "text",
+          "body": "Application: mud pies (Lewis); functional prodigal living today — media, fantasy, relationships."
+        },
+        {
+          "type": "text",
+          "body": "Key claim: Sin is not merely breaking God’s rules. Sin is preferring God’s gifts to God Himself."
+        },
+        {
+          "type": "text",
+          "body": "Presumptuous sin “crosses out” Psalm 16 — fullness of joy in His presence."
+        },
+        {
+          "type": "scripture",
+          "ref": "Psalm 16:11 (ESV)",
+          "body": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore."
+        },
+        {
+          "type": "text",
+          "body": "Prodigal joys are false joys; only nearness to the Father satisfies."
         },
         {
           "type": "heading",
-          "text": "3. Depends on a deep Old Testament. That is a modern weakness."
-        },
-        {
-          "type": "text",
-          "body": "We are not symbolically dead. Logos, flags, emojis all day. Our library is advertising and movies. For about 1,500 years the West’s library was Old Testament images."
-        },
-        {
-          "type": "text",
-          "body": "Lego illustration: box-build kits (helicopter rotor, police hat) versus the big bucket. Two kinds of kids. Two kinds of parents."
-        },
-        {
-          "type": "text",
-          "body": "Revelation is a bucket of Old Testament Legos. Specialty parts recall old concepts and do something new."
+          "text": "Act 2 — Returning to the Father (vv. 17–24)"
         },
         {
           "type": "scripture",
-          "ref": "Revelation 5:6",
-          "body": "A Lamb standing as though slain, seven horns, seven eyes."
+          "ref": "Luke 15:17 (ESV)",
+          "body": "“But when he came to himself, he said, ‘How many of my father's hired servants have more than enough bread, but I perish here with hunger!’"
         },
         {
           "type": "text",
-          "body": "Lamb: Abraham, Passover, Isaiah 53."
+          "body": "“When he came to himself” (v. 17): he wakes to poverty, hunger, and need. Grace brings you to your senses."
         },
         {
           "type": "text",
-          "body": "Horns: Daniel’s kit. Horn = royal power. Seven = complete, unrivaled."
+          "body": "He remembers the Father’s lavish care even for hired servants."
         },
         {
           "type": "text",
-          "body": "Eyes: Zechariah 4:10. The seven eyes of the LORD range through the whole earth."
+          "body": "The Father’s love pulled apart:"
+        },
+        {
+          "type": "text",
+          "body": "1. He sees him while still a long way off."
+        },
+        {
+          "type": "text",
+          "body": "2. He runs."
+        },
+        {
+          "type": "text",
+          "body": "3. He embraces and kisses."
+        },
+        {
+          "type": "text",
+          "body": "4. The best robe, the family ring, shoes, the fattened calf, celebration."
+        },
+        {
+          "type": "text",
+          "body": "5. The exclamation: dead and alive; lost and found."
+        },
+        {
+          "type": "text",
+          "body": "This ties to Luke 15:7 and 15:10 — joy in heaven / before the angels over one sinner who repents."
         },
         {
           "type": "scripture",
-          "ref": "Zechariah 4:10",
-          "body": "The seven eyes of the LORD range through the whole earth."
+          "ref": "Luke 15:7 (ESV)",
+          "body": "Just so, I tell you, there will be more joy in heaven over one sinner who repents than over ninety-nine righteous persons who need no repentance."
+        },
+        {
+          "type": "scripture",
+          "ref": "Luke 15:10 (ESV)",
+          "body": "Just so, I tell you, there is joy before the angels of God over one sinner who repents."
         },
         {
           "type": "text",
-          "body": "Complex only because we lack OT familiarity and turn symbols into codes."
+          "body": "The Father’s reaction: relief, joy, love — not arms crossed on the porch."
         },
         {
           "type": "text",
-          "body": "Everybody reads Revelation figuratively. Wrong readings reach into the newspaper. Locusts in chapter 9: Old Testament bucket, or attack helicopters. Both symbolic. One is Scripture. One is the news."
+          "body": "Conversion application: God the Father responded this way to you."
+        },
+        {
+          "type": "text",
+          "body": "How can a holy God receive sinners? Not by pretending sin didn’t happen — Jesus is going to Jerusalem to bear the cost."
+        },
+        {
+          "type": "text",
+          "body": "Linger under the Father’s affection; you were, are, and always will be an object of mercy."
         },
         {
           "type": "heading",
-          "text": "4. We have misunderstood what prophecy mostly is."
+          "text": "Act 3 — Refusing the Father (vv. 25–32)"
         },
         {
           "type": "text",
-          "body": "Older generation: prophecy is more forthtelling than foretelling. Less predicting, more pronouncing."
+          "body": "The older son is angry; he refuses to go in — now outside the house by refusal, as the younger was by running."
         },
         {
           "type": "text",
-          "body": "In the OT prophets, prediction is God throwing punches and giving promises: condemnation and comfort."
+          "body": "The Father comes out and entreats him tenderly."
         },
         {
           "type": "text",
-          "body": "Revelation calls itself prophecy (prophēteia) five times."
+          "body": "The older son’s complaint: I have served, never disobeyed, never got a party."
         },
         {
           "type": "text",
-          "body": "Largely forthtelling. Not saying there is no prediction. Most people enter as if it were mostly a predictive document. It is not."
+          "body": "Contrast:"
         },
         {
           "type": "text",
-          "body": "A full seventh of the book (chs. 2–3) is direct address to living congregations: command, rebuke, repent (2:5, 16, 21–22; 3:3, 19)."
+          "body": "The younger wants the Father’s things without the Father."
         },
         {
           "type": "text",
-          "body": "Blessing formula: not “Blessed is the one who decodes.” Blessed is the one who reads aloud, hears, and keeps what is written. Same at the end: keep the words."
+          "body": "The older serves the Father primarily to get the Father’s things."
+        },
+        {
+          "type": "text",
+          "body": "Neither, initially, simply delights in the Father Himself."
+        },
+        {
+          "type": "text",
+          "body": "Older-brother attitude: grumbling, anger, judgmentalism, bitterness."
+        },
+        {
+          "type": "text",
+          "body": "Sunday-morning older-brother sketch: the greeter’s shirt, the kids check-in line, the raised-hands sincerity test, “good sermon for my spouse” — body in the house, heart outside with arms crossed."
+        },
+        {
+          "type": "text",
+          "body": "Contrast: the repentant sinner’s Sunday — grateful for the gathering, the greeting, kids ministry, the song, the Word."
+        },
+        {
+          "type": "text",
+          "body": "Warning: confess self-righteousness; you are no better than a Pharisee or a tax collector."
+        },
+        {
+          "type": "text",
+          "body": "The end of the parable accents verses 31–32: “Son, you are always with me… It was fitting to celebrate… dead and is alive… lost and is found.”"
         },
         {
           "type": "scripture",
-          "ref": "Revelation 1:3",
-          "body": "Blessed is the one who reads aloud, hears, and keeps what is written."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 22:7",
-          "body": "Blessed is the one who keeps the words of the prophecy of this book."
+          "ref": "Luke 15:31–32 (ESV)",
+          "body": "And he said to him, “Son, you are always with me, and all that is mine is yours. It was fitting to celebrate and be glad, for this your brother was dead, and is alive; he was lost, and is found.”"
         },
         {
           "type": "text",
-          "body": "Exhortations dropped into the visions. This is preaching, not prediction:"
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 13:9–10",
-          "body": "If anyone has an ear, let him hear. Here is a call for the endurance and faith of the saints."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 14:12",
-          "body": "Here is a call for the endurance of the saints, those who keep the commandments of God and their faith in Jesus."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 16:15",
-          "body": "Behold, I am coming like a thief! Blessed is the one who stays awake, keeping his garments on."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 18:4",
-          "body": "Come out of her, my people, lest you take part in her sins."
-        },
-        {
-          "type": "text",
-          "body": "The Comfort Playbook — twelve ways God comforts the weary. Revelation runs every play. That is a main reason prophecy exists as a genre. Not for prediction. For comfort."
-        },
-        {
-          "type": "text",
-          "body": "1. He shows his presence. He is near."
-        },
-        {
-          "type": "text",
-          "body": "2. He reminds them of his character."
-        },
-        {
-          "type": "text",
-          "body": "3. He reminds them of his goodwill toward his elect."
-        },
-        {
-          "type": "text",
-          "body": "4. He shows more forces on the side of good than the weary can see. Dothan: Elisha’s servant; “O LORD, open his eyes”; horses and chariots of fire; those with us are more."
-        },
-        {
-          "type": "scripture",
-          "ref": "2 Kings 6:16–17",
-          "body": "O LORD, open his eyes. Horses and chariots of fire. Those who are with us are more than those who are with them."
-        },
-        {
-          "type": "text",
-          "body": "5. He pulls back the cosmic curtain. The unseen realm."
-        },
-        {
-          "type": "text",
-          "body": "6. He sends angels, ministering spirits."
-        },
-        {
-          "type": "text",
-          "body": "7. He speaks promises, usually “fear not.”"
-        },
-        {
-          "type": "text",
-          "body": "8. He recounts past acts. Care in history. Sovereignty over history."
-        },
-        {
-          "type": "text",
-          "body": "9. He sets a limit on hardship. A clock. Dates, periods, or “a little while.”"
-        },
-        {
-          "type": "text",
-          "body": "10. He promises vindication. He will judge his enemies."
-        },
-        {
-          "type": "text",
-          "body": "11. He reminds the suffering they have brothers and sisters in the same situation."
-        },
-        {
-          "type": "text",
-          "body": "12. He shows the final outcome. Where the suffering leads."
+          "body": "The Father does not tear down either son; He is entreating to the self-righteous, celebratory to the repentant rebel."
         },
         {
           "type": "heading",
-          "text": "5. We have flattened works out of our gospel theology. Law and gospel categories are childish and unbiblical."
-        },
-        {
-          "type": "text",
-          "body": "Revelation has an extensive, sophisticated sense of deeds, consequences, outcomes."
-        },
-        {
-          "type": "text",
-          "body": "Sevenfold: “I know your works.” He searches mind and heart and gives to each according to works. Every church is also told they will be blessed for the deed of overcoming."
-        },
-        {
-          "type": "text",
-          "body": "Flattened Reformed soteriology makes every imperative an act of law. We do not like to think about the role works play, the way God does."
-        },
-        {
-          "type": "text",
-          "body": "Clarity: these works are downstream of real conversion. Washed white in the blood of the Lamb (7:14). Conquer by the blood of the Lamb (12:11). Not works-based righteousness. A righteousness that expresses itself in works. We do not know how to talk like this."
+          "text": "Application"
         },
         {
           "type": "heading",
-          "text": "6. We do not like the Jesus of Revelation as much as the Jesus of our selective Gospels."
+          "text": "1. Carrying Resentment"
         },
         {
           "type": "text",
-          "body": "Church culture built around the nice Jesus. Revelation’s Christ is not nice. He is kind."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 1:12–17",
-          "body": "Eyes like flame, feet like burnished bronze, voice like many waters, sharp two-edged sword from his mouth, face like the sun. Glorious. None of it weak."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 2:16",
-          "body": "Therefore repent. If not, I will come to you soon and war against them with the sword of my mouth."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 2:22–23",
-          "body": "Jezebel onto a sickbed. Strike her children dead. All the churches will know I search mind and heart."
+          "body": "If you are carrying resentment toward a relative, a friend, or a spouse:"
         },
         {
           "type": "text",
-          "body": "2:27: rod of iron."
+          "body": "What are you more aware of — their deficiencies, or God’s grace toward you?"
         },
         {
           "type": "text",
-          "body": "14: treading the winepress of the wrath of God."
+          "body": "Have you forgotten a Matthew 18–sized canceled debt?"
         },
         {
           "type": "text",
-          "body": "19: rider on the white horse, robe dipped in blood, striking down the nations."
+          "body": "What is your life preaching about God?"
         },
         {
           "type": "text",
-          "body": "Some of the last information the church received about the nature of Jesus. If Jesus is only gentle and lowly, we do not know what to do with this book."
+          "body": "Look the Father in the eyes; forsake bitterness; you may need more forgiveness than the one you are spiteful toward."
         },
         {
           "type": "heading",
-          "text": "Part Two: Three Advantages"
+          "text": "2. Older-Brother Attitude"
+        },
+        {
+          "type": "text",
+          "body": "If you are smug toward weaker saints:"
+        },
+        {
+          "type": "text",
+          "body": "Do not stop good obedience; check the heart."
+        },
+        {
+          "type": "text",
+          "body": "Is growth evidence of grace, or of being better than others?"
+        },
+        {
+          "type": "text",
+          "body": "Identity: growth and obedience, or God’s mercy — past and present — that makes you merciful?"
+        },
+        {
+          "type": "text",
+          "body": "The older brother saw sin and got angry; the Father saw sin and moved with compassion."
+        },
+        {
+          "type": "text",
+          "body": "Repent; call to mind the Father’s tenderness; reflect Him. Jesus came to seek and save the lost — including you."
         },
         {
           "type": "heading",
-          "text": "1. We have watched the state become a religion."
+          "text": "Close"
         },
         {
           "type": "text",
-          "body": "Political power using Christless religious imagery to consolidate power."
+          "body": "Recap: the tragedy of forgetting the Father’s goodness; the danger of life far from Him; the ugliness of physical nearness with a far heart."
         },
         {
           "type": "text",
-          "body": "Main enemy of the book, if you are not thinking of Satan and demons: statism."
+          "body": "Above all the Father: He rejoices when the lost are found; He receives repentant sinners; He goes out to entreat the self-righteous."
         },
         {
           "type": "text",
-          "body": "Statism: the conviction that the state is the highest authority in human life. Political power as ultimate power. The state claiming what belongs to God: final allegiance, deepest trust, worship. Not merely big government. Government as god."
+          "body": "Return to Tozer: what comes into your mind when you think about God — arms crossed, or the Father who sees, runs, embraces, restores, celebrates?"
         },
         {
           "type": "text",
-          "body": "Cancel culture as a category: you cannot buy bread if you will not burn incense to the state’s chosen deity."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 13:16–17",
-          "body": "Marked on right hand or forehead, so that no one can buy or sell unless he has the mark, the name of the beast or the number of its name."
+          "body": "He is grieved by rebellion and opposes pride; for the humble who come in faith, His heart is not reluctant."
         },
         {
           "type": "text",
-          "body": "A thirty-year-old saint now has more capacity to understand this than a thirty-year-old in the mid-eighties."
+          "body": "Younger or older: come humbly; you stand by mercy."
         },
         {
           "type": "text",
-          "body": "You know about losing a job if you will not pour out wine to the pronoun gods. Dominant theme in the book."
+          "body": "Walk out humbler, kinder, quicker to forgive, more merciful — not lowering holiness, but remembering what God is like toward you."
+        },
+        {
+          "type": "text",
+          "body": "“You were, are, and always will be an object of the Father’s mercy.” Pray."
         },
         {
           "type": "heading",
-          "text": "2. We are familiar with deconstruction and apostasy."
+          "text": "Communion"
         },
         {
           "type": "text",
-          "body": "People who used to call themselves Christians and no longer do."
+          "body": "This parable is preached as Jesus walked toward Jerusalem to die."
         },
         {
           "type": "text",
-          "body": "Age of compromise. Encouragement for those ready to die. Warning to those tempted to switch teams. Most of us know someone who switched."
+          "body": "He takes the place of the rebel and the self-righteous; God is just and the justifier of those who have faith in Christ."
         },
         {
           "type": "text",
-          "body": "Practical rule: assume everything in the book is for the benefit of the seven churches in chapters 2–3. The problems named there are addressed through the rest of the book."
+          "body": "The narrative of the Father’s heart; the cross puts that mercy in history."
         },
         {
           "type": "text",
-          "body": "Compromise is not the only church problem. It is massive. Pergamum seduced. Thyatira tolerates Jezebel. Laodicea assimilated so successfully it feels no pressure."
-        },
-        {
-          "type": "text",
-          "body": "Pliny the Younger to Trajan, about 20–40 years after Revelation, near the seven churches. Appointed provincial governor writing the emperor for legal guidance."
-        },
-        {
-          "type": "text",
-          "body": "He does not quite know how to interrogate and torture Christians. Direct question: are you a Christian. A few chances, with threats, to deny."
-        },
-        {
-          "type": "text",
-          "body": "If they said they were not Christians, three things:"
-        },
-        {
-          "type": "text",
-          "body": "1. Offer wine and incense to the emperor’s image."
-        },
-        {
-          "type": "text",
-          "body": "2. Curse Christ."
-        },
-        {
-          "type": "text",
-          "body": "3. Invoke the gods Pliny dictated, some of the Roman pantheon."
-        },
-        {
-          "type": "text",
-          "body": "Names came from informants. Many informants seem to have been former Christians. People who had been Christians and were no longer."
-        },
-        {
-          "type": "text",
-          "body": "If yes: chance to denounce Christ and re-enter normal society, or die."
-        },
-        {
-          "type": "text",
-          "body": "Christianity as contagion. Temples almost deserted. Sacrificial meat almost no buyers. Then temples filling again, meat selling again. Emperor cult and Roman commerce restored."
+          "body": "Take the elements with humility, kindness, and gratitude — objects of mercy."
         },
         {
           "type": "scripture",
-          "ref": "1 John 2:19",
-          "body": "They went out from us, but they were not of us."
-        },
-        {
-          "type": "text",
-          "body": "Meeting in secret. Suspicion inside the churches because of informant lists."
-        },
-        {
-          "type": "text",
-          "body": "We are not persecuted exactly. Not yet. We are living in an age of defection. People defect and often throw a grenade back into the church on the way out."
-        },
-        {
-          "type": "heading",
-          "text": "3. We are becoming aware of the cost of cowardice."
-        },
-        {
-          "type": "text",
-          "body": "Core theme."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 21:8",
-          "body": "The cowardly, the faithless, the detestable, murderers, the sexually immoral, sorcerers, idolaters, and all liars. Their portion: the lake that burns with fire and sulfur."
-        },
-        {
-          "type": "text",
-          "body": "Why is cowardice first, ahead of murderer, sorcerer, idolater? Most of us would not put it on the list at all."
-        },
-        {
-          "type": "text",
-          "body": "In intense persecutorial pressure, cowardice is the gateway to the rest."
-        },
-        {
-          "type": "text",
-          "body": "Pair with “conquer.” Verse 8 holds cowardice as the headwaters of the other sins."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 21:7–8",
-          "body": "The one who conquers will have this heritage, and I will be his God and he will be my son. But as for the cowardly…"
-        },
-        {
-          "type": "text",
-          "body": "“Faithless”: failure of nerve in that environment. Faithfulness is first the character of Jesus:"
-        },
-        {
-          "type": "text",
-          "body": "1:5 faithful witness"
-        },
-        {
-          "type": "text",
-          "body": "3:14 faithful and true witness"
-        },
-        {
-          "type": "text",
-          "body": "19:11 Faithful and True"
-        },
-        {
-          "type": "text",
-          "body": "2:13 Antipas the faithful witness"
-        },
-        {
-          "type": "text",
-          "body": "2:10 Smyrna: faithful unto death"
-        },
-        {
-          "type": "text",
-          "body": "“Detestable”: polluted with idols. Compromised with the world. Laodicea lukewarm. Jesus would spit them out. Easiest path: add the idols of the age alongside Jesus. Love Caesar and Jesus."
-        },
-        {
-          "type": "text",
-          "body": "Cowardice as doorway. Not faithless overnight. Afraid. Not polluted overnight. Succumb because afraid."
-        },
-        {
-          "type": "text",
-          "body": "“Murderers”: 17:6 Babylon drunk on the blood of the saints. Blood largely from so-called Christian informants: denounce Christ as God alone, and disclose who else was at that secret baptism. Not random murderers. Blood on their hands because of cowardice."
-        },
-        {
-          "type": "text",
-          "body": "“Sexually immoral”: not generic only. Tied to chapter 2. Pergamum and Thyatira in cultic sexual practices of Roman worship. Rome as a church-and-state complex held together by a brothel."
-        },
-        {
-          "type": "text",
-          "body": "“Sorcery”: deceived by the beast’s charms, spells, signs, wonders. Rome’s false religion: just enough spirituality to make Rome’s metaphysical claims feel real."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 18:23",
-          "body": "…all nations were deceived by your sorcery."
-        },
-        {
-          "type": "text",
-          "body": "“Idolaters”: main idea of the book. Cowardice leads here."
-        },
-        {
-          "type": "text",
-          "body": "“All liars”: the lie you say to get out of trouble. “Caesar is Lord.” “I am not a Christian.” “Christ is not King of all kings.”"
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 14:5",
-          "body": "The 144,000; in their mouth was found no lie."
-        },
-        {
-          "type": "heading",
-          "text": "The Close"
-        },
-        {
-          "type": "text",
-          "body": "The world system. Rome one expression of it."
-        },
-        {
-          "type": "text",
-          "body": "Image: a bold Marilyn Monroe, seductress, spilling out of her dress, leaning over the first-century Christian: “Come my way. It’s so much better.” Sword in her hand. Painted lips: we can do this the easy way or the hard way. That is the original audience’s environment."
-        },
-        {
-          "type": "text",
-          "body": "Final image of Revelation, the one that brings tears: against the seductress with the sword, 22:17."
-        },
-        {
-          "type": "scripture",
-          "ref": "Revelation 22:17",
-          "body": "The Spirit and the Bride say, “Come.” And let the one who hears say, “Come.” And let the one who is thirsty come; let the one who desires take the water of life without price."
-        },
-        {
-          "type": "text",
-          "body": "The whore banished. Now the Bride. Purchased by Christ. Cleansed by his Word. Saying, with the Spirit:"
-        },
-        {
-          "type": "text",
-          "body": "Endure."
-        },
-        {
-          "type": "text",
-          "body": "Conquer."
-        },
-        {
-          "type": "text",
-          "body": "Come."
+          "ref": "1 Corinthians 11:23–26 (ESV)",
+          "body": "For I received from the Lord what I also delivered to you, that the Lord Jesus on the night when he was betrayed took bread, and when he had given thanks, he broke it, and said, “This is my body, which is for you. Do this in remembrance of me.” In the same way also he took the cup, after supper, saying, “This cup is the new covenant in my blood. Do this, as often as you drink it, in remembrance of me.” For as often as you eat this bread and drink the cup, you proclaim the Lord's death until he comes."
         }
       ]
     },
     "band": [
       {
-        "name": "Josh L.",
+        "name": "Jared",
         "role": "Lead"
       },
       {
-        "name": "Sarah Hoit",
-        "role": "Keys, Vocals"
+        "name": "Jesse",
+        "role": "Keys"
       },
       {
-        "name": "Steven Luffman",
-        "role": "Bass"
+        "name": "Shannon",
+        "role": "Vox"
       }
     ],
     "songs": [
       {
-        "title": "Behold Our God",
+        "title": "Jesus Paid It All",
         "section": "opening"
       },
       {
-        "title": "How Firm a Foundation",
+        "title": "Good and Gracious",
         "section": "opening"
       },
       {
-        "title": "Crown Him With Many Crowns",
+        "title": "His Mercy is More",
         "section": "opening2"
       },
       {
-        "title": "Ancient of Days",
+        "title": "Amazing Grace",
         "section": "opening2"
       },
       {
-        "title": "Revelation Song vs. Jesus Our Judge and Our Saviour",
+        "title": "His Forever",
         "section": "communion"
-      },
-      {
-        "title": "All Glory be to Christ vs. TBD",
-        "section": "final"
       }
     ],
     "playlist_url": ""
