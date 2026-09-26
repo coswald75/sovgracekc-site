@@ -191,9 +191,33 @@
   },
   "announcements": [
     {
+      "title": "Parent\u2013Youth Meeting",
+      "body": "Parents of youth. Saturday, October 3 at 5:00 PM.",
+      "when": "Saturday, October 3 \u00b7 5:00 PM CT",
+      "link": ""
+    },
+    {
+      "title": "Work Day",
+      "body": "Church work day. Saturday, October 10 at 9:00 AM.",
+      "when": "Saturday, October 10 \u00b7 9:00 AM CT",
+      "link": ""
+    },
+    {
       "title": "Baptisms",
       "body": "Praise God \u2014 we have a baptism service coming up, with several people preparing to be baptized. More details as the date approaches.",
       "when": "Sunday, October 11",
+      "link": ""
+    },
+    {
+      "title": "Crocktoberfest",
+      "body": "Women's Ministry. Wednesday, October 14, 6:30\u20139:00 PM.",
+      "when": "Wednesday, October 14 \u00b7 6:30\u20139:00 PM CT",
+      "link": ""
+    },
+    {
+      "title": "New Member Class",
+      "body": "Saturday, October 17 and Sunday, October 18.",
+      "when": "Saturday, October 17 and Sunday, October 18",
       "link": ""
     },
     {
