@@ -123,9 +123,10 @@ function renderListItem(it) {
     .o-verse {
       font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; margin: 0;
     }
-    .o-verse sup.verse {
+    /* `sup` is injected from the body string, so style the element, not a class the compiler can't see. */
+    .o-verse sup {
       font-family: var(--sans); font-size: 0.62em; font-weight: 600;
-      line-height: 0; position: relative; top: -0.55em;
+      line-height: 0; vertical-align: super;
       margin-right: 0.15em; letter-spacing: 0;
     }
     .o-quote {
