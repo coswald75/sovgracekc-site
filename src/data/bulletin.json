@@ -1,5 +1,5 @@
 {
-  "week_of": "September 27, 2026",
+  "week_of": "October 4, 2026",
   "service_order": {
     "flow": [
       {
@@ -18,7 +18,7 @@
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Congregational reading of Romans 11:33–36; Reading of Proverbs 19:21 (ESV)"
+        "detail": "Isaiah 40:6–8; Acts 20:24 (ESV)"
       },
       {
         "type": "songs",
@@ -49,167 +49,298 @@
       }
     ],
     "sermon": {
-      "title": "Productive Problem Solving",
-      "text": "1 Samuel 8",
-      "thesis": "Israel faces a real problem — Samuel's sons are corrupt judges — but reaches for a destructive solution: a king “like all the nations.” The demand rejects the Lord as King. Productive problem-solving runs every problem through six questions — clarity, humility, urgency, and, most powerfully, identity, memory, and the fear of God.",
+      "title": "Saul thru Solomon and the Season of Discontent",
+      "subtitle": "From Saul to Solomon",
+      "text": "1 Samuel 9–28",
       "outline": [
         {
           "type": "heading",
-          "text": "Six categories that serve me"
+          "text": "Introduction: The King Israel Asked For"
         },
         {
           "type": "text",
-          "body": "Run any problem through six questions. The first three keep us honest; the last three are the most powerful."
-        },
-        {
-          "type": "text",
-          "body": "Clarity — Am I confident I actually understand the problem?"
-        },
-        {
-          "type": "text",
-          "body": "Humility — Am I the person who is supposed to solve this problem?"
-        },
-        {
-          "type": "text",
-          "body": "Urgency — Does the problem really need to be solved right away?"
-        },
-        {
-          "type": "text",
-          "body": "Identity — Am I approaching this problem as a child of God who has been adopted in Christ?"
-        },
-        {
-          "type": "text",
-          "body": "Memory — Do I have a clear, “embodied” sense of God's past faithfulness?"
-        },
-        {
-          "type": "text",
-          "body": "Fear — Am I making this decision with a suitable fear of God?"
-        },
-        {
-          "type": "text",
-          "body": "Identity, memory, and fear are the three that carry the most weight."
+          "body": "We continue preparing for our time in Isaiah, and this morning that means the life of Saul. Open with his name. Sha’ul means “asked for.” Israel asked for a king, and God gave them a man named Asked For. God gave them exactly what they requested, and that is the problem. If God doesn’t have a sense of humor, he at least has a severely ironic one."
         },
         {
           "type": "heading",
-          "text": "1. The problem"
+          "text": "A King Like All the Nations Means a Religion Like All the Nations"
         },
         {
-          "type": "scripture",
-          "ref": "1 Samuel 8:1–5 (ESV)",
-          "body": "When Samuel became old, he made his sons judges over Israel. The name of his firstborn son was Joel, and the name of his second, Abijah; they were judges in Beersheba. Yet his sons did not walk in his ways but turned aside after gain. They took bribes and perverted justice. Then all the elders of Israel gathered together and came to Samuel at Ramah and said to him, “Behold, you are old and your sons do not walk in your ways. Now appoint for us a king to judge us like all the nations.”"
+          "type": "text",
+          "body": "The impatient, unwise request for a king “like all the nations” (1 Sam 8:5, 20) runs straight into the king they got. The kings of the nations were religious pragmatists. Their idolatry was formal and serious, but it was transparently transactional. Nobody was singing “I’ve got the joy, joy, joy of Baal down in my heart.” The arrangement was simpler: I need crops, this idol wants grain, so I give it grain."
         },
         {
           "type": "heading",
-          "text": "2. The destructive solution"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:4–5 (ESV)",
-          "body": "Then all the elders of Israel gathered together and came to Samuel at Ramah and said to him, “Behold, you are old and your sons do not walk in your ways. Now appoint for us a king to judge us like all the nations.”"
+          "text": "What Made Israel Different"
         },
         {
           "type": "text",
-          "body": "Clarity — they understood the problem well enough. Corrupt judges were a common problem."
+          "body": "It is fair to say Israel was different because their God is the God, and not a statue or a demon hiding behind one. Go deeper, though. Because their God is the living God, Israel’s relationship with him was relational rather than transactional. He doesn’t have system RAM that runs out when too many human tabs are open. Each of us can bring every care, sigh and question to him for a whole lifetime, and it costs him nothing. Having the true God changes what it means to be in relationship with God at all."
+        },
+        {
+          "type": "heading",
+          "text": "Two Ways Israel Got What They Asked For"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "lead": "A king who lords it over them.",
+              "body": "Pick up Samuel’s warning from last week (“he will take,” 1 Sam 8:11–18) and set Jesus beside it: “You know that those who are considered rulers of the Gentiles lord it over them, and their great ones exercise authority over them. But it shall not be so among you” (Mark 10:42–45; cf. Matt 20:25–28; Luke 22:25–26)."
+            },
+            {
+              "lead": "A king who treats God the way the nations treat their gods.",
+              "body": "This is the deeper difference. They got a king whose relationship with religion was pragmatic, kept when it served him and set aside when it didn’t."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "The Problem of People Who Look Like Christians but Aren’t"
         },
         {
           "type": "text",
-          "body": "Humility — but was it really theirs to solve this way?"
+          "body": "Pause before the story and name the hard question. Jesus says, “Not everyone who says to me, ‘Lord, Lord,’ will enter the kingdom of heaven… And then will I declare to them, ‘I never knew you; depart from me’” (Matt 7:21–23). Hebrews 6:4–6 describes people who “shared in the Holy Spirit” and still fell away. Who are these people?"
         },
         {
           "type": "text",
-          "body": "Urgency — “Now appoint for us a king…” The demand is immediate."
+          "body": "The question matters because Jesus tells us to expect them: the weeds among the wheat (Matt 13:24–30, 36–43) and the net that gathers fish of every kind (Matt 13:47–50). Seeing people fall away is part of Christian life. It should also make us sober: am I one of these? This is a real problem, and it matters for eternity."
+        },
+        {
+          "type": "heading",
+          "text": "Saul the Religious Pragmatist"
         },
         {
           "type": "text",
-          "body": "Identity — “a king to judge us like all the nations.” They reach to be like everyone else."
+          "body": "State the thesis. Saul kept the form of his people’s religion as long as it didn’t obviously contradict his own wisdom, his own plan, or his own sense of what was good for him. He could look deeply spiritual, and he wasn’t."
+        },
+        {
+          "type": "heading",
+          "text": "The Case File on Saul"
+        },
+        {
+          "type": "text",
+          "body": "Read the story in order and hold back the verdict until the end."
+        },
+        {
+          "type": "subheading",
+          "text": "Exhibit one: a man looking for donkeys (1 Sam 9)"
+        },
+        {
+          "type": "text",
+          "body": "Saul’s first contact with the man of God is about lost livestock. By itself, it’s hard to know what to make of that. The text even says this was ordinary practice: “Formerly in Israel, when a man went to inquire of God, he said, ‘Come, let us go to the seer’” (9:9). A typical believer of that day might have done the same. Note it, leave it open, and move on."
+        },
+        {
+          "type": "subheading",
+          "text": "Real encounters with the Spirit"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "lead": "10:6–9:",
+              "body": "Samuel promises Saul will be “turned into another man,” and “God gave him another heart.”"
+            },
+            {
+              "lead": "10:10–13:",
+              "body": "The Spirit rushes on him, he prophesies, and people ask, “Is Saul also among the prophets?”"
+            },
+            {
+              "lead": "11:6–11:",
+              "body": "The Spirit rushes on him again, and he rescues Jabesh-gilead."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Give these their full weight and let the congregation assume what anyone would: this is a transformed man."
+        },
+        {
+          "type": "subheading",
+          "text": "Genuine or not? How could we even know?"
+        },
+        {
+          "type": "text",
+          "body": "Maybe there’s something real here. Maybe not. How would you tell? Trials. They reveal “the tested genuineness of your faith” (1 Pet 1:6–7). We find out whether someone loves God when God’s way and their own way come apart."
+        },
+        {
+          "type": "subheading",
+          "text": "The trials"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "lead": "Chapter 13:",
+              "body": "The army is scattering and Samuel is late, so Saul offers the sacrifice himself. “I forced myself” (13:12)."
+            },
+            {
+              "lead": "Chapter 15:",
+              "body": "Partial obedience regarding Amalek, a monument set up for himself (15:12), and “honor me now before the elders” (15:30). Samuel answers, “To obey is better than sacrifice” (15:22)."
+            },
+            {
+              "lead": "Chapter 18 and following:",
+              "body": "Jealousy of David turns murderous. The Spirit has departed and a harmful spirit has come (16:14)."
+            },
+            {
+              "lead": "Chapter 28:",
+              "body": "Heaven is silent, so Saul hires a medium. The Chronicler’s verdict is that he did not seek guidance from the Lord (1 Chr 10:13–14)."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "body": "Set David beside him briefly. David repeatedly suspends his own judgment for what he takes to be the Lord’s will. He spares Saul twice (chs. 24, 26), and later he sends the ark back to Jerusalem and says, “let him do to me what seems good to him” (2 Sam 15:25–26)."
+        },
+        {
+          "type": "subheading",
+          "text": "The bookends"
+        },
+        {
+          "type": "text",
+          "body": "Now go back to the donkeys. Seen from Endor, the opening scene is no longer ambiguous. Saul’s whole life is bracketed by trying to get God, or something like God, to hand him what he thinks he needs. The ending explains the beginning."
+        },
+        {
+          "type": "subheading",
+          "text": "The complication"
+        },
+        {
+          "type": "text",
+          "body": "That isn’t entirely unlike a true believer. We seek God for his blessings, and God encourages this all through Scripture. He makes the promises and attaches the rewards (Heb 11:6), and he wants us to think about them. So seeking blessing can’t be the dividing line. And yet the way we respond in trials is what shows the tested genuineness of our faith."
+        },
+        {
+          "type": "subheading",
+          "text": "A common work of the Spirit"
+        },
+        {
+          "type": "text",
+          "body": "Here is how Calvin and Owen read Hebrews 6. There are common operations of the Spirit: real experiences of his working that are not saving."
         },
         {
           "type": "quote",
-          "body": "A peculiar and chosen people must not solve their problems as if they are like everybody else."
-        },
-        {
-          "type": "heading",
-          "text": "3. The productive solution (fan fiction)"
-        },
-        {
-          "type": "text",
-          "body": "Run the same problem through the categories differently:"
-        },
-        {
-          "type": "text",
-          "body": "Clarity? We think we see the problem — it may be bigger or different than it looks."
-        },
-        {
-          "type": "text",
-          "body": "Urgency? We have time. This can play out further while we pay attention and learn."
-        },
-        {
-          "type": "text",
-          "body": "Humility? This isn't really ours to solve — not directly. This is God's problem."
-        },
-        {
-          "type": "text",
-          "body": "Identity? We are God's chosen people. He loves us and has great plans for us."
-        },
-        {
-          "type": "text",
-          "body": "Memory? God has handled this exact problem for us before."
-        },
-        {
-          "type": "text",
-          "body": "The irony hiding in plain sight: “Samuel” means “God has heard.”"
+          "body": "“God indeed favors none but the elect alone with the Spirit of regeneration, and … by this they are distinguished from the reprobate… But I cannot admit that all this is any reason why he should not grant the reprobate also some taste of his grace, why he should not irradiate their minds with some sparks of his light, why he should not give them some perception of his goodness, and in some sort engrave his word on their hearts… There is therefore some knowledge even in the reprobate, which afterwards vanishes away, either because it did not strike roots sufficiently deep, or because it withers, being choked up.”",
+          "cite": "John Calvin, on Hebrews 6:4"
         },
         {
           "type": "quote",
-          "body": "God loves us. He pays attention. He cares for us. He has heard our cries in the past. You, Samuel, are living proof of that. So we are going to call for a national time of prayer and fasting, and ask the Lord to help us with this problem."
-        },
-        {
-          "type": "heading",
-          "text": "4. The problems caused by the destructive solution"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:6–9 (ESV)",
-          "body": "But the thing displeased Samuel when they said, “Give us a king to judge us.” And Samuel prayed to the LORD. And the LORD said to Samuel, “Obey the voice of the people in all that they say to you, for they have not rejected you, but they have rejected me from being king over them. According to all the deeds that they have done, from the day I brought them up out of Egypt even to this day, forsaking me and serving other gods, so they are also doing to you. Now then, obey their voice; only you shall solemnly warn them and show them the ways of the king who shall reign over them.”"
+          "body": "“The Holy Ghost is present with many as unto powerful operations with whom he is not present as to gracious inhabitation; or, many are made partakers of him in his spiritual gifts who are never made partakers of him in his saving graces.”",
+          "cite": "John Owen, on the Spirit’s presence"
         },
         {
           "type": "text",
-          "body": "Fear — am I making this decision with a suitable fear of God? As an act of his discipline, the Lord gave them what they wanted."
-        },
-        {
-          "type": "text",
-          "body": "D. A. Carson, on the displacing power of the fear of the Lord:"
+          "body": "Owen cites Matthew 7:22–23 right there, which ties back to “Lord, Lord.”"
         },
         {
           "type": "quote",
-          "body": "Get yourself ready. Fear God, fear no other. Do not be terrified by them or I will terrify you before them. Those are the options. You either refuse to be terrified by the world around you, or God in his providential working out of things will see to it that you live your life in fear before them. That is important in our culture. Resolve it every day: I will not be afraid. I will not be afraid. I will fear God only. I will not fear this world. Because if you do not resolve in this way to fear God and thus no other, you will, by God's own decree, be sentenced to scaredness — to being frightened, to being fearful before the watching world.",
-          "cite": "D. A. Carson"
+          "body": "“They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces.”",
+          "cite": "John Owen, on what it means to have only “tasted”"
         },
         {
-          "type": "scripture",
-          "ref": "1 Samuel 8:10–18 (ESV)",
-          "body": "So Samuel told all the words of the LORD to the people who were asking for a king from him. He said, “These will be the ways of the king who will reign over you: he will take your sons and appoint them to his chariots and to be his horsemen and to run before his chariots. And he will appoint for himself commanders of thousands and commanders of fifties, and some to plow his ground and to reap his harvest, and to make his implements of war and the equipment of his chariots. He will take your daughters to be perfumers and cooks and bakers. He will take the best of your fields and vineyards and olive orchards and give them to his servants. He will take the tenth of your grain and of your vineyards and give it to his officers and to his servants. He will take your male servants and female servants and the best of your young men and your donkeys, and put them to his work. He will take the tenth of your flocks, and you shall be his slaves. And in that day you will cry out because of your king, whom you have chosen for yourselves, but the LORD will not answer you in that day.”"
+          "type": "text",
+          "body": "And of that mere taste, Owen says it will not"
         },
         {
-          "type": "scripture",
-          "ref": "1 Samuel 8:19–22 (ESV)",
-          "body": "But the people refused to obey the voice of Samuel. And they said, “No! But there shall be a king over us, that we also may be like all the nations, and that our king may judge us and go out before us and fight our battles.” And when Samuel had heard all the words of the people, he repeated them in the ears of the LORD. And the LORD said to Samuel, “Obey their voice and make them a king.” Samuel then said to the men of Israel, “Go every man to his city.”"
+          "type": "quote",
+          "body": "“give us such a love of the truth as to abide by it in trials or temptations.”",
+          "cite": "John Owen"
+        },
+        {
+          "type": "text",
+          "body": "This also answers 1 Samuel 10:9, “God gave him another heart.” The common Reformed reading is that this was an equipping for the office of king rather than regeneration. It fits Owen’s distinction: Saul shared in the Spirit’s gifts without sharing in his saving graces."
+        },
+        {
+          "type": "subheading",
+          "text": "The real test"
+        },
+        {
+          "type": "text",
+          "body": "Spiritual experiences are less reliable evidence than this question: what do you do when you don’t get your way? When God says go this way, and going that way plainly brings more problems and more pain, what do you do? That appears to be Scripture’s main way of showing whether you love God or only love the gifts that come with obeying him."
         },
         {
           "type": "heading",
-          "text": "Long-term consequences"
+          "text": "Application: Thank God for Your Trials"
         },
         {
           "type": "text",
-          "body": "The very things on this list would divide the kingdom — north and south."
+          "body": "If you are in a trial, be thankful for it. And don’t cheat yourself out of real assurance. Some of you are in situations where the easiest thing would have been to cut and run, or stop trying, or do it the way the world says to, and you didn’t. Look at those moments and ask why you passed that test. That is 1 Peter 1, and it is a great thing to see."
         },
         {
           "type": "text",
-          "body": "Their wickedness would bring national judgment from the surrounding nations."
+          "body": "Then the probing question: are you in situations where you have to obey God even when it doesn’t seem like the right way? Those situations have something to tell you. Are you able to follow God when it doesn’t make sense? Is that a clear part of your life?"
+        },
+        {
+          "type": "heading",
+          "text": "Pragmatic Religion Institutionalized: Where Isaiah Lives"
         },
         {
           "type": "text",
-          "body": "And this category — a king “like the nations” — would become a key ingredient in the crucifixion of Christ."
+          "body": "This hollowed-out faith, using God mostly for self, doesn’t stay with one king. It becomes institutionalized, and it is the air we will breathe when we get to Isaiah."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "lead": "Isaiah 1:10–17:",
+              "body": "“Bring no more vain offerings.”"
+            },
+            {
+              "lead": "Isaiah 29:13:",
+              "body": "“This people draw near with their mouth and honor me with their lips, while their hearts are far from me.”"
+            },
+            {
+              "lead": "Isaiah 58:1–5:",
+              "body": "Fasting while pursuing their own pleasure."
+            },
+            {
+              "lead": "Supporting texts:",
+              "body": "Jeremiah 7:4–11, Amos 5:21–24, Micah 6:6–8."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "body": "This is where Isaiah is."
+        },
+        {
+          "type": "heading",
+          "text": "The Other Saul"
+        },
+        {
+          "type": "text",
+          "body": "The Saul of the New Testament is the same deal. He is of the tribe of Benjamin like his namesake (Phil 3:5; cf. Acts 13:21), a Pharisee of the Pharisees, with religious form and a dark spirit inside it that is not God. He is actively trying to destroy the Davidic line, which is Christ and his people: “Saul, Saul, why are you persecuting me?” (Acts 9:4)."
+        },
+        {
+          "type": "text",
+          "body": "Go deeper. This is where we find Judaism left in the book of Acts: a form that lacks a good heart, largely pragmatic and blessing-seeking rather than God-seeking (Rom 10:2–3)."
+        },
+        {
+          "type": "heading",
+          "text": "Communion"
+        },
+        {
+          "type": "scripture",
+          "ref": "1 Timothy 1:12–17",
+          "body": "{{12}} I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service, {{13}} though formerly I was a blasphemer, persecutor, and insolent opponent. But I received mercy because I had acted ignorantly in unbelief, {{14}} and the grace of our Lord overflowed for me with the faith and love that are in Christ Jesus. {{15}} The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. {{16}} But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life. {{17}} To the King of the ages, immortal, invisible, the only God, be honor and glory forever and ever. Amen."
+        },
+        {
+          "type": "heading",
+          "text": "Sources"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "body": "John Calvin, *Commentaries on the Epistle of Paul the Apostle to the Hebrews*, on 6:4 (Calvin Translation Society edition)."
+            },
+            {
+              "body": "John Owen, *The Nature and Causes of Apostasy from the Gospel*, chapter 1, an exposition of Hebrews 6:4–6 (Works, vol. 7)."
+            }
+          ]
         }
       ]
     },
@@ -220,56 +351,42 @@
       },
       {
         "name": "Jared",
-        "role": "Drums"
+        "role": "Acoustic, Vocals"
       },
       {
-        "name": "Sarah",
+        "name": "Shannon",
         "role": "Keys, Vocals"
-      },
-      {
-        "name": "Josh",
-        "role": "Bass"
-      },
-      {
-        "name": "Christine",
-        "role": "Vocals"
       }
     ],
     "songs": [
       {
-        "title": "Holy, Holy, Holy",
+        "title": "Only A Holy God",
         "section": "opening"
       },
       {
-        "title": "We Give Thanks (Psalm 107)",
+        "title": "O Help My Unbelief",
         "section": "opening"
       },
       {
-        "title": "Christ Our Wisdom",
+        "title": "One Thing",
         "section": "opening2"
       },
       {
-        "title": "How Long, O Lord? (Psalm 13)",
+        "title": "Be Thou My Vision (with Margaret Clarkson ending verses)",
         "section": "opening2"
       },
       {
-        "title": "All Things",
+        "title": "We Are Thankful",
         "section": "communion"
       },
       {
-        "title": "Christ Our Wisdom",
+        "title": "Your Will Be Done",
         "section": "final"
       }
     ],
-    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv?si=8b09b19eddb64686"
+    "playlist_url": ""
   },
   "announcements": [
-    {
-      "title": "Parent–Youth Meeting",
-      "body": "Parents of youth. Saturday, October 3 at 5:00 PM.",
-      "when": "Saturday, October 3 · 5:00 PM CT",
-      "link": ""
-    },
     {
       "title": "Work Day",
       "body": "Church work day. Saturday, October 10 at 9:00 AM.",
@@ -283,14 +400,14 @@
       "link": ""
     },
     {
-      "title": "Crocktoberfest",
-      "body": "Women's Ministry. Wednesday, October 14, 6:30–9:00 PM.",
+      "title": "Women's Ministry Crocktoberfest",
+      "body": "Ladies, fall is here and Crocktoberfest is back — fellowship, delicious food, a fun seasonal craft, and a great night to invite friends. Sign-ups are on Basecamp. If you've been part of our church family for less than six months, please don't feel any pressure to bring anything; we're simply glad to have you.",
       "when": "Wednesday, October 14 · 6:30–9:00 PM CT",
       "link": ""
     },
     {
       "title": "New Member Class",
-      "body": "Saturday, October 17 and Sunday, October 18.",
+      "body": "Saturday, October 17 and Sunday, October 18. Sign up on Basecamp.",
       "when": "Saturday, October 17 and Sunday, October 18",
       "link": ""
     },
