@@ -1,5 +1,5 @@
 {
-  "week_of": "September 27, 2026",
+  "week_of": "October 4, 2026",
   "service_order": {
     "flow": [
       {
@@ -18,7 +18,7 @@
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Congregational reading of Romans 11:33–36; Reading of Proverbs 19:21 (ESV)"
+        "detail": "Isaiah 40:6–8; Acts 20:24 (ESV)"
       },
       {
         "type": "songs",
@@ -48,171 +48,6 @@
         "label": "Benediction"
       }
     ],
-    "sermon": {
-      "title": "Productive Problem Solving",
-      "text": "1 Samuel 8",
-      "thesis": "Israel faces a real problem — Samuel's sons are corrupt judges — but reaches for a destructive solution: a king “like all the nations.” The demand rejects the Lord as King. Productive problem-solving runs every problem through six questions — clarity, humility, urgency, and, most powerfully, identity, memory, and the fear of God.",
-      "outline": [
-        {
-          "type": "heading",
-          "text": "Six categories that serve me"
-        },
-        {
-          "type": "text",
-          "body": "Run any problem through six questions. The first three keep us honest; the last three are the most powerful."
-        },
-        {
-          "type": "text",
-          "body": "Clarity — Am I confident I actually understand the problem?"
-        },
-        {
-          "type": "text",
-          "body": "Humility — Am I the person who is supposed to solve this problem?"
-        },
-        {
-          "type": "text",
-          "body": "Urgency — Does the problem really need to be solved right away?"
-        },
-        {
-          "type": "text",
-          "body": "Identity — Am I approaching this problem as a child of God who has been adopted in Christ?"
-        },
-        {
-          "type": "text",
-          "body": "Memory — Do I have a clear, “embodied” sense of God's past faithfulness?"
-        },
-        {
-          "type": "text",
-          "body": "Fear — Am I making this decision with a suitable fear of God?"
-        },
-        {
-          "type": "text",
-          "body": "Identity, memory, and fear are the three that carry the most weight."
-        },
-        {
-          "type": "heading",
-          "text": "1. The problem"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:1–5 (ESV)",
-          "body": "When Samuel became old, he made his sons judges over Israel. The name of his firstborn son was Joel, and the name of his second, Abijah; they were judges in Beersheba. Yet his sons did not walk in his ways but turned aside after gain. They took bribes and perverted justice. Then all the elders of Israel gathered together and came to Samuel at Ramah and said to him, “Behold, you are old and your sons do not walk in your ways. Now appoint for us a king to judge us like all the nations.”"
-        },
-        {
-          "type": "heading",
-          "text": "2. The destructive solution"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:4–5 (ESV)",
-          "body": "Then all the elders of Israel gathered together and came to Samuel at Ramah and said to him, “Behold, you are old and your sons do not walk in your ways. Now appoint for us a king to judge us like all the nations.”"
-        },
-        {
-          "type": "text",
-          "body": "Clarity — they understood the problem well enough. Corrupt judges were a common problem."
-        },
-        {
-          "type": "text",
-          "body": "Humility — but was it really theirs to solve this way?"
-        },
-        {
-          "type": "text",
-          "body": "Urgency — “Now appoint for us a king…” The demand is immediate."
-        },
-        {
-          "type": "text",
-          "body": "Identity — “a king to judge us like all the nations.” They reach to be like everyone else."
-        },
-        {
-          "type": "quote",
-          "body": "A peculiar and chosen people must not solve their problems as if they are like everybody else."
-        },
-        {
-          "type": "heading",
-          "text": "3. The productive solution (fan fiction)"
-        },
-        {
-          "type": "text",
-          "body": "Run the same problem through the categories differently:"
-        },
-        {
-          "type": "text",
-          "body": "Clarity? We think we see the problem — it may be bigger or different than it looks."
-        },
-        {
-          "type": "text",
-          "body": "Urgency? We have time. This can play out further while we pay attention and learn."
-        },
-        {
-          "type": "text",
-          "body": "Humility? This isn't really ours to solve — not directly. This is God's problem."
-        },
-        {
-          "type": "text",
-          "body": "Identity? We are God's chosen people. He loves us and has great plans for us."
-        },
-        {
-          "type": "text",
-          "body": "Memory? God has handled this exact problem for us before."
-        },
-        {
-          "type": "text",
-          "body": "The irony hiding in plain sight: “Samuel” means “God has heard.”"
-        },
-        {
-          "type": "quote",
-          "body": "God loves us. He pays attention. He cares for us. He has heard our cries in the past. You, Samuel, are living proof of that. So we are going to call for a national time of prayer and fasting, and ask the Lord to help us with this problem."
-        },
-        {
-          "type": "heading",
-          "text": "4. The problems caused by the destructive solution"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:6–9 (ESV)",
-          "body": "But the thing displeased Samuel when they said, “Give us a king to judge us.” And Samuel prayed to the LORD. And the LORD said to Samuel, “Obey the voice of the people in all that they say to you, for they have not rejected you, but they have rejected me from being king over them. According to all the deeds that they have done, from the day I brought them up out of Egypt even to this day, forsaking me and serving other gods, so they are also doing to you. Now then, obey their voice; only you shall solemnly warn them and show them the ways of the king who shall reign over them.”"
-        },
-        {
-          "type": "text",
-          "body": "Fear — am I making this decision with a suitable fear of God? As an act of his discipline, the Lord gave them what they wanted."
-        },
-        {
-          "type": "text",
-          "body": "D. A. Carson, on the displacing power of the fear of the Lord:"
-        },
-        {
-          "type": "quote",
-          "body": "Get yourself ready. Fear God, fear no other. Do not be terrified by them or I will terrify you before them. Those are the options. You either refuse to be terrified by the world around you, or God in his providential working out of things will see to it that you live your life in fear before them. That is important in our culture. Resolve it every day: I will not be afraid. I will not be afraid. I will fear God only. I will not fear this world. Because if you do not resolve in this way to fear God and thus no other, you will, by God's own decree, be sentenced to scaredness — to being frightened, to being fearful before the watching world.",
-          "cite": "D. A. Carson"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:10–18 (ESV)",
-          "body": "So Samuel told all the words of the LORD to the people who were asking for a king from him. He said, “These will be the ways of the king who will reign over you: he will take your sons and appoint them to his chariots and to be his horsemen and to run before his chariots. And he will appoint for himself commanders of thousands and commanders of fifties, and some to plow his ground and to reap his harvest, and to make his implements of war and the equipment of his chariots. He will take your daughters to be perfumers and cooks and bakers. He will take the best of your fields and vineyards and olive orchards and give them to his servants. He will take the tenth of your grain and of your vineyards and give it to his officers and to his servants. He will take your male servants and female servants and the best of your young men and your donkeys, and put them to his work. He will take the tenth of your flocks, and you shall be his slaves. And in that day you will cry out because of your king, whom you have chosen for yourselves, but the LORD will not answer you in that day.”"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 8:19–22 (ESV)",
-          "body": "But the people refused to obey the voice of Samuel. And they said, “No! But there shall be a king over us, that we also may be like all the nations, and that our king may judge us and go out before us and fight our battles.” And when Samuel had heard all the words of the people, he repeated them in the ears of the LORD. And the LORD said to Samuel, “Obey their voice and make them a king.” Samuel then said to the men of Israel, “Go every man to his city.”"
-        },
-        {
-          "type": "heading",
-          "text": "Long-term consequences"
-        },
-        {
-          "type": "text",
-          "body": "The very things on this list would divide the kingdom — north and south."
-        },
-        {
-          "type": "text",
-          "body": "Their wickedness would bring national judgment from the surrounding nations."
-        },
-        {
-          "type": "text",
-          "body": "And this category — a king “like the nations” — would become a key ingredient in the crucifixion of Christ."
-        }
-      ]
-    },
     "band": [
       {
         "name": "Josh L.",
@@ -220,56 +55,42 @@
       },
       {
         "name": "Jared",
-        "role": "Drums"
+        "role": "Acoustic, Vocals"
       },
       {
-        "name": "Sarah",
+        "name": "Shannon",
         "role": "Keys, Vocals"
-      },
-      {
-        "name": "Josh",
-        "role": "Bass"
-      },
-      {
-        "name": "Christine",
-        "role": "Vocals"
       }
     ],
     "songs": [
       {
-        "title": "Holy, Holy, Holy",
+        "title": "Only A Holy God",
         "section": "opening"
       },
       {
-        "title": "We Give Thanks (Psalm 107)",
+        "title": "O Help My Unbelief",
         "section": "opening"
       },
       {
-        "title": "Christ Our Wisdom",
+        "title": "One Thing",
         "section": "opening2"
       },
       {
-        "title": "How Long, O Lord? (Psalm 13)",
+        "title": "Be Thou My Vision (with Margaret Clarkson ending verses)",
         "section": "opening2"
       },
       {
-        "title": "All Things",
+        "title": "We Are Thankful",
         "section": "communion"
       },
       {
-        "title": "Christ Our Wisdom",
+        "title": "Your Will Be Done",
         "section": "final"
       }
     ],
-    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv?si=8b09b19eddb64686"
+    "playlist_url": ""
   },
   "announcements": [
-    {
-      "title": "Parent–Youth Meeting",
-      "body": "Parents of youth. Saturday, October 3 at 5:00 PM.",
-      "when": "Saturday, October 3 · 5:00 PM CT",
-      "link": ""
-    },
     {
       "title": "Work Day",
       "body": "Church work day. Saturday, October 10 at 9:00 AM.",
@@ -283,14 +104,14 @@
       "link": ""
     },
     {
-      "title": "Crocktoberfest",
-      "body": "Women's Ministry. Wednesday, October 14, 6:30–9:00 PM.",
+      "title": "Women's Ministry Crocktoberfest",
+      "body": "Ladies, fall is here and Crocktoberfest is back — fellowship, delicious food, a fun seasonal craft, and a great night to invite friends. Sign-ups are on Basecamp. If you've been part of our church family for less than six months, please don't feel any pressure to bring anything; we're simply glad to have you.",
       "when": "Wednesday, October 14 · 6:30–9:00 PM CT",
       "link": ""
     },
     {
       "title": "New Member Class",
-      "body": "Saturday, October 17 and Sunday, October 18.",
+      "body": "Saturday, October 17 and Sunday, October 18. Sign up on Basecamp.",
       "when": "Saturday, October 17 and Sunday, October 18",
       "link": ""
     },
