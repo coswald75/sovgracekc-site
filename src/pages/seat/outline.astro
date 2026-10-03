@@ -21,12 +21,20 @@ const usesScripture = outline.some((b) => b.type === 'scripture');
       {hasOutline && sermon ? (
         <>
           <h1 class="masthead" style="font-size:clamp(1.9rem, 8vw, 2.6rem); text-align:center; margin:0 0 6px;">{sermon.title}</h1>
+          {sermon.subtitle && <p style="text-align:center; font-family:var(--serif); font-style:italic; font-size:1.15rem; margin:0 0 6px;">{sermon.subtitle}</p>}
           {sermon.text && <p style="text-align:center; font-family:var(--serif); font-size:1.05rem; color:var(--gray); margin:0 0 24px;">{sermon.text}</p>}
           {sermon.thesis && <p class="thesis">{sermon.thesis}</p>}
 
           <div class="outline">
             {outline.map((b) => {
               if (b.type === 'heading') return <h2 class="o-head">{b.text}</h2>;
+              if (b.type === 'subheading') return <h3 class="o-subhead">{b.text}</h3>;
+              if (b.type === 'list') {
+                const items = (b.items || []).map((it) => (
+                  <li>{it.lead && <strong>{it.lead} </strong>}{it.body}</li>
+                ));
+                return b.ordered ? <ol class="o-list">{items}</ol> : <ul class="o-list">{items}</ul>;
+              }
               if (b.type === 'scripture') return (
                 <blockquote class="o-scripture">
                   {b.ref && <p class="o-ref">{b.ref}</p>}
@@ -75,6 +83,15 @@ const usesScripture = outline.some((b) => b.type === 'scripture');
       margin: 34px 0 4px; padding-top: 6px;
     }
     .o-head:first-child { margin-top: 0; }
+    .o-subhead {
+      font-family: var(--serif); font-size: 1.12rem; line-height: 1.3;
+      margin: 26px 0 0;
+    }
+    .o-list {
+      font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;
+      margin: 14px 0 0; padding-left: 1.4em;
+    }
+    .o-list li { margin: 6px 0 0; }
     .o-text {
       font-family: var(--serif); font-size: 1.05rem; line-height: 1.65;
       margin: 14px 0 0;
