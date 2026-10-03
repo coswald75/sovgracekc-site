@@ -324,7 +324,7 @@
         {
           "type": "scripture",
           "ref": "1 Timothy 1:12–17",
-          "body": "12 I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service, 13 though formerly I was a blasphemer, persecutor, and insolent opponent. But I received mercy because I had acted ignorantly in unbelief, 14 and the grace of our Lord overflowed for me with the faith and love that are in Christ Jesus. 15 The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. 16 But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life. 17 To the King of the ages, immortal, invisible, the only God, be honor and glory forever and ever. Amen."
+          "body": "{{12}} I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service, {{13}} though formerly I was a blasphemer, persecutor, and insolent opponent. But I received mercy because I had acted ignorantly in unbelief, {{14}} and the grace of our Lord overflowed for me with the faith and love that are in Christ Jesus. {{15}} The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. {{16}} But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life. {{17}} To the King of the ages, immortal, invisible, the only God, be honor and glory forever and ever. Amen."
         },
         {
           "type": "heading",
@@ -335,10 +335,10 @@
           "ordered": false,
           "items": [
             {
-              "body": "John Calvin, Commentaries on the Epistle of Paul the Apostle to the Hebrews, on 6:4 (Calvin Translation Society edition)."
+              "body": "John Calvin, *Commentaries on the Epistle of Paul the Apostle to the Hebrews*, on 6:4 (Calvin Translation Society edition)."
             },
             {
-              "body": "John Owen, The Nature and Causes of Apostasy from the Gospel, chapter 1, an exposition of Hebrews 6:4–6 (Works, vol. 7)."
+              "body": "John Owen, *The Nature and Causes of Apostasy from the Gospel*, chapter 1, an exposition of Hebrews 6:4–6 (Works, vol. 7)."
             }
           ]
         }

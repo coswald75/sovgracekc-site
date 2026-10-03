@@ -7,6 +7,22 @@ const sermon = bulletin.service_order?.sermon || null;
 const outline = sermon?.outline || [];
 const hasOutline = outline.length > 0;
 const usesScripture = outline.some((b) => b.type === 'scripture');
+
+/** Escape, then apply optional inline marks. Unmarked text renders as before. */
+function renderInline(text) {
+  if (!text) return '';
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\{\{(\d{1,3})\}\}/g, '<sup class="verse">$1</sup>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+function renderListItem(it) {
+  const lead = it.lead ? `<strong>${renderInline(it.lead)} </strong>` : '';
+  return lead + renderInline(it.body || '');
+}
 ---
 <Base
   title="Sermon Outline | This Sunday | Providence Community Church"
@@ -31,14 +47,14 @@ const usesScripture = outline.some((b) => b.type === 'scripture');
               if (b.type === 'subheading') return <h3 class="o-subhead">{b.text}</h3>;
               if (b.type === 'list') {
                 const items = (b.items || []).map((it) => (
-                  <li>{it.lead && <strong>{it.lead} </strong>}{it.body}</li>
+                  <li set:html={renderListItem(it)} />
                 ));
                 return b.ordered ? <ol class="o-list">{items}</ol> : <ul class="o-list">{items}</ul>;
               }
               if (b.type === 'scripture') return (
                 <blockquote class="o-scripture">
                   {b.ref && <p class="o-ref">{b.ref}</p>}
-                  <p class="o-verse">{b.body}</p>
+                  <p class="o-verse" set:html={renderInline(b.body)} />
                 </blockquote>
               );
               if (b.type === 'quote') return (
@@ -106,6 +122,11 @@ const usesScripture = outline.some((b) => b.type === 'scripture');
     }
     .o-verse {
       font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; margin: 0;
+    }
+    .o-verse sup.verse {
+      font-family: var(--sans); font-size: 0.62em; font-weight: 600;
+      line-height: 0; position: relative; top: -0.55em;
+      margin-right: 0.15em; letter-spacing: 0;
     }
     .o-quote {
       margin: 22px 0 0; padding: 18px 22px;
