@@ -1,10 +1,10 @@
 {
-  "week_of": "October 4, 2026",
+  "week_of": "October 11, 2026",
   "service_order": {
     "flow": [
       {
         "type": "element",
-        "label": "Welcome"
+        "label": "Announcements"
       },
       {
         "type": "element",
@@ -12,395 +12,113 @@
       },
       {
         "type": "songs",
-        "label": "Songs",
+        "label": "Congregational Singing",
         "section": "opening"
       },
       {
         "type": "element",
         "label": "Scripture Reading",
-        "detail": "Isaiah 40:6–8; Acts 20:24 (ESV)"
+        "detail": "Hebrews 10:15–25 ESV"
       },
       {
         "type": "songs",
         "label": "Songs",
         "section": "opening2"
-      },
-      {
-        "type": "element",
-        "label": "Kids Dismissal"
       },
       {
         "type": "sermon",
         "label": "Sermon"
       },
       {
+        "type": "element",
+        "label": "Transition to Baptism Testimonies"
+      },
+      {
+        "type": "element",
+        "label": "Baptism Testimonies"
+      },
+      {
+        "type": "element",
+        "label": "Communion Meditation"
+      },
+      {
         "type": "songs",
-        "label": "Communion",
+        "label": "The Lord’s Supper",
         "section": "communion"
       },
       {
         "type": "songs",
-        "label": "Final Songs",
+        "label": "Final Song",
         "section": "final"
       },
       {
         "type": "element",
         "label": "Benediction"
+      },
+      {
+        "type": "element",
+        "label": "Dismissal and Transition Outside"
+      },
+      {
+        "type": "element",
+        "label": "Baptisms"
       }
     ],
-    "sermon": {
-      "title": "Saul thru Solomon and the Season of Discontent",
-      "subtitle": "From Saul to Solomon",
-      "text": "1 Samuel 9–28",
-      "outline": [
-        {
-          "type": "heading",
-          "text": "Introduction: The King Israel Asked For"
-        },
-        {
-          "type": "text",
-          "body": "Open with his name. Sha’ul means “asked for.” Israel asked for a king, and God gave them a man named Asked For."
-        },
-        {
-          "type": "heading",
-          "text": "A King Like All the Nations Means a Religion Like All the Nations"
-        },
-        {
-          "type": "text",
-          "body": "They asked for a king like the other nations and they got one! Saul was just like the other kings in a very particular way: He had a transactional relationship with the supernatural. He was a religious pragmatist."
-        },
-        {
-          "type": "heading",
-          "text": "The Problem of People Who Look Like Christians but Aren’t"
-        },
-        {
-          "type": "text",
-          "body": "Jesus says, “Not everyone who says to me, ‘Lord, Lord,’ will enter the kingdom of heaven… And then will I declare to them, ‘I never knew you; depart from me’” (Matt 7:21–23)."
-        },
-        {
-          "type": "text",
-          "body": "Hebrews 6:4–6 describes people who “shared in the Holy Spirit” and still fell away. Who are these people?"
-        },
-        {
-          "type": "text",
-          "body": "The question matters because Jesus tells us to expect them: the weeds among the wheat (Matt 13:24–30, 36–43) and the net that gathers fish of every kind (Matt 13:47–50). Seeing people fall away is part of Christian life. It should also make us sober: am I one of these? This is a real problem, and it matters for eternity."
-        },
-        {
-          "type": "text",
-          "body": "And it’s just going to come up as we talk about the life of Saul. These are the very categories that get stirred up in our minds when we think about what was going on with Saul."
-        },
-        {
-          "type": "heading",
-          "text": "A Quick Survey of Saul"
-        },
-        {
-          "type": "subheading",
-          "text": "Meets Samuel: 1 Samuel 9:1–3"
-        },
-        {
-          "type": "scripture",
-          "body": "{{1}} There was a man of Benjamin whose name was Kish, the son of Abiel, son of Zeror, son of Becorath, son of Aphiah, a Benjaminite, a man of wealth. {{2}} And he had a son whose name was Saul, a handsome young man. There was not a man among the people of Israel more handsome than he. From his shoulders upward he was taller than any of the people. {{3}} Now the donkeys of Kish, Saul’s father, were lost. So Kish said to Saul his son, “Take one of the young men with you, and arise, go and look for the donkeys.”"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 9:5–8",
-          "body": "{{5}} When they came to the land of Zuph, Saul said to his servant who was with him, “Come, let us go back, lest my father cease to care about the donkeys and become anxious about us.” {{6}} But he said to him, “Behold, there is a man of God in this city, and he is a man who is held in honor; all that he says comes true. So now let us go there. Perhaps he can tell us the way we should go.” {{7}} Then Saul said to his servant, “But if we go, what can we bring the man? For the bread in our sacks is gone, and there is no present to bring to the man of God. What do we have?” {{8}} The servant answered Saul again, “Here, I have with me a quarter of a shekel of silver, and I will give it to the man of God to tell us our way.”"
-        },
-        {
-          "type": "scripture",
-          "ref": "God Has A Good Purpose: 1 Samuel 9:15–16",
-          "body": "{{15}} Now the day before Saul came, the Lord had revealed to Samuel: {{16}} “Tomorrow about this time I will send to you a man from the land of Benjamin, and you shall anoint him to be prince over my people Israel. He shall save my people from the hand of the Philistines. For I have seen my people, because their cry has come to me.”"
-        },
-        {
-          "type": "subheading",
-          "text": "Real encounters with the Spirit"
-        },
-        {
-          "type": "text",
-          "body": "Here’s where things get complicated. Look at chapter 10."
-        },
-        {
-          "type": "text",
-          "body": "Samuel tells Saul to go on a little trip, and he says that while you’re on this trip, there are going to be three signs that God has called you to be king."
-        },
-        {
-          "type": "scripture",
-          "ref": "Spirit Rushes on Saul – 10:5–6",
-          "body": "{{5}} After that you shall come to Gibeath-elohim, where there is a garrison of the Philistines. And there, as soon as you come to the city, you will meet a group of prophets coming down from the high place with harp, tambourine, flute, and lyre before them, prophesying. {{6}} Then the Spirit of the LORD will rush upon you, and you will prophesy with them and be turned into another man."
-        },
-        {
-          "type": "scripture",
-          "ref": "Saul Prophesies – 10:9–10",
-          "body": "{{9}} When he turned his back to leave Samuel, God gave him another heart. And all these signs came to pass that day. {{10}} When they came to Gibeah, behold, a group of prophets met him, and the Spirit of God rushed upon him, and he prophesied among them."
-        },
-        {
-          "type": "text",
-          "body": "Samuel presents Saul as King – 10:17–27"
-        },
-        {
-          "type": "text",
-          "body": "The Spirit of God rushed upon Saul Again – 11:6"
-        },
-        {
-          "type": "subheading",
-          "text": "It All Begins To Go Downhill"
-        },
-        {
-          "type": "text",
-          "body": "Chapter 13: Saul is preparing to fight the Philistines. And he’s supposed to wait until Samuel gets there so that he can offer a sacrifice for the army, but when the army begins to scatter because Samuel was late, Saul offers the sacrifice himself (13:12)."
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Samuel 13:11–14",
-          "body": "{{11}} Samuel said, “What have you done?” And Saul said, “When I saw that the people were scattering from me, and that you did not come within the days appointed, and that the Philistines had mustered at Michmash, {{12}} I said, ‘Now the Philistines will come down against me at Gilgal, and I have not sought the favor of the LORD.’ So I forced myself, and offered the burnt offering.” {{13}} And Samuel said to Saul, “You have done foolishly. You have not kept the command of the LORD your God, with which he commanded you. For then the LORD would have established your kingdom over Israel forever. {{14}} But now your kingdom shall not continue. The LORD has sought out a man after his own heart, and the LORD has commanded him to be prince over his people, because you have not kept what the LORD commanded you.”"
-        },
-        {
-          "type": "text",
-          "body": "Chapter 15: Partial obedience regarding Amalek, a monument set up for himself (15:12), and “honor me now before the elders” (15:30). Samuel answers, “To obey is better than sacrifice” (15:22)."
-        },
-        {
-          "type": "text",
-          "body": "Chapter 18 and following: Jealousy of David turns murderous. The Spirit has departed and a harmful spirit has come (16:14)."
-        },
-        {
-          "type": "text",
-          "body": "Chapter 28: Heaven is silent, so Saul hires a medium. The Chronicler’s verdict is that he did not seek guidance from the Lord (1 Chr 10:13–14)."
-        },
-        {
-          "type": "subheading",
-          "text": "The bookends"
-        },
-        {
-          "type": "text",
-          "body": "Now go back to the donkeys. Seen from Endor, the opening scene is no longer ambiguous. Saul’s whole life is bracketed by trying to get God, or something like God, to hand him what he thinks he needs. The ending explains the beginning."
-        },
-        {
-          "type": "subheading",
-          "text": "The complication"
-        },
-        {
-          "type": "text",
-          "body": "That isn’t entirely unlike a true believer. We seek God for his blessings, and God encourages this all through Scripture. He makes the promises and attaches the rewards (Heb 11:6), and he wants us to think about them. So seeking blessing can’t be the dividing line. And yet the way we respond in trials is what shows the tested genuineness of our faith."
-        },
-        {
-          "type": "subheading",
-          "text": "A common work of the Spirit"
-        },
-        {
-          "type": "text",
-          "body": "How do we spot the Saul in us or in someone else? What evidences should we rely on to determine the veracity of our own faith? How do we know if we aren’t just following God because it serves us to do so?"
-        },
-        {
-          "type": "text",
-          "body": "Well, it turns out one lesson we can take from the story of Saul is that religious experiences by themselves are not evidence of full transformation."
-        },
-        {
-          "type": "scripture",
-          "ref": "Hebrews 6:4–6",
-          "body": "{{4}} For it is impossible, in the case of those who have once been enlightened, who have tasted the heavenly gift, and have shared in the Holy Spirit, {{5}} and have tasted the goodness of the word of God and the powers of the age to come, {{6}} and then have fallen away, to restore them again to repentance, since they are crucifying once again the Son of God to their own harm and holding him up to contempt."
-        },
-        {
-          "type": "text",
-          "body": "Here is how Calvin and Owen read Hebrews 6. There are common operations of the Spirit: real experiences of his working that are not saving."
-        },
-        {
-          "type": "quote",
-          "body": "“God indeed favors none but the elect alone with the Spirit of regeneration, and … by this they are distinguished from the reprobate… But I cannot admit that all this is any reason why he should not grant the reprobate also some taste of his grace, why he should not irradiate their minds with some sparks of his light, why he should not give them some perception of his goodness, and in some sort engrave his word on their hearts… There is therefore some knowledge even in the reprobate, which afterwards vanishes away, either because it did not strike roots sufficiently deep, or because it withers, being choked up.”",
-          "cite": "John Calvin, on Hebrews 6:4"
-        },
-        {
-          "type": "quote",
-          "body": "“The Holy Ghost is present with many as unto powerful operations with whom he is not present as to gracious inhabitation; or, many are made partakers of him in his spiritual gifts who are never made partakers of him in his saving graces.”",
-          "cite": "John Owen, on the Spirit’s presence"
-        },
-        {
-          "type": "text",
-          "body": "(Owen cites Matthew 7:22–23 right there, which ties back to “Lord, Lord.”)"
-        },
-        {
-          "type": "quote",
-          "body": "“They may taste, — 1. Of the word in its truth, not its power; 2. Of the worship of the church in its outward order, not in its inward beauty; 3. Of the gifts of the church, not its graces.”",
-          "cite": "John Owen, on what it means to have only “tasted”"
-        },
-        {
-          "type": "text",
-          "body": "And of that mere taste, Owen says it will not"
-        },
-        {
-          "type": "quote",
-          "body": "“give us such a love of the truth as to abide by it in trials or temptations.”",
-          "cite": "John Owen"
-        },
-        {
-          "type": "text",
-          "body": "This also answers 1 Samuel 10:9, “God gave him another heart.” The common Reformed reading is that this was an equipping for the office of king rather than regeneration. It fits Owen’s distinction: Saul shared in the Spirit’s gifts without sharing in his saving graces."
-        },
-        {
-          "type": "subheading",
-          "text": "The real test"
-        },
-        {
-          "type": "text",
-          "body": "Spiritual experiences are less reliable evidence than this question: what do you do when you don’t get your way? When God says go this way, and going that way plainly brings more problems and more pain, what do you do? That appears to be Scripture’s main way of showing whether you love God or only love the gifts that come with obeying him."
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Peter 1:6–7",
-          "body": "{{6}} In this you rejoice, though now for a little while, if necessary, you have been grieved by various trials, {{7}} so that the tested genuineness of your faith—more precious than gold that perishes though it is tested by fire—may be found to result in praise and glory and honor at the revelation of Jesus Christ."
-        },
-        {
-          "type": "heading",
-          "text": "Application: Thank God for Your Trials"
-        },
-        {
-          "type": "text",
-          "body": "If you are in a trial, be thankful for it. And don’t cheat yourself out of real assurance. Some of you are in situations where the easiest thing would have been to cut and run, or stop trying, or do it the way the world says to, and you didn’t. Look at those moments and ask why you passed that test. That is 1 Peter 1, and it is a great thing to see."
-        },
-        {
-          "type": "text",
-          "body": "Then the probing question: are you in situations where you have to obey God even when it doesn’t seem like the right way? Those situations have something to tell you. Are you able to follow God when it doesn’t make sense? Is that a clear part of your life?"
-        },
-        {
-          "type": "heading",
-          "text": "Pragmatic Religion Institutionalized: Where Isaiah Lives"
-        },
-        {
-          "type": "text",
-          "body": "This hollowed-out faith, using God mostly for self, doesn’t stay with one king. It becomes institutionalized, and it is the air we will breathe when we get to Isaiah."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "lead": "Isaiah 1:10–17:",
-              "body": "“Bring no more vain offerings.”"
-            },
-            {
-              "lead": "Isaiah 29:13:",
-              "body": "“This people draw near with their mouth and honor me with their lips, while their hearts are far from me.”"
-            },
-            {
-              "lead": "Isaiah 58:1–5:",
-              "body": "Fasting while pursuing their own pleasure."
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "body": "This is where Isaiah is."
-        },
-        {
-          "type": "heading",
-          "text": "The Other Saul"
-        },
-        {
-          "type": "text",
-          "body": "The Saul of the New Testament is the same deal. He is of the tribe of Benjamin like his namesake (Phil 3:5; cf. Acts 13:21), a Pharisee of the Pharisees, with religious form and a dark spirit inside it that is not God. He is actively trying to destroy the Davidic line, which is Christ and his people: “Saul, Saul, why are you persecuting me?” (Acts 9:4)."
-        },
-        {
-          "type": "text",
-          "body": "Go deeper. This is where we find Judaism left in the book of Acts: a form that lacks a good heart, largely pragmatic and blessing-seeking rather than God-seeking (Rom 10:2–3)."
-        },
-        {
-          "type": "heading",
-          "text": "Communion"
-        },
-        {
-          "type": "scripture",
-          "ref": "1 Timothy 1:12–17",
-          "body": "{{12}} I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service, {{13}} though formerly I was a blasphemer, persecutor, and insolent opponent. But I received mercy because I had acted ignorantly in unbelief, {{14}} and the grace of our Lord overflowed for me with the faith and love that are in Christ Jesus. {{15}} The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. {{16}} But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life. {{17}} To the King of the ages, immortal, invisible, the only God, be honor and glory forever and ever. Amen."
-        },
-        {
-          "type": "heading",
-          "text": "Sources"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "body": "John Calvin, *Commentaries on the Epistle of Paul the Apostle to the Hebrews*, on 6:4 (Calvin Translation Society edition)."
-            },
-            {
-              "body": "John Owen, *The Nature and Causes of Apostasy from the Gospel*, chapter 1, an exposition of Hebrews 6:4–6 (Works, vol. 7)."
-            }
-          ]
-        }
-      ]
-    },
+    "sermon": null,
     "band": [
       {
         "name": "Josh L.",
         "role": "Lead"
       },
       {
-        "name": "Jared",
-        "role": "Acoustic, Vocals"
+        "name": "Jessa",
+        "role": "Keys, Vocals"
       },
       {
-        "name": "Shannon",
-        "role": "Keys, Vocals"
+        "name": "Steven",
+        "role": "Bass"
       }
     ],
     "songs": [
       {
-        "title": "Only A Holy God",
+        "title": "His Mercy Is More",
         "section": "opening"
       },
       {
-        "title": "O Help My Unbelief",
+        "title": "O Great God",
         "section": "opening"
       },
       {
-        "title": "One Thing",
+        "title": "There Is A Fountain",
         "section": "opening2"
       },
       {
-        "title": "Be Thou My Vision (with Margaret Clarkson ending verses)",
+        "title": "Christ Our Hope In Life and Death",
         "section": "opening2"
       },
       {
-        "title": "We Are Thankful",
+        "title": "His Forever / We Receive",
         "section": "communion"
       },
       {
-        "title": "Your Will Be Done",
+        "title": "Great Is Thy Faithfulness",
         "section": "final"
       }
     ],
-    "playlist_url": ""
+    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv"
   },
   "announcements": [
     {
-      "title": "Work Day",
-      "body": "Church work day. Saturday, October 10 at 9:00 AM.",
-      "when": "Saturday, October 10 · 9:00 AM CT",
-      "link": ""
-    },
-    {
-      "title": "Baptisms",
-      "body": "Praise God — we have a baptism service coming up, with several people preparing to be baptized. More details as the date approaches.",
-      "when": "Sunday, October 11",
-      "link": ""
-    },
-    {
-      "title": "Women's Ministry Crocktoberfest",
-      "body": "Ladies, fall is here and Crocktoberfest is back — fellowship, delicious food, a fun seasonal craft, and a great night to invite friends. Sign-ups are on Basecamp. If you've been part of our church family for less than six months, please don't feel any pressure to bring anything; we're simply glad to have you.",
-      "when": "Wednesday, October 14 · 6:30–9:00 PM CT",
-      "link": ""
+      "title": "Crocktoberfest",
+      "when": "Wednesday, October 14"
     },
     {
       "title": "New Member Class",
-      "body": "Saturday, October 17 and Sunday, October 18. Sign up on Basecamp.",
-      "when": "Saturday, October 17 and Sunday, October 18",
-      "link": ""
+      "when": "Saturday, October 17 – Sunday, October 18"
     },
     {
-      "title": "Men's Retreat",
-      "body": "Men, mark your calendars for our annual Men's Retreat. Meet Justin Lackmacher, founder of Redemption House. Chris and Dov have gotten to know Justin over the years and are absolutely thrilled to have him spend time with the men at Providence. Justin is a former addict, a current minister to addicts, and — as Pastor Chris puts it — has serious Biblical Counseling game. Spots are limited; registration cost increases on October 12.",
-      "when": "October 23–25",
-      "link": "https://lenexachurch.churchcenter.com/registrations/events/3776061"
+      "title": "Men’s Retreat",
+      "when": "Friday, October 23 – Sunday, October 25"
     }
   ]
 }

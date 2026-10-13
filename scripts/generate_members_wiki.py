@@ -18,8 +18,8 @@ import html
 import pathlib
 import markdown
 
-SRC = pathlib.Path.home() / "Obsidian" / "Sermon_Vault" / "Providence 2627"
-OUT = pathlib.Path.home() / "shepherds-guild" / "sovgracekc-site" / "public" / "members"
+SRC = pathlib.Path.home() / "Documents" / "sermon_vault" / "Providence 2627"
+OUT = pathlib.Path(os.environ.get("MEMBERS_OUT") or pathlib.Path(__file__).resolve().parent.parent / "public" / "members")
 
 INDEX_NAME = "Providence Ministries — Index"
 
@@ -30,7 +30,15 @@ HUBS = [
     ("Community Groups", "Community Groups"),
     ("Providence Ministry Meetings", "Master Calendar"),
     ("Setting Up Basecamp", "Basecamp"),
+    ("Online Giving", "Online Giving"),
 ]
+# Internal working notes: still generated as pages, but never listed in the sidebar/directory.
+HIDDEN_FROM_NAV = lambda n: n.rstrip().lower().endswith("kyle owns")
+
+# Sidebar items that link off-site (name -> url) instead of to a vault page.
+EXTERNAL_LINKS = {
+    "Online Giving": "https://www.churchofficegiving.com/app/giving/prov1011279",
+}
 RESOURCES = [
     ("Sermons Online", "Sermons Online"),
     ("PCC Library Charter", "The Church Library"),
@@ -301,6 +309,7 @@ DESCRIPTIONS = {
     "Community Groups": "The church's small groups — biblical fellowship in a more intimate setting.",
     "Providence Ministry Meetings": "The master calendar of every gathering, with upcoming dates.",
     "Setting Up Basecamp": "How we stay connected through the week — and how to get on it.",
+    "Online Giving": "Give online through our secure giving page.",
     # Ministries
     "AV Team": "Sound, slides, and livestream for the Sunday service.",
     "Coffee Ministry": "Coffee before and after the service — simple, welcoming hospitality.",
@@ -344,7 +353,7 @@ def group_items(name_to_url):
     ministry_names = sorted(
         n for n in name_to_url
         if n not in dict(HUBS) and n not in dict(LEADERS) and n not in dict(RESOURCES)
-        and n != FORM_NAME
+        and n != FORM_NAME and not HIDDEN_FROM_NAV(n)
     )
     return [
         ("Start Here", [(n, l) for n, l in HUBS]),
@@ -361,6 +370,9 @@ def build_nav(active_name, name_to_url):
         parts.append(f'<div class="grp">{html.escape(title)}</div>')
         for name, label in items:
             cls = "active" if name == active_name else ""
+            if name in EXTERNAL_LINKS:
+                parts.append(f'<a class="" href="{EXTERNAL_LINKS[name]}" target="_blank" rel="noopener">{html.escape(label)}</a>')
+                continue
             parts.append(f'<a class="{cls}" href="{name_to_url[name]}">{html.escape(label)}</a>')
     return "\n".join(parts)
 
@@ -376,7 +388,8 @@ def build_directory(name_to_url):
         for name, label in items:
             desc = DESCRIPTIONS.get(name, "")
             d = f' <span class="dir-d">— {html.escape(desc)}</span>' if desc else ""
-            out.append(f'<li><a href="{name_to_url[name]}">{html.escape(label)}</a>{d}</li>')
+            href = EXTERNAL_LINKS.get(name) or name_to_url[name]
+            out.append(f'<li><a href="{href}">{html.escape(label)}</a>{d}</li>')
         out.append('</ul>')
     return "\n".join(out)
 
