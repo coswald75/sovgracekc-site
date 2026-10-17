@@ -1,10 +1,10 @@
 {
-  "week_of": "October 11, 2026",
+  "week_of": "October 18, 2026",
   "service_order": {
     "flow": [
       {
         "type": "element",
-        "label": "Announcements"
+        "label": "Welcome"
       },
       {
         "type": "element",
@@ -12,13 +12,8 @@
       },
       {
         "type": "songs",
-        "label": "Congregational Singing",
+        "label": "Songs",
         "section": "opening"
-      },
-      {
-        "type": "element",
-        "label": "Scripture Reading",
-        "detail": "Hebrews 10:15–25 ESV"
       },
       {
         "type": "songs",
@@ -26,53 +21,41 @@
         "section": "opening2"
       },
       {
+        "type": "element",
+        "label": "Kids Dismissal"
+      },
+      {
         "type": "sermon",
         "label": "Sermon"
       },
       {
-        "type": "element",
-        "label": "Transition to Baptism Testimonies"
-      },
-      {
-        "type": "element",
-        "label": "Baptism Testimonies"
-      },
-      {
-        "type": "element",
-        "label": "Communion Meditation"
-      },
-      {
         "type": "songs",
-        "label": "The Lord’s Supper",
+        "label": "Communion",
         "section": "communion"
       },
       {
         "type": "songs",
-        "label": "Final Song",
+        "label": "Final Songs",
         "section": "final"
       },
       {
         "type": "element",
         "label": "Benediction"
-      },
-      {
-        "type": "element",
-        "label": "Dismissal and Transition Outside"
-      },
-      {
-        "type": "element",
-        "label": "Baptisms"
       }
     ],
     "sermon": null,
     "band": [
       {
-        "name": "Josh L.",
+        "name": "Jared",
         "role": "Lead"
       },
       {
-        "name": "Jessa",
-        "role": "Keys, Vocals"
+        "name": "Sarah",
+        "role": "Vocals"
+      },
+      {
+        "name": "Danielle",
+        "role": "Keys"
       },
       {
         "name": "Steven",
@@ -81,44 +64,50 @@
     ],
     "songs": [
       {
-        "title": "His Mercy Is More",
+        "title": "Holy, Holy, Holy",
         "section": "opening"
+      },
+      {
+        "title": "Ancient of Days",
+        "section": "opening"
+      },
+      {
+        "title": "You Are Unchanging",
+        "section": "opening2"
+      },
+      {
+        "title": "All Glory Be to Christ",
+        "section": "opening2"
       },
       {
         "title": "O Great God",
-        "section": "opening"
-      },
-      {
-        "title": "There Is A Fountain",
-        "section": "opening2"
-      },
-      {
-        "title": "Christ Our Hope In Life and Death",
-        "section": "opening2"
-      },
-      {
-        "title": "His Forever / We Receive",
         "section": "communion"
       },
       {
-        "title": "Great Is Thy Faithfulness",
+        "title": "To be announced",
         "section": "final"
       }
     ],
-    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv"
+    "playlist_url": "https://open.spotify.com/playlist/4bl8PQ2f40joeMzEqeUhxv?si=ca75a7608c24470c"
   },
   "announcements": [
     {
-      "title": "Crocktoberfest",
-      "when": "Wednesday, October 14"
-    },
-    {
-      "title": "New Member Class",
-      "when": "Saturday, October 17 – Sunday, October 18"
-    },
-    {
       "title": "Men’s Retreat",
-      "when": "Friday, October 23 – Sunday, October 25"
+      "body": "Men, mark your calendars for our annual Men’s Retreat. Meet Justin Lackmacher, founder of Redemption House. Chris and Dov have gotten to know Justin over the years and are absolutely thrilled to have him spend time with the men at Providence. Justin is a former addict, a current minister to addicts, and — as Pastor Chris puts it — has serious Biblical Counseling game.",
+      "when": "Friday, October 23 – Sunday, October 25",
+      "link": "https://lenexachurch.churchcenter.com/registrations/events/3776061"
+    },
+    {
+      "title": "Men’s Ministry",
+      "body": "",
+      "when": "Wednesday, October 28",
+      "link": ""
+    },
+    {
+      "title": "Community Groups",
+      "body": "Find a group near you on our Community Groups page.",
+      "when": "Ongoing",
+      "link": ""
     }
   ]
 }
