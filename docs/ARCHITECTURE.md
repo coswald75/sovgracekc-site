@@ -83,7 +83,7 @@ Each is a static page calling a **public** Supabase Edge Function (`verify_jwt=f
 
 ### 1f. The weekly bulletin — `sovgracekc.org/seat/`
 - NFC/QR "seat-sticker" landing page showing this Sunday's Order of Service, Announcements, Sermon Outline, a guest "say hello" form, and Give.
-- Built via the **`weekly-bulletin` skill** + `scripts/publish_bulletin.py`, all rendered from `src/data/bulletin.json`; sources = **Josh's Basecamp music email** + **Dov Cohen's announcements email** (both Gmail) + **Chris's sermon title/outline**. **Full workflow → [§6](#6-the-seat-weekly-bulletin-pipeline).**
+- Built via the **`weekly-bulletin` skill** + `scripts/publish_bulletin.py`, all rendered from `src/data/bulletin.json`; sources = **Josh's Basecamp worship post** + the recurring **PLT Announcements Notion note** (https://www.notion.so/410e3fbad4d18028a4cee92d9dae31cb; no announcements email) + **Chris's sermon title/outline**. **Full workflow → [§6](#6-the-seat-weekly-bulletin-pipeline).**
 
 ---
 
@@ -228,7 +228,7 @@ builds without deploying (for review).
 
 1. **Gather** (all read from Chris's logged-in Chrome via the browser tools — no tokens):
    - **Worship set** ← Josh Luffman's Basecamp email in Gmail, subject *"(Corporate Worship - Music) Sunday Worship MM/DD/YYYY"*. Read the **first** message: band, songs (mapped to liturgy sections), Spotify playlist (strip `?si=…`). Josh usually **interleaves a Scripture Reading** between the first two and next two opening songs.
-   - **Announcements** ← **Dov Cohen's** Gmail email, subject *"Announcements M/D/YYYY"*. It's just **titles + dates**; real detail lives in the slides he uploads (image-only `.pptx` — extract by unzipping `ppt/media/*` and *reading the images*) or Chris supplies it at review. **Don't invent** times/places/sign-up links. Carry over still-upcoming events (retreats, etc.) per Chris.
+   - **Announcements** ← the recurring **Announcements** note in the **PLT** Notion team space (https://www.notion.so/410e3fbad4d18028a4cee92d9dae31cb). Dov fills it each week; there is **no announcements email** anymore. Format is still **titles + dates** (e.g. `Women's night at Banning's - 11/11`). **Don't invent** times/places/sign-up links. Carry over still-upcoming events (retreats, etc.) per Chris. Ops runbook: `/workspace/seat-publish/README.md`.
    - **Sermon** ← Chris gives the **title + passage**; the **outline** he hands over Sunday morning as a manuscript, which you *reduce* to headings + full-ESV scriptures + memorable quotes (his three rules: main headings suffice, Scriptures in full ESV, include quotes).
 2. **Draft** → overwrite `bulletin.json` (`week_of` = the coming Sunday).
 3. **Review** → `python3 scripts/publish_bulletin.py --check`, start the `sovgracekc` preview, screenshot `/seat/`, `/seat/order/`, `/seat/announcements/`, `/seat/outline/` at mobile width, and get Chris's **explicit yes**.
