@@ -1,0 +1,142 @@
+---
+// /eval/ — UNLISTED anonymous sermon listening feedback (Chris, Nov 15 2026). No nav link, not in sitemap, noindex.
+// Deliberately NOT using Base.astro: that layout loads Google Analytics + Meta Pixel, and this form is anonymous.
+// Posts to functions/api/forms/sermon-eval.js (stores in Supabase public.form_sermon_eval, emails chris@ only).
+const sections = [
+  ["The text", [
+    [1, "The sermon explained what the parable actually says and means in Jesus' setting."],
+    [2, "The main point came from the passage itself, not just from a topic laid on top of it."],
+    [3, "I could tell why the third servant was judged, and the sermon handled that hard part honestly."],
+  ]],
+  ["The gospel", [
+    [4, "Jesus Christ and his work were clearly at the center, not only a moral lesson about effort."],
+    [5, "I heard both the call to faithfulness and the grace that makes faithfulness possible."],
+  ]],
+  ["Clarity", [
+    [6, "I could say the main point in one sentence."],
+    [7, "The sermon was easy to follow from start to finish."],
+  ]],
+  ["Application", [
+    [8, "I know what faithfulness with what God has given me looks like this week."],
+    [9, "The application was backed by Scripture, not just good advice."],
+    [10, "It spoke to my heart and motives, not only my behavior."],
+  ]],
+  ["Delivery", [
+    [11, "Dov spoke with warmth and conviction, and I wanted to keep listening."],
+  ]],
+  ["Engaging", [
+    [12, "Compared with other sermons I've listened to, I found it easy to stay locked in on the speaker."],
+  ]],
+];
+const anchors = (n) => n === 12 ? ["Harder than usual", "About the same", "Much easier"] : ["Not really", "Somewhat", "Clearly yes"];
+const texts = [
+  ["helped", "What helped you most?"],
+  ["stronger", "One thing that would make it even clearer or stronger."],
+  ["unclear", "Anything that seemed unclear or off from the text?"],
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Sermon Listening Feedback — Providence Community Church</title>
+  <link rel="icon" href="/wp-content/uploads/cropped-favicon-5-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/wp-content/uploads/cropped-favicon-5-180x180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    :root{--paper:#fff;--ink:#262626;--gray:#6b6b6b;--greige:#b9a898;--greige-light:#ede8e2;--line:#d9d9d9;--red:#9c2b21;
+      --serif:'Newsreader',Georgia,serif;--sans:'Archivo Narrow','Arial Narrow',sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--greige-light);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:680px;margin:0 auto;padding:28px 16px 64px}
+    .brand{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin:0 0 14px}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 22px}
+    h1{font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.1;margin:0 0 8px}
+    .meta{margin:0 0 6px;font-size:1rem} .sub{color:var(--gray);margin:0 0 8px}
+    h2{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin:30px 0 4px;padding-top:18px;border-top:1px solid var(--line)}
+    .q{margin:18px 0 0} .q p{margin:0 0 8px;font-weight:600}
+    .pills{display:flex;gap:8px} .pills label{flex:1;position:relative;margin:0}
+    .pills input{position:absolute;opacity:0;width:1px;height:1px}
+    .pills span{display:flex;align-items:center;justify-content:center;min-height:48px;border:1.5px solid var(--line);border-radius:10px;background:#faf9f5;font-size:1.1rem;font-weight:600;cursor:pointer;user-select:none}
+    .pills input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+    .pills input:focus-visible + span{outline:3px solid var(--greige);outline-offset:2px}
+    .anchors{display:flex;justify-content:space-between;font-size:.78rem;color:var(--gray);margin-top:4px}
+    .anchors span{flex:1} .anchors span:nth-child(2){text-align:center} .anchors span:last-child{text-align:right}
+    .lbl{display:block;font-weight:600;margin:14px 0 6px}
+    input[type=text],textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:#faf9f5}
+    textarea{min-height:96px;resize:vertical}
+    .foot{margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line);font-family:var(--serif);font-size:1.05rem}
+    button{margin-top:18px;width:100%;padding:15px;border:none;border-radius:10px;background:var(--ink);color:#fff;font:inherit;font-size:1.05rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+    button:disabled{opacity:.6}
+    .msg{margin-top:12px;font-size:.95rem} .msg.err{color:var(--red)}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;overflow:hidden}
+    #thanks{text-align:center;padding:40px 10px} #thanks h1{margin-bottom:12px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p class="brand">Providence Community Church · Lenexa</p>
+  <div class="card">
+    <div id="formview">
+      <h1>Sermon Listening Feedback</h1>
+      <p class="meta">Dov · Sunday, Nov 15, 2026 · Matthew 25:14–30, the parable of the talents</p>
+      <p class="sub">Anonymous. Your answers go only to Chris.</p>
+      <form id="evalform" novalidate>
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+        {sections.map(([title, qs]) => (
+          <section>
+            <h2>{title}</h2>
+            {qs.map(([n, q]) => (
+              <div class="q">
+                <p>{n}. {q}</p>
+                {n === 6 && (<><label class="lbl" for="main_point">Write it here</label><input type="text" id="main_point" name="main_point" maxlength="500" autocomplete="off" /><p style="margin:12px 0 8px;font-weight:600;font-size:.9rem">How sure are you?</p></>)}
+                <div class="pills" role="radiogroup" aria-label={`Question ${n}`}>
+                  {[1,2,3,4,5].map((v) => (<label><input type="radio" name={`q${n}`} value={v} /><span>{v}</span></label>))}
+                </div>
+                <div class="anchors">{anchors(n).map((a, i) => <span>{[1,3,5][i]} = {a}</span>)}</div>
+              </div>
+            ))}
+          </section>
+        ))}
+        <section>
+          <h2>In your own words</h2>
+          {texts.map(([k, q]) => (<><label class="lbl" for={k}>{q}</label><textarea id={k} name={k} maxlength="4000"></textarea></>))}
+        </section>
+        <p class="foot">Thank you. This is meant to encourage and sharpen Dov. Be candid; Midwestern niceness will not help him.</p>
+        <button type="submit">Submit</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div id="thanks" hidden>
+      <h1>Thank you.</h1>
+      <p class="sub">Your answers were sent to Chris. You can close this page.</p>
+    </div>
+  </div>
+</div>
+<script is:inline>
+(function () {
+  var t0 = Date.now(), f = document.getElementById("evalform"), msg = document.getElementById("msg");
+  f.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var btn = f.querySelector("button[type=submit]"), data = {};
+    new FormData(f).forEach(function (v, k) { data[k] = typeof v === "string" ? v : ""; });
+    var any = Object.keys(data).some(function (k) { return k !== "website" && String(data[k]).trim() !== ""; });
+    if (!any) { msg.className = "msg err"; msg.textContent = "Please answer at least one question (anything at all) before you submit. Thank you!"; return; }
+    data.elapsed_ms = Date.now() - t0;
+    btn.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
+    try {
+      var r = await fetch("/api/forms/sermon-eval", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      var j = await r.json().catch(function () { return {}; });
+      if (!r.ok || !j.ok) throw new Error(j.error || "Something went wrong. Please try again.");
+      document.getElementById("formview").hidden = true; document.getElementById("thanks").hidden = false; window.scrollTo(0, 0);
+    } catch (err) { msg.className = "msg err"; msg.textContent = err.message; btn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
